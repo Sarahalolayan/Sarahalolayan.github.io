@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sarahalolayan.github.io/sitemap.xml
