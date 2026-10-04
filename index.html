@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ساره العليان: لوحات بيانات حية، أتمتة الإجراءات، وتحليل الأنظمة والحوكمة.">
+<title>ساره العليان</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: hero with a live operations log, service trio, tabbed interactive lab, filterable work grid, expandable timeline, contact band */
+:root{
+  --bg:#EDF1F4; --surface:#FFFFFF; --sunk:#F4F7F9; --ink:#122033; --ink-2:#3E4C5C; --muted:#5F6D7C; --line:#D6DDE5; --grid:#E4E9EE;
+  --accent:#0E6E6B; --accent-ink:#FFFFFF; --accent-soft:#D6ECEA;
+  --good:#1D7F47; --good-soft:#DDF1E4; --warn:#9A6412; --warn-soft:#F8EBD3; --bad:#B4380B; --bad-soft:#F9E0D6;
+  --st-good:#0ca30c; --st-warn:#fab219; --st-bad:#d03b3b; --st-info:#2a78d6;
+  --ghost:#9AA8B6;
+  --f-display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C131B; --surface:#131D28; --sunk:#0F1821; --ink:#E4EBF2; --ink-2:#BCC8D4; --muted:#93A2B2; --line:#243241; --grid:#1D2935;
+  --accent:#3DB5AD; --accent-ink:#06201F; --accent-soft:#12312F;
+  --good:#5BCB8A; --good-soft:#143323; --warn:#E3B354; --warn-soft:#352914; --bad:#F2875E; --bad-soft:#3A1E14;
+  --ghost:#5F7183; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C131B; --surface:#131D28; --sunk:#0F1821; --ink:#E4EBF2; --ink-2:#BCC8D4; --muted:#93A2B2; --line:#243241; --grid:#1D2935;
+  --accent:#3DB5AD; --accent-ink:#06201F; --accent-soft:#12312F;
+  --good:#5BCB8A; --good-soft:#143323; --warn:#E3B354; --warn-soft:#352914; --bad:#F2875E; --bad-soft:#3A1E14;
+  --ghost:#5F7183; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;direction:rtl}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.3}
+p{margin:0}
+a{color:var(--accent)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.num{font-family:var(--f-data);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.muted{color:var(--muted)}
+.en{font-family:var(--f-body);direction:ltr;unicode-bidi:isolate}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid transparent}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:600;font-size:17px;color:var(--ink);text-decoration:none}
+.mark{width:32px;height:32px;border-radius:8px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--f-data);font-size:13px;font-weight:500;letter-spacing:.02em}
+.links{display:flex;gap:22px;font-size:15px;align-items:center}
+.links a{color:var(--muted);text-decoration:none}
+.links a:hover,.links a.on{color:var(--ink)}
+.icon-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer}
+.icon-btn:hover{border-color:var(--ink-2)}
+.menu-btn{display:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;font-weight:500;font-size:15px}
+.btn:hover{border-color:var(--ink-2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.07)}
+.btn.sm{padding:6px 12px;font-size:14px}
+.chip{font-size:13px;padding:4px 12px;border-radius:99px;border:1px solid var(--line);background:transparent;cursor:pointer}
+.chip[aria-pressed="true"],.chip[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:56px 40px}
+.hero-text{display:grid;gap:18px}
+.eyebrow{font-size:13px;letter-spacing:.04em;color:var(--accent);font-weight:600}
+.hero h1{font-size:clamp(30px,4.6vw,48px);font-weight:700}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--ink-2);font-size:18px;max-width:58ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.opslog{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 50px -26px rgba(18,32,51,.4);overflow:hidden}
+.opslog-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--sunk);font-size:13px;color:var(--muted)}
+.live{display:inline-flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--st-good);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--st-good) 60%,transparent)}100%{box-shadow:0 0 0 8px transparent}}
+.opslog-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.opslog-kpis div{padding:12px 16px;display:grid;gap:2px}
+.opslog-kpis div+div{border-inline-start:1px solid var(--line)}
+.opslog-kpis span{font-size:12px;color:var(--muted)}
+.opslog-kpis b{font-family:var(--f-data);font-weight:500;font-size:20px}
+.opslog ul{list-style:none;margin:0;padding:10px 16px 14px;display:grid;gap:8px;height:228px;overflow:hidden}
+.opslog li{display:grid;grid-template-columns:auto 18px minmax(0,1fr);gap:10px;align-items:baseline;font-size:13.5px;line-height:1.5}
+.opslog li time{font-family:var(--f-data);font-size:12px;color:var(--muted)}
+.opslog li i{font-style:normal;font-size:12px;text-align:center}
+.opslog li.new{animation:slide .45s ease}
+@keyframes slide{from{transform:translateY(-8px);opacity:0}to{transform:none;opacity:1}}
+
+.facts-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-block:1px solid var(--line);margin-bottom:24px}
+.facts-strip div{padding:18px 4px;display:grid;gap:2px}
+.facts-strip div+div{border-inline-start:1px solid var(--line);padding-inline-start:20px}
+.facts-strip b{font-family:var(--f-data);font-size:28px;font-weight:500}
+.facts-strip span{font-size:14px;color:var(--muted)}
+
+/* sections */
+section.block{padding-block:64px;display:grid;gap:30px;scroll-margin-top:70px}
+.block-head{display:grid;gap:8px;max-width:680px}
+.block-head h2{font-size:clamp(25px,3.4vw,34px);font-weight:600}
+.block-head p{color:var(--muted)}
+
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.service{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;display:grid;gap:12px;align-content:start}
+.service h3{font-size:19px;font-weight:600;display:flex;gap:10px;align-items:center}
+.service h3 svg{flex:none;color:var(--accent)}
+.service p{color:var(--ink-2);font-size:15px}
+.service ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:14.5px}
+.service li{display:flex;gap:8px}
+.service li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:.7em}
+.service .try{font-size:14px;font-weight:500;text-decoration:none;margin-top:4px}
+.integrations{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:15px;align-items:baseline}
+.integrations b{color:var(--ink);font-weight:500}
+
+/* lab */
+.lab{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 18px 50px -30px rgba(18,32,51,.35)}
+.tabs{display:flex;gap:4px;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--sunk);overflow-x:auto}
+.tab{padding:8px 16px;border-radius:8px;border:none;background:transparent;cursor:pointer;font-weight:500;color:var(--muted);white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 0 var(--line),0 0 0 1px var(--line)}
+.panel-body{padding:20px;display:grid;gap:16px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.bar h3{font-size:16px;font-weight:600;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tag{font-size:12px;padding:2px 8px;border-radius:99px;background:var(--warn-soft);color:var(--warn);font-weight:600}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.controls select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font-size:14px}
+.paused .dot{background:var(--muted);animation:none}
+
+/* store demo */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:grid;gap:6px}
+.kpi-label{font-size:13px;color:var(--muted)}
+.kpi-value{font-size:25px;font-weight:500;line-height:1.2}
+.kpi-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.delta{font-size:12.5px;padding:2px 8px;border-radius:99px;font-weight:600;white-space:nowrap}
+.delta.up{background:var(--good-soft);color:var(--good)}
+.delta.down{background:var(--bad-soft);color:var(--bad)}
+.delta.flat{background:var(--sunk);color:var(--muted)}
+.kpi-sub{font-size:12px;color:var(--muted)}
+.spark{width:100%;height:34px;display:block}
+.flash{animation:flash .6s ease}
+@keyframes flash{0%{color:var(--accent)}100%{color:inherit}}
+.mid{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(0,1fr);gap:16px}
+.box{border:1px solid var(--line);border-radius:var(--r);padding:16px;min-width:0;display:grid;gap:10px;align-content:start}
+.box-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.box-head h4{font-family:var(--f-display);font-size:15px;font-weight:600;margin:0}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:8px;border-radius:2px;margin-inline-end:5px;vertical-align:middle}
+.chart-box{overflow-x:auto}
+svg{direction:ltr}
+#chart{width:100%;min-width:480px;height:auto;display:block}
+svg text{fill:var(--muted);font-family:var(--f-data);font-size:11px}
+.alerts{list-style:none;margin:0;padding:0;display:grid;gap:8px;max-height:300px;overflow-y:auto}
+.alert{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px;padding:8px 10px;border-radius:8px;background:var(--sunk);font-size:13.5px;line-height:1.55}
+.alert .ic{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff}
+.alert.bad .ic{background:var(--st-bad)} .alert.warn .ic{background:var(--st-warn);color:#2a1d00} .alert.good .ic{background:var(--st-good)} .alert.info .ic{background:var(--st-info)}
+.alert small{display:block;color:var(--muted);font-size:12px}
+.alert-new{animation:slide .4s ease}
+.summary{border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;background:var(--sunk)}
+.summary h4{font-family:var(--f-display);font-size:15px;font-weight:600;margin:0 0 6px}
+.dl{display:grid;gap:8px;margin:0;padding:0;list-style:none;font-size:14px}
+.dl li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.dl span:first-child{color:var(--muted)}
+.sum-foot{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--muted)}
+
+/* automation */
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;position:relative}
+.node{position:relative;border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:4px;background:var(--surface);transition:border-color .3s,background .3s}
+.node:not(:last-child)::after{content:"";position:absolute;top:50%;inset-inline-end:-15px;width:16px;height:2px;background:var(--line)}
+.node .k{font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.node b{font-family:var(--f-display);font-weight:600;font-size:14.5px}
+.node .tool{font-size:12.5px;color:var(--ink-2)}
+.node .st{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:10px;color:#fff}
+.node.cond{border-style:dashed}
+.node.running{border-color:var(--accent);background:var(--accent-soft)}
+.node.running .st{border-color:var(--accent);border-top-color:transparent;animation:spin .7s linear infinite}
+.node.done .st{background:var(--st-good);border-color:var(--st-good)}
+.node.done:not(:last-child)::after{background:var(--st-good)}
+.node.skip{opacity:.45}
+.node.skip .st{border-style:dashed}
+@keyframes spin{to{transform:rotate(360deg)}}
+.auto-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+.console{background:#0B1520;color:#CFE3E1;border-radius:10px;padding:14px;font-family:var(--f-data);font-size:12.5px;line-height:1.7;height:220px;overflow-y:auto;direction:ltr;text-align:left}
+.console .t{color:#6E8597}
+.console .ok{color:#62D39A}
+.console .ar{font-family:var(--f-body);direction:rtl;unicode-bidi:isolate}
+.compare{display:grid;gap:12px;align-content:start}
+.cmp-row{display:grid;gap:4px;font-size:14px}
+.cmp-row .track{height:10px;border-radius:5px;background:var(--grid);overflow:hidden}
+.cmp-row .track i{display:block;height:100%;border-radius:5px}
+.big-num{font-family:var(--f-data);font-size:26px;font-weight:500;color:var(--accent)}
+
+/* roi */
+.roi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.field{display:grid;gap:6px}
+.field label{display:flex;justify-content:space-between;gap:8px;font-size:14.5px}
+.field output{font-family:var(--f-data);color:var(--accent);font-weight:500}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.roi-out{background:var(--sunk);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:16px;align-content:start}
+.roi-out .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.roi-out .cell{display:grid;gap:2px}
+.roi-out .cell span{font-size:13px;color:var(--muted)}
+.roi-out .cell b{font-family:var(--f-data);font-weight:500;font-size:24px}
+.roi-note{font-size:12.5px;color:var(--muted)}
+
+/* work */
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.work{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:12px;align-content:start;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-2px);border-color:var(--ink-2)}
+.card.feature{grid-column:span 2;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.card .cat{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.02em}
+.card h3{font-size:19px;font-weight:600}
+.card p{color:var(--ink-2);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:12.5px;padding:1px 10px;border-radius:99px;background:var(--accent-soft)}
+.card .links-row{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;font-weight:500}
+.card .links-row a{text-decoration:none}
+.card .links-row a:hover{text-decoration:underline}
+.mini{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--sunk);display:grid;gap:10px}
+.mini-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mini-kpis div{display:grid}
+.mini-kpis span{font-size:11.5px;color:var(--muted)}
+.mini-kpis b{font-family:var(--f-data);font-weight:500;font-size:18px}
+.mini svg{width:100%;height:60px;display:block}
+.card[hidden]{display:none}
+
+/* timeline */
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0;border-inline-start:2px solid var(--line);margin-inline-start:8px}
+.role{position:relative;padding-inline-start:26px;padding-block:6px 18px}
+.role::before{content:"";position:absolute;inset-inline-start:-7px;top:14px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.role:first-child::before{background:var(--accent)}
+.role button{all:unset;cursor:pointer;display:grid;gap:2px;width:100%}
+.role button:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
+.role .yr{font-family:var(--f-data);font-size:13px;color:var(--muted)}
+.role h3{font-size:18px;font-weight:600;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.role h3 .chev{font-size:13px;color:var(--muted);transition:transform .2s}
+.role[data-open="true"] .chev{transform:rotate(180deg)}
+.role .org{font-size:14.5px;color:var(--ink-2)}
+.role .org .en{color:var(--muted);font-size:13px}
+.role ul{margin:10px 0 0;padding-inline-start:18px;color:var(--ink-2);font-size:15px;display:grid;gap:6px;max-width:75ch}
+.role[data-open="false"] ul{display:none}
+
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.skills h3{font-size:16px;font-weight:600;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13.5px;padding:3px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface)}
+.creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.creds ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.creds li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.creds li small{display:block;color:var(--muted);font-size:13px}
+
+.contact{background:var(--ink);color:var(--bg);border-radius:16px;padding:40px 32px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;margin-block:24px 56px;scroll-margin-top:70px}
+.contact h2{font-size:clamp(25px,3.4vw,34px)}
+.contact p{opacity:.8;max-width:56ch;margin-top:10px}
+.contact-list{display:grid;gap:10px;align-content:start}
+.ci{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:color-mix(in srgb,var(--bg) 8%,transparent);border:1px solid color-mix(in srgb,var(--bg) 18%,transparent)}
+.ci span{font-size:13px;opacity:.75}
+.ci>div{min-width:0}
+.ci b,.ci a{overflow-wrap:anywhere}
+.ci a,.ci b{color:var(--bg);font-weight:500;text-decoration:none}
+.ci button{font-size:12.5px;padding:3px 10px;border-radius:99px;border:1px solid color-mix(in srgb,var(--bg) 35%,transparent);background:transparent;color:var(--bg);cursor:pointer}
+footer{padding-block:24px 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+
+/* ---------- motion & graphics ---------- */
+.hero-shell{position:relative;isolation:isolate}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;
+  -webkit-mask-image:radial-gradient(ellipse 75% 85% at 50% 45%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 75% 85% at 50% 45%,#000 45%,transparent 100%)}
+.hero-shell::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
+  background-image:radial-gradient(var(--line) 1px,transparent 1.2px);background-size:22px 22px;opacity:.55;
+  -webkit-mask-image:linear-gradient(#000,transparent 90%);mask-image:linear-gradient(#000,transparent 90%)}
+#rot{display:inline-block;transition:opacity .35s,transform .35s}
+#rot.out{opacity:0;transform:translateY(-10px)}
+.hero h1 .caret{display:inline-block;width:3px;height:.9em;background:var(--accent);margin-inline-start:6px;vertical-align:-.08em;border-radius:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.opslog{position:relative}
+.opslog::after{content:"";position:absolute;inset:-1px;border-radius:14px;padding:1px;pointer-events:none;
+  background:conic-gradient(from var(--ang,0deg),transparent 0 70%,var(--accent) 85%,transparent 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:spinb 6s linear infinite}
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spinb{to{--ang:360deg}}
+
+.illo{width:100%;height:auto;display:block;border-radius:10px;background:var(--sunk);border:1px solid var(--line)}
+.illo .g{stroke:var(--grid);stroke-width:1}
+.illo .bar{fill:var(--accent);transform-box:fill-box;transform-origin:50% 100%;animation:grow 3.2s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes grow{0%,100%{transform:scaleY(var(--a,.45))}50%{transform:scaleY(1)}}
+.illo .ln{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-dasharray:260;stroke-dashoffset:260;animation:draw 3.2s ease-in-out infinite}
+@keyframes draw{0%{stroke-dashoffset:260}55%,100%{stroke-dashoffset:0}}
+.illo .pulse{fill:var(--accent);transform-box:fill-box;transform-origin:center;animation:pl 1.6s ease-out infinite}
+@keyframes pl{0%{transform:scale(1);opacity:.9}100%{transform:scale(3);opacity:0}}
+.illo .nd{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.illo .nd.on{stroke:var(--accent)}
+.illo .wire{fill:none;stroke:var(--line);stroke-width:2}
+.illo .wire.live{stroke:var(--accent);stroke-dasharray:4 6;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-20}}
+.illo .pk{fill:var(--accent)}
+.illo text{font-family:var(--f-body);font-size:10px;fill:var(--ink-2)}
+.illo .chip{fill:var(--good-soft)}
+.illo .chipt{fill:var(--good);font-family:var(--f-data);font-size:10px;font-weight:600}
+
+.marquee{overflow:hidden;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;gap:10px;width:max-content;direction:ltr;animation:mq 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{white-space:nowrap;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);font-size:14px;color:var(--ink-2)}
+@keyframes mq{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+
+.spot{position:relative;overflow:hidden}
+.spot::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .25s;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%)}
+.spot:hover::before{opacity:1}
+.spot>*{position:relative}
+
+.reveal{transform:translateY(18px);opacity:.35;transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .7s}
+.reveal.in{transform:none;opacity:1}
+
+.timeline{position:relative}
+.tl-fill{position:absolute;inset-inline-start:-2px;top:0;width:2px;height:var(--p,0%);background:var(--accent);transition:height .15s linear}
+
+.node.running:not(:last-child)::after{background:linear-gradient(90deg,var(--line),var(--accent),var(--line));background-size:200% 100%;animation:sweep .7s linear infinite}
+@keyframes sweep{from{background-position:200% 0}to{background-position:0 0}}
+.node.done{animation:pop .35s ease}
+@keyframes pop{50%{transform:scale(1.04)}}
+@media (max-width:980px){
+  .hero,.contact,.roi,.auto-grid,.mid,.summary{grid-template-columns:minmax(0,1fr)}
+  .services,.work,.skills{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card.feature{grid-column:1/-1}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:minmax(0,1fr)}
+  .node:not(:last-child)::after{top:auto;bottom:-15px;inset-inline-end:auto;inset-inline-start:24px;width:2px;height:16px}
+  .facts-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts-strip div:nth-child(3){border-inline-start:none;padding-inline-start:4px}
+  .facts-strip div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:760px){
+  .links{display:none}
+  .links.open{display:grid;position:absolute;top:100%;inset-inline:0;background:var(--surface);border-bottom:1px solid var(--line);padding:12px 20px;gap:12px}
+  .menu-btn{display:grid}
+}
+@media (max-width:600px){
+  .wrap{padding-inline:16px}
+  .services,.work,.skills,.creds,.kpis{grid-template-columns:minmax(0,1fr)}
+  .card.feature{grid-template-columns:minmax(0,1fr)}
+  .panel-body{padding:14px}
+  .contact{padding:28px 20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><span class="mark">SA</span>ساره العليان</a>
+    <div class="links" id="links">
+      <a href="#services">الخدمات</a>
+      <a href="#lab">جرّب بنفسك</a>
+      <a href="#work">أعمالي</a>
+      <a href="#experience">الخبرة</a>
+      <a href="#contact">تواصل</a>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" id="theme" type="button" aria-label="تبديل الوضع الفاتح والداكن" title="تبديل الوضع"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-label="القائمة" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+  <div class="hero-shell">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <header class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">نظم المعلومات · لوحات البيانات · الأتمتة</span>
+      <h1>أحوّل بيانات عملك وإجراءاته إلى أنظمة <em id="rot">تشتغل لوحدها</em><span class="caret" aria-hidden="true"></span></h1>
+      <p>خبرة أكثر من ثلاث سنوات في تحليل الأنظمة وحوكمة نظم المعلومات وإدارة المشاريع. اليوم أبني لوحات بيانات حية وأتمتة للمهام المتكررة، بنفس المنهجية: أفهم الاحتياج أولاً، ثم أبني شيئاً يستخدمه الفريق فعلاً.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#lab">جرّب أعمالي مباشرة</a>
+        <a class="btn" href="#contact">تواصل معي</a>
+      </div>
+    </div>
+    <aside class="opslog" aria-label="مثال حي على سجل عمليات مؤتمت">
+      <div class="opslog-head"><span class="live"><span class="dot"></span>سجل الأتمتة · مثال حي</span><span class="num" id="ops-clock">--:--</span></div>
+      <div class="opslog-kpis">
+        <div><span>مهام نُفّذت اليوم</span><b id="ops-runs">0</b></div>
+        <div><span>دقائق تم توفيرها</span><b id="ops-saved">0</b></div>
+        <div><span>تنبيهات أُرسلت</span><b id="ops-alerts">0</b></div>
+      </div>
+      <ul id="ops-list"></ul>
+    </aside>
+  </header>
+  </div>
+
+  <div class="facts-strip">
+    <div><b class="num" data-count="3" data-prefix="+">+3</b><span>سنوات خبرة في نظم المعلومات</span></div>
+    <div><b class="num" data-count="4">4</b><span>أدوار: حوكمة، تحليل، مشاريع، تطوير أعمال</span></div>
+    <div><b class="num" data-count="2">2</b><span>لوحة بيانات حية منشورة</span></div>
+    <div><b class="en">ISTQB</b><span>شهادة دولية في اختبار البرمجيات</span></div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="block" id="services">
+    <div class="block-head">
+      <h2>الخدمات</h2>
+      <p>ثلاث خدمات مترابطة: أرتّب الإجراءات، أؤتمت المتكرر منها، وأعرض نتائجها في لوحة واحدة.</p>
+    </div>
+    <div class="services">
+      <article class="service spot">
+        <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
+          <line class="g" x1="14" x2="246" y1="30" y2="30"/><line class="g" x1="14" x2="246" y1="60" y2="60"/><line class="g" x1="14" x2="246" y1="90" y2="90"/>
+          <rect class="bar" x="24" y="40" width="18" height="50" rx="3" style="--d:0s"/>
+          <rect class="bar" x="54" y="30" width="18" height="60" rx="3" style="--d:.2s"/>
+          <rect class="bar" x="84" y="48" width="18" height="42" rx="3" style="--d:.4s;--a:.6"/>
+          <rect class="bar" x="114" y="22" width="18" height="68" rx="3" style="--d:.6s"/>
+          <rect class="bar" x="144" y="36" width="18" height="54" rx="3" style="--d:.8s;--a:.55"/>
+          <rect class="bar" x="174" y="16" width="18" height="74" rx="3" style="--d:1s"/>
+          <path class="ln" d="M33 70 L63 58 L93 64 L123 44 L153 50 L183 30 L222 22"/>
+          <circle class="pulse" cx="222" cy="22" r="4"/><circle cx="222" cy="22" r="4" fill="var(--accent)"/>
+          <rect class="chip" x="200" y="74" width="46" height="18" rx="9"/><text class="chipt" x="223" y="86" text-anchor="middle">▲ 12%</text>
+        </svg>
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>لوحات بيانات حية</h3>
+        <p>لوحة تحكم تتحدّث تلقائياً من مصادر بياناتك، وتعرض الأرقام المهمة مع اتجاهها.</p>
+        <ul><li>تحديث تلقائي من مصادرك</li><li>مؤشرات KPI مع نسبة التغيّر والأهداف</li><li>تنبيهات فورية عند أي خلل</li><li>ملخص يومي مكتوب</li></ul>
+        <a class="try" href="#lab" data-tab="store">جرّب لوحة حية ←</a>
+      </article>
+      <article class="service spot">
+        <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
+          <path id="w1" class="wire live" d="M214 40 H156"/>
+          <path id="w2" class="wire live" d="M104 40 H46"/>
+          <path id="w3" class="wire" d="M130 54 V74 H72"/>
+          <rect class="nd on" x="214" y="24" width="34" height="32" rx="8"/><text x="231" y="44" text-anchor="middle">▶</text>
+          <rect class="nd on" x="104" y="24" width="52" height="32" rx="8"/><text x="130" y="44" text-anchor="middle">شرط</text>
+          <rect class="nd on" x="12" y="24" width="34" height="32" rx="8"/><text x="29" y="44" text-anchor="middle">✓</text>
+          <rect class="nd" x="38" y="62" width="34" height="26" rx="8"/><text x="55" y="79" text-anchor="middle">▤</text>
+          <circle class="pk" r="4"><animateMotion dur="1.6s" repeatCount="indefinite" path="M214 40 H156"/></circle>
+          <circle class="pk" r="4"><animateMotion dur="1.6s" begin=".8s" repeatCount="indefinite" path="M104 40 H46"/></circle>
+          <circle class="pk" r="3.5" opacity=".7"><animateMotion dur="2.2s" begin=".4s" repeatCount="indefinite" path="M130 56 V74 H72"/></circle>
+          <text x="231" y="100" text-anchor="middle">المُشغّل</text><text x="29" y="18" text-anchor="middle">إرسال</text>
+        </svg>
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H14a4 4 0 0 1 4 4v5.5"/></svg>أتمتة الإجراءات</h3>
+        <p>أي مهمة تتكرر يومياً بنفس الخطوات تقدر تشتغل لوحدها: من نسخ البيانات إلى إرسال التقارير.</p>
+        <ul><li>ربط الأنظمة ببعض (متجر، شيت، CRM)</li><li>تقارير مجدولة تصل واتساب أو بريد</li><li>مسارات موافقات بدل الورق والرسائل</li><li>تنبيهات بشروط تحددها أنت</li></ul>
+        <a class="try" href="#lab" data-tab="auto">شغّل محاكي الأتمتة ←</a>
+      </article>
+      <article class="service spot">
+        <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
+          <path class="wire" d="M232 50 H206 M162 50 H140 M112 50 H98 V28 H80 M98 50 V72 H80 M44 28 H30 V50 M44 72 H30 V50 H22"/>
+          <circle cx="240" cy="50" r="8" class="nd on"/>
+          <rect class="nd" x="162" y="36" width="44" height="28" rx="6"/><text x="184" y="54" text-anchor="middle">متطلبات</text>
+          <path class="nd on" d="M126 36 L140 50 L126 64 L112 50 Z"/><text x="126" y="54" text-anchor="middle">×</text>
+          <rect class="nd" x="44" y="16" width="36" height="24" rx="6"/><text x="62" y="32" text-anchor="middle">سياسة</text>
+          <rect class="nd" x="44" y="60" width="36" height="24" rx="6"/><text x="62" y="76" text-anchor="middle">امتثال</text>
+          <circle cx="16" cy="50" r="7" class="nd" style="stroke-width:3;stroke:var(--ink-2)"/>
+          <circle class="pk" r="4"><animateMotion dur="4s" repeatCount="indefinite" path="M240 50 H184 H126 H98 V28 H62 H30 V50 H16"/></circle>
+          <circle class="pk" r="4" opacity=".6"><animateMotion dur="4s" begin="2s" repeatCount="indefinite" path="M240 50 H184 H126 H98 V72 H62 H30 V50 H16"/></circle>
+        </svg>
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="7" height="6" rx="1.5"/><rect x="14" y="14" width="7" height="6" rx="1.5"/><path d="M6.5 10v4a3 3 0 0 0 3 3H14"/></svg>تحليل الأنظمة والحوكمة</h3>
+        <p>قبل أي أداة: نفهم الإجراء الحالي، نحدد الفجوات، ونكتب السياسة التي يمشي عليها الفريق.</p>
+        <ul><li>جمع المتطلبات وتوثيقها</li><li>رسم الإجراءات بـ BPMN</li><li>سياسات الوصول والتعامل مع البيانات</li><li>تقارير امتثال دورية</li></ul>
+        <a class="try" href="#experience">شوف الخبرة ←</a>
+      </article>
+    </div>
+    <div style="display:grid;gap:10px"><span class="muted" style="font-size:14px">أربط مع:</span><div class="marquee" aria-label="الأنظمة التي أربط معها: Google Sheets، Excel، سلة، زد، Foodics، واتساب، البريد الإلكتروني، قواعد بيانات SQL، Google Drive، CRM، نماذج إلكترونية، أي نظام فيه API"><div class="marquee-track" aria-hidden="true"><span>Google Sheets</span><span>Excel</span><span>سلة</span><span>زد</span><span>Foodics</span><span>واتساب</span><span>البريد الإلكتروني</span><span>قواعد بيانات SQL</span><span>Google Drive</span><span>CRM</span><span>نماذج إلكترونية</span><span>أي نظام فيه API</span><span>Google Sheets</span><span>Excel</span><span>سلة</span><span>زد</span><span>Foodics</span><span>واتساب</span><span>البريد الإلكتروني</span><span>قواعد بيانات SQL</span><span>Google Drive</span><span>CRM</span><span>نماذج إلكترونية</span><span>أي نظام فيه API</span></div></div></div>
+  </section>
+
+  <!-- LAB -->
+  <section class="block" id="lab">
+    <div class="block-head">
+      <h2>جرّب بنفسك</h2>
+      <p>ثلاث أدوات تعمل هنا مباشرة: لوحة متجر حية، محاكي لسير عمل مؤتمت، وحاسبة تقدّر الوقت الذي توفره الأتمتة لفريقك.</p>
+    </div>
+    <div class="lab">
+      <div class="tabs" role="tablist" aria-label="أدوات تفاعلية">
+        <button class="tab" role="tab" id="tab-store" aria-controls="p-store" aria-selected="true">لوحة متجر حية</button>
+        <button class="tab" role="tab" id="tab-auto" aria-controls="p-auto" aria-selected="false" tabindex="-1">محاكي الأتمتة</button>
+        <button class="tab" role="tab" id="tab-roi" aria-controls="p-roi" aria-selected="false" tabindex="-1">حاسبة التوفير</button>
+      </div>
+
+      <!-- store -->
+      <div class="panel-body" role="tabpanel" id="p-store" aria-labelledby="tab-store">
+        <div class="bar">
+          <h3>متجر نخلة · لوحة العمليات <span class="tag">بيانات تجريبية</span> <span class="live kpi-sub" id="live"><span class="dot"></span>آخر تحديث <span class="num" id="clock">--:--</span></span></h3>
+          <div class="controls">
+            <label for="speed">التحديث كل</label>
+            <select id="speed"><option value="1000">ثانية</option><option value="2500" selected>2.5 ثانية</option><option value="5000">5 ثوانٍ</option></select>
+            <button class="btn sm" id="toggle" type="button">إيقاف مؤقت</button>
+            <button class="btn sm" id="anomaly" type="button">محاكاة خلل</button>
+          </div>
+        </div>
+        <div class="kpis" id="kpis"></div>
+        <div class="mid">
+          <div class="box">
+            <div class="box-head"><h4>المبيعات بالساعة (ر.س)</h4><div class="legend"><span><i style="background:var(--accent)"></i>اليوم</span><span><i style="background:var(--ghost);height:2px"></i>أمس</span></div></div>
+            <div class="chart-box"><svg id="chart" viewBox="0 0 640 250" role="img" aria-label="المبيعات بالساعة لليوم مقارنة بأمس"></svg></div>
+          </div>
+          <div class="box">
+            <div class="box-head"><h4>التنبيهات</h4><span class="kpi-sub" id="alert-count"></span></div>
+            <ul class="alerts" id="alerts"></ul>
+          </div>
+        </div>
+        <div class="summary">
+          <div>
+            <h4>الملخص اليومي</h4>
+            <p id="summary-text"></p>
+            <div class="sum-foot"><button class="btn sm" id="copy" type="button">نسخ الملخص</button><span id="copy-msg">يُرسل تلقائياً كل ليلة</span></div>
+          </div>
+          <ul class="dl" id="facts"></ul>
+        </div>
+      </div>
+
+      <!-- automation -->
+      <div class="panel-body" role="tabpanel" id="p-auto" aria-labelledby="tab-auto" hidden>
+        <div class="bar">
+          <div class="filters" id="scenarios" role="group" aria-label="اختر سيناريو">
+            <button class="chip" type="button" data-s="order" aria-pressed="true">طلب جديد في المتجر</button>
+            <button class="chip" type="button" data-s="daily" aria-pressed="false">التقرير اليومي</button>
+            <button class="chip" type="button" data-s="leave" aria-pressed="false">طلب إجازة وموافقة</button>
+          </div>
+          <div class="controls"><button class="btn primary sm" id="run" type="button">▶ شغّل السير</button><button class="btn sm" id="auto-run" type="button" aria-pressed="false">تشغيل متكرر</button></div>
+        </div>
+        <ol class="flow" id="flow"></ol>
+        <div class="auto-grid">
+          <div class="console" id="console" aria-live="polite"></div>
+          <div class="compare">
+            <div class="cmp-row"><span>يدوياً: <b id="cmp-manual-t"></b></span><div class="track"><i id="cmp-manual" style="background:var(--ghost);width:100%"></i></div></div>
+            <div class="cmp-row"><span>مؤتمت: <b id="cmp-auto-t"></b></span><div class="track"><i id="cmp-auto" style="background:var(--accent);width:2%"></i></div></div>
+            <div><span class="kpi-sub">مرات التشغيل في هذه الجلسة</span><div class="big-num" id="runs">0</div></div>
+            <div><span class="kpi-sub">وقت يدوي تم توفيره</span><div class="big-num" id="saved">0 دقيقة</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- roi -->
+      <div class="panel-body" role="tabpanel" id="p-roi" aria-labelledby="tab-roi" hidden>
+        <div class="roi">
+          <div style="display:grid;gap:18px">
+            <div class="field"><label for="r-tasks">كم مرة تتكرر المهمة أسبوعياً؟ <output id="o-tasks" for="r-tasks"></output></label><input type="range" id="r-tasks" min="1" max="100" value="20"></div>
+            <div class="field"><label for="r-min">كم دقيقة تأخذ كل مرة؟ <output id="o-min" for="r-min"></output></label><input type="range" id="r-min" min="2" max="120" value="15"></div>
+            <div class="field"><label for="r-staff">كم موظف يقوم بها؟ <output id="o-staff" for="r-staff"></output></label><input type="range" id="r-staff" min="1" max="20" value="3"></div>
+            <div class="field"><label for="r-cost">تكلفة ساعة الموظف (ر.س) <output id="o-cost" for="r-cost"></output></label><input type="range" id="r-cost" min="20" max="300" step="5" value="60"></div>
+          </div>
+          <div class="roi-out" aria-live="polite">
+            <div class="row">
+              <div class="cell"><span>ساعات توفّرها شهرياً</span><b id="x-hours">0</b></div>
+              <div class="cell"><span>أيام عمل في السنة</span><b id="x-days">0</b></div>
+            </div>
+            <div class="cell"><span>توفير سنوي تقديري</span><b id="x-money" style="color:var(--accent);font-size:32px">0</b></div>
+            <div class="cmp-row"><span>الوقت الشهري الحالي: <b id="x-now" class="num"></b> ساعة</span><div class="track"><i style="background:var(--ghost);width:100%"></i></div></div>
+            <div class="cmp-row"><span>بعد الأتمتة: <b id="x-after" class="num"></b> ساعة</span><div class="track"><i style="background:var(--accent);width:20%"></i></div></div>
+            <p class="roi-note">تقدير مبسّط يفترض أن الأتمتة توفّر 80% من الوقت اليدوي، ويبقى 20% للمراجعة والاستثناءات. الرقم الفعلي يتحدد بعد دراسة الإجراء.</p>
+            <a class="btn primary sm" href="#contact" style="justify-self:start">ناقش معي مهمتك</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="block" id="work">
+    <div class="block-head">
+      <h2>أعمالي</h2>
+      <p>مشاريع منشورة تقدر تفتحها وتجربها، وأعمال من خبرتي في تحليل الأنظمة والحوكمة.</p>
+    </div>
+    <div class="filters" id="work-filters" role="group" aria-label="تصفية الأعمال">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">الكل</button>
+      <button class="chip" type="button" data-f="dash" aria-pressed="false">لوحات بيانات</button>
+      <button class="chip" type="button" data-f="auto" aria-pressed="false">أتمتة</button>
+      <button class="chip" type="button" data-f="gov" aria-pressed="false">تحليل وحوكمة</button>
+    </div>
+    <div class="work" id="work-grid">
+      <article class="card feature spot" data-cat="dash auto">
+        <div style="display:grid;gap:12px">
+          <span class="cat">لوحة بيانات · مشروع منشور</span>
+          <h3>نبض النادي</h3>
+          <p>لوحة تحكم حية لنادي رياضي مبنية على 973 جلسة تمرين حقيقية. فيها أهداف يومية، ومناطق شدة النبض، وفلاتر تطبّق على اللوحة كاملة، وتنبيهات بزر متابعة، وملخص يومي يُحفظ تلقائياً.</p>
+          <div class="tags"><span>تحديث تلقائي</span><span>6 مؤشرات KPI</span><span>تنبيهات</span><span>ملخص يومي</span><span>رفع CSV</span></div>
+          <div class="links-row"><a href="https://sarahalolayan.github.io/nabd-alnadi/" target="_blank" rel="noopener">افتح اللوحة ↗</a><a href="https://github.com/Sarahalolayan/nabd-alnadi" target="_blank" rel="noopener">الكود على GitHub ↗</a></div>
+        </div>
+        <div class="mini" aria-hidden="true">
+          <div class="mini-kpis"><div><span>الجلسات</span><b id="m-n">59</b></div><div><span>السعرات</span><b id="m-c">53,259</b></div><div><span>الهدف</span><b>128</b></div></div>
+          <svg id="m-chart" viewBox="0 0 300 60" preserveAspectRatio="none"></svg>
+          <span class="kpi-sub">معاينة مصغّرة تتحدّث</span>
+        </div>
+      </article>
+      <article class="card spot" data-cat="dash">
+        <span class="cat">لوحة بيانات · عرض حي</span>
+        <h3>لوحة عمليات متجر إلكتروني</h3>
+        <p>مبيعات بالساعة مقابل أمس، أربع مؤشرات مع نسب التغيّر، تنبيهات مخزون وتحويل، وتوقع لمبيعات نهاية اليوم.</p>
+        <div class="tags"><span>مبيعات</span><span>معدل التحويل</span><span>توقع</span></div>
+        <div class="links-row"><a href="#lab" data-tab="store">جرّبها هنا ←</a></div>
+      </article>
+      <article class="card spot" data-cat="auto">
+        <span class="cat">أتمتة · محاكي تفاعلي</span>
+        <h3>ثلاث مسارات عمل مؤتمتة</h3>
+        <p>طلب متجر يحدّث الشيت وينبّه المدير، تقرير يومي يُكتب ويُرسل لوحده، وطلب إجازة يمر بالموافقة ويُبلغ الموظف.</p>
+        <div class="tags"><span>Webhook</span><span>شروط</span><span>تنبيهات</span><span>موافقات</span></div>
+        <div class="links-row"><a href="#lab" data-tab="auto">شغّلها هنا ←</a></div>
+      </article>
+      <article class="card spot" data-cat="gov">
+        <span class="cat">حوكمة نظم المعلومات · مجموعة المسواك</span>
+        <h3>سياسات نظم المعلومات والامتثال</h3>
+        <p>كتابة وتحديث سياسات الوصول للأنظمة والتعامل مع البيانات وضوابط الاستخدام، مع متابعة التزام الإدارات وتقارير امتثال دورية بالإجراءات التصحيحية.</p>
+        <div class="tags"><span>سياسات</span><span>امتثال</span><span>تقارير</span></div>
+      </article>
+      <article class="card spot" data-cat="gov">
+        <span class="cat">تحليل أنظمة · EinAI</span>
+        <h3>متطلبات وخرائط إجراءات BPMN</h3>
+        <p>ورش عمل لجمع المتطلبات الوظيفية وغير الوظيفية، ورسم الإجراءات الحالية والمقترحة لكشف الفجوات ونقاط التكامل، ومتابعة التسليم في Jira.</p>
+        <div class="tags"><span>BPMN</span><span>متطلبات</span><span>Jira</span></div>
+      </article>
+      <article class="card spot" data-cat="auto gov">
+        <span class="cat">أتمتة · من سجل الخبرة</span>
+        <h3>تقارير الامتثال والتقدم</h3>
+        <p>تقارير دورية كانت تُجمع يدوياً من الاجتماعات والمتابعات. اليوم أبنيها كمسار مؤتمت يجمع البيانات ويكتب الملخص ويرسله في موعده.</p>
+        <div class="tags"><span>تقارير مجدولة</span><span>ملخصات</span></div>
+        <div class="links-row"><a href="#lab" data-tab="auto" data-scenario="daily">شوف المثال ←</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="block" id="experience">
+    <div class="block-head">
+      <h2>الخبرة</h2>
+      <p>مسار تدرّج من تنسيق المشاريع إلى تحليل الأنظمة ثم الحوكمة وتطوير الأعمال. اضغط على أي دور للتفاصيل.</p>
+    </div>
+    <ol class="timeline" id="timeline">
+      <span class="tl-fill" id="tl-fill" aria-hidden="true"></span>
+      <li class="role" data-open="true">
+        <button type="button" aria-expanded="true"><span class="yr">2026 – الآن</span><h3>تطوير الأعمال <span class="chev">▾</span></h3><span class="org">يونيك ديزاين، الرياض · <span class="en">Business Development Specialist</span></span></button>
+        <ul><li>أقابل العملاء لفهم احتياجاتهم، وأوثّق متطلبات نظم المعلومات التي يبني عليها الفريق التقني.</li><li>أبحث في سوق نظم المعلومات والتصميم الرقمي لاكتشاف فرص خدمات جديدة، وأرفعها للإدارة في تقارير منظمة.</li><li>أتابع حسابات العملاء وأنسّق داخلياً ليبقى التسليم ضمن النطاق والجدول، مع تقارير دورية بالتقدم.</li></ul>
+      </li>
+      <li class="role" data-open="false">
+        <button type="button" aria-expanded="false"><span class="yr">2025 – 2026</span><h3>حوكمة نظم المعلومات <span class="chev">▾</span></h3><span class="org">مجموعة المسواك، الرياض · <span class="en">Information Systems Governance Specialist</span></span></button>
+        <ul><li>إشراف على أداء الفريق وتوزيع المهام اليومية، والالتزام بالمواعيد وإجراءات نظم المعلومات.</li><li>كتابة وتحديث سياسات الوصول للأنظمة والتعامل مع البيانات وضوابط الاستخدام، لتوحيد الممارسات بين الإدارات.</li><li>متابعة التزام الإدارات بالإجراءات، ورفع حالات عدم الالتزام، وإعداد تقارير امتثال دورية بالنتائج والإجراءات التصحيحية.</li></ul>
+      </li>
+      <li class="role" data-open="false">
+        <button type="button" aria-expanded="false"><span class="yr">2024 – 2025</span><h3>تحليل الأنظمة وقيادة المشاريع <span class="chev">▾</span></h3><span class="org">EinAI، الرياض · <span class="en">Information Systems Analyst &amp; Project Lead</span></span></button>
+        <ul><li>جمع المتطلبات الوظيفية وغير الوظيفية عبر مقابلات وورش عمل، وتوثيقها لفرق التطوير.</li><li>رسم مسارات العمل الحالية والمقترحة بـ BPMN لكشف الفجوات ونقاط التكامل.</li><li>تنسيق المهام ومتابعة مراحل التسليم في Jira، مع تقارير حالة منتظمة لمدير المشروع وأصحاب المصلحة.</li></ul>
+      </li>
+      <li class="role" data-open="false">
+        <button type="button" aria-expanded="false"><span class="yr">2023 – 2024</span><h3>تنسيق مشاريع نظم المعلومات <span class="chev">▾</span></h3><span class="org">مركز العدلي للتدريب · كلاسيرا، الرياض · <span class="en">Information Systems Project Coordinator</span></span></button>
+        <ul><li>تنظيم مهام المشاريع وجداول الاجتماعات وتتبّع بنود العمل لضمان التسليم في وقته.</li><li>توثيق الاجتماعات ونقاشات المتطلبات في تقارير تقدم منظمة للمشرفين والفريق.</li></ul>
+      </li>
+    </ol>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="block">
+    <div class="block-head"><h2>المهارات والشهادات</h2></div>
+    <div class="skills">
+      <div><h3>الحوكمة والتحليل</h3><div class="chips"><span>حوكمة تقنية المعلومات</span><span>تحليل الأنظمة</span><span>تقارير الامتثال</span><span>توثيق الأنظمة</span><span>جمع المتطلبات</span></div></div>
+      <div><h3>التسليم والإجراءات</h3><div class="chips"><span>Agile</span><span>Waterfall</span><span>BPMN</span><span>Jira</span><span>إدارة أصحاب المصلحة</span><span>اختبار البرمجيات</span></div></div>
+      <div><h3>البيانات والنمو</h3><div class="chips"><span>لوحات البيانات</span><span>الأتمتة</span><span>إدارة البيانات</span><span>التحول الرقمي</span><span>تحليل السوق</span><span>استراتيجية الأعمال</span></div></div>
+    </div>
+    <div class="creds">
+      <div>
+        <h3 style="font-size:16px;font-weight:600;margin-bottom:10px">الشهادات</h3>
+        <ul>
+          <li><span>ISTQB <small>الشهادة الدولية لاختبار البرمجيات</small></span><span class="num">2025</span></li>
+          <li><span>دورة اختبار البرمجيات والأتمتة</span><span class="num">2025</span></li>
+          <li><span>الرخصة الدولية لريادة الأعمال</span><span class="num">2022</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;font-weight:600;margin-bottom:10px">التعليم</h3>
+        <ul>
+          <li><span>بكالوريوس نظم المعلومات <small>جامعة المعرفة</small></span><span class="num">2024</span></li>
+          <li><span>دبلوم تقنية المعلومات <small>جامعة الأميرة نورة بنت عبدالرحمن</small></span><span class="num">2019</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div>
+      <h2>عندك مهمة تتكرر كل يوم، أو أرقام تبي تشوفها بوضوح؟</h2>
+      <p>أرسل لي وصفاً مختصراً لنشاطك ومن أين تأتي بياناتك، وأرجع لك بتصور أولي للحل وخطوات تنفيذه.</p>
+    </div>
+    <div class="contact-list">
+      <div class="ci"><div><span>البريد</span><br><b class="en" id="email">sarah.m.alolayan@gmail.com</b></div><button type="button" data-copy="sarah.m.alolayan@gmail.com">نسخ</button></div>
+      <div class="ci"><div><span>الجوال وواتساب</span><br><b class="num">0597 783 740</b></div><button type="button" data-copy="0597783740">نسخ</button></div>
+      <div class="ci"><div><span>لينكدإن</span><br><a href="https://sa.linkedin.com/in/sarah-alolayan-991368183" target="_blank" rel="noopener">sarah-alolayan ↗</a></div></div>
+      <div class="ci"><div><span>GitHub</span><br><a href="https://github.com/Sarahalolayan" target="_blank" rel="noopener">Sarahalolayan ↗</a></div></div>
+    </div>
+  </section>
+</main>
+<footer class="wrap"><span>© <span class="num" id="year">2026</span> ساره العليان</span><span>الرياض، المملكة العربية السعودية</span></footer>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+  const fmt = (n,d=0) => Number(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const rnd = (a,b) => a + Math.random()*(b-a);
+  const pad = n => String(n).padStart(2,'0');
+  const nowHM = () => { const d=new Date(); return `${pad(d.getHours())}:${pad(d.getMinutes())}`; };
+  const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  $('#year').textContent = new Date().getFullYear();
+
+  // ---------- theme ----------
+  const root=document.documentElement;
+  try{ const t=localStorage.getItem('theme'); if(t) root.dataset.theme=t; }catch(e){}
+  $('#theme').addEventListener('click',()=>{
+    const dark = root.dataset.theme ? root.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark?'light':'dark';
+    try{ localStorage.setItem('theme',root.dataset.theme); }catch(e){}
+    renderStore(); drawMini();
+  });
+
+  // ---------- nav ----------
+  const nav=$('#nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8),{passive:true});
+  $('#menu').addEventListener('click',e=>{ const o=$('#links').classList.toggle('open'); e.currentTarget.setAttribute('aria-expanded',o); });
+  $$('#links a').forEach(a=>a.addEventListener('click',()=>$('#links').classList.remove('open')));
+  const secs=['services','lab','work','experience','contact'].map(id=>document.getElementById(id));
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) $$('#links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)); }),{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(s=>io.observe(s));
+  }
+
+  // ---------- hero ops log ----------
+  const OPS=[
+    ['✓','طلب جديد #10482 من سلة · تم تحديث الشيت',4],
+    ['!','مخزون «قهوة مختصة 1كغ» أقل من 10 · أُرسل تنبيه واتساب',3],
+    ['✓','تمت مزامنة 38 طلباً مع نظام الشحن',12],
+    ['✓','طلب إجازة من فريق المبيعات · أُرسل للمدير للموافقة',6],
+    ['✓','الموافقة على طلب الإجازة · تم إشعار الموظف',4],
+    ['✓','تقرير المبيعات الأسبوعي · أُرسل لـ 4 مستلمين',35],
+    ['!','انخفاض معدل التحويل إلى 1.4% · تنبيه للفريق',2],
+    ['✓','فاتورة جديدة · سُجّلت في دفتر الحسابات',5],
+    ['✓','عميل جديد في النموذج · أُضيف إلى CRM',3],
+    ['✓','نسخة احتياطية للبيانات · Google Drive',8],
+  ];
+  let opsI=0, runs=0, saved=0, alertsN=0;
+  const opsList=$('#ops-list');
+  function opsTick(first){
+    const [ic,txt,min]=OPS[opsI++%OPS.length];
+    runs++; saved+=min; if(ic==='!') alertsN++;
+    const li=document.createElement('li'); if(!first) li.className='new';
+    li.innerHTML=`<time>${nowHM()}</time><i style="color:${ic==='!'?css('--warn'):css('--good')}">${ic}</i><span>${txt}</span>`;
+    opsList.prepend(li); while(opsList.children.length>7) opsList.lastChild.remove();
+    $('#ops-runs').textContent=runs; $('#ops-saved').textContent=fmt(saved); $('#ops-alerts').textContent=alertsN;
+    $('#ops-clock').textContent=nowHM();
+  }
+  for(let i=0;i<5;i++) opsTick(true);
+  setInterval(()=>opsTick(false),2600);
+
+  // ---------- tabs ----------
+  const tabs=$$('.tab');
+  function selectTab(name){
+    tabs.forEach(t=>{ const on=t.id==='tab-'+name; t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1; document.getElementById(t.getAttribute('aria-controls')).hidden=!on; });
+    if(name==='store') renderStore();
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>selectTab(t.id.slice(4))));
+  $('.tabs').addEventListener('keydown',e=>{
+    const i=tabs.findIndex(t=>t.getAttribute('aria-selected')==='true');
+    if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ const d=(e.key==='ArrowLeft')?1:-1; const n=tabs[(i+d+tabs.length)%tabs.length]; n.focus(); n.click(); }
+  });
+  $$('[data-tab]').forEach(a=>a.addEventListener('click',()=>{ selectTab(a.dataset.tab); if(a.dataset.scenario) pickScenario(a.dataset.scenario); }));
+
+  // ================= STORE DEMO =================
+  const MIN_PER_TICK=2, profile=h=>0.15+0.85*Math.exp(-((h-13)**2)/10)+1.05*Math.exp(-((h-21.5)**2)/6)+0.25*Math.exp(-((h-9)**2)/4);
+  const BASE_AOV=182, BASE_CONV=0.027;
+  let yesterday, today;
+  const newDay=prev=>{ yesterday=prev?prev.slice():Array.from({length:24},(_,h)=>Math.round(900*profile(h)*rnd(0.9,1.1))); today=new Array(24).fill(0); };
+  const d0=new Date(); let simMin=d0.getHours()*60+d0.getMinutes();
+  newDay(null);
+  const st={sales:0,orders:0,visitors:0,hist:{sales:[],orders:[],conv:[],aov:[]},anomaly:0,last:{},alerts:[]};
+  function step(){
+    const h=Math.floor(simMin/60);
+    const exp=yesterday[h]/(60/MIN_PER_TICK)*1.09*rnd(0.6,1.45);
+    const conv=st.anomaly>0?BASE_CONV*rnd(0.3,0.45):BASE_CONV*rnd(0.85,1.18);
+    const aov=BASE_AOV*rnd(0.88,1.14), visitors=(exp/BASE_AOV)/BASE_CONV*rnd(0.9,1.1), orders=visitors*conv, sales=orders*aov;
+    st.sales+=sales; st.orders+=orders; st.visitors+=visitors; today[h]+=sales; return {conv};
+  }
+  (()=>{ const end=simMin; simMin=0; while(simMin<end){ step(); simMin+=MIN_PER_TICK; } simMin=end; })();
+  const ySoFar=()=>{ const h=Math.floor(simMin/60),f=(simMin%60)/60; let s=0; for(let i=0;i<h;i++) s+=yesterday[i]; return s+yesterday[h]*f; };
+  const KPIS=[
+    {k:'sales',label:'المبيعات اليوم',unit:'ر.س',get:()=>st.sales,y:()=>ySoFar(),f:v=>fmt(v)},
+    {k:'orders',label:'عدد الطلبات',unit:'طلب',get:()=>st.orders,y:()=>ySoFar()/178,f:v=>fmt(v)},
+    {k:'conv',label:'معدل التحويل',unit:'%',get:()=>st.orders/st.visitors*100,y:()=>2.55,f:v=>fmt(v,2),pp:true},
+    {k:'aov',label:'متوسط قيمة الطلب',unit:'ر.س',get:()=>st.sales/st.orders,y:()=>178,f:v=>fmt(v,1)},
+  ];
+  $('#kpis').innerHTML=KPIS.map(c=>`<div class="kpi" id="k-${c.k}"><span class="kpi-label">${c.label}</span><div class="kpi-value"><span class="num v"></span> <span class="kpi-sub">${c.unit}</span></div><div class="kpi-row"><span class="delta"></span><span class="kpi-sub">مقارنة بأمس</span></div><svg class="spark" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"></svg></div>`).join('');
+  function spark(svg,data,color){
+    if(data.length<2){svg.innerHTML='';return}
+    const mn=Math.min(...data),mx=Math.max(...data),r=(mx-mn)||1;
+    const pts=data.map((v,i)=>[119-i/(data.length-1)*118,31-((v-mn)/r)*27]);
+    const line=pts.map(p=>p.join(',')).join(' '),last=pts[pts.length-1];
+    svg.innerHTML=`<polygon points="119,34 ${line} ${last[0]},34" fill="${color}" opacity=".12"/><polyline points="${line}" fill="none" stroke="${color}" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/><circle cx="${last[0]}" cy="${last[1]}" r="2.4" fill="${color}"/>`;
+  }
+  function renderKpis(push){
+    KPIS.forEach(c=>{
+      const v=c.get(),y=c.y(),el=$('#k-'+c.k),H=st.hist[c.k];
+      if(push){ H.push(v); if(H.length>30) H.shift(); }
+      const vEl=el.querySelector('.v'),txt=c.f(v);
+      if(vEl.textContent!==txt){ vEl.textContent=txt; vEl.classList.remove('flash'); void vEl.offsetWidth; vEl.classList.add('flash'); }
+      const d=c.pp?v-y:(v-y)/y*100, cls=Math.abs(d)<0.05?'flat':d>0?'up':'down';
+      const dEl=el.querySelector('.delta'); dEl.className='delta '+cls;
+      dEl.innerHTML=(d>0?'▲ ':d<0?'▼ ':'')+`<span class="num">${fmt(Math.abs(d),1)}${c.pp?' نقطة':'%'}</span>`;
+      spark(el.querySelector('.spark'),H,css(cls==='down'?'--bad':'--accent'));
+    });
+  }
+  const niceMax=v=>{ const p=Math.pow(10,Math.floor(Math.log10(v))),n=v/p; return (n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10)*p; };
+  function renderChart(){
+    const W=640,H=250,L=48,R=10,T=12,B=28,cw=W-L-R,ch=H-T-B,hNow=Math.floor(simMin/60);
+    const max=niceMax(Math.max(...yesterday,...today)*1.05), y=v=>T+ch-(v/max)*ch, bw=cw/24, x=i=>L+cw-(i+1)*bw;
+    let s='';
+    for(let t=0;t<=4;t++){ const v=max*t/4,yy=y(v); s+=`<line x1="${L}" x2="${W-R}" y1="${yy}" y2="${yy}" stroke="var(--grid)"/><text x="${L-6}" y="${yy+4}" text-anchor="end">${fmt(v)}</text>`; }
+    for(let i=0;i<=hNow;i++){ const v=today[i]; if(v<=0) continue; const yy=y(v);
+      s+=`<path d="M${x(i)+3},${T+ch} V${yy+3} q0,-3 3,-3 H${x(i)+bw-6} q3,0 3,3 V${T+ch} Z" fill="var(--accent)" opacity="${i===hNow?1:.55}"><title>${pad(i)}:00 · ${fmt(v)} ر.س</title></path>`; }
+    s+=`<polyline points="${yesterday.map((v,i)=>`${x(i)+bw/2},${y(v)}`).join(' ')}" fill="none" stroke="var(--ghost)" stroke-width="2" stroke-dasharray="5 4"/>`;
+    [0,6,12,18,23].forEach(i=>{ s+=`<text x="${x(i)+bw/2}" y="${H-8}" text-anchor="middle">${pad(i)}:00</text>`; });
+    $('#chart').innerHTML=s;
+  }
+  const LV={bad:'حرج',warn:'تحذير',good:'إيجابي',info:'معلومة'}, IC={bad:'!',warn:'!',good:'✓',info:'i'};
+  function pushAlert(level,text,key,cool){
+    if(key){ const l=st.last[key]; if(l!==undefined&&simMin-l<cool&&simMin>=l) return; st.last[key]=simMin; }
+    st.alerts.unshift({level,text,time:`${pad(Math.floor(simMin/60))}:${pad(simMin%60)}`,fresh:true}); if(st.alerts.length>14) st.alerts.pop();
+  }
+  function renderAlerts(){
+    $('#alerts').innerHTML=st.alerts.map(a=>`<li class="alert ${a.level}${a.fresh?' alert-new':''}"><span class="ic" aria-hidden="true">${IC[a.level]}</span><div>${a.text}<small>${LV[a.level]} · <span class="num">${a.time}</span></small></div></li>`).join('');
+    st.alerts.forEach(a=>a.fresh=false);
+    const n=st.alerts.filter(a=>a.level==='bad'||a.level==='warn').length;
+    $('#alert-count').textContent=n?`${n} تحتاج انتباه`:'كل شيء طبيعي';
+  }
+  const PRODUCTS=['قهوة مختصة 1كغ','دلة ستيل','بخور كمبودي','تمر سكري فاخر','فناجين بورسلان'];
+  function evaluate(s){
+    const c=s.conv*100;
+    if(c<1.6) pushAlert('warn',`انخفاض حاد في معدل التحويل إلى <span class="num">${fmt(c,2)}%</span>. راجع صفحة الدفع.`,'conv',30);
+    if(st.anomaly===1) pushAlert('good','عاد معدل التحويل إلى مستواه الطبيعي.');
+    const pace=(st.sales-ySoFar())/ySoFar()*100;
+    if(pace>12) pushAlert('good',`المبيعات أعلى من أمس بنسبة <span class="num">${fmt(pace,1)}%</span> لنفس الوقت.`,'pace',180);
+    if(Math.random()<0.035) pushAlert('info',`طلب كبير بقيمة <span class="num">${fmt(rnd(1400,3600))}</span> ر.س من الرياض.`);
+    if(Math.random()<0.02) pushAlert('bad',`مخزون «${PRODUCTS[Math.floor(Math.random()*PRODUCTS.length)]}» أقل من <span class="num">${Math.floor(rnd(3,10))}</span> وحدات.`,'stock',40);
+  }
+  let summaryPlain='';
+  function renderSummary(){
+    const t=`${pad(Math.floor(simMin/60))}:${pad(simMin%60)}`, y=ySoFar(), pace=(st.sales-y)/y*100;
+    const proj=st.sales*(yesterday.reduce((a,b)=>a+b,0)/Math.max(y,1)), hNow=Math.floor(simMin/60);
+    let best=0; for(let i=0;i<=hNow;i++) if(today[i]>today[best]) best=i;
+    const conv=st.orders/st.visitors*100, issues=st.alerts.filter(a=>a.level==='bad'||a.level==='warn').length;
+    const dir=pace>=0?`أعلى من أمس بنسبة ${fmt(pace,1)}%`:`أقل من أمس بنسبة ${fmt(-pace,1)}%`;
+    summaryPlain=`حتى الساعة ${t} بلغت المبيعات ${fmt(st.sales)} ر.س من ${fmt(st.orders)} طلب، وهذا ${dir} لنفس الوقت. معدل التحويل ${fmt(conv,2)}% ومتوسط الطلب ${fmt(st.sales/st.orders,1)} ر.س. أقوى ساعة حتى الآن ${pad(best)}:00. ${issues?`يوجد ${issues} تنبيه يحتاج متابعة.`:'لا توجد مشاكل تحتاج تدخلاً.'} التوقع لنهاية اليوم حوالي ${fmt(Math.round(proj/100)*100)} ر.س.`;
+    $('#summary-text').innerHTML=summaryPlain.replace(/(\d[\d,.:]*\d%?|\d%?)/g,'<span class="num">$1</span>');
+    $('#facts').innerHTML=[['المبيعات المتوقعة لنهاية اليوم',fmt(Math.round(proj/100)*100)+' ر.س'],['أقوى ساعة',`${pad(best)}:00`],['زوار المتجر',fmt(st.visitors)],['تنبيهات تحتاج متابعة',String(issues)]].map(f=>`<li><span>${f[0]}</span><span class="num">${f[1]}</span></li>`).join('');
+  }
+  function renderStore(push){
+    if($('#p-store').hidden) return;
+    renderKpis(push); renderChart(); renderAlerts(); renderSummary();
+    $('#clock').textContent=`${pad(Math.floor(simMin/60))}:${pad(simMin%60)}`;
+  }
+  function storeTick(){
+    simMin+=MIN_PER_TICK;
+    if(simMin>=1440){ simMin-=1440; newDay(today); st.sales=st.orders=st.visitors=0; Object.values(st.hist).forEach(a=>a.length=0); pushAlert('info','بدأ يوم جديد. أُرسل ملخص أمس تلقائياً.'); }
+    const s=step(); if(st.anomaly>0) st.anomaly--; evaluate(s);
+    KPIS.forEach(c=>{ const H=st.hist[c.k]; H.push(c.get()); if(H.length>30) H.shift(); });
+    renderStore(false);
+  }
+  pushAlert('info',`طلب كبير بقيمة <span class="num">2,480</span> ر.س من جدة.`);
+  pushAlert('bad',`مخزون «قهوة مختصة 1كغ» أقل من <span class="num">8</span> وحدات.`,'stock',0);
+  pushAlert('good','اكتملت مزامنة الطلبات مع نظام الشحن.');
+  KPIS.forEach(c=>st.hist[c.k].push(c.get()*0.97));
+  renderStore(true);
+  let timer=null, ms=2500, running=true;
+  const start=()=>{ clearInterval(timer); timer=setInterval(storeTick,ms); };
+  start();
+  $('#speed').addEventListener('change',e=>{ ms=+e.target.value; if(running) start(); });
+  $('#toggle').addEventListener('click',e=>{ running=!running; $('#live').classList.toggle('paused',!running); e.currentTarget.textContent=running?'إيقاف مؤقت':'استئناف'; running?start():clearInterval(timer); });
+  $('#anomaly').addEventListener('click',()=>{ st.anomaly=6; if(!running) $('#toggle').click(); });
+  $('#copy').addEventListener('click',()=>copyText(summaryPlain,$('#copy-msg'),'تم نسخ الملخص.',$('#summary-text')));
+
+  // ================= AUTOMATION =================
+  const SCN={
+    order:{manual:12, manualTxt:'12 دقيقة لكل طلب', nodes:[
+      {k:'المُشغّل',b:'طلب جديد',tool:'سلة · Webhook',log:'POST /webhook/order  #10482 · 3 items · 486 SAR'},
+      {k:'خطوة',b:'تسجيل الطلب',tool:'Google Sheets',log:'sheets.append("الطلبات", row 1,204)'},
+      {k:'شرط',b:'المخزون أقل من 10؟',tool:'قاعدة المخزون',cond:true,log:'stock("قهوة مختصة 1كغ") = {v}'},
+      {k:'إجراء',b:'تنبيه المدير',tool:'واتساب',ifYes:true,log:'whatsapp.send(manager, "مخزون منخفض")'},
+      {k:'إجراء',b:'تحديث اللوحة',tool:'لوحة البيانات',log:'dashboard.refresh(kpis: sales, orders)'},
+    ]},
+    daily:{manual:45, manualTxt:'45 دقيقة كل يوم', nodes:[
+      {k:'المُشغّل',b:'الساعة 11:59 م',tool:'جدولة يومية',log:'cron "59 23 * * *" fired'},
+      {k:'خطوة',b:'جمع أرقام اليوم',tool:'قاعدة البيانات',log:'query(sales, orders, alerts) → 4 tables'},
+      {k:'خطوة',b:'كتابة الملخص',tool:'قالب نصي',log:'summary.render("ar") → 142 words'},
+      {k:'إجراء',b:'إرسال الملخص',tool:'بريد + واتساب',log:'send(to: 4 recipients) → delivered'},
+      {k:'إجراء',b:'أرشفة التقرير',tool:'Google Drive',log:'drive.upload("تقرير-اليوم.pdf")'},
+    ]},
+    leave:{manual:2880, manualTxt:'يومين عمل بالمراسلات', nodes:[
+      {k:'المُشغّل',b:'طلب إجازة',tool:'نموذج إلكتروني',log:'form.submit(employee: E-214, days: 3)'},
+      {k:'شرط',b:'الرصيد كافٍ؟',tool:'نظام الموارد البشرية',cond:true,log:'balance(E-214) = {v} days'},
+      {k:'خطوة',b:'موافقة المدير',tool:'بريد بزر موافقة',ifYes:true,log:'approval.request(manager) → approved'},
+      {k:'إجراء',b:'تحديث السجل',tool:'نظام الموارد البشرية',ifYes:true,log:'hr.update(E-214, leave: 3 days)'},
+      {k:'إجراء',b:'إشعار الموظف',tool:'SMS',log:'sms.send(E-214, "{msg}")'},
+    ]},
+  };
+  let scn='order', busy=false, autoRuns=0, autoSaved=0, loop=null;
+  const flow=$('#flow'), con=$('#console');
+  function drawFlow(){
+    flow.innerHTML=SCN[scn].nodes.map((n,i)=>`<li class="node${n.cond?' cond':''}" id="n${i}"><span class="k">${n.k}<span class="st"></span></span><b>${n.b}</b><span class="tool">${n.tool}</span></li>`).join('');
+    const S=SCN[scn];
+    $('#cmp-manual-t').textContent=S.manualTxt; $('#cmp-auto-t').textContent='ثوانٍ';
+  }
+  function pickScenario(s){ if(busy) return; scn=s; $$('#scenarios .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.s===s)); drawFlow(); con.innerHTML=''; logLine('<span class="ar">اضغط «شغّل السير» لتشاهد الخطوات تنفَّذ.</span>'); }
+  $('#scenarios').addEventListener('click',e=>{ const c=e.target.closest('.chip'); if(c) pickScenario(c.dataset.s); });
+  function logLine(html){ const d=document.createElement('div'); d.innerHTML=html; con.appendChild(d); con.scrollTop=con.scrollHeight; }
+  const ts=()=>{ const d=new Date(); return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`; };
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  async function runFlow(){
+    if(busy) return; busy=true; $('#run').disabled=true;
+    const S=SCN[scn]; drawFlow(); con.innerHTML='';
+    logLine(`<span class="t">${ts()}</span> ▶ run started · scenario=${scn}`);
+    let yes=true; const t0=performance.now();
+    for(let i=0;i<S.nodes.length;i++){
+      const n=S.nodes[i], el=$('#n'+i);
+      if(n.ifYes && !yes){ el.classList.add('skip'); logLine(`<span class="t">${ts()}</span> ↷ skipped · <span class="ar">${n.b}</span>`); continue; }
+      el.classList.add('running'); await wait(scn==='leave'&&i===2?1300:650+Math.random()*400);
+      let msg=n.log;
+      if(n.cond){ if(scn==='order'){ const v=Math.floor(rnd(2,24)); yes=v<10; msg=msg.replace('{v}',v); } else { const v=Math.floor(rnd(0,21)); yes=v>=3; msg=msg.replace('{v}',v); } }
+      msg=msg.replace('{msg}', yes?'تمت الموافقة على إجازتك':'الرصيد غير كافٍ');
+      el.classList.remove('running'); el.classList.add('done');
+      logLine(`<span class="t">${ts()}</span> <span class="ok">✓</span> ${msg}${n.cond?` → <span class="ok">${yes?'نعم':'لا'}</span>`:''}`);
+    }
+    const secs=((performance.now()-t0)/1000).toFixed(1);
+    autoRuns++; autoSaved+=S.manual;
+    logLine(`<span class="t">${ts()}</span> <span class="ok">■ done in ${secs}s</span>`);
+    $('#cmp-auto-t').textContent=`${secs} ثانية`;
+    $('#runs').textContent=autoRuns;
+    $('#saved').textContent=autoSaved>=60?`${fmt(autoSaved/60,1)} ساعة`:`${autoSaved} دقيقة`;
+    busy=false; $('#run').disabled=false;
+  }
+  $('#run').addEventListener('click',runFlow);
+  $('#auto-run').addEventListener('click',e=>{
+    const on=e.currentTarget.getAttribute('aria-pressed')!=='true';
+    e.currentTarget.setAttribute('aria-pressed',on); e.currentTarget.textContent=on?'إيقاف التكرار':'تشغيل متكرر';
+    clearInterval(loop); if(on){ runFlow(); loop=setInterval(()=>{ if(!busy) runFlow(); },6500); }
+  });
+  pickScenario('order');
+
+  // ================= ROI =================
+  const R={tasks:$('#r-tasks'),min:$('#r-min'),staff:$('#r-staff'),cost:$('#r-cost')};
+  function roi(){
+    const t=+R.tasks.value, m=+R.min.value, s=+R.staff.value, c=+R.cost.value;
+    $('#o-tasks').textContent=t+' مرة'; $('#o-min').textContent=m+' دقيقة'; $('#o-staff').textContent=s; $('#o-cost').textContent=c+' ر.س';
+    const now=t*m/60*s*4.33, savedH=now*0.8;
+    $('#x-hours').textContent=fmt(savedH,0); $('#x-days').textContent=fmt(savedH*12/8,0);
+    $('#x-money').textContent=fmt(savedH*12*c,0)+' ر.س';
+    $('#x-now').textContent=fmt(now,0); $('#x-after').textContent=fmt(now*0.2,0);
+  }
+  Object.values(R).forEach(i=>i.addEventListener('input',roi)); roi();
+
+  // ================= WORK =================
+  $('#work-filters').addEventListener('click',e=>{
+    const c=e.target.closest('.chip'); if(!c) return;
+    $$('#work-filters .chip').forEach(x=>x.setAttribute('aria-pressed',x===c));
+    $$('#work-grid .card').forEach(card=>{ card.hidden = c.dataset.f!=='all' && !card.dataset.cat.split(' ').includes(c.dataset.f); });
+  });
+  // mini live preview for the gym project
+  let miniN=59, miniC=53259, miniSeries=[4,9,7,5,3,4,6,5,4,7,6,8];
+  function drawMini(){
+    const W=300,H=60,mx=Math.max(...miniSeries,10),bw=W/miniSeries.length;
+    $('#m-chart').innerHTML=miniSeries.map((v,i)=>{ const h=v/mx*(H-6); return `<rect x="${W-(i+1)*bw+2}" y="${H-h}" width="${bw-4}" height="${h}" rx="2" fill="var(--accent)" opacity="${i===miniSeries.length-1?1:.5}"/>`; }).join('');
+    $('#m-n').textContent=fmt(miniN); $('#m-c').textContent=fmt(miniC);
+  }
+  drawMini();
+  setInterval(()=>{ const add=Math.random()<.6?1:0; if(add){ miniN++; miniC+=Math.round(rnd(500,1300)); miniSeries[miniSeries.length-1]++; } if(Math.random()<.12){ miniSeries.push(1); if(miniSeries.length>12) miniSeries.shift(); } drawMini(); },3000);
+
+  // ================= TIMELINE =================
+  $('#timeline').addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    const li=b.parentElement, open=li.dataset.open!=='true';
+    li.dataset.open=open; b.setAttribute('aria-expanded',open);
+  });
+
+
+  // ================= MOTION & GRAPHICS =================
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // rotating phrase in the headline
+  const PHRASES=['تشتغل لوحدها','تنبّهك وقت الخلل','تكتب تقاريرها بنفسها','توفّر وقت فريقك'];
+  let pi=0; const rot=$('#rot');
+  if(!reduce) setInterval(()=>{ rot.classList.add('out'); setTimeout(()=>{ pi=(pi+1)%PHRASES.length; rot.textContent=PHRASES[pi]; rot.classList.remove('out'); },350); },2800);
+
+  // hero data network: nodes drift, packets travel along nearby links
+  (function net(){
+    const cv=$('#net'), ctx=cv.getContext('2d'); let W=0,H=0,dpr=1,nodes=[],packets=[],col={},visible=true,last=0;
+    const readCol=()=>{ col={line:css('--line'),muted:css('--muted'),accent:css('--accent')}; };
+    function size(){
+      const r=cv.getBoundingClientRect(); dpr=Math.min(devicePixelRatio||1,2); W=r.width; H=r.height;
+      cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+      const n=Math.round(Math.min(60,Math.max(18,W*H/16000)));
+      nodes=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:rnd(-.18,.18),vy:rnd(-.18,.18),r:rnd(1.6,3)}));
+    }
+    const D=()=>Math.min(150,Math.max(100,W/8));
+    function frame(t){
+      if(!visible){ requestAnimationFrame(frame); return; }
+      const dt=Math.min(50,t-last||16); last=t;
+      ctx.clearRect(0,0,W,H);
+      const d=D();
+      for(const n of nodes){ if(!reduce){ n.x+=n.vx*dt/16; n.y+=n.vy*dt/16; } if(n.x<0||n.x>W) n.vx*=-1; if(n.y<0||n.y>H) n.vy*=-1; }
+      ctx.lineWidth=1;
+      for(let i=0;i<nodes.length;i++) for(let j=i+1;j<nodes.length;j++){
+        const a=nodes[i],b=nodes[j],dist=Math.hypot(a.x-b.x,a.y-b.y);
+        if(dist<d){ ctx.globalAlpha=(1-dist/d)*.38; ctx.strokeStyle=col.muted; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+      }
+      ctx.globalAlpha=.8; ctx.fillStyle=col.muted;
+      for(const n of nodes){ ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,7); ctx.fill(); }
+      if(!reduce && Math.random()<.08 && packets.length<14){
+        const a=nodes[Math.floor(Math.random()*nodes.length)];
+        const near=nodes.filter(b=>b!==a&&Math.hypot(a.x-b.x,a.y-b.y)<d);
+        if(near.length) packets.push({a,b:near[Math.floor(Math.random()*near.length)],t:0,hops:Math.floor(rnd(1,4))});
+      }
+      ctx.fillStyle=col.accent;
+      packets=packets.filter(p=>{
+        p.t+=dt/700;
+        if(p.t>=1){ if(--p.hops<=0) return false; const near=nodes.filter(b=>b!==p.b&&Math.hypot(p.b.x-b.x,p.b.y-b.y)<d); if(!near.length) return false; p.a=p.b; p.b=near[Math.floor(Math.random()*near.length)]; p.t=0; }
+        const x=p.a.x+(p.b.x-p.a.x)*p.t, y=p.a.y+(p.b.y-p.a.y)*p.t;
+        ctx.globalAlpha=.25; ctx.beginPath(); ctx.arc(x,y,7,0,7); ctx.fill();
+        ctx.globalAlpha=1; ctx.beginPath(); ctx.arc(x,y,2.8,0,7); ctx.fill();
+        return true;
+      });
+      ctx.globalAlpha=1;
+      requestAnimationFrame(frame);
+    }
+    readCol(); size();
+    new ResizeObserver(size).observe(cv);
+    if('IntersectionObserver' in window) new IntersectionObserver(e=>{ visible=e[0].isIntersecting; }).observe(cv);
+    document.addEventListener('visibilitychange',()=>{ visible=!document.hidden; });
+    $('#theme').addEventListener('click',()=>setTimeout(readCol,0));
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>setTimeout(readCol,0));
+    requestAnimationFrame(frame);
+  })();
+
+  // pointer spotlight on cards
+  document.addEventListener('pointermove',e=>{
+    const c=e.target.closest&&e.target.closest('.spot'); if(!c) return;
+    const r=c.getBoundingClientRect(); c.style.setProperty('--mx',(e.clientX-r.left)+'px'); c.style.setProperty('--my',(e.clientY-r.top)+'px');
+  },{passive:true});
+
+  // reveal-on-scroll for content below the first screen, and count-up for the facts strip
+  if('IntersectionObserver' in window && !reduce){
+    const targets=$$('.block-head, .service, .card, .role, .skills>div, .creds>div, .lab, .contact');
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{rootMargin:'0px 0px -8% 0px'});
+    targets.forEach((el,i)=>{ if(el.getBoundingClientRect().top>innerHeight){ el.classList.add('reveal'); el.style.transitionDelay=(i%3)*80+'ms'; io.observe(el); } });
+    const cio=new IntersectionObserver(es=>es.forEach(e=>{
+      if(!e.isIntersecting) return; cio.unobserve(e.target);
+      const b=e.target, to=+b.dataset.count, pre=b.dataset.prefix||''; let t0=null;
+      const stepC=t=>{ t0=t0||t; const k=Math.min(1,(t-t0)/900); b.textContent=pre+Math.round(to*(1-Math.pow(1-k,3))); if(k<1) requestAnimationFrame(stepC); };
+      requestAnimationFrame(stepC);
+    }),{threshold:.6});
+    $$('[data-count]').forEach(b=>cio.observe(b));
+  }
+
+  // timeline fills as you scroll through it
+  const tl=$('#timeline'), tlf=$('#tl-fill');
+  function tlProgress(){ const r=tl.getBoundingClientRect(); const p=Math.max(0,Math.min(1,(innerHeight*.6-r.top)/r.height)); tlf.style.setProperty('--p',(p*100)+'%'); }
+  addEventListener('scroll',tlProgress,{passive:true}); tlProgress();
+
+  // ================= COPY =================
+  function copyText(text,msgEl,okMsg,selectEl){
+    const done=()=>{ if(msgEl){ const old=msgEl.textContent; msgEl.textContent=okMsg; setTimeout(()=>msgEl.textContent=old,1800);} };
+    const fail=()=>{ if(selectEl){ const r=document.createRange(); r.selectNodeContents(selectEl); const s=getSelection(); s.removeAllRanges(); s.addRange(r); } if(msgEl) msgEl.textContent='حدّد النص وانسخه يدوياً.'; };
+    try{ navigator.clipboard.writeText(text).then(done,fail); }catch(e){ fail(); }
+  }
+  $$('[data-copy]').forEach(b=>b.addEventListener('click',()=>copyText(b.dataset.copy,b,'تم النسخ',b.previousElementSibling)));
+})();
+</script>
+
+</body>
+</html>
