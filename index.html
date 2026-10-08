@@ -204,10 +204,11 @@ svg text{fill:var(--muted);font-family:var(--f-data);font-size:11px}
 .node.skip .st{border-style:dashed}
 @keyframes spin{to{transform:rotate(360deg)}}
 .auto-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
-.console{background:#0B1520;color:#CFE3E1;border-radius:10px;padding:14px;font-family:var(--f-data);font-size:12.5px;line-height:1.7;height:220px;overflow-y:auto;direction:ltr;text-align:left}
-.console .t{color:#6E8597}
-.console .ok{color:#62D39A}
-.console .ar{font-family:var(--f-body);direction:rtl;unicode-bidi:isolate}
+.console{background:var(--sunk);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.7;height:220px;overflow-y:auto;display:grid;align-content:start;gap:4px}
+.console div{display:grid;grid-template-columns:auto 18px minmax(0,1fr);gap:8px;align-items:baseline}
+.console .t{font-family:var(--f-data);font-size:12px;color:var(--muted)}
+.console .ok{color:var(--good);font-weight:600}
+.console .skip-i{color:var(--muted)}
 .compare{display:grid;gap:12px;align-content:start}
 .cmp-row{display:grid;gap:4px;font-size:14px}
 .cmp-row .track{height:10px;border-radius:5px;background:var(--grid);overflow:hidden}
@@ -421,6 +422,19 @@ main:focus{outline:none}
   .bar,.illo .bar,.mix-bar i,.track i,.dot{forced-color-adjust:none}
   .btn,.chip,.tab,.icon-btn{border:1px solid ButtonText}
 }
+
+/* ---------- client-friendly pass ---------- */
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ba-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ba-row .before{color:var(--muted);font-size:15px}
+.ba-row .before small,.ba-row .after small{display:block;font-size:12px;letter-spacing:.02em;margin-bottom:2px}
+.ba-row .after{font-weight:600;font-size:15.5px}
+.ba-row .after small{color:var(--accent);font-weight:600}
+.ba-row .arrow{width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:16px}
+.hint{display:flex;gap:10px;align-items:flex-start;background:var(--accent-soft);border-radius:10px;padding:10px 14px;font-size:14.5px;color:var(--ink)}
+.hint b{color:var(--accent);flex:none}
+@media (max-width:980px){.ba{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.ba-row{grid-template-columns:minmax(0,1fr);gap:8px}.ba-row .arrow{transform:rotate(-90deg)}}
 @media (max-width:980px){
   .hero,.contact,.roi,.auto-grid,.mid,.summary{grid-template-columns:minmax(0,1fr)}
   .services,.work,.skills{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -457,7 +471,7 @@ main:focus{outline:none}
       <a href="#services">الخدمات</a>
       <a href="#lab">جرّب بنفسك</a>
       <a href="#work">أعمالنا</a>
-      <a href="#process">طريقة العمل</a>
+      <a href="#process">كيف نعمل</a>
       <a href="#contact">تواصل</a>
     </div>
     <div style="display:flex;gap:8px;align-items:center">
@@ -474,16 +488,16 @@ main:focus{outline:none}
   <canvas id="net" aria-hidden="true"></canvas>
   <header class="hero">
     <div class="hero-text">
-      <span class="eyebrow">نظم المعلومات · لوحات البيانات · الأتمتة</span>
-      <h1><span class="sr-only">نحوّل بيانات عملك إلى أنظمة تعمل تلقائياً، تنبّهك عند الخلل، وتكتب تقاريرها بنفسها.</span><span aria-hidden="true">نحوّل بيانات عملك إلى أنظمة <em id="rot">تعمل تلقائياً</em><span class="caret"></span></span></h1>
-      <p>نبني لوحات بيانات حية ونؤتمت المهام المتكررة، بخبرة في تحليل الأنظمة وحوكمة نظم المعلومات.</p>
+      <span class="eyebrow">شاشات متابعة · أتمتة المهام</span>
+      <h1><span class="sr-only">نجعل أرقام عملك واضحة أمامك، وننجز المهام المتكررة تلقائياً.</span><span aria-hidden="true">أرقام عملك أمامك، ومهامك المتكررة <em id="rot">تُنجز تلقائياً</em><span class="caret"></span></span></h1>
+      <p>نربط الأنظمة التي تستخدمها، ونعرض أرقامك في شاشة واحدة تتحدّث وحدها، ونرسل لك تنبيهاً وتقريراً جاهزاً بدل متابعتها يدوياً.</p>
       <div class="cta-row">
         <a class="btn primary" href="#lab">جرّب أعمالنا</a>
         <a class="btn" href="#contact">تواصل معنا</a>
       </div>
     </div>
     <aside class="opslog" aria-label="مثال توضيحي لسجل عمليات مؤتمت">
-      <div class="opslog-head"><span class="live"><span class="dot"></span>سجل الأتمتة · مثال توضيحي</span><span class="num" id="ops-clock">--:--</span></div>
+      <div class="opslog-head"><span class="live"><span class="dot"></span>مثال: ما يحدث تلقائياً خلال اليوم</span><span class="num" id="ops-clock">--:--</span></div>
       <div class="opslog-kpis">
         <div><span>مهام نُفّذت اليوم</span><b id="ops-runs">0</b></div>
         <div><span>دقائق تم توفيرها</span><b id="ops-saved">0</b></div>
@@ -495,17 +509,17 @@ main:focus{outline:none}
   </div>
 
   <div class="facts-strip">
-    <div><b class="num">24/7</b><span>مراقبة وتنبيهات تلقائية</span></div>
-    <div><b class="num" data-count="12" data-prefix="+">+12</b><span>أداة ومنصة نربط معها</span></div>
-    <div><b class="num" data-count="3">3</b><span>خدمات: لوحات بيانات، أتمتة، حوكمة</span></div>
-    <div><b class="en" lang="en">ISTQB</b><span>اختبار وفق المعايير الدولية</span></div>
+    <div><b class="num">24/7</b><span>تنبيهات تصلك على جوالك</span></div>
+    <div><b class="num" data-count="12" data-prefix="+">+12</b><span>نظاماً نربط معه، مثل سلة وExcel</span></div>
+    <div><b class="num" data-count="4">4</b><span>خطوات من الفكرة إلى التشغيل</span></div>
+    <div><b>✓</b><span>نختبر كل شيء قبل التسليم</span></div>
   </div>
 
   <!-- SERVICES -->
   <section class="block" id="services">
     <div class="block-head">
       <h2>الخدمات</h2>
-      <p>نرتّب الإجراءات، ونؤتمت المتكرر منها، ونعرض النتائج في لوحة واحدة.</p>
+      <p>ثلاث خدمات تكمّل بعضها. ابدأ بواحدة أو اجمعها.</p>
     </div>
     <div class="services">
       <article class="service spot">
@@ -521,9 +535,9 @@ main:focus{outline:none}
           <circle class="pulse" cx="222" cy="22" r="4"/><circle cx="222" cy="22" r="4" fill="var(--accent)"/>
           <rect class="chip" x="200" y="74" width="46" height="18" rx="9"/><text class="chipt" x="223" y="86" text-anchor="middle">▲ 12%</text>
         </svg>
-        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>لوحات بيانات حية</h3>
-        <p>لوحة تتحدّث تلقائياً وتعرض أرقامك المهمة.</p>
-        <ul><li>تحديث تلقائي من مصادرك</li><li>مؤشرات أداء مع نسبة التغيّر</li><li>تنبيهات فورية عند أي خلل</li><li>ملخص يومي مكتوب</li></ul>
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>شاشة متابعة لأرقامك</h3>
+        <p>مبيعاتك وطلباتك وأهم أرقامك في شاشة واحدة، تتحدّث وحدها.</p>
+        <ul><li>تتحدّث تلقائياً بدون إدخال يدوي</li><li>تقارن اليوم بأمس وبالهدف</li><li>تنبيه فوري إذا حصل خلل</li><li>ملخص مكتوب آخر كل يوم</li></ul>
         <a class="try" href="#lab" data-tab="store">جرّب لوحة حية ←</a>
       </article>
       <article class="service spot">
@@ -540,41 +554,55 @@ main:focus{outline:none}
           <circle class="pk" r="3.5" opacity=".7"><animateMotion dur="2.2s" begin=".4s" repeatCount="indefinite" path="M130 56 V74 H72"/></circle>
           <text x="231" y="100" text-anchor="middle">المُشغّل</text><text x="29" y="18" text-anchor="middle">إرسال</text>
         </svg>
-        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H14a4 4 0 0 1 4 4v5.5"/></svg>أتمتة الإجراءات</h3>
-        <p>المهام المتكررة تُنفَّذ تلقائياً بدل العمل اليدوي.</p>
-        <ul><li>ربط الأنظمة ببعضها</li><li>تقارير مجدولة عبر واتساب أو البريد</li><li>مسارات موافقات إلكترونية</li><li>تنبيهات بشروط تحددها</li></ul>
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H14a4 4 0 0 1 4 4v5.5"/></svg>أتمتة المهام المتكررة</h3>
+        <p>أي مهمة تكررها كل يوم بنفس الخطوات، نجعلها تُنجز وحدها.</p>
+        <ul><li>نقل البيانات بين أنظمتك تلقائياً</li><li>تقارير تصلك واتساب أو بريد في موعدها</li><li>طلبات وموافقات بدون أوراق</li><li>تنبيهات حسب الشروط التي تختارها</li></ul>
         <a class="try" href="#lab" data-tab="auto">شغّل محاكي الأتمتة ←</a>
       </article>
       <article class="service spot">
         <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
           <path class="wire" d="M232 50 H206 M162 50 H140 M112 50 H98 V28 H80 M98 50 V72 H80 M44 28 H30 V50 M44 72 H30 V50 H22"/>
           <circle cx="240" cy="50" r="8" class="nd on"/>
-          <rect class="nd" x="162" y="36" width="44" height="28" rx="6"/><text x="184" y="54" text-anchor="middle">متطلبات</text>
+          <rect class="nd" x="162" y="36" width="44" height="28" rx="6"/><text x="184" y="54" text-anchor="middle">طلب</text>
           <path class="nd on" d="M126 36 L140 50 L126 64 L112 50 Z"/><text x="126" y="54" text-anchor="middle">×</text>
-          <rect class="nd" x="44" y="16" width="36" height="24" rx="6"/><text x="62" y="32" text-anchor="middle">سياسة</text>
-          <rect class="nd" x="44" y="60" width="36" height="24" rx="6"/><text x="62" y="76" text-anchor="middle">امتثال</text>
+          <rect class="nd" x="44" y="16" width="36" height="24" rx="6"/><text x="62" y="32" text-anchor="middle">موافقة</text>
+          <rect class="nd" x="44" y="60" width="36" height="24" rx="6"/><text x="62" y="76" text-anchor="middle">تعديل</text>
           <circle cx="16" cy="50" r="7" class="nd" style="stroke-width:3;stroke:var(--ink-2)"/>
           <circle class="pk" r="4"><animateMotion dur="4s" repeatCount="indefinite" path="M240 50 H184 H126 H98 V28 H62 H30 V50 H16"/></circle>
           <circle class="pk" r="4" opacity=".6"><animateMotion dur="4s" begin="2s" repeatCount="indefinite" path="M240 50 H184 H126 H98 V72 H62 H30 V50 H16"/></circle>
         </svg>
-        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="7" height="6" rx="1.5"/><rect x="14" y="14" width="7" height="6" rx="1.5"/><path d="M6.5 10v4a3 3 0 0 0 3 3H14"/></svg>تحليل الأنظمة والحوكمة</h3>
-        <p>نفهم الإجراء الحالي، ونحدد الفجوات، ونكتب السياسات.</p>
-        <ul><li>جمع المتطلبات وتوثيقها</li><li>رسم الإجراءات بـ BPMN</li><li>سياسات الوصول والتعامل مع البيانات</li><li>تقارير امتثال دورية</li></ul>
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="7" height="6" rx="1.5"/><rect x="14" y="14" width="7" height="6" rx="1.5"/><path d="M6.5 10v4a3 3 0 0 0 3 3H14"/></svg>تنظيم الإجراءات والصلاحيات</h3>
+        <p>نرتّب طريقة العمل قبل أتمتتها، حتى يعرف كل شخص دوره.</p>
+        <ul><li>توثيق خطوات العمل الحالية</li><li>اكتشاف مواضع التأخير والتكرار</li><li>تحديد من يرى ماذا من البيانات</li><li>متابعة الالتزام بتقارير دورية</li></ul>
         <a class="try" href="#work">أعمالنا ←</a>
       </article>
     </div>
     <div style="display:grid;gap:10px"><span class="muted" style="font-size:14px">نربط مع:</span><ul class="sr-only"><li>Google Sheets</li><li>Excel</li><li>سلة</li><li>زد</li><li>Foodics</li><li>واتساب</li><li>البريد الإلكتروني</li><li>قواعد بيانات SQL</li><li>Google Drive</li><li>CRM</li><li>نماذج إلكترونية</li><li>أي نظام فيه API</li></ul><div class="marquee" aria-hidden="true"><div class="marquee-track" aria-hidden="true"><span>Google Sheets</span><span>Excel</span><span>سلة</span><span>زد</span><span>Foodics</span><span>واتساب</span><span>البريد الإلكتروني</span><span>قواعد بيانات SQL</span><span>Google Drive</span><span>CRM</span><span>نماذج إلكترونية</span><span>أي نظام فيه API</span><span>Google Sheets</span><span>Excel</span><span>سلة</span><span>زد</span><span>Foodics</span><span>واتساب</span><span>البريد الإلكتروني</span><span>قواعد بيانات SQL</span><span>Google Drive</span><span>CRM</span><span>نماذج إلكترونية</span><span>أي نظام فيه API</span></div></div></div>
   </section>
 
+  <!-- BEFORE AFTER -->
+  <section class="block" id="benefits">
+    <div class="block-head">
+      <h2>ماذا يتغيّر في عملك؟</h2>
+      <p>أمثلة على مهام يومية قبل وبعد.</p>
+    </div>
+    <div class="ba">
+      <div class="ba-row"><div class="before"><small>قبل</small>تجمع الأرقام من عدة ملفات كل يوم</div><span class="arrow" aria-hidden="true">←</span><div class="after"><small>بعد</small>تراها في شاشة واحدة تتحدّث وحدها</div></div>
+      <div class="ba-row"><div class="before"><small>قبل</small>تكتشف المشكلة بعد أيام</div><span class="arrow" aria-hidden="true">←</span><div class="after"><small>بعد</small>يصلك تنبيه على جوالك فوراً</div></div>
+      <div class="ba-row"><div class="before"><small>قبل</small>تكتب التقرير بيدك آخر اليوم</div><span class="arrow" aria-hidden="true">←</span><div class="after"><small>بعد</small>يصلك التقرير جاهزاً في موعده</div></div>
+      <div class="ba-row"><div class="before"><small>قبل</small>طلبات وموافقات بالرسائل والأوراق</div><span class="arrow" aria-hidden="true">←</span><div class="after"><small>بعد</small>طلب إلكتروني يصل للمدير ويعود بالرد</div></div>
+    </div>
+  </section>
+
   <!-- PROCESS -->
   <section class="block" id="process">
     <div class="block-head">
-      <h2>طريقة العمل</h2>
+      <h2>كيف نعمل</h2>
       <p>أربع مراحل، ولكل مرحلة مخرج واضح تراجعه قبل الانتقال للتالية.</p>
     </div>
     <ol class="steps">
-      <li class="step"><span class="n">01</span><h3>جلسة فهم</h3><p>نفهم نشاطك والأرقام المهمة لك.</p><span class="out">المخرج: <b>الاحتياج والمؤشرات المقترحة</b></span></li>
-      <li class="step"><span class="n">02</span><h3>تصميم الحل</h3><p>نحدد مصادر البيانات والتنبيهات وشكل اللوحة.</p><span class="out">المخرج: <b>تصميم اللوحة ومسار الأتمتة</b></span></li>
+      <li class="step"><span class="n">01</span><h3>جلسة فهم</h3><p>نفهم نشاطك والأرقام المهمة لك.</p><span class="out">المخرج: <b>ما تحتاجه بالتحديد</b></span></li>
+      <li class="step"><span class="n">02</span><h3>تصميم الحل</h3><p>نتفق على شكل الشاشة والتنبيهات والتقارير.</p><span class="out">المخرج: <b>تصميم واضح توافق عليه</b></span></li>
       <li class="step"><span class="n">03</span><h3>البناء والاختبار</h3><p>نبني النظام ونختبره على بياناتك قبل التشغيل.</p><span class="out">المخرج: <b>نظام جاهز للإطلاق</b></span></li>
       <li class="step"><span class="n">04</span><h3>التشغيل والدعم</h3><p>نطلق النظام وندرّب فريقك ونتابع بعد الإطلاق.</p><span class="out">المخرج: <b>توثيق وتدريب ودعم</b></span></li>
     </ol>
@@ -584,19 +612,20 @@ main:focus{outline:none}
   <section class="block" id="lab">
     <div class="block-head">
       <h2>جرّب بنفسك</h2>
-      <p>ثلاثة أمثلة تفاعلية تعمل ببيانات تجريبية.</p>
+      <p>ثلاثة أمثلة تعمل أمامك الآن ببيانات تجريبية. جرّبها لترى النتيجة بنفسك.</p>
     </div>
     <div class="lab">
       <div class="tabs" role="tablist" aria-label="أدوات تفاعلية">
-        <button class="tab" role="tab" id="tab-store" aria-controls="p-store" aria-selected="true">لوحة متجر حية</button>
-        <button class="tab" role="tab" id="tab-auto" aria-controls="p-auto" aria-selected="false" tabindex="-1">محاكي الأتمتة</button>
-        <button class="tab" role="tab" id="tab-roi" aria-controls="p-roi" aria-selected="false" tabindex="-1">حاسبة التوفير</button>
+        <button class="tab" role="tab" id="tab-store" aria-controls="p-store" aria-selected="true">شاشة متابعة متجر</button>
+        <button class="tab" role="tab" id="tab-auto" aria-controls="p-auto" aria-selected="false" tabindex="-1">كيف تعمل الأتمتة؟</button>
+        <button class="tab" role="tab" id="tab-roi" aria-controls="p-roi" aria-selected="false" tabindex="-1">كم توفّر؟</button>
       </div>
 
       <!-- store -->
       <div class="panel-body" role="tabpanel" id="p-store" aria-labelledby="tab-store">
+        <p class="hint"><b>جرّب:</b>الأرقام تتحدّث وحدها كل ثوانٍ. اضغط «محاكاة خلل» وراقب التنبيه يظهر في القائمة.</p>
         <div class="bar">
-          <h3>متجر نخلة · لوحة العمليات <span class="tag">بيانات تجريبية</span> <span class="live kpi-sub" id="live"><span class="dot"></span>آخر تحديث <span class="num" id="clock">--:--</span></span></h3>
+          <h3>متجر نخلة <span class="tag">بيانات تجريبية</span> <span class="live kpi-sub" id="live"><span class="dot"></span>آخر تحديث <span class="num" id="clock">--:--</span></span></h3>
           <div class="controls">
             <label for="speed">التحديث كل</label>
             <select id="speed"><option value="1000">ثانية</option><option value="2500" selected>2.5 ثانية</option><option value="5000">5 ثوانٍ</option></select>
@@ -627,28 +656,30 @@ main:focus{outline:none}
 
       <!-- automation -->
       <div class="panel-body" role="tabpanel" id="p-auto" aria-labelledby="tab-auto" hidden>
+        <p class="hint"><b>جرّب:</b>اختر مثالاً واضغط «شغّل» لترى الخطوات تُنجز وحدها، والوقت الذي كانت تأخذه يدوياً.</p>
         <div class="bar">
           <div class="filters" id="scenarios" role="group" aria-label="اختر سيناريو">
             <button class="chip" type="button" data-s="order" aria-pressed="true">طلب جديد في المتجر</button>
             <button class="chip" type="button" data-s="daily" aria-pressed="false">التقرير اليومي</button>
             <button class="chip" type="button" data-s="leave" aria-pressed="false">طلب إجازة وموافقة</button>
           </div>
-          <div class="controls"><button class="btn primary sm" id="run" type="button">▶ شغّل السير</button><button class="btn sm" id="auto-run" type="button" aria-pressed="false">تشغيل متكرر</button></div>
+          <div class="controls"><button class="btn primary sm" id="run" type="button">▶ شغّل</button><button class="btn sm" id="auto-run" type="button" aria-pressed="false">تشغيل متكرر</button></div>
         </div>
         <ol class="flow" id="flow"></ol>
         <div class="auto-grid">
-          <div class="console" id="console" tabindex="0" role="log" aria-label="سجل تنفيذ السير"></div>
+          <div class="console" id="console" tabindex="0" role="log" aria-label="ما حدث خطوة بخطوة"></div>
           <div class="compare">
-            <div class="cmp-row"><span>يدوياً: <b id="cmp-manual-t"></b></span><div class="track"><i id="cmp-manual" style="background:var(--ghost);width:100%"></i></div></div>
-            <div class="cmp-row"><span>مؤتمت: <b id="cmp-auto-t"></b></span><div class="track"><i id="cmp-auto" style="background:var(--accent);width:2%"></i></div></div>
-            <div><span class="kpi-sub">مرات التشغيل في هذه الجلسة</span><div class="big-num" id="runs">0</div></div>
-            <div><span class="kpi-sub">وقت يدوي تم توفيره</span><div class="big-num" id="saved">0 دقيقة</div></div>
+            <div class="cmp-row"><span>الوقت يدوياً: <b id="cmp-manual-t"></b></span><div class="track"><i id="cmp-manual" style="background:var(--ghost);width:100%"></i></div></div>
+            <div class="cmp-row"><span>الوقت مع الأتمتة: <b id="cmp-auto-t"></b></span><div class="track"><i id="cmp-auto" style="background:var(--accent);width:2%"></i></div></div>
+            <div><span class="kpi-sub">مرات التشغيل</span><div class="big-num" id="runs">0</div></div>
+            <div><span class="kpi-sub">الوقت الذي وفّرته</span><div class="big-num" id="saved">0 دقيقة</div></div>
           </div>
         </div>
       </div>
 
       <!-- roi -->
       <div class="panel-body" role="tabpanel" id="p-roi" aria-labelledby="tab-roi" hidden>
+        <p class="hint"><b>جرّب:</b>حرّك المؤشرات حسب عملك لترى الساعات والمبلغ الذي توفّره سنوياً.</p>
         <div class="roi">
           <div style="display:grid;gap:18px">
             <div class="field"><label for="r-tasks">كم مرة تتكرر المهمة أسبوعياً؟ <output id="o-tasks" for="r-tasks"></output></label><input type="range" id="r-tasks" min="1" max="100" value="20"></div>
@@ -680,17 +711,17 @@ main:focus{outline:none}
     </div>
     <div class="filters" id="work-filters" role="group" aria-label="تصفية الأعمال">
       <button class="chip" type="button" data-f="all" aria-pressed="true">الكل</button>
-      <button class="chip" type="button" data-f="dash" aria-pressed="false">لوحات بيانات</button>
+      <button class="chip" type="button" data-f="dash" aria-pressed="false">شاشات متابعة</button>
       <button class="chip" type="button" data-f="auto" aria-pressed="false">أتمتة</button>
-      <button class="chip" type="button" data-f="gov" aria-pressed="false">تحليل وحوكمة</button>
+      <button class="chip" type="button" data-f="gov" aria-pressed="false">تنظيم الإجراءات</button>
     </div>
     <div class="work" id="work-grid">
       <article class="card feature spot" data-cat="dash auto">
         <div style="display:grid;gap:12px">
-          <span class="cat">لوحة بيانات · مشروع منشور</span>
+          <span class="cat">شاشة متابعة · مشروع منشور</span>
           <h3>نبض النادي</h3>
-          <p>لوحة حية لنادي رياضي مبنية على 973 جلسة تمرين، مع أهداف يومية وتنبيهات وملخص يومي.</p>
-          <div class="tags"><span>تحديث تلقائي</span><span>6 مؤشرات أداء</span><span>تنبيهات</span><span>ملخص يومي</span><span>رفع CSV</span></div>
+          <p>شاشة يرى فيها مدير النادي عدد المتدربين اليوم ومقارنتهم بالهدف، مع تنبيهات وملخص يومي. مبنية على 973 جلسة تمرين حقيقية.</p>
+          <div class="tags"><span>تتحدّث وحدها</span><span>تنبيهات</span><span>ملخص يومي</span></div>
           <div class="links-row"><a href="https://sarahalolayan.github.io/nabd-alnadi/" target="_blank" rel="noopener">افتح اللوحة ↗</a></div>
         </div>
         <div class="mini" aria-hidden="true">
@@ -700,36 +731,36 @@ main:focus{outline:none}
         </div>
       </article>
       <article class="card spot" data-cat="dash">
-        <span class="cat">لوحة بيانات · عرض حي</span>
-        <h3>لوحة عمليات متجر إلكتروني</h3>
-        <p>مبيعات بالساعة، ومؤشرات مع نسب التغيّر، وتنبيهات، وتوقع لنهاية اليوم.</p>
-        <div class="tags"><span>مبيعات</span><span>معدل التحويل</span><span>توقع</span></div>
+        <span class="cat">شاشة متابعة · مثال تفاعلي</span>
+        <h3>شاشة متابعة لمتجر إلكتروني</h3>
+        <p>مبيعات كل ساعة مقارنة بأمس، وتنبيه عند نقص المخزون، وتوقع لمبيعات نهاية اليوم.</p>
+        <div class="tags"><span>مبيعات</span><span>مخزون</span><span>توقع</span></div>
         <div class="links-row"><a href="#lab" data-tab="store">جرّبها ←</a></div>
       </article>
       <article class="card spot" data-cat="auto">
-        <span class="cat">أتمتة · محاكي تفاعلي</span>
-        <h3>ثلاثة مسارات عمل مؤتمتة</h3>
-        <p>طلب متجر، وتقرير يومي، وطلب إجازة بموافقة المدير.</p>
-        <div class="tags"><span>Webhook</span><span>شروط</span><span>تنبيهات</span><span>موافقات</span></div>
+        <span class="cat">أتمتة · مثال تفاعلي</span>
+        <h3>ثلاث مهام تُنجز وحدها</h3>
+        <p>طلب متجر يُسجَّل وينبّه المدير، وتقرير يومي يُرسل في موعده، وطلب إجازة يصل للمدير ويعود بالرد.</p>
+        <div class="tags"><span>طلبات</span><span>تقارير</span><span>موافقات</span></div>
         <div class="links-row"><a href="#lab" data-tab="auto">شغّلها ←</a></div>
       </article>
       <article class="card spot" data-cat="gov">
-        <span class="cat">حوكمة نظم المعلومات · خبرة سابقة</span>
-        <h3>سياسات نظم المعلومات والامتثال</h3>
-        <p>سياسات الوصول للأنظمة والتعامل مع البيانات، مع متابعة الالتزام وتقارير امتثال دورية.</p>
-        <div class="tags"><span>سياسات</span><span>امتثال</span><span>تقارير</span></div>
+        <span class="cat">تنظيم الإجراءات · خبرة سابقة</span>
+        <h3>من يرى ماذا من البيانات</h3>
+        <p>كتابة قواعد واضحة لصلاحيات الموظفين على الأنظمة، ومتابعة الالتزام بها بتقارير دورية.</p>
+        <div class="tags"><span>صلاحيات</span><span>متابعة</span><span>تقارير</span></div>
       </article>
       <article class="card spot" data-cat="gov">
-        <span class="cat">تحليل الأنظمة · خبرة سابقة</span>
-        <h3>متطلبات وخرائط إجراءات BPMN</h3>
-        <p>جمع المتطلبات ورسم الإجراءات لكشف الفجوات، ومتابعة التسليم في Jira.</p>
-        <div class="tags"><span>BPMN</span><span>متطلبات</span><span>Jira</span></div>
+        <span class="cat">تنظيم الإجراءات · خبرة سابقة</span>
+        <h3>توثيق خطوات العمل وتحسينها</h3>
+        <p>رسم خطوات العمل كما هي اليوم، واكتشاف مواضع التأخير، واقتراح طريقة أبسط.</p>
+        <div class="tags"><span>توثيق</span><span>تحسين</span></div>
       </article>
       <article class="card spot" data-cat="auto gov">
         <span class="cat">أتمتة · مثال تطبيقي</span>
-        <h3>تقارير دورية مؤتمتة</h3>
+        <h3>تقرير يصلك جاهزاً</h3>
         <p>تقرير يُجمع ويُكتب ويُرسل في موعده بدل إعداده يدوياً.</p>
-        <div class="tags"><span>تقارير مجدولة</span><span>ملخصات</span></div>
+        <div class="tags"><span>تقارير</span><span>واتساب</span></div>
         <div class="links-row"><a href="#lab" data-tab="auto" data-scenario="daily">شاهد المثال ←</a></div>
       </article>
     </div>
@@ -760,7 +791,7 @@ main:focus{outline:none}
             <select id="b-type"><option>متجر إلكتروني</option><option>مطعم أو مقهى</option><option>عيادة أو مركز</option><option>شركة خدمات</option><option>جهة حكومية أو غير ربحية</option><option>أخرى</option></select></div>
         </div>
         <fieldset class="bf"><legend>الخدمة المطلوبة</legend>
-          <div class="svc-pick" id="b-svc"><button type="button" aria-pressed="true">لوحة بيانات</button><button type="button" aria-pressed="false">أتمتة</button><button type="button" aria-pressed="false">تحليل وحوكمة</button></div>
+          <div class="svc-pick" id="b-svc"><button type="button" aria-pressed="true">شاشة متابعة</button><button type="button" aria-pressed="false">أتمتة مهام</button><button type="button" aria-pressed="false">تنظيم الإجراءات</button></div>
         </fieldset>
         <div class="bf"><label for="b-msg">ما المهمة أو الأرقام التي تريد متابعتها؟</label><textarea id="b-msg" rows="3" aria-required="true" aria-describedby="b-note" placeholder="مثال: نجمع مبيعات الفروع يدوياً كل يوم"></textarea></div>
         <div class="cta-row">
@@ -878,7 +909,7 @@ main:focus{outline:none}
   const KPIS=[
     {k:'sales',label:'المبيعات اليوم',unit:'ر.س',get:()=>st.sales,y:()=>ySoFar(),f:v=>fmt(v)},
     {k:'orders',label:'عدد الطلبات',unit:'طلب',get:()=>st.orders,y:()=>ySoFar()/178,f:v=>fmt(v)},
-    {k:'conv',label:'معدل التحويل',unit:'%',get:()=>st.orders/st.visitors*100,y:()=>2.55,f:v=>fmt(v,2),pp:true},
+    {k:'conv',label:'نسبة من اشتروا من الزوار',unit:'%',get:()=>st.orders/st.visitors*100,y:()=>2.55,f:v=>fmt(v,2),pp:true},
     {k:'aov',label:'متوسط قيمة الطلب',unit:'ر.س',get:()=>st.sales/st.orders,y:()=>178,f:v=>fmt(v,1)},
   ];
   $('#kpis').innerHTML=KPIS.map(c=>`<div class="kpi" id="k-${c.k}"><span class="kpi-label">${c.label}</span><div class="kpi-value"><span class="num v"></span> <span class="kpi-sub">${c.unit}</span></div><div class="kpi-row"><span class="delta"></span><span class="kpi-sub">مقارنة بأمس</span></div><svg class="spark" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"></svg></div>`).join('');
@@ -973,25 +1004,25 @@ main:focus{outline:none}
   // ================= AUTOMATION =================
   const SCN={
     order:{manual:12, manualTxt:'12 دقيقة لكل طلب', nodes:[
-      {k:'المُشغّل',b:'طلب جديد',tool:'سلة · Webhook',log:'POST /webhook/order  #10482 · 3 items · 486 SAR'},
-      {k:'خطوة',b:'تسجيل الطلب',tool:'Google Sheets',log:'sheets.append("الطلبات", row 1,204)'},
-      {k:'شرط',b:'المخزون أقل من 10؟',tool:'قاعدة المخزون',cond:true,log:'stock("قهوة مختصة 1كغ") = {v}'},
-      {k:'إجراء',b:'تنبيه المدير',tool:'واتساب',ifYes:true,log:'whatsapp.send(manager, "مخزون منخفض")'},
-      {k:'إجراء',b:'تحديث اللوحة',tool:'لوحة البيانات',log:'dashboard.refresh(kpis: sales, orders)'},
+      {k:'يبدأ عندما',b:'يصل طلب جديد',tool:'من متجرك في سلة',log:'وصل طلب جديد رقم 10482 بقيمة 486 ر.س'},
+      {k:'ثم',b:'يُسجَّل الطلب',tool:'في جدول Google Sheets',log:'سُجّل الطلب في جدول الطلبات'},
+      {k:'إذا',b:'المخزون أقل من 10؟',tool:'يفحص الكمية المتبقية',cond:true,log:'الكمية المتبقية من «قهوة مختصة»: {v} قطعة'},
+      {k:'فإن',b:'ينبّه المدير',tool:'رسالة واتساب',ifYes:true,log:'أُرسلت رسالة واتساب للمدير: المخزون منخفض'},
+      {k:'وأخيراً',b:'تتحدّث الشاشة',tool:'شاشة المتابعة',log:'تحدّثت أرقام المبيعات والطلبات'},
     ]},
     daily:{manual:45, manualTxt:'45 دقيقة كل يوم', nodes:[
-      {k:'المُشغّل',b:'الساعة 11:59 م',tool:'جدولة يومية',log:'cron "59 23 * * *" fired'},
-      {k:'خطوة',b:'جمع أرقام اليوم',tool:'قاعدة البيانات',log:'query(sales, orders, alerts) → 4 tables'},
-      {k:'خطوة',b:'كتابة الملخص',tool:'قالب نصي',log:'summary.render("ar") → 142 words'},
-      {k:'إجراء',b:'إرسال الملخص',tool:'بريد + واتساب',log:'send(to: 4 recipients) → delivered'},
-      {k:'إجراء',b:'أرشفة التقرير',tool:'Google Drive',log:'drive.upload("تقرير-اليوم.pdf")'},
+      {k:'يبدأ عندما',b:'تصبح الساعة 11:59 م',tool:'كل يوم تلقائياً',log:'حان موعد التقرير اليومي'},
+      {k:'ثم',b:'تُجمع أرقام اليوم',tool:'من كل الأنظمة',log:'جُمعت المبيعات والطلبات والتنبيهات'},
+      {k:'ثم',b:'يُكتب الملخص',tool:'بلغة واضحة',log:'كُتب ملخص اليوم'},
+      {k:'ثم',b:'يُرسل لك',tool:'واتساب وبريد',log:'أُرسل الملخص إلى 4 أشخاص'},
+      {k:'وأخيراً',b:'يُحفظ نسخة',tool:'في Google Drive',log:'حُفظت نسخة من التقرير'},
     ]},
-    leave:{manual:2880, manualTxt:'يومين عمل بالمراسلات', nodes:[
-      {k:'المُشغّل',b:'طلب إجازة',tool:'نموذج إلكتروني',log:'form.submit(employee: E-214, days: 3)'},
-      {k:'شرط',b:'الرصيد كافٍ؟',tool:'نظام الموارد البشرية',cond:true,log:'balance(E-214) = {v} days'},
-      {k:'خطوة',b:'موافقة المدير',tool:'بريد بزر موافقة',ifYes:true,log:'approval.request(manager) → approved'},
-      {k:'إجراء',b:'تحديث السجل',tool:'نظام الموارد البشرية',ifYes:true,log:'hr.update(E-214, leave: 3 days)'},
-      {k:'إجراء',b:'إشعار الموظف',tool:'SMS',log:'sms.send(E-214, "{msg}")'},
+    leave:{manual:2880, manualTxt:'يومان من المراسلات', nodes:[
+      {k:'يبدأ عندما',b:'يطلب موظف إجازة',tool:'نموذج إلكتروني',log:'طلب الموظف أحمد إجازة 3 أيام'},
+      {k:'إذا',b:'رصيده يكفي؟',tool:'يفحص رصيد الإجازات',cond:true,log:'رصيد أحمد: {v} يوماً'},
+      {k:'فإن',b:'يوافق المدير',tool:'بضغطة زر في البريد',ifYes:true,log:'وافق المدير على الطلب'},
+      {k:'ثم',b:'يُحدَّث السجل',tool:'سجل الموارد البشرية',ifYes:true,log:'سُجّلت الإجازة في سجل الموظف'},
+      {k:'وأخيراً',b:'يُبلَّغ الموظف',tool:'رسالة نصية',log:'أُبلغ الموظف: {msg}'},
     ]},
   };
   let scn='order', busy=false, autoRuns=0, autoSaved=0, loop=null;
@@ -1001,7 +1032,7 @@ main:focus{outline:none}
     const S=SCN[scn];
     $('#cmp-manual-t').textContent=S.manualTxt; $('#cmp-auto-t').textContent='ثوانٍ';
   }
-  function pickScenario(s){ if(busy) return; scn=s; $$('#scenarios .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.s===s)); drawFlow(); con.innerHTML=''; logLine('<span class="ar">اضغط «شغّل السير» لمشاهدة الخطوات.</span>'); }
+  function pickScenario(s){ if(busy) return; scn=s; $$('#scenarios .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.s===s)); drawFlow(); con.innerHTML=''; logLine('<span></span><span></span><span class="muted">اضغط «شغّل» لمشاهدة الخطوات.</span>'); }
   $('#scenarios').addEventListener('click',e=>{ const c=e.target.closest('.chip'); if(c) pickScenario(c.dataset.s); });
   function logLine(html){ const d=document.createElement('div'); d.innerHTML=html; con.appendChild(d); con.scrollTop=con.scrollHeight; }
   const ts=()=>{ const d=new Date(); return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`; };
@@ -1009,21 +1040,21 @@ main:focus{outline:none}
   async function runFlow(){
     if(busy) return; busy=true; $('#run').disabled=true;
     const S=SCN[scn]; drawFlow(); con.innerHTML='';
-    logLine(`<span class="t">${ts()}</span> ▶ run started · scenario=${scn}`);
+    logLine(`<span class="t">${ts()}</span><span>▶</span><span>بدأ التشغيل</span>`);
     let yes=true; const t0=performance.now();
     for(let i=0;i<S.nodes.length;i++){
       const n=S.nodes[i], el=$('#n'+i);
-      if(n.ifYes && !yes){ el.classList.add('skip'); el.querySelector('.tool').textContent='تم التخطي · الشرط لم يتحقق'; logLine(`<span class="t">${ts()}</span> ↷ skipped · <span class="ar">${n.b}</span>`); continue; }
+      if(n.ifYes && !yes){ el.classList.add('skip'); el.querySelector('.tool').textContent='لم تحتج، الشرط لم يتحقق'; logLine(`<span class="t">${ts()}</span><span class="skip-i">↷</span><span class="skip-i">لم تحتج: ${n.b}</span>`); continue; }
       el.classList.add('running'); await wait(scn==='leave'&&i===2?1300:650+Math.random()*400);
       let msg=n.log;
       if(n.cond){ if(scn==='order'){ const v=Math.floor(rnd(2,24)); yes=v<10; msg=msg.replace('{v}',v); } else { const v=Math.floor(rnd(0,21)); yes=v>=3; msg=msg.replace('{v}',v); } }
-      msg=msg.replace('{msg}', yes?'تمت الموافقة على إجازتك':'الرصيد غير كافٍ');
+      msg=msg.replace('{msg}', yes?'تمت الموافقة على إجازتك':'رصيدك لا يكفي لهذه الإجازة');
       el.classList.remove('running'); el.classList.add('done');
-      logLine(`<span class="t">${ts()}</span> <span class="ok">✓</span> ${msg}${n.cond?` → <span class="ok">${yes?'نعم':'لا'}</span>`:''}`);
+      logLine(`<span class="t">${ts()}</span><span class="ok">✓</span><span>${msg}${n.cond?` ← <b>${yes?'نعم':'لا'}</b>`:''}</span>`);
     }
     const secs=((performance.now()-t0)/1000).toFixed(1);
     autoRuns++; autoSaved+=S.manual;
-    logLine(`<span class="t">${ts()}</span> <span class="ok">■ done in ${secs}s</span>`);
+    logLine(`<span class="t">${ts()}</span><span class="ok">■</span><span class="ok">انتهى خلال ${secs} ثانية</span>`);
     $('#cmp-auto-t').textContent=`${secs} ثانية`;
     $('#runs').textContent=autoRuns;
     $('#saved').textContent=autoSaved>=60?`${fmt(autoSaved/60,1)} ساعة`:`${autoSaved} دقيقة`;
@@ -1069,7 +1100,7 @@ main:focus{outline:none}
 
   // ================= MOTION & GRAPHICS =================
   // rotating phrase in the headline
-  const PHRASES=['تعمل تلقائياً','تنبّهك عند الخلل','تكتب تقاريرها بنفسها','توفّر وقت فريقك'];
+  const PHRASES=['تُنجز تلقائياً','تُنجز بدون عمل يدوي','تُنجز في وقتها','تُنجز بدون أخطاء'];
   let pi=0; const rot=$('#rot');
   setInterval(()=>{ if(still) return; rot.classList.add('out'); setTimeout(()=>{ pi=(pi+1)%PHRASES.length; rot.textContent=PHRASES[pi]; rot.classList.remove('out'); },350); },2800);
 
