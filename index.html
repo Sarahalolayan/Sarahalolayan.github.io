@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Agentiq: لوحات بيانات حية، أتمتة الإجراءات، وتحليل الأنظمة والحوكمة. نحوّل بيانات عملك إلى أنظمة تعمل تلقائياً.">
+<meta name="description" content="Agentiq: شاشات متابعة حية لأرقام عملك، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات والصلاحيات.">
 <meta name="theme-color" content="#0C131B" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#EDF1F4" media="(prefers-color-scheme: light)">
 <link rel="canonical" href="https://sarahalolayan.github.io/">
@@ -13,19 +13,19 @@
 <meta property="og:locale" content="ar_SA">
 <meta property="og:url" content="https://sarahalolayan.github.io/">
 <meta property="og:title" content="Agentiq | لوحات بيانات حية وأتمتة">
-<meta property="og:description" content="Agentiq: لوحات بيانات حية، أتمتة الإجراءات، وتحليل الأنظمة والحوكمة. نحوّل بيانات عملك إلى أنظمة تعمل تلقائياً.">
+<meta property="og:description" content="Agentiq: شاشات متابعة حية لأرقام عملك، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات والصلاحيات.">
 <meta property="og:image" content="https://sarahalolayan.github.io/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Agentiq | لوحات بيانات حية وأتمتة">
-<meta name="twitter:description" content="Agentiq: لوحات بيانات حية، أتمتة الإجراءات، وتحليل الأنظمة والحوكمة. نحوّل بيانات عملك إلى أنظمة تعمل تلقائياً.">
+<meta name="twitter:description" content="Agentiq: شاشات متابعة حية لأرقام عملك، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات والصلاحيات.">
 <meta name="twitter:image" content="https://sarahalolayan.github.io/og.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Agentiq", "url": "https://sarahalolayan.github.io/", "logo": "https://sarahalolayan.github.io/og.png", "email": "s.e.alolayan@gmail.com", "telephone": "+966557912466", "areaServed": "SA", "address": {"@type": "PostalAddress", "addressLocality": "الرياض", "addressCountry": "SA"}, "description": "Agentiq: لوحات بيانات حية، أتمتة الإجراءات، وتحليل الأنظمة والحوكمة. نحوّل بيانات عملك إلى أنظمة تعمل تلقائياً."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Agentiq", "url": "https://sarahalolayan.github.io/", "logo": "https://sarahalolayan.github.io/og.png", "email": "s.e.alolayan@gmail.com", "telephone": "+966557912466", "areaServed": "SA", "address": {"@type": "PostalAddress", "addressLocality": "الرياض", "addressCountry": "SA"}, "description": "Agentiq: شاشات متابعة حية لأرقام عملك، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات والصلاحيات."}</script>
 <title>Agentiq</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Amiri:wght@700&family=Readex+Pro:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: hero with a live operations log, service trio, tabbed interactive lab, filterable work grid, expandable timeline, contact band */
 [hidden]{display:none!important}
@@ -435,6 +435,50 @@ main:focus{outline:none}
 .hint b{color:var(--accent);flex:none}
 @media (max-width:980px){.ba{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){.ba-row{grid-template-columns:minmax(0,1fr);gap:8px}.ba-row .arrow{transform:rotate(-90deg)}}
+
+/* ---------- v4: clearer services, website service, studio preview ---------- */
+.services{grid-template-columns:repeat(2,minmax(0,1fr))}
+.service .fit{font-size:14.5px;color:var(--ink);background:var(--sunk);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.service .fit b{color:var(--accent);font-weight:600}
+.service .gets-label{font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.swap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;align-items:baseline;font-size:14px;border-top:1px dashed var(--line);padding-top:12px}
+.swap .from{color:var(--muted);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--muted) 60%,transparent)}
+.swap .to{font-weight:600}
+.swap small{font-size:12px;color:var(--muted)}
+.svc-links{display:flex;gap:16px;flex-wrap:wrap}
+.svc-links a{font-size:14px;font-weight:500;text-decoration:none}
+.svc-links a:hover{text-decoration:underline}
+.badge-new{font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:99px;background:var(--accent);color:var(--accent-ink);margin-inline-start:8px;vertical-align:middle}
+
+.illo .win{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.illo .sky{fill:url(#sky)}
+.illo .hill{fill:color-mix(in srgb,var(--ink) 55%,var(--accent))}
+.illo .tl{fill:#fff;opacity:.9}
+.illo .cta{fill:var(--accent)}
+.illo .ctat{fill:var(--accent-ink);font-size:9px;font-weight:600}
+.illo .ring{fill:none;stroke:var(--accent);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:ringp 2s ease-out infinite}
+@keyframes ringp{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.5);opacity:0}}
+
+/* studio website preview inside the work card */
+.site-prev{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0b0f14;display:grid}
+.site-bar{display:flex;align-items:center;gap:6px;padding:7px 10px;background:var(--sunk);border-bottom:1px solid var(--line)}
+.site-bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.site-bar span{margin-inline-start:auto;font-family:var(--f-data);font-size:11px;color:var(--muted);direction:ltr}
+.site-stage{position:relative;aspect-ratio:16/10;max-width:100%;overflow:hidden;
+  background:linear-gradient(180deg,#5d7ea6 0%,#9bb7d4 38%,#3f5d7a 52%,#1f3346 70%,#121c26 100%)}
+.site-stage::before{content:"";position:absolute;inset:auto 0 0 0;height:58%;
+  background:radial-gradient(120% 70% at 30% 100%,#2c3a44 40%,transparent 41%),radial-gradient(90% 60% at 85% 100%,#38474f 45%,transparent 46%),linear-gradient(180deg,transparent,#0b0f14 95%)}
+.site-stage .nav-m{position:absolute;inset:8px 12px auto 12px;display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#fff;z-index:2}
+.site-stage .nav-m b{font-family:"Amiri",serif;font-size:14px}
+.site-stage .nav-m em{font-style:normal;border:1px solid rgba(255,255,255,.6);padding:1px 8px;border-radius:3px}
+.site-stage .cap{position:absolute;inset:auto 14px 14px auto;z-index:2;color:#fff;text-align:right}
+.site-stage .cap small{display:block;font-size:10px;opacity:.85}
+.site-stage .cap strong{font-family:"Amiri",serif;font-size:clamp(17px,2.2vw,24px);line-height:1.25;display:block;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.iris{position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:radial-gradient(circle at 50% 50%,transparent var(--open,80%),#05080b calc(var(--open,80%) + 1%));animation:iris 6s ease-in-out infinite}
+@property --open{syntax:"<percentage>";inherits:false;initial-value:80%}
+@keyframes iris{0%,62%{--open:80%}74%,80%{--open:0%}100%{--open:80%}}
+.prev-note{font-size:12px;color:var(--muted)}
 @media (max-width:980px){
   .hero,.contact,.roi,.auto-grid,.mid,.summary{grid-template-columns:minmax(0,1fr)}
   .services,.work,.skills{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -469,10 +513,9 @@ main:focus{outline:none}
     <a class="brand" href="#top" aria-label="Agentiq"><span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.6" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.6" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.6"/></svg></span><span class="en" lang="en">Agentiq</span></a>
     <div class="links" id="links">
       <a href="#services">الخدمات</a>
-      <a href="#lab">جرّب بنفسك</a>
       <a href="#work">أعمالنا</a>
-      <a href="#process">كيف نعمل</a>
-      <a href="#contact">تواصل</a>
+      <a href="#lab">جرّب بنفسك</a>
+      <a href="#faq">الأسئلة</a>
     </div>
     <div style="display:flex;gap:8px;align-items:center">
       <a class="btn primary sm nav-cta" href="#contact">ابدأ مشروعك</a>
@@ -488,12 +531,12 @@ main:focus{outline:none}
   <canvas id="net" aria-hidden="true"></canvas>
   <header class="hero">
     <div class="hero-text">
-      <span class="eyebrow">شاشات متابعة · أتمتة المهام</span>
+      <span class="eyebrow">شاشات متابعة · أتمتة المهام · مواقع إلكترونية</span>
       <h1><span class="sr-only">نجعل أرقام عملك واضحة أمامك، وننجز المهام المتكررة تلقائياً.</span><span aria-hidden="true">أرقام عملك أمامك، ومهامك المتكررة <em id="rot">تُنجز تلقائياً</em><span class="caret"></span></span></h1>
       <p>نربط الأنظمة التي تستخدمها، ونعرض أرقامك في شاشة واحدة تتحدّث وحدها، ونرسل لك تنبيهاً وتقريراً جاهزاً بدل متابعتها يدوياً.</p>
       <div class="cta-row">
-        <a class="btn primary" href="#lab">جرّب أعمالنا</a>
-        <a class="btn" href="#contact">تواصل معنا</a>
+        <a class="btn primary" href="#contact">ابدأ مشروعك</a>
+        <a class="btn" href="#work">شاهد أعمالنا</a>
       </div>
     </div>
     <aside class="opslog" aria-label="مثال توضيحي لسجل عمليات مؤتمت">
@@ -519,7 +562,7 @@ main:focus{outline:none}
   <section class="block" id="services">
     <div class="block-head">
       <h2>الخدمات</h2>
-      <p>ثلاث خدمات تكمّل بعضها. ابدأ بواحدة أو اجمعها.</p>
+      <p>أربع خدمات تكمّل بعضها. لكل خدمة: لمن تناسب، وماذا تستلم، ومثال تفتحه بنفسك. ابدأ بواحدة ونكبر معك.</p>
     </div>
     <div class="services">
       <article class="service spot">
@@ -536,9 +579,12 @@ main:focus{outline:none}
           <rect class="chip" x="200" y="74" width="46" height="18" rx="9"/><text class="chipt" x="223" y="86" text-anchor="middle">▲ 12%</text>
         </svg>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>شاشة متابعة لأرقامك</h3>
-        <p>مبيعاتك وطلباتك وأهم أرقامك في شاشة واحدة، تتحدّث وحدها.</p>
-        <ul><li>تتحدّث تلقائياً بدون إدخال يدوي</li><li>تقارن اليوم بأمس وبالهدف</li><li>تنبيه فوري إذا حصل خلل</li><li>ملخص مكتوب آخر كل يوم</li></ul>
-        <a class="try" href="#lab" data-tab="store">جرّب لوحة حية ←</a>
+        <p>مبيعاتك وطلباتك وأهم أرقامك في شاشة واحدة، تتحدّث وحدها من أنظمتك.</p>
+        <p class="fit"><b>تناسبك إذا</b> كنت تتابع مبيعات أو طلبات أو حضوراً كل يوم.</p>
+        <span class="gets-label">ماذا تستلم</span>
+        <ul><li>شاشة تتحدّث تلقائياً بدون إدخال يدوي</li><li>مقارنة باليوم السابق وبالهدف</li><li>تنبيه فوري وملخص مكتوب آخر كل يوم</li></ul>
+        <div class="swap"><small>بدلاً من</small><span class="from">تجميع الأرقام من عدة ملفات كل يوم</span><small>تصبح</small><span class="to">أرقامك أمامك في شاشة واحدة</span></div>
+        <div class="svc-links"><a href="#lab" data-tab="store">جرّب مثالاً حياً ←</a><a href="https://sarahalolayan.github.io/nabd-alnadi/" target="_blank" rel="noopener">نبض النادي ↗</a></div>
       </article>
       <article class="service spot">
         <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
@@ -556,8 +602,32 @@ main:focus{outline:none}
         </svg>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H14a4 4 0 0 1 4 4v5.5"/></svg>أتمتة المهام المتكررة</h3>
         <p>أي مهمة تكررها كل يوم بنفس الخطوات، نجعلها تُنجز وحدها.</p>
-        <ul><li>نقل البيانات بين أنظمتك تلقائياً</li><li>تقارير تصلك واتساب أو بريد في موعدها</li><li>طلبات وموافقات بدون أوراق</li><li>تنبيهات حسب الشروط التي تختارها</li></ul>
-        <a class="try" href="#lab" data-tab="auto">شغّل محاكي الأتمتة ←</a>
+        <p class="fit"><b>تناسبك إذا</b> كان فريقك ينقل بيانات أو يكتب تقارير أو يتابع موافقات يدوياً.</p>
+        <span class="gets-label">ماذا تستلم</span>
+        <ul><li>نقل البيانات بين أنظمتك تلقائياً</li><li>تقارير تصلك واتساب أو بريد في موعدها</li><li>طلبات وموافقات إلكترونية بدون أوراق</li></ul>
+        <div class="swap"><small>بدلاً من</small><span class="from">كتابة التقرير يدوياً آخر كل يوم</span><small>يصبح</small><span class="to">التقرير يصلك جاهزاً في موعده</span></div>
+        <div class="svc-links"><a href="#lab" data-tab="auto">شغّل مثالاً حياً ←</a></div>
+      </article>
+      <article class="service spot">
+        <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
+          <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d9cc0"/><stop offset="1" stop-color="#2a4560"/></linearGradient></defs>
+          <rect class="win" x="40" y="8" width="180" height="94" rx="8"/>
+          <circle cx="52" cy="17" r="2.5" fill="var(--line)"/><circle cx="60" cy="17" r="2.5" fill="var(--line)"/><circle cx="68" cy="17" r="2.5" fill="var(--line)"/>
+          <rect class="sky" x="46" y="25" width="168" height="54" rx="4"/>
+          <path class="hill" d="M46 79 L46 64 Q80 46 112 62 T170 58 Q195 52 214 62 L214 79 Z"/>
+          <rect class="tl" x="150" y="36" width="54" height="6" rx="3"/><rect class="tl" x="166" y="46" width="38" height="5" rx="2.5" style="opacity:.6"/>
+          <rect x="54" y="86" width="40" height="5" rx="2.5" fill="var(--line)"/><rect x="100" y="86" width="40" height="5" rx="2.5" fill="var(--line)"/>
+          <rect class="ring" x="150" y="83" width="56" height="13" rx="6.5"/>
+          <rect class="cta" x="150" y="83" width="56" height="13" rx="6.5"/><text class="ctat" x="178" y="92.5" text-anchor="middle">احجز جلسة</text>
+          <rect x="6" y="40" width="30" height="56" rx="6" class="win"/><rect x="10" y="48" width="22" height="16" rx="2" fill="url(#sky)"/><rect x="10" y="80" width="22" height="7" rx="3.5" class="cta"/>
+        </svg>
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 8.5h18"/><path d="M8 13h5"/></svg>مواقع إلكترونية وصفحات حجز<span class="badge-new">جديد</span></h3>
+        <p>موقع عربي سريع يعرض نشاطك ويحوّل الزائر إلى طلب، ويعمل على الجوال قبل الكمبيوتر.</p>
+        <p class="fit"><b>تناسبك إذا</b> كنت تحتاج حضوراً على الإنترنت يجيب لك حجوزات أو طلبات أسعار.</p>
+        <span class="gets-label">ماذا تستلم</span>
+        <ul><li>موقع لنشاطك التجاري، أو موقع شخصي يعرض خبراتك</li><li>تصميم خاص بهويتك مع معرض لأعمالك</li><li>نموذج حجز أو طلب سعر يصلك على واتساب</li></ul>
+        <div class="swap"><small>بدلاً من</small><span class="from">طلبات متفرقة في الرسائل بدون تفاصيل</span><small>يصبح</small><span class="to">طلب كامل التفاصيل يصلك جاهزاً</span></div>
+        <div class="svc-links"><a href="https://sarahalolayan.github.io/demos/bahrawi/" target="_blank" rel="noopener">موقع استديو البحراوي ↗</a><a href="https://sarahalolayan.github.io/portfolio/" target="_blank" rel="noopener">موقع شخصي ↗</a></div>
       </article>
       <article class="service spot">
         <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
@@ -572,25 +642,95 @@ main:focus{outline:none}
           <circle class="pk" r="4" opacity=".6"><animateMotion dur="4s" begin="2s" repeatCount="indefinite" path="M240 50 H184 H126 H98 V72 H62 H30 V50 H16"/></circle>
         </svg>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="7" height="6" rx="1.5"/><rect x="14" y="14" width="7" height="6" rx="1.5"/><path d="M6.5 10v4a3 3 0 0 0 3 3H14"/></svg>تنظيم الإجراءات والصلاحيات</h3>
-        <p>نرتّب طريقة العمل قبل أتمتتها، حتى يعرف كل شخص دوره.</p>
-        <ul><li>توثيق خطوات العمل الحالية</li><li>اكتشاف مواضع التأخير والتكرار</li><li>تحديد من يرى ماذا من البيانات</li><li>متابعة الالتزام بتقارير دورية</li></ul>
-        <a class="try" href="#work">أعمالنا ←</a>
+        <p>نرتّب طريقة العمل قبل أتمتتها، حتى يعرف كل شخص دوره وما يراه من البيانات.</p>
+        <p class="fit"><b>تناسبك إذا</b> كان فريقك يكبر والمهام والصلاحيات تتداخل.</p>
+        <span class="gets-label">ماذا تستلم</span>
+        <ul><li>خطوات عمل موثقة ومبسطة</li><li>قواعد واضحة لمن يرى ماذا من البيانات</li><li>متابعة الالتزام بتقارير دورية</li></ul>
+        <div class="swap"><small>بدلاً من</small><span class="from">طلبات وموافقات بالرسائل والأوراق</span><small>تصبح</small><span class="to">خطوات واضحة يعرفها الجميع</span></div>
+        <div class="svc-links"><a href="#work" data-filter="gov">أمثلة من خبرتنا ←</a></div>
       </article>
     </div>
     <div style="display:grid;gap:10px"><span class="muted" style="font-size:14px">نربط مع:</span><ul class="sr-only"><li>Google Sheets</li><li>Excel</li><li>سلة</li><li>زد</li><li>Foodics</li><li>واتساب</li><li>البريد الإلكتروني</li><li>قواعد بيانات SQL</li><li>Google Drive</li><li>CRM</li><li>نماذج إلكترونية</li><li>أي نظام فيه API</li></ul><div class="marquee" aria-hidden="true"><div class="marquee-track" aria-hidden="true"><span>Google Sheets</span><span>Excel</span><span>سلة</span><span>زد</span><span>Foodics</span><span>واتساب</span><span>البريد الإلكتروني</span><span>قواعد بيانات SQL</span><span>Google Drive</span><span>CRM</span><span>نماذج إلكترونية</span><span>أي نظام فيه API</span><span>Google Sheets</span><span>Excel</span><span>سلة</span><span>زد</span><span>Foodics</span><span>واتساب</span><span>البريد الإلكتروني</span><span>قواعد بيانات SQL</span><span>Google Drive</span><span>CRM</span><span>نماذج إلكترونية</span><span>أي نظام فيه API</span></div></div></div>
   </section>
 
-  <!-- BEFORE AFTER -->
-  <section class="block" id="benefits">
+  <!-- WORK -->
+  <section class="block" id="work">
     <div class="block-head">
-      <h2>ماذا يتغيّر في عملك؟</h2>
-      <p>أمثلة على مهام يومية قبل وبعد.</p>
+      <h2>أعمالنا</h2>
+      <p>مشاريع منشورة تفتحها وتجربها بنفسك، وأمثلة من خبرتنا السابقة. الأحدث أولاً.</p>
     </div>
-    <div class="ba">
-      <div class="ba-row"><div class="before"><small>قبل</small>تجمع الأرقام من عدة ملفات كل يوم</div><span class="arrow" aria-hidden="true">←</span><div class="after"><small>بعد</small>تراها في شاشة واحدة تتحدّث وحدها</div></div>
-      <div class="ba-row"><div class="before"><small>قبل</small>تكتشف المشكلة بعد أيام</div><span class="arrow" aria-hidden="true">←</span><div class="after"><small>بعد</small>يصلك تنبيه على جوالك فوراً</div></div>
-      <div class="ba-row"><div class="before"><small>قبل</small>تكتب التقرير بيدك آخر اليوم</div><span class="arrow" aria-hidden="true">←</span><div class="after"><small>بعد</small>يصلك التقرير جاهزاً في موعده</div></div>
-      <div class="ba-row"><div class="before"><small>قبل</small>طلبات وموافقات بالرسائل والأوراق</div><span class="arrow" aria-hidden="true">←</span><div class="after"><small>بعد</small>طلب إلكتروني يصل للمدير ويعود بالرد</div></div>
+    <div class="filters" id="work-filters" role="group" aria-label="تصفية الأعمال">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">الكل</button>
+      <button class="chip" type="button" data-f="web" aria-pressed="false">مواقع</button>
+      <button class="chip" type="button" data-f="dash" aria-pressed="false">شاشات متابعة</button>
+      <button class="chip" type="button" data-f="auto" aria-pressed="false">أتمتة</button>
+      <button class="chip" type="button" data-f="gov" aria-pressed="false">تنظيم الإجراءات</button>
+    </div>
+    <div class="work" id="work-grid">
+      <article class="card feature spot" data-cat="web">
+        <div style="display:grid;gap:12px">
+          <span class="cat">موقع إلكتروني · نموذج لعميل · نوفمبر 2026</span>
+          <h3>استديو تصوير البحراوي</h3>
+          <p>موقع لاستديو تصوير يبدأ بعدسة تنفتح مع التمرير، ثم معرض أعمال بصور كاملة الشاشة، وخدمات الاستديو، ونموذج حجز يرسل طلب عرض السعر مباشرة على واتساب.</p>
+          <div class="tags"><span>تجربة تمرير سينمائية</span><span>معرض أعمال</span><span>حجز عبر واتساب</span><span>يعمل على الجوال</span></div>
+          <div class="links-row"><a href="https://sarahalolayan.github.io/demos/bahrawi/" target="_blank" rel="noopener">افتح الموقع ↗</a></div>
+        </div>
+        <a class="site-prev" href="https://sarahalolayan.github.io/demos/bahrawi/" target="_blank" rel="noopener" aria-label="معاينة موقع استديو البحراوي، يفتح في نافذة جديدة">
+          <span class="site-bar" aria-hidden="true"><i></i><i></i><i></i><span>bahrawi</span></span>
+          <span class="site-stage" aria-hidden="true">
+            <span class="nav-m"><b>البحراوي</b><em>احجز جلسة</em></span>
+            <span class="cap"><small>استديو تصوير</small><strong>لحظاتكم تستاهل صورة تبقى</strong></span>
+            <span class="iris"></span>
+          </span>
+        </a>
+      </article>
+      <article class="card spot" data-cat="web">
+        <span class="cat">موقع إلكتروني · موقع شخصي · أكتوبر 2026</span>
+        <h3>موقع شخصي لعرض الخبرات</h3>
+        <p>موقع سيرة مهنية تفاعلي: الخبرات بخط زمني، والشهادات والمهارات، وأرقام تلخّص المسيرة، وطرق التواصل في مكان واحد.</p>
+        <div class="tags"><span>سيرة تفاعلية</span><span>عربي</span><span>جوال</span></div>
+        <div class="links-row"><a href="https://sarahalolayan.github.io/portfolio/" target="_blank" rel="noopener">افتح الموقع ↗</a></div>
+      </article>
+      <article class="card feature spot" data-cat="dash auto">
+        <div style="display:grid;gap:12px">
+          <span class="cat">شاشة متابعة · مشروع منشور</span>
+          <h3>نبض النادي</h3>
+          <p>شاشة يرى فيها مدير النادي عدد المتدربين اليوم ومقارنتهم بالهدف، مع تنبيهات وملخص يومي. مبنية على 973 جلسة تمرين حقيقية.</p>
+          <div class="tags"><span>تتحدّث وحدها</span><span>تنبيهات</span><span>ملخص يومي</span></div>
+          <div class="links-row"><a href="https://sarahalolayan.github.io/nabd-alnadi/" target="_blank" rel="noopener">افتح اللوحة ↗</a></div>
+        </div>
+        <div class="mini" aria-hidden="true">
+          <div class="mini-kpis"><div><span>الجلسات</span><b id="m-n">59</b></div><div><span>السعرات</span><b id="m-c">53,259</b></div><div><span>الهدف</span><b>128</b></div></div>
+          <svg id="m-chart" viewBox="0 0 300 60" preserveAspectRatio="none"></svg>
+          <span class="kpi-sub">معاينة مصغّرة · أكتوبر 2026</span>
+        </div>
+      </article>
+      <article class="card spot" data-cat="dash">
+        <span class="cat">شاشة متابعة · مثال تفاعلي</span>
+        <h3>شاشة متابعة لمتجر إلكتروني</h3>
+        <p>مبيعات كل ساعة مقارنة بأمس، وتنبيه عند نقص المخزون، وتوقع لمبيعات نهاية اليوم.</p>
+        <div class="tags"><span>مبيعات</span><span>مخزون</span><span>توقع</span></div>
+        <div class="links-row"><a href="#lab" data-tab="store">جرّبها ←</a></div>
+      </article>
+      <article class="card spot" data-cat="auto">
+        <span class="cat">أتمتة · مثال تفاعلي</span>
+        <h3>ثلاث مهام تُنجز وحدها</h3>
+        <p>طلب متجر يُسجَّل وينبّه المدير، وتقرير يومي يُرسل في موعده، وطلب إجازة يصل للمدير ويعود بالرد.</p>
+        <div class="tags"><span>طلبات</span><span>تقارير</span><span>موافقات</span></div>
+        <div class="links-row"><a href="#lab" data-tab="auto">شغّلها ←</a></div>
+      </article>
+      <article class="card spot" data-cat="gov">
+        <span class="cat">تنظيم الإجراءات · خبرة سابقة</span>
+        <h3>من يرى ماذا من البيانات</h3>
+        <p>كتابة قواعد واضحة لصلاحيات الموظفين على الأنظمة، ومتابعة الالتزام بها بتقارير دورية.</p>
+        <div class="tags"><span>صلاحيات</span><span>متابعة</span><span>تقارير</span></div>
+      </article>
+      <article class="card spot" data-cat="gov">
+        <span class="cat">تنظيم الإجراءات · خبرة سابقة</span>
+        <h3>توثيق خطوات العمل وتحسينها</h3>
+        <p>رسم خطوات العمل كما هي اليوم، واكتشاف مواضع التأخير، واقتراح طريقة أبسط.</p>
+        <div class="tags"><span>توثيق</span><span>تحسين</span></div>
+      </article>
     </div>
   </section>
 
@@ -602,7 +742,7 @@ main:focus{outline:none}
     </div>
     <ol class="steps">
       <li class="step"><span class="n">01</span><h3>جلسة فهم</h3><p>نفهم نشاطك والأرقام المهمة لك.</p><span class="out">المخرج: <b>ما تحتاجه بالتحديد</b></span></li>
-      <li class="step"><span class="n">02</span><h3>تصميم الحل</h3><p>نتفق على شكل الشاشة والتنبيهات والتقارير.</p><span class="out">المخرج: <b>تصميم واضح توافق عليه</b></span></li>
+      <li class="step"><span class="n">02</span><h3>تصميم الحل</h3><p>نتفق على شكل الشاشة أو الموقع، والتنبيهات والتقارير.</p><span class="out">المخرج: <b>تصميم واضح توافق عليه</b></span></li>
       <li class="step"><span class="n">03</span><h3>البناء والاختبار</h3><p>نبني النظام ونختبره على بياناتك قبل التشغيل.</p><span class="out">المخرج: <b>نظام جاهز للإطلاق</b></span></li>
       <li class="step"><span class="n">04</span><h3>التشغيل والدعم</h3><p>نطلق النظام وندرّب فريقك ونتابع بعد الإطلاق.</p><span class="out">المخرج: <b>توثيق وتدريب ودعم</b></span></li>
     </ol>
@@ -703,69 +843,6 @@ main:focus{outline:none}
     </div>
   </section>
 
-  <!-- WORK -->
-  <section class="block" id="work">
-    <div class="block-head">
-      <h2>أعمالنا</h2>
-      <p>مشاريع منشورة يمكنك تجربتها، وأمثلة من خبرتنا السابقة.</p>
-    </div>
-    <div class="filters" id="work-filters" role="group" aria-label="تصفية الأعمال">
-      <button class="chip" type="button" data-f="all" aria-pressed="true">الكل</button>
-      <button class="chip" type="button" data-f="dash" aria-pressed="false">شاشات متابعة</button>
-      <button class="chip" type="button" data-f="auto" aria-pressed="false">أتمتة</button>
-      <button class="chip" type="button" data-f="gov" aria-pressed="false">تنظيم الإجراءات</button>
-    </div>
-    <div class="work" id="work-grid">
-      <article class="card feature spot" data-cat="dash auto">
-        <div style="display:grid;gap:12px">
-          <span class="cat">شاشة متابعة · مشروع منشور</span>
-          <h3>نبض النادي</h3>
-          <p>شاشة يرى فيها مدير النادي عدد المتدربين اليوم ومقارنتهم بالهدف، مع تنبيهات وملخص يومي. مبنية على 973 جلسة تمرين حقيقية.</p>
-          <div class="tags"><span>تتحدّث وحدها</span><span>تنبيهات</span><span>ملخص يومي</span></div>
-          <div class="links-row"><a href="https://sarahalolayan.github.io/nabd-alnadi/" target="_blank" rel="noopener">افتح اللوحة ↗</a></div>
-        </div>
-        <div class="mini" aria-hidden="true">
-          <div class="mini-kpis"><div><span>الجلسات</span><b id="m-n">59</b></div><div><span>السعرات</span><b id="m-c">53,259</b></div><div><span>الهدف</span><b>128</b></div></div>
-          <svg id="m-chart" viewBox="0 0 300 60" preserveAspectRatio="none"></svg>
-          <span class="kpi-sub">معاينة مصغّرة</span>
-        </div>
-      </article>
-      <article class="card spot" data-cat="dash">
-        <span class="cat">شاشة متابعة · مثال تفاعلي</span>
-        <h3>شاشة متابعة لمتجر إلكتروني</h3>
-        <p>مبيعات كل ساعة مقارنة بأمس، وتنبيه عند نقص المخزون، وتوقع لمبيعات نهاية اليوم.</p>
-        <div class="tags"><span>مبيعات</span><span>مخزون</span><span>توقع</span></div>
-        <div class="links-row"><a href="#lab" data-tab="store">جرّبها ←</a></div>
-      </article>
-      <article class="card spot" data-cat="auto">
-        <span class="cat">أتمتة · مثال تفاعلي</span>
-        <h3>ثلاث مهام تُنجز وحدها</h3>
-        <p>طلب متجر يُسجَّل وينبّه المدير، وتقرير يومي يُرسل في موعده، وطلب إجازة يصل للمدير ويعود بالرد.</p>
-        <div class="tags"><span>طلبات</span><span>تقارير</span><span>موافقات</span></div>
-        <div class="links-row"><a href="#lab" data-tab="auto">شغّلها ←</a></div>
-      </article>
-      <article class="card spot" data-cat="gov">
-        <span class="cat">تنظيم الإجراءات · خبرة سابقة</span>
-        <h3>من يرى ماذا من البيانات</h3>
-        <p>كتابة قواعد واضحة لصلاحيات الموظفين على الأنظمة، ومتابعة الالتزام بها بتقارير دورية.</p>
-        <div class="tags"><span>صلاحيات</span><span>متابعة</span><span>تقارير</span></div>
-      </article>
-      <article class="card spot" data-cat="gov">
-        <span class="cat">تنظيم الإجراءات · خبرة سابقة</span>
-        <h3>توثيق خطوات العمل وتحسينها</h3>
-        <p>رسم خطوات العمل كما هي اليوم، واكتشاف مواضع التأخير، واقتراح طريقة أبسط.</p>
-        <div class="tags"><span>توثيق</span><span>تحسين</span></div>
-      </article>
-      <article class="card spot" data-cat="auto gov">
-        <span class="cat">أتمتة · مثال تطبيقي</span>
-        <h3>تقرير يصلك جاهزاً</h3>
-        <p>تقرير يُجمع ويُكتب ويُرسل في موعده بدل إعداده يدوياً.</p>
-        <div class="tags"><span>تقارير</span><span>واتساب</span></div>
-        <div class="links-row"><a href="#lab" data-tab="auto" data-scenario="daily">شاهد المثال ←</a></div>
-      </article>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section class="block" id="faq">
     <div class="block-head"><h2>أسئلة شائعة</h2></div>
@@ -775,6 +852,7 @@ main:focus{outline:none}
       <details class="faq"><summary>كيف تحمون البيانات؟</summary><p>نحدد صلاحيات الوصول لكل مستخدم، وتبقى البيانات ملكك.</p></details>
       <details class="faq"><summary>كم يستغرق المشروع؟</summary><p>حسب حجمه. نحدد المدة بعد جلسة الفهم وقبل بدء العمل.</p></details>
       <details class="faq"><summary>ماذا بعد التسليم؟</summary><p>نسلّم التوثيق وندرّب فريقك، ونبقى متاحين للتعديلات.</p></details>
+      <details class="faq"><summary>هل تصممون مواقع إلكترونية؟</summary><p>نعم. نصمم مواقع عربية تعمل على الجوال، مع نموذج حجز أو طلب سعر يصلك على واتساب. شاهد مثال <a href="https://sarahalolayan.github.io/demos/bahrawi/" target="_blank" rel="noopener">استديو البحراوي</a>.</p></details>
       <details class="faq"><summary>هل يمكن البدء بمشروع صغير؟</summary><p>نعم. يمكنك البدء بلوحة واحدة أو إجراء واحد، ثم التوسع.</p></details>
     </div>
   </section>
@@ -791,7 +869,7 @@ main:focus{outline:none}
             <select id="b-type"><option>متجر إلكتروني</option><option>مطعم أو مقهى</option><option>عيادة أو مركز</option><option>شركة خدمات</option><option>جهة حكومية أو غير ربحية</option><option>أخرى</option></select></div>
         </div>
         <fieldset class="bf"><legend>الخدمة المطلوبة</legend>
-          <div class="svc-pick" id="b-svc"><button type="button" aria-pressed="true">شاشة متابعة</button><button type="button" aria-pressed="false">أتمتة مهام</button><button type="button" aria-pressed="false">تنظيم الإجراءات</button></div>
+          <div class="svc-pick" id="b-svc"><button type="button" aria-pressed="true">شاشة متابعة</button><button type="button" aria-pressed="false">أتمتة مهام</button><button type="button" aria-pressed="false">موقع إلكتروني</button><button type="button" aria-pressed="false">تنظيم الإجراءات</button></div>
         </fieldset>
         <div class="bf"><label for="b-msg">ما المهمة أو الأرقام التي تريد متابعتها؟</label><textarea id="b-msg" rows="3" aria-required="true" aria-describedby="b-note" placeholder="مثال: نجمع مبيعات الفروع يدوياً كل يوم"></textarea></div>
         <div class="cta-row">
@@ -1081,6 +1159,7 @@ main:focus{outline:none}
   Object.values(R).forEach(i=>i.addEventListener('input',roi)); roi();
 
   // ================= WORK =================
+  $$('[data-filter]').forEach(a=>a.addEventListener('click',()=>{ const c=$(`#work-filters [data-f="${a.dataset.filter}"]`); if(c) c.click(); }));
   $('#work-filters').addEventListener('click',e=>{
     const c=e.target.closest('.chip'); if(!c) return;
     $$('#work-filters .chip').forEach(x=>x.setAttribute('aria-pressed',x===c));
