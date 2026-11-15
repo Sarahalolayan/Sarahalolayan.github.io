@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>حاسبة تكلفة الأعمال اليدوية | Agentiq</title>
+<meta name="description" content="احسب كم ساعة يقضي فريقك في الأعمال اليدوية المتكررة يومياً وشهرياً وسنوياً، وكم منها يمكن أتمتته. أداة مجانية من Agentiq.">
+<link rel="canonical" href="https://sarahalolayan.github.io/hours/">
+<meta name="theme-color" content="#0C131B" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EDF1F4" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E6E6B'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Agentiq">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:url" content="https://sarahalolayan.github.io/hours/">
+<meta property="og:title" content="كم ساعة وكم ريال تكلفك الأعمال اليدوية؟">
+<meta property="og:description" content="أضف مهامك اليومية المتكررة واعرف وقتها الحقيقي، وكم منها يمكن أن يُنجز تلقائياً.">
+<meta property="og:image" content="https://sarahalolayan.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: short intro, then task list (inputs) beside a sticky results panel; stacks on phones with results after the list */
+[hidden]{display:none!important}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:root{
+  --bg:#EDF1F4; --surface:#FFFFFF; --sunk:#F4F7F9; --ink:#122033; --ink-2:#3E4C5C; --muted:#56636F; --line:#D6DDE5; --grid:#E4E9EE;
+  --accent:#0E6E6B; --accent-ink:#FFFFFF; --accent-soft:#D6ECEA;
+  --bad:#A0310A; --bad-soft:#F9E0D6; --ghost:#B7C2CD;
+  --warm:#B45309; --warm-ink:#7C2D12; --warm-soft:#FDEEDF; --warm-mute:#E9C9AA; --coin:#E8A33D; --coin-2:#C9821F;
+  --deep:#0A4F4D; --deep-2:#0E6E6B; --on-deep:#FFFFFF; --mint:#A7E8DF;
+  --f-display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C131B; --surface:#131D28; --sunk:#0F1821; --ink:#E4EBF2; --ink-2:#BCC8D4; --muted:#93A2B2; --line:#243241; --grid:#1D2935;
+  --accent:#3DB5AD; --accent-ink:#06201F; --accent-soft:#12312F; --bad:#F2875E; --bad-soft:#3A1E14; --ghost:#3A4B5C; --warm:#F4A261; --warm-ink:#F8C9A0; --warm-soft:#2A1B10; --warm-mute:#6B4A30; --coin:#E8A33D; --coin-2:#B87414;
+  --deep:#0F4A47; --deep-2:#13615D; --on-deep:#FFFFFF; --mint:#8FE0D5; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C131B; --surface:#131D28; --sunk:#0F1821; --ink:#E4EBF2; --ink-2:#BCC8D4; --muted:#93A2B2; --line:#243241; --grid:#1D2935;
+  --accent:#3DB5AD; --accent-ink:#06201F; --accent-soft:#12312F; --bad:#F2875E; --bad-soft:#3A1E14; --ghost:#3A4B5C; --warm:#F4A261; --warm-ink:#F8C9A0; --warm-soft:#2A1B10; --warm-mute:#6B4A30; --coin:#E8A33D; --coin-2:#B87414;
+  --deep:#0F4A47; --deep-2:#13615D; --on-deep:#FFFFFF; --mint:#8FE0D5; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;direction:rtl}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.3}
+p{margin:0}
+a{color:var(--accent)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.num{font-family:var(--f-data);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:600;font-size:17px;color:var(--ink);text-decoration:none}
+.mark{width:32px;height:32px;border-radius:8px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center}
+.nav-r{display:flex;gap:8px;align-items:center}
+.icon-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 18px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;font-weight:500;font-size:15px}
+.btn:hover{border-color:var(--ink-2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.sm{padding:6px 12px;font-size:14px}
+.btn.link{border:none;background:none;color:var(--accent);padding:6px 4px}
+
+.intro{padding-block:36px 24px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px 32px;align-items:center}
+.intro-text{display:grid;gap:12px}
+.hero-art{width:100%;max-width:340px;height:auto;justify-self:center;display:block}
+.eyebrow{font-size:13px;letter-spacing:.04em;color:var(--accent);font-weight:600}
+.intro h1{font-size:clamp(28px,4.4vw,44px);font-weight:700}
+.intro p{color:var(--ink-2);font-size:17.5px;max-width:62ch}
+.steps-mini{display:flex;gap:8px 20px;flex-wrap:wrap;font-size:14px;color:var(--muted);margin-top:4px}
+.steps-mini b{font-family:var(--f-data);color:var(--accent);margin-inline-end:6px}
+
+.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;align-items:start;padding-bottom:64px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:16px;min-width:0}
+.panel h2{font-size:17px;font-weight:600}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.hint{font-size:13.5px;color:var(--muted)}
+
+.presets{display:flex;flex-wrap:wrap;gap:8px}
+.preset{font-size:13.5px;padding:5px 12px;border-radius:99px;border:1px dashed var(--line);background:var(--sunk);cursor:pointer}
+.preset:hover{border-color:var(--accent);color:var(--accent)}
+.preset[disabled]{opacity:.45;cursor:default;border-style:solid}
+.preset.other{border-style:solid;border-color:var(--accent);color:var(--accent);background:transparent}
+
+.tasks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.task{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:12px;background:var(--surface)}
+.task.new{animation:pop .35s ease}
+@keyframes pop{from{transform:translateY(-6px);opacity:.3}to{transform:none;opacity:1}}
+.task-top{display:flex;gap:10px;align-items:center}
+.task-top input{flex:1;min-width:0;font-weight:600;font-size:15.5px;border:none;border-bottom:1px dashed var(--line);background:transparent;padding:4px 2px}
+.task-top input:focus{outline:none;border-bottom-color:var(--accent)}
+.del{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:transparent;cursor:pointer;color:var(--muted);flex:none}
+.del:hover{color:var(--bad);border-color:var(--bad)}
+.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.f{display:grid;gap:4px;min-width:0}
+.stepper,.task,.fields,.tasks,.panel>*{min-width:0}
+.task-top input{width:100%}
+.f label{font-size:12.5px;color:var(--muted)}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--sunk)}
+.stepper button{width:32px;height:36px;border:none;background:transparent;cursor:pointer;font-size:17px;color:var(--ink-2);flex:none}
+.stepper button:hover{background:var(--grid)}
+.stepper input{width:100%;min-width:0;border:none;background:transparent;text-align:center;font-family:var(--f-data);font-size:15px;height:36px;-moz-appearance:textfield;direction:ltr}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.task-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:none;background:transparent;padding:5px 10px;font-size:13px;cursor:pointer;color:var(--ink-2)}
+.seg button+button{border-inline-start:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.seg-label{font-size:12.5px;color:var(--muted);margin-inline-end:6px}
+.task-sum{font-size:14px;color:var(--ink-2)}
+.task-sum b{font-family:var(--f-data);color:var(--ink)}
+
+.settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border-top:1px solid var(--line);padding-top:16px}
+
+/* results */
+.results{position:sticky;top:76px;gap:18px}
+.big{display:grid;gap:2px}
+.big>span{font-size:14px;color:var(--muted)}
+.big b{font-family:var(--f-data);font-size:clamp(40px,6vw,56px);font-weight:500;line-height:1.1;color:var(--ink)}
+.big b small{font-family:var(--f-body);font-size:18px;color:var(--ink-2);font-weight:500;margin-inline-start:6px}
+.periods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.periods div{padding:10px 12px;display:grid;gap:2px}
+.periods div+div{border-inline-start:1px solid var(--line)}
+.periods span{font-size:12.5px;color:var(--muted)}
+.periods b{font-family:var(--f-data);font-weight:500;font-size:20px}
+.equiv{font-size:14.5px;color:var(--ink-2);background:var(--sunk);border-radius:8px;padding:10px 12px}
+.equiv b{color:var(--ink)}
+.cost{border-radius:12px;padding:14px 16px;background:var(--bad-soft);display:grid;gap:6px}
+.cost>span{font-size:13.5px;color:var(--ink-2)}
+.cost-row{display:flex;gap:8px 22px;flex-wrap:wrap}
+.cost-row b{font-family:var(--f-data);font-size:22px;font-weight:500;color:var(--ink)}
+.cost-row small{font-family:var(--f-body);font-size:13px;color:var(--ink-2);font-weight:500}
+.save{border-radius:12px;padding:14px 16px;background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-soft) 55%,var(--surface)));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;align-items:center}
+.save-text{display:grid;gap:4px}
+.donut{width:92px;height:92px;display:block}
+.donut .bg{fill:none;stroke:color-mix(in srgb,var(--accent) 18%,transparent);stroke-width:10}
+.donut .fg{fill:none;stroke:var(--accent);stroke-width:10;stroke-linecap:round;transition:stroke-dasharray .6s ease}
+.donut text{font-family:var(--f-data);font-size:17px;fill:var(--ink);font-weight:500}
+.donut .sub{font-family:var(--f-body);font-size:9px;fill:var(--ink-2)}
+.save-text>span{font-size:13.5px;color:var(--ink-2)}
+.save b{font-family:var(--f-data);font-size:26px;font-weight:500;color:var(--ink)}
+.save .money{font-size:14.5px;color:var(--ink)}
+.chart{display:grid;gap:10px}
+.chart-legend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.chart-legend i{display:inline-block;width:12px;height:8px;border-radius:2px;margin-inline-end:6px;vertical-align:middle}
+.bar-row{display:grid;gap:4px}
+.bar-row .lbl{display:flex;justify-content:space-between;gap:10px;font-size:13.5px}
+.bar-row .lbl span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.bar-row .lbl .num{color:var(--ink-2);flex:none}
+.track{display:flex;height:12px;gap:2px}
+.track i{display:block;height:100%;transition:width .35s}
+.track i.a{background:var(--accent);border-radius:0 4px 4px 0}
+.track i.r{background:var(--warm-mute);border-radius:4px 0 0 4px}
+.insight{font-size:14.5px;line-height:1.7}
+.insight b{color:var(--accent)}
+.cta-col{display:grid;gap:8px}
+.note{font-size:12.5px;color:var(--muted)}
+.talk{border-radius:14px;padding:20px;background:radial-gradient(120% 90% at 100% 0%,var(--deep-2),var(--deep));color:var(--on-deep);display:grid;gap:12px;animation:pop .45s ease;position:relative;overflow:hidden}
+.talk::after{content:"";position:absolute;inset-inline-start:-40px;bottom:-40px;width:140px;height:140px;border-radius:50%;border:18px solid rgba(255,255,255,.06);pointer-events:none}
+.talk>*{position:relative}
+.talk h3{font-size:19px;font-weight:600}
+.talk h3 .num{color:var(--mint)}
+.talk p{font-size:14.5px;opacity:.85}
+.talk .btn{width:100%}
+.wa-btn{background:#1FA855;border-color:#1FA855;color:#fff;font-weight:600}
+.wa-btn:hover{filter:brightness(1.08)}
+.talk-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.talk-row .btn{background:rgba(255,255,255,.06);color:var(--on-deep);border-color:rgba(255,255,255,.3)}
+.talk-row .btn:hover{border-color:#fff}
+.talk-info{display:grid;gap:2px;font-size:13px;opacity:.85}
+.talk-info b{overflow-wrap:anywhere;font-weight:500}
+.talk .btn.link{color:var(--on-deep);opacity:.8;justify-self:center;width:auto}
+.empty{text-align:center;color:var(--muted);padding:28px 10px;border:1px dashed var(--line);border-radius:12px}
+
+
+/* cost card in warm tones */
+.cost{background:linear-gradient(135deg,var(--warm-soft),color-mix(in srgb,var(--warm-soft) 50%,var(--surface)))!important;border:1px solid color-mix(in srgb,var(--warm) 30%,transparent)}
+.cost>span{color:var(--warm-ink)!important;font-weight:600}
+.cost-row b{color:var(--warm-ink)!important}
+.periods{background:var(--sunk)}
+.big b{display:flex;align-items:baseline;gap:6px}
+.big .clk{width:30px;height:30px;color:var(--warm);align-self:center}
+.big .clk .h{transform-origin:12px 12px;animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* hero illustration: time drips into coins on the left, automation gives it back on the right */
+.hero-art .face{fill:var(--surface);stroke:var(--line);stroke-width:2}
+.hero-art .tick{stroke:var(--muted);stroke-width:2;stroke-linecap:round}
+.hero-art .min{stroke:var(--ink);stroke-width:4;stroke-linecap:round;transform-origin:150px 104px;animation:spin 5s linear infinite}
+.hero-art .hr{stroke:var(--warm);stroke-width:5;stroke-linecap:round;transform-origin:150px 104px;animation:spin 60s linear infinite}
+.hero-art .hub{fill:var(--warm)}
+.hero-art .coin{fill:var(--coin);stroke:var(--coin-2);stroke-width:1.5}
+.hero-art .coin-top{fill:color-mix(in srgb,var(--coin) 70%,#fff)}
+.hero-art .drop{animation:drop 2.4s ease-in infinite}
+.hero-art .drop.d2{animation-delay:.8s}.hero-art .drop.d3{animation-delay:1.6s}
+@keyframes drop{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(-62px,92px);opacity:0}}
+.hero-art .arc{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;stroke-dasharray:6 8;animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.hero-art .gear{fill:var(--accent);transform-origin:258px 176px;animation:spin 7s linear infinite}
+.hero-art .gear-hole{fill:var(--surface)}
+.hero-art .lbl{font-family:var(--f-body);font-size:11px;fill:var(--ink-2)}
+.hero-art .glow{fill:var(--accent);opacity:.12}
+.hero-art .wglow{fill:var(--warm);opacity:.1}
+@media (max-width:900px){.intro{grid-template-columns:minmax(0,1fr)}.hero-art{max-width:280px;order:-1}}
+@media (prefers-reduced-motion:reduce){.hero-art *{animation:none!important}}
+footer{padding-block:24px 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .results{position:static}
+}
+@media (max-width:560px){
+  .wrap{padding-inline:16px}
+  .fields{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .fields .f:last-child{grid-column:1/-1}
+  .settings{grid-template-columns:minmax(0,1fr)}
+  .panel{padding:16px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../" aria-label="Agentiq، العودة للصفحة الرئيسية"><span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.6" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.6" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.6"/></svg></span><span lang="en">Agentiq</span></a>
+    <div class="nav-r">
+      <a class="btn sm" href="../#services">خدماتنا</a>
+      <button class="icon-btn" id="theme" type="button" aria-label="تبديل الوضع الفاتح والداكن"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="intro-text">
+    <span class="eyebrow">أداة مجانية · دقيقتان</span>
+    <h1>كم ساعة وكم ريال تكلفك الأعمال اليدوية؟</h1>
+    <p>اكتب أعمالك اليومية المتكررة، وكم تأخذ من وقتك، وكم تكلفك ساعة العمل. تطلع لك مباشرة: الساعات التي تقضيها، وتكلفتها عليك، وكم توفّر عليك الأتمتة.</p>
+    <div class="steps-mini"><span><b>1</b>اكتب أعمالك</span><span><b>2</b>الوقت والتكرار</span><span><b>3</b>تكلفة الساعة</span><span><b>4</b>الساعات والتكلفة والتوفير</span></div>
+    </div>
+    <svg class="hero-art" viewBox="0 0 300 220" role="img" aria-label="ساعة تتسرب منها عملات، وترس الأتمتة يعيد الوقت">
+      <circle class="wglow" cx="62" cy="186" r="44"/><circle class="glow" cx="258" cy="176" r="40"/>
+      <circle class="face" cx="150" cy="104" r="78"/>
+      <g><line class="tick" x1="150.0" y1="38.0" x2="150.0" y2="32.0"/><line class="tick" x1="183.0" y1="46.8" x2="186.0" y2="41.6"/><line class="tick" x1="207.2" y1="71.0" x2="212.4" y2="68.0"/><line class="tick" x1="216.0" y1="104.0" x2="222.0" y2="104.0"/><line class="tick" x1="207.2" y1="137.0" x2="212.4" y2="140.0"/><line class="tick" x1="183.0" y1="161.2" x2="186.0" y2="166.4"/><line class="tick" x1="150.0" y1="170.0" x2="150.0" y2="176.0"/><line class="tick" x1="117.0" y1="161.2" x2="114.0" y2="166.4"/><line class="tick" x1="92.8" y1="137.0" x2="87.6" y2="140.0"/><line class="tick" x1="84.0" y1="104.0" x2="78.0" y2="104.0"/><line class="tick" x1="92.8" y1="71.0" x2="87.6" y2="68.0"/><line class="tick" x1="117.0" y1="46.8" x2="114.0" y2="41.6"/></g>
+      <line class="hr" x1="150" y1="104" x2="150" y2="66"/>
+      <line class="min" x1="150" y1="104" x2="150" y2="44"/>
+      <circle class="hub" cx="150" cy="104" r="7"/>
+      <g class="drop"><ellipse class="coin" cx="96" cy="120" rx="10" ry="4.5"/></g>
+      <g class="drop d2"><ellipse class="coin" cx="96" cy="120" rx="10" ry="4.5"/></g>
+      <g class="drop d3"><ellipse class="coin" cx="96" cy="120" rx="10" ry="4.5"/></g>
+      <ellipse class="coin" cx="40" cy="206" rx="20" ry="7"/><ellipse class="coin" cx="40" cy="198" rx="20" ry="7"/><ellipse class="coin" cx="40" cy="190" rx="20" ry="7"/><ellipse class="coin coin-top" cx="40" cy="182" rx="20" ry="7"/>
+      <ellipse class="coin" cx="78" cy="206" rx="18" ry="6.5"/><ellipse class="coin coin-top" cx="78" cy="198" rx="18" ry="6.5"/>
+      <text class="lbl" x="58" y="166" text-anchor="middle">تكلفة يدوية</text>
+      <path class="arc" d="M226 92 C 276 110, 286 140, 266 160"/>
+      <g class="gear"><path d="M258 156 l5 0 l2 7 l6 3 l6 -4 l4 4 l-4 6 l3 6 l7 2 l0 5 l-7 2 l-3 6 l4 6 l-4 4 l-6 -4 l-6 3 l-2 7 l-5 0 l-2 -7 l-6 -3 l-6 4 l-4 -4 l4 -6 l-3 -6 l-7 -2 l0 -5 l7 -2 l3 -6 l-4 -6 l4 -4 l6 4 l6 -3 z" transform="translate(-2.5 0)"/></g>
+      <circle class="gear-hole" cx="258" cy="176" r="7"/>
+      <text class="lbl" x="258" y="214" text-anchor="middle">وقت مسترجَع</text>
+    </svg>
+  </header>
+
+  <div class="layout">
+    <section class="panel" aria-labelledby="t-tasks">
+      <div class="panel-head">
+        <h2 id="t-tasks">١. أعمالك اليومية المتكررة</h2>
+        <button class="btn link" id="reset" type="button">ابدأ من جديد</button>
+      </div>
+      <p class="hint" id="example-hint">وضعنا ثلاث مهام كمثال. عدّلها أو احذفها وأضف مهامك.</p>
+      <div>
+        <p class="hint" style="margin-bottom:8px">أضف بضغطة:</p>
+        <div class="presets" id="presets"></div>
+      </div>
+      <ul class="tasks" id="tasks" aria-live="polite"></ul>
+      <div class="settings">
+        <div class="f"><label for="days">أيام العمل في الشهر</label>
+          <div class="stepper"><button type="button" data-step="-1" data-for="days" aria-label="إنقاص">−</button><input id="days" size="3" type="number" inputmode="numeric" min="1" max="31" value="22"><button type="button" data-step="1" data-for="days" aria-label="زيادة">+</button></div></div>
+        <div class="f"><label for="rate"><b style="color:var(--ink)">٢. كم تكلفك ساعة الموظف؟</b> (ر.س، الراتب ÷ ساعات العمل)</label>
+          <div class="stepper"><button type="button" data-step="-5" data-for="rate" aria-label="إنقاص">−</button><input id="rate" size="3" type="number" inputmode="numeric" min="0" max="2000" value="60"><button type="button" data-step="5" data-for="rate" aria-label="زيادة">+</button></div></div>
+      </div>
+    </section>
+
+    <aside class="panel results" aria-labelledby="t-res" aria-live="polite">
+      <h2 id="t-res">النتيجة</h2>
+      <div id="res-empty" class="empty" hidden>أضف مهمة واحدة على الأقل لتظهر النتيجة.</div>
+      <div id="res" style="display:grid;gap:18px">
+        <div class="big"><span>وقت الأعمال اليدوية يومياً</span><b><svg class="clk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path class="h" d="M12 12V7"/></svg><span id="r-day">0</span><small>ساعة</small></b></div>
+        <div class="periods">
+          <div><span>أسبوعياً</span><b id="r-week">0</b></div>
+          <div><span>شهرياً</span><b id="r-month">0</b></div>
+          <div><span>سنوياً</span><b id="r-year">0</b></div>
+        </div>
+        <p class="equiv" id="r-equiv"></p>
+        <div class="cost" id="cost-box">
+          <span>تكلفة هذه الأعمال عليك</span>
+          <div class="cost-row"><b><span id="r-cost-m">0</span> <small>ر.س شهرياً</small></b><b><span id="r-cost-y">0</span> <small>ر.س سنوياً</small></b></div>
+        </div>
+        <div class="save">
+          <div class="save-text">
+          <span>توفّر عليك الأتمتة شهرياً</span>
+          <b><span id="r-save">0</span> ساعة <small class="num" id="r-save-pct" style="font-size:15px;color:var(--ink-2)"></small></b>
+          <span class="money" id="r-money"></span>
+          </div>
+          <svg class="donut" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="40"/><circle class="fg" id="donut-fg" cx="50" cy="50" r="40" transform="rotate(-90 50 50)" stroke-dasharray="0 251.3"/><text x="50" y="53" text-anchor="middle" id="donut-t">0%</text><text class="sub" x="50" y="68" text-anchor="middle">من الوقت</text></svg>
+        </div>
+        <div class="chart">
+          <div class="chart-legend"><span><i style="background:var(--accent)"></i>يمكن أتمتته</span><span><i style="background:var(--ghost)"></i>يبقى يدوياً</span><span>· ساعات شهرياً</span></div>
+          <div id="bars"></div>
+        </div>
+        <p class="insight" id="r-insight"></p>
+        <section class="talk" aria-labelledby="talk-h">
+          <h3 id="talk-h">جاهز توفّر <span class="num" id="talk-h-n">0</span> ساعة كل شهر؟</h3>
+          <p>تواصل معنا ونرسل لك خطة لأتمتة هذه المهام. نتيجتك تُرفق مع رسالتك تلقائياً.</p>
+          <a class="btn wa-btn" id="wa" href="https://wa.me/966557912466" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>تواصل معنا عبر واتساب</a>
+          <div class="talk-row">
+            <a class="btn" id="mail" href="mailto:s.e.alolayan@gmail.com">أرسل بالبريد</a>
+            <a class="btn" href="tel:+966557912466">اتصل بنا</a>
+          </div>
+          <div class="talk-info"><span>واتساب وجوال: <b class="num">0557 912 466</b></span><span>البريد: <b class="num">s.e.alolayan@gmail.com</b></span></div>
+          <button class="btn link" id="copy" type="button">انسخ النتيجة</button>
+        </section>
+        <p class="note" id="copy-msg">أرقام تقديرية مبنية على ما أدخلته. نحسب الأرقام الدقيقة معك في جلسة الفهم.</p>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer class="wrap"><span>© <span class="num" id="year">2026</span> <span lang="en">Agentiq</span></span><a href="../">العودة للصفحة الرئيسية</a></footer>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const fmt=(n,d=0)=>Number(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const fmtH=h=>h>=100?fmt(h):h>=10?fmt(h,0):fmt(h,1);
+  const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  $('#year').textContent=new Date().getFullYear();
+
+  // theme shared with the main site (same origin, same key)
+  const root=document.documentElement;
+  try{ const t=localStorage.getItem('theme'); if(t) root.dataset.theme=t; }catch(e){}
+  $('#theme').addEventListener('click',()=>{
+    const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme=dark?'light':'dark'; try{ localStorage.setItem('theme',root.dataset.theme); }catch(e){}
+  });
+
+  // automation potential: share of the task's time that automation typically removes
+  const LEVELS=[{k:'high',l:'عالية',v:.8},{k:'mid',l:'متوسطة',v:.5},{k:'low',l:'منخفضة',v:.2}];
+  const PRESETS=[
+    {n:'إدخال الطلبات في النظام',m:3,t:30,p:1,a:'high'},
+    {n:'نسخ البيانات بين الملفات',m:20,t:2,p:1,a:'high'},
+    {n:'إعداد التقرير اليومي',m:45,t:1,p:1,a:'high'},
+    {n:'تجميع أرقام الفروع',m:30,t:1,p:1,a:'high'},
+    {n:'متابعة المخزون',m:20,t:1,p:1,a:'high'},
+    {n:'إصدار الفواتير',m:5,t:15,p:1,a:'mid'},
+    {n:'الرد على الاستفسارات المتكررة',m:4,t:25,p:1,a:'mid'},
+    {n:'جدولة المواعيد وتأكيدها',m:3,t:20,p:1,a:'mid'},
+    {n:'طلبات الموافقة ومتابعتها',m:10,t:4,p:1,a:'mid'},
+  ];
+  const EXAMPLE=[0,2,6];
+  let tasks=[], seq=0, isExample=false;
+
+  function load(){
+    try{ const raw=localStorage.getItem('agentiq-hours'); if(raw){ const d=JSON.parse(raw); if(Array.isArray(d.tasks)){ tasks=d.tasks.map(t=>({...t,id:++seq})); $('#days').value=d.days||22; $('#rate').value=d.rate??60; isExample=!!d.example; return; } } }catch(e){}
+    tasks=EXAMPLE.map(i=>({...PRESETS[i],id:++seq})); isExample=true;
+  }
+  function save(){ try{ localStorage.setItem('agentiq-hours',JSON.stringify({tasks:tasks.map(({id,...t})=>t),days:+$('#days').value,rate:+$('#rate').value,example:isExample})); }catch(e){} }
+  const clamp=(v,lo,hi)=>Math.min(hi,Math.max(lo,Number.isFinite(+v)?+v:lo));
+  const dayMin=t=>t.m*t.t*t.p;
+
+  // ---------- presets ----------
+  function drawPresets(){
+    $('#presets').innerHTML=PRESETS.map((p,i)=>{ const used=tasks.some(t=>t.n===p.n); return `<button class="preset" type="button" data-i="${i}" ${used?'disabled aria-disabled="true"':''}>${used?'✓ ':'+ '}${p.n}</button>`; }).join('')+`<button class="preset other" type="button" data-i="new">+ مهمة أخرى</button>`;
+  }
+  $('#presets').addEventListener('click',e=>{
+    const b=e.target.closest('.preset'); if(!b||b.disabled) return;
+    const t=b.dataset.i==='new'?{n:'',m:10,t:1,p:1,a:'mid'}:{...PRESETS[+b.dataset.i]};
+    t.id=++seq; tasks.push(t); isExample=false; drawTasks(t.id); update();
+    if(b.dataset.i==='new') document.querySelector(`[data-id="${t.id}"] .tname`).focus();
+  });
+
+  // ---------- task rows ----------
+  const stepper=(id,key,val,label,step,unit)=>`<div class="f"><label for="${key}-${id}">${label}</label><div class="stepper"><button type="button" data-step="-${step}" data-for="${key}-${id}" aria-label="إنقاص ${label}">−</button><input id="${key}-${id}" data-k="${key}" type="number" inputmode="numeric" min="0" size="3" value="${val}"><button type="button" data-step="${step}" data-for="${key}-${id}" aria-label="زيادة ${label}">+</button></div></div>`;
+  function drawTasks(newId){
+    $('#tasks').innerHTML=tasks.map(t=>`<li class="task${t.id===newId?' new':''}" data-id="${t.id}">
+      <div class="task-top"><label class="sr-only" for="n-${t.id}">اسم المهمة</label><input class="tname" id="n-${t.id}" data-k="n" value="${esc(t.n)}" placeholder="اكتب اسم المهمة" maxlength="60"><button class="del" type="button" aria-label="حذف ${esc(t.n||'المهمة')}">✕</button></div>
+      <div class="fields">${stepper(t.id,'m',t.m,'دقائق في المرة',1)}${stepper(t.id,'t',t.t,'مرات في اليوم',1)}${stepper(t.id,'p',t.p,'عدد الموظفين',1)}</div>
+      <div class="task-foot"><div><span class="seg-label" id="al-${t.id}">قابلية الأتمتة</span><span class="seg" role="group" aria-labelledby="al-${t.id}">${LEVELS.map(l=>`<button type="button" data-a="${l.k}" aria-pressed="${t.a===l.k}">${l.l}</button>`).join('')}</span></div>
+      <span class="task-sum" data-sum></span></div></li>`).join('');
+    drawPresets(); $('#example-hint').hidden=!isExample;
+  }
+  const taskOf=el=>tasks.find(t=>t.id===+el.closest('.task').dataset.id);
+  $('#tasks').addEventListener('input',e=>{
+    const k=e.target.dataset.k; if(!k) return; const t=taskOf(e.target);
+    t[k]= k==='n' ? e.target.value : clamp(e.target.value,0,k==='m'?600:k==='t'?500:200);
+    isExample=false; $('#example-hint').hidden=true; update(true);
+  });
+  $('#tasks').addEventListener('click',e=>{
+    const del=e.target.closest('.del'); if(del){ const t=taskOf(del); tasks=tasks.filter(x=>x!==t); isExample=false; drawTasks(); update(); return; }
+    const seg=e.target.closest('[data-a]'); if(seg){ const t=taskOf(seg); t.a=seg.dataset.a; seg.parentElement.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b===seg)); update(true); return; }
+  });
+  // steppers (task rows and settings)
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('[data-step]'); if(!b) return;
+    const inp=document.getElementById(b.dataset.for); const max=+inp.max||600;
+    inp.value=clamp((+inp.value||0)+(+b.dataset.step),+inp.min||0,max);
+    inp.dispatchEvent(new Event('input',{bubbles:true}));
+  });
+  ['days','rate'].forEach(id=>$('#'+id).addEventListener('input',()=>update(true)));
+
+  // ---------- results ----------
+  let summary='';
+  function update(skipRows){
+    const days=clamp($('#days').value,1,31), rate=clamp($('#rate').value,0,2000);
+    const rows=tasks.map(t=>{ const d=dayMin(t); const lv=LEVELS.find(l=>l.k===t.a)||LEVELS[1]; const mH=d/60*days; return {t,d,mH,auto:mH*lv.v}; });
+    // per-row totals
+    $$('.task').forEach(li=>{ const r=rows.find(x=>x.t.id===+li.dataset.id); if(r) li.querySelector('[data-sum]').innerHTML=`<b>${fmtH(r.mH)}</b> ساعة شهرياً`+(rate>0?` · <b>${fmt(r.mH*rate)}</b> ر.س`:''); });
+    const valid=rows.filter(r=>r.d>0);
+    $('#res-empty').hidden=valid.length>0; $('#res').hidden=!valid.length;
+    save();
+    if(!valid.length){ summary=''; return; }
+    const dayH=valid.reduce((s,r)=>s+r.d,0)/60, monthH=dayH*days, yearH=monthH*12, weekH=yearH/52;
+    const saveH=valid.reduce((s,r)=>s+r.auto,0), pct=saveH/monthH*100;
+    $('#r-day').textContent=fmtH(dayH); $('#r-week').textContent=fmtH(weekH); $('#r-month').textContent=fmtH(monthH); $('#r-year').textContent=fmt(yearH);
+    const workDays=yearH/8, months=workDays/days;
+    $('#r-equiv').innerHTML=`هذا يعادل <b class="num">${fmt(workDays)}</b> يوم عمل كامل في السنة${months>=1?`، أي قرابة <b class="num">${fmt(months,1)}</b> شهر عمل لموظف واحد`:''}.`;
+    $('#r-save').textContent=fmtH(saveH);
+    { const C=2*Math.PI*40; $('#donut-fg').setAttribute('stroke-dasharray',`${C*pct/100} ${C}`); $('#donut-t').textContent=fmt(pct)+'%'; } $('#r-save-pct').textContent=`(${fmt(pct)}%)`;
+    $('#cost-box').hidden=!(rate>0); $('#r-cost-m').textContent=fmt(monthH*rate); $('#r-cost-y').textContent=fmt(yearH*rate);
+    $('#r-money').innerHTML=rate>0?`أي <b class="num">${fmt(saveH*rate)}</b> ر.س شهرياً · <b class="num">${fmt(saveH*rate*12)}</b> ر.س سنوياً`:'أدخل تكلفة ساعة الموظف لترى التوفير بالريال.';
+    const sorted=[...valid].sort((a,b)=>b.mH-a.mH), max=sorted[0].mH;
+    $('#bars').innerHTML=sorted.map(r=>`<div class="bar-row"><div class="lbl"><span>${esc(r.t.n||'مهمة بدون اسم')}</span><span class="num">${fmtH(r.mH)} س</span></div><div class="track" role="img" aria-label="${esc(r.t.n||'مهمة')}: ${fmtH(r.mH)} ساعة شهرياً، منها ${fmtH(r.auto)} يمكن أتمتتها"><i class="a" style="width:${r.auto/max*100}%"></i><i class="r" style="width:${(r.mH-r.auto)/max*100}%"></i></div></div>`).join('');
+    const top=sorted[0];
+    $('#r-insight').innerHTML=`أكثر مهمة تأخذ وقتكم: <b>${esc(top.t.n||'مهمة بدون اسم')}</b> بواقع <span class="num">${fmtH(top.mH)}</span> ساعة شهرياً. ${top.t.a==='low'?'قابليتها للأتمتة منخفضة، فابدأ بالمهمة التي تليها.':'ابدأ بها، فهي أسرع طريق لاسترجاع الوقت.'}`;
+    summary=['نتيجة حاسبة الوقت اليدوي (Agentiq):',
+      ...sorted.map(r=>`- ${r.t.n||'مهمة'}: ${r.t.m} دقيقة × ${r.t.t} مرة × ${r.t.p} موظف = ${fmtH(r.mH)} ساعة شهرياً`),
+      `الإجمالي: ${fmtH(dayH)} ساعة يومياً، ${fmtH(monthH)} ساعة شهرياً، ${fmt(yearH)} ساعة سنوياً.`,
+      ...(rate>0?[`التكلفة الحالية: ${fmt(monthH*rate)} ر.س شهرياً (${fmt(yearH*rate)} ر.س سنوياً).`]:[]),
+      `توفّر الأتمتة قرابة ${fmtH(saveH)} ساعة شهرياً`+(rate>0?` (${fmt(saveH*rate*12)} ر.س سنوياً).`:'.'),
+      'أرغب بمناقشة أتمتة هذه المهام.'].join('\n');
+    $('#wa').href='https://wa.me/966557912466?text='+encodeURIComponent(summary);
+    $('#mail').href='mailto:s.e.alolayan@gmail.com?subject='+encodeURIComponent('أتمتة الأعمال اليدوية: '+fmtH(saveH)+' ساعة شهرياً')+'&body='+encodeURIComponent(summary);
+    $('#talk-h-n').textContent=fmtH(saveH);
+    if(!skipRows) drawPresets();
+  }
+  $('#copy').addEventListener('click',()=>{
+    const m=$('#copy-msg'), old='أرقام تقديرية مبنية على ما أدخلته. نحسب الأرقام الدقيقة معك في جلسة الفهم.';
+    const ok=()=>{ m.textContent='تم نسخ النتيجة.'; setTimeout(()=>m.textContent=old,2200); };
+    try{ navigator.clipboard.writeText(summary).then(ok,()=>{ m.textContent='لم ينجح النسخ. استخدم زر واتساب بدلاً منه.'; }); }catch(e){ m.textContent='لم ينجح النسخ. استخدم زر واتساب بدلاً منه.'; }
+  });
+  $('#reset').addEventListener('click',()=>{ tasks=[]; isExample=false; drawTasks(); update(); });
+
+  load(); drawTasks(); update();
+})();
+</script>
+</body>
+</html>
