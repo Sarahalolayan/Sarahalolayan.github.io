@@ -7,6 +7,9 @@
 <meta name="theme-color" content="#121B20" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#EEF2F1" media="(prefers-color-scheme: light)">
 <link rel="canonical" href="https://sarahalolayan.github.io/">
+<link rel="alternate" hreflang="ar" href="https://sarahalolayan.github.io/">
+<link rel="alternate" hreflang="en" href="https://sarahalolayan.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://sarahalolayan.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E6E6B'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='12.5' cy='19' r='2' fill='white'/%3E%3Ccircle cx='19.5' cy='19' r='2' fill='white'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Agentiq">
@@ -77,6 +80,7 @@ button,select,input{font:inherit;color:inherit}
 .icon-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer}
 .icon-btn:hover{border-color:var(--ink-2)}
 .menu-btn{display:none}
+.lang-link{font-size:13.5px;font-weight:600;padding:6px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink-2);background:var(--surface)}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;font-weight:500;font-size:15px}
@@ -546,6 +550,11 @@ main:focus{outline:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 
+<script src="/assets/agentiq-config.js" defer></script>
+<script>
+// count WhatsApp and call clicks once visitor statistics are switched on (see /assets/agentiq-config.js)
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"],a[href^="tel:"]');if(!a)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'click/'+(a.href.indexOf('wa.me')>-1?'whatsapp':'call')+':'+location.pathname,title:'click',event:true});}catch(err){}});
+</script>
 </head>
 <body>
 <a class="skip" href="#top">تخطَّ إلى المحتوى</a>
@@ -560,6 +569,7 @@ main:focus{outline:none}
       <a href="#faq">الأسئلة</a>
     </div>
     <div style="display:flex;gap:8px;align-items:center">
+      <a class="lang-link" href="en/" lang="en" hreflang="en">EN</a>
       <a class="btn primary sm nav-cta" href="#contact">ابدأ مشروعك</a>
       <button class="icon-btn motion-btn" id="motion" type="button" aria-pressed="false" aria-label="إيقاف الحركة" title="إيقاف الحركة"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6v12M15 6v12"/></svg></button>
       <button class="icon-btn" id="theme" type="button" aria-label="الوضع الداكن" aria-pressed="false" title="تبديل الوضع"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
@@ -635,7 +645,7 @@ main:focus{outline:none}
         <span class="gets-label">ماذا تستلم</span>
         <ul><li>شاشة تتحدّث تلقائياً بدون إدخال يدوي</li><li>مقارنة باليوم السابق وبالهدف</li><li>تنبيه فوري وملخص مكتوب آخر كل يوم</li></ul>
         <div class="swap"><small>بدلاً من</small><span class="from">تجميع الأرقام من عدة ملفات كل يوم</span><small>تصبح</small><span class="to">أرقامك أمامك في شاشة واحدة</span></div>
-        <div class="svc-links"><a href="#lab" data-tab="store">جرّب مثالاً حياً ←</a><a href="https://sarahalolayan.github.io/nabd-alnadi/" target="_blank" rel="noopener">نبض النادي ↗</a></div>
+        <div class="svc-links"><a href="services/dashboards/"><b>تفاصيل الخدمة ←</b></a><a href="#lab" data-tab="store">جرّب مثالاً حياً ←</a><a href="https://sarahalolayan.github.io/nabd-alnadi/" target="_blank" rel="noopener">نبض النادي ↗</a></div>
       </article>
       <article class="service spot">
         <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
@@ -657,7 +667,7 @@ main:focus{outline:none}
         <span class="gets-label">ماذا تستلم</span>
         <ul><li>نقل البيانات بين أنظمتك تلقائياً</li><li>تقارير تصلك واتساب أو بريد في موعدها</li><li>طلبات وموافقات إلكترونية بدون أوراق</li></ul>
         <div class="swap"><small>بدلاً من</small><span class="from">كتابة التقرير يدوياً آخر كل يوم</span><small>يصبح</small><span class="to">التقرير يصلك جاهزاً في موعده</span></div>
-        <div class="svc-links"><a href="#lab" data-tab="auto">شغّل مثالاً حياً ←</a><a href="hours/">احسب تكلفة مهامك ←</a></div>
+        <div class="svc-links"><a href="services/automation/"><b>تفاصيل الخدمة ←</b></a><a href="#lab" data-tab="auto">شغّل مثالاً حياً ←</a><a href="hours/">احسب تكلفة مهامك ←</a></div>
       </article>
       <article class="service spot">
         <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
@@ -678,7 +688,7 @@ main:focus{outline:none}
         <span class="gets-label">ماذا تستلم</span>
         <ul><li>موقع لنشاطك التجاري، أو موقع شخصي يعرض خبراتك</li><li>تصميم خاص بهويتك مع معرض لأعمالك</li><li>نموذج حجز أو طلب سعر يصلك على واتساب</li></ul>
         <div class="swap"><small>بدلاً من</small><span class="from">طلبات متفرقة في الرسائل بدون تفاصيل</span><small>يصبح</small><span class="to">طلب كامل التفاصيل يصلك جاهزاً</span></div>
-        <div class="svc-links"><a href="https://sarahalolayan.github.io/demos/bahrawi/" target="_blank" rel="noopener">نموذج موقع استديو تصوير ↗</a></div>
+        <div class="svc-links"><a href="services/websites/"><b>تفاصيل الخدمة ←</b></a><a href="https://sarahalolayan.github.io/demos/bahrawi/" target="_blank" rel="noopener">نموذج موقع استديو تصوير ↗</a></div>
       </article>
       <article class="service spot">
         <svg class="illo" viewBox="0 0 260 110" aria-hidden="true">
@@ -698,7 +708,7 @@ main:focus{outline:none}
         <span class="gets-label">ماذا تستلم</span>
         <ul><li>خطوات عمل موثقة ومبسطة</li><li>قواعد واضحة لمن يرى ماذا من البيانات</li><li>متابعة الالتزام بتقارير دورية</li></ul>
         <div class="swap"><small>بدلاً من</small><span class="from">طلبات وموافقات بالرسائل والأوراق</span><small>تصبح</small><span class="to">خطوات واضحة يعرفها الجميع</span></div>
-        <div class="svc-links"><a href="#work" data-filter="gov">أمثلة من خبرتنا ←</a></div>
+        <div class="svc-links"><a href="services/process/"><b>تفاصيل الخدمة ←</b></a><a href="#work" data-filter="gov">أمثلة من خبرتنا ←</a></div>
       </article>
     </div>
     <div style="display:grid;gap:10px"><span class="muted" style="font-size:14px">نربط مع:</span><ul class="sr-only"><li>Google Sheets</li><li>Excel</li><li>سلة</li><li>زد</li><li>Foodics</li><li>واتساب</li><li>البريد الإلكتروني</li><li>قواعد بيانات SQL</li><li>Google Drive</li><li>CRM</li><li>نماذج إلكترونية</li><li>أي نظام فيه API</li></ul><div class="marquee" aria-hidden="true"><div class="marquee-track" aria-hidden="true"><span>Google Sheets</span><span>Excel</span><span>سلة</span><span>زد</span><span>Foodics</span><span>واتساب</span><span>البريد الإلكتروني</span><span>قواعد بيانات SQL</span><span>Google Drive</span><span>CRM</span><span>نماذج إلكترونية</span><span>أي نظام فيه API</span><span>Google Sheets</span><span>Excel</span><span>سلة</span><span>زد</span><span>Foodics</span><span>واتساب</span><span>البريد الإلكتروني</span><span>قواعد بيانات SQL</span><span>Google Drive</span><span>CRM</span><span>نماذج إلكترونية</span><span>أي نظام فيه API</span></div></div></div>
@@ -935,7 +945,7 @@ main:focus{outline:none}
 <button class="to-top" id="to-top" type="button" aria-label="العودة لأعلى الصفحة"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <a class="fab" id="fab" href="https://wa.me/966557912466" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg><span>واتساب</span></a>
 </main>
-<footer class="wrap"><span>© <span class="num" id="year">2026</span> <span class="en" lang="en">Agentiq</span></span><span>الرياض، المملكة العربية السعودية</span></footer>
+<footer class="wrap"><span>© <span class="num" id="year">2026</span> <span class="en" lang="en">Agentiq</span></span><span>الرياض، المملكة العربية السعودية · <a href="en/" lang="en" style="color:inherit">English</a></span></footer>
 
 <script>
 (function(){

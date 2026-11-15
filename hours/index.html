@@ -223,6 +223,11 @@ footer{padding-block:24px 40px;color:var(--muted);font-size:13px;border-top:1px 
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<script src="/assets/agentiq-config.js" defer></script>
+<script>
+// count WhatsApp and call clicks once visitor statistics are switched on (see /assets/agentiq-config.js)
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"],a[href^="tel:"]');if(!a)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'click/'+(a.href.indexOf('wa.me')>-1?'whatsapp':'call')+':'+location.pathname,title:'click',event:true});}catch(err){}});
+</script>
 </head>
 <body>
 <nav class="nav">
