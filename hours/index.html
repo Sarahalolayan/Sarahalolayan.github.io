@@ -6,8 +6,8 @@
 <title>حاسبة تكلفة الأعمال اليدوية | Agentiq</title>
 <meta name="description" content="احسب كم ساعة يقضي فريقك في الأعمال اليدوية المتكررة يومياً وشهرياً وسنوياً، وكم منها يمكن أتمتته. أداة مجانية من Agentiq.">
 <link rel="canonical" href="https://sarahalolayan.github.io/hours/">
-<meta name="theme-color" content="#0C131B" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#EDF1F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121B20" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEF2F1" media="(prefers-color-scheme: light)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E6E6B'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Agentiq">
@@ -25,23 +25,23 @@
 [hidden]{display:none!important}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 :root{
-  --bg:#EDF1F4; --surface:#FFFFFF; --sunk:#F4F7F9; --ink:#122033; --ink-2:#3E4C5C; --muted:#56636F; --line:#D6DDE5; --grid:#E4E9EE;
-  --accent:#0E6E6B; --accent-ink:#FFFFFF; --accent-soft:#D6ECEA;
-  --bad:#A0310A; --bad-soft:#F9E0D6; --ghost:#B7C2CD;
-  --warm:#B45309; --warm-ink:#7C2D12; --warm-soft:#FDEEDF; --warm-mute:#E9C9AA; --coin:#E8A33D; --coin-2:#C9821F;
-  --deep:#0A4F4D; --deep-2:#0E6E6B; --on-deep:#FFFFFF; --mint:#A7E8DF;
+  --bg:#EEF2F1; --surface:#FAFCFB; --sunk:#F2F6F5; --ink:#1E2C33; --ink-2:#46555C; --muted:#5C6B70; --line:#D9E2E0; --grid:#E6ECEA;
+  --accent:#2B7A74; --accent-ink:#FFFFFF; --accent-soft:#DDEEEA;
+  --bad:#A0310A; --bad-soft:#F9E0D6; --ghost:#B4C1BF;
+  --warm:#9C6B45; --warm-ink:#6E4A30; --warm-soft:#F4ECE3; --warm-mute:#DCCDBE; --coin:#D3A464; --coin-2:#B08347;
+  --deep:#24625D; --deep-2:#2B7A74; --on-deep:#FFFFFF; --mint:#BFE6DF;
   --f-display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;
   --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
   --f-data:"IBM Plex Mono",ui-monospace,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0C131B; --surface:#131D28; --sunk:#0F1821; --ink:#E4EBF2; --ink-2:#BCC8D4; --muted:#93A2B2; --line:#243241; --grid:#1D2935;
-  --accent:#3DB5AD; --accent-ink:#06201F; --accent-soft:#12312F; --bad:#F2875E; --bad-soft:#3A1E14; --ghost:#3A4B5C; --warm:#F4A261; --warm-ink:#F8C9A0; --warm-soft:#2A1B10; --warm-mute:#6B4A30; --coin:#E8A33D; --coin-2:#B87414;
-  --deep:#0F4A47; --deep-2:#13615D; --on-deep:#FFFFFF; --mint:#8FE0D5; color-scheme:dark}}
+  --bg:#121B20; --surface:#18242A; --sunk:#151F25; --ink:#D5DFE0; --ink-2:#AFBDBF; --muted:#8A9A9C; --line:#273539; --grid:#202D32;
+  --accent:#5FAFA6; --accent-ink:#0E2422; --accent-soft:#1C3633; --bad:#F2875E; --bad-soft:#3A1E14; --ghost:#3B4C4E; --warm:#CFA27C; --warm-ink:#E3C3A6; --warm-soft:#29231E; --warm-mute:#55473B; --coin:#D3A464; --coin-2:#A07A45;
+  --deep:#1C4B47; --deep-2:#245A55; --on-deep:#FFFFFF; --mint:#A9D9D1; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0C131B; --surface:#131D28; --sunk:#0F1821; --ink:#E4EBF2; --ink-2:#BCC8D4; --muted:#93A2B2; --line:#243241; --grid:#1D2935;
-  --accent:#3DB5AD; --accent-ink:#06201F; --accent-soft:#12312F; --bad:#F2875E; --bad-soft:#3A1E14; --ghost:#3A4B5C; --warm:#F4A261; --warm-ink:#F8C9A0; --warm-soft:#2A1B10; --warm-mute:#6B4A30; --coin:#E8A33D; --coin-2:#B87414;
-  --deep:#0F4A47; --deep-2:#13615D; --on-deep:#FFFFFF; --mint:#8FE0D5; color-scheme:dark}
+  --bg:#121B20; --surface:#18242A; --sunk:#151F25; --ink:#D5DFE0; --ink-2:#AFBDBF; --muted:#8A9A9C; --line:#273539; --grid:#202D32;
+  --accent:#5FAFA6; --accent-ink:#0E2422; --accent-soft:#1C3633; --bad:#F2875E; --bad-soft:#3A1E14; --ghost:#3B4C4E; --warm:#CFA27C; --warm-ink:#E3C3A6; --warm-soft:#29231E; --warm-mute:#55473B; --coin:#D3A464; --coin-2:#A07A45;
+  --deep:#1C4B47; --deep-2:#245A55; --on-deep:#FFFFFF; --mint:#A9D9D1; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;direction:rtl}
@@ -166,11 +166,12 @@ button,select,input{font:inherit;color:inherit}
 .talk h3 .num{color:var(--mint)}
 .talk p{font-size:14.5px;opacity:.85}
 .talk .btn{width:100%}
-.wa-btn{background:#1FA855;border-color:#1FA855;color:#fff;font-weight:600}
+.wa-btn{background:var(--mint);border-color:var(--mint);color:#123C38;font-weight:600}
 .wa-btn:hover{filter:brightness(1.08)}
 .talk-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .talk-row .btn{background:rgba(255,255,255,.06);color:var(--on-deep);border-color:rgba(255,255,255,.3)}
 .talk-row .btn:hover{border-color:#fff}
+.call-btn{background:rgba(255,255,255,.06)!important;color:var(--on-deep)!important;border-color:rgba(255,255,255,.3)!important}
 .talk-info{display:grid;gap:2px;font-size:13px;opacity:.85}
 .talk-info b{overflow-wrap:anywhere;font-weight:500}
 .talk .btn.link{color:var(--on-deep);opacity:.8;justify-self:center;width:auto}
@@ -312,13 +313,10 @@ footer{padding-block:24px 40px;color:var(--muted);font-size:13px;border-top:1px 
         <p class="insight" id="r-insight"></p>
         <section class="talk" aria-labelledby="talk-h">
           <h3 id="talk-h">جاهز توفّر <span class="num" id="talk-h-n">0</span> ساعة كل شهر؟</h3>
-          <p>تواصل معنا ونرسل لك خطة لأتمتة هذه المهام. نتيجتك تُرفق مع رسالتك تلقائياً.</p>
+          <p>تواصل معنا ونرسل لك خطة لأتمتة هذه المهام. نتيجتك تُرفق مع رسالة واتساب تلقائياً.</p>
           <a class="btn wa-btn" id="wa" href="https://wa.me/966557912466" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>تواصل معنا عبر واتساب</a>
-          <div class="talk-row">
-            <a class="btn" id="mail" href="mailto:s.e.alolayan@gmail.com">أرسل بالبريد</a>
-            <a class="btn" href="tel:+966557912466">اتصل بنا</a>
-          </div>
-          <div class="talk-info"><span>واتساب وجوال: <b class="num">0557 912 466</b></span><span>البريد: <b class="num">s.e.alolayan@gmail.com</b></span></div>
+          <a class="btn call-btn" href="tel:+966557912466">اتصل بنا</a>
+          <div class="talk-info"><span>واتساب وجوال: <b class="num">0557 912 466</b></span></div>
           <button class="btn link" id="copy" type="button">انسخ النتيجة</button>
         </section>
         <p class="note" id="copy-msg">أرقام تقديرية مبنية على ما أدخلته. نحسب الأرقام الدقيقة معك في جلسة الفهم.</p>
@@ -439,7 +437,6 @@ footer{padding-block:24px 40px;color:var(--muted);font-size:13px;border-top:1px 
       `توفّر الأتمتة قرابة ${fmtH(saveH)} ساعة شهرياً`+(rate>0?` (${fmt(saveH*rate*12)} ر.س سنوياً).`:'.'),
       'أرغب بمناقشة أتمتة هذه المهام.'].join('\n');
     $('#wa').href='https://wa.me/966557912466?text='+encodeURIComponent(summary);
-    $('#mail').href='mailto:s.e.alolayan@gmail.com?subject='+encodeURIComponent('أتمتة الأعمال اليدوية: '+fmtH(saveH)+' ساعة شهرياً')+'&body='+encodeURIComponent(summary);
     $('#talk-h-n').textContent=fmtH(saveH);
     if(!skipRows) drawPresets();
   }
