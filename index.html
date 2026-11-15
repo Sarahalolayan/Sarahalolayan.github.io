@@ -491,6 +491,27 @@ main:focus{outline:none}
 .promo p{color:var(--ink-2);font-size:15px;margin-top:4px}
 .promo .go{font-weight:600;color:var(--accent);white-space:nowrap}
 @media (max-width:600px){.promo{grid-template-columns:auto minmax(0,1fr)}.promo .go{grid-column:1/-1}}
+
+/* ---------- pricing ---------- */
+.plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+.plan{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 20px;display:grid;grid-template-rows:auto auto auto 1fr auto;gap:12px}
+.plan.pick{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 18px 40px -28px color-mix(in srgb,var(--accent) 70%,transparent)}
+.plan .flag{position:absolute;top:-11px;inset-inline-start:18px;font-size:12px;font-weight:600;padding:2px 10px;border-radius:99px;background:var(--accent);color:var(--accent-ink)}
+.plan h3{font-size:17px;font-weight:600;display:flex;gap:8px;align-items:center}
+.plan h3 svg{color:var(--accent);flex:none}
+.plan .for{font-size:14px;color:var(--ink-2);min-height:2.9em}
+.price{display:grid;gap:0}
+.price small{font-size:12.5px;color:var(--muted)}
+.price b{font-family:var(--f-data);font-size:30px;font-weight:500;line-height:1.2}
+.price b span{font-family:var(--f-body);font-size:14px;color:var(--ink-2);font-weight:500;margin-inline-start:4px}
+.plan ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;font-size:14px;align-content:start;border-top:1px solid var(--line);padding-top:12px}
+.plan li{display:flex;gap:8px}
+.plan li::before{content:"✓";color:var(--accent);font-weight:700;flex:none}
+.plan .btn{width:100%;justify-content:center}
+.plans-foot{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;align-items:center;font-size:14px;color:var(--muted)}
+.plans-foot a{font-weight:500}
+@media (max-width:1100px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.plans{grid-template-columns:minmax(0,1fr)}.plan .for{min-height:0}}
 @media (max-width:980px){
   .hero,.contact,.roi,.auto-grid,.mid,.summary{grid-template-columns:minmax(0,1fr)}
   .services,.work,.skills{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -526,7 +547,7 @@ main:focus{outline:none}
     <div class="links" id="links">
       <a href="#services">الخدمات</a>
       <a href="#work">أعمالنا</a>
-      <a href="#lab">جرّب بنفسك</a>
+      <a href="#pricing">الأسعار</a>
       <a href="hours/">احسب التوفير</a>
       <a href="#faq">الأسئلة</a>
     </div>
@@ -767,6 +788,52 @@ main:focus{outline:none}
     </ol>
   </section>
 
+  <!-- PRICING -->
+  <section class="block" id="pricing">
+    <div class="block-head">
+      <h2>الباقات والأسعار</h2>
+      <p>أسعار تبدأ منها، ويتحدد السعر النهائي بعد جلسة الفهم حسب حجم العمل. يصلك عرض مكتوب قبل أن نبدأ، بدون أي التزام.</p>
+    </div>
+    <div class="plans">
+      <article class="plan pick">
+        <span class="flag">أفضل بداية</span>
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H14a4 4 0 0 1 4 4v5.5"/></svg>أتمتة مهمة</h3>
+        <p class="for">لمهمة واحدة تتكرر يومياً وتريد أن تُنجز وحدها.</p>
+        <div class="price"><small>تبدأ من</small><b>2,000<span>ر.س</span></b></div>
+        <ul><li>مسار عمل مؤتمت واحد</li><li>ربط نظامين، مثل المتجر وExcel</li><li>تنبيه أو تقرير على واتساب أو البريد</li><li>توثيق ودعم 30 يوماً</li></ul>
+        <a class="btn primary" href="https://wa.me/966557912466?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A8%D8%A7%D9%82%D8%A9%20%C2%AB%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D9%85%D9%87%D9%85%D8%A9%C2%BB%20%D9%85%D9%86%20Agentiq." target="_blank" rel="noopener">اطلب هذه الباقة</a>
+      </article>
+      <article class="plan">
+        
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>شاشة متابعة</h3>
+        <p class="for">لمتابعة مبيعاتك أو طلباتك أو حضورك يومياً.</p>
+        <div class="price"><small>تبدأ من</small><b>3,500<span>ر.س</span></b></div>
+        <ul><li>شاشة بستة مؤشرات رئيسية</li><li>ربط مصدر بيانات واحد</li><li>تنبيهات فورية وملخص يومي</li><li>تدريب الفريق ودعم 30 يوماً</li></ul>
+        <a class="btn" href="https://wa.me/966557912466?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A8%D8%A7%D9%82%D8%A9%20%C2%AB%D8%B4%D8%A7%D8%B4%D8%A9%20%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9%C2%BB%20%D9%85%D9%86%20Agentiq." target="_blank" rel="noopener">اطلب هذه الباقة</a>
+      </article>
+      <article class="plan">
+        
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 8.5h18"/></svg>موقع إلكتروني</h3>
+        <p class="for">لنشاط يحتاج حضوراً على الإنترنت يجيب حجوزات وطلبات.</p>
+        <div class="price"><small>تبدأ من</small><b>3,000<span>ر.س</span></b></div>
+        <ul><li>حتى خمسة أقسام بتصميم خاص</li><li>معرض لأعمالك أو منتجاتك</li><li>نموذج حجز أو طلب سعر إلى واتساب</li><li>يعمل على الجوال وربط الدومين</li></ul>
+        <a class="btn" href="https://wa.me/966557912466?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A8%D8%A7%D9%82%D8%A9%20%C2%AB%D9%85%D9%88%D9%82%D8%B9%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%C2%BB%20%D9%85%D9%86%20Agentiq." target="_blank" rel="noopener">اطلب هذه الباقة</a>
+      </article>
+      <article class="plan">
+        
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>الدعم الشهري</h3>
+        <p class="for">لمن عنده نظام قائم ويريد من يتابعه ويطوّره.</p>
+        <div class="price"><small>من</small><b>800<span>ر.س / شهرياً</span></b></div>
+        <ul><li>متابعة عمل الأتمتة والشاشات</li><li>تعديلات صغيرة شهرياً</li><li>إضافة تنبيهات وتقارير جديدة</li><li>تقرير شهري بما تم</li></ul>
+        <a class="btn" href="https://wa.me/966557912466?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A8%D8%A7%D9%82%D8%A9%20%C2%AB%D8%A7%D9%84%D8%AF%D8%B9%D9%85%20%D8%A7%D9%84%D8%B4%D9%87%D8%B1%D9%8A%C2%BB%20%D9%85%D9%86%20Agentiq." target="_blank" rel="noopener">اطلب هذه الباقة</a>
+      </article>
+    </div>
+    <div class="plans-foot">
+      <span>تحتاج أكثر من خدمة؟ نجمعها لك في عرض واحد بسعر أقل.</span>
+      <a href="hours/">احسب كم توفّر قبل أن تقرر ←</a>
+    </div>
+  </section>
+
   <!-- LAB -->
   <section class="block" id="lab">
     <div class="block-head">
@@ -869,6 +936,7 @@ main:focus{outline:none}
       <details class="faq"><summary>هل أحتاج فريقاً تقنياً؟</summary><p>لا. نتولى البناء والربط، وفريقك يستخدم النتيجة فقط.</p></details>
       <details class="faq"><summary>من أين تأتي البيانات؟</summary><p>من الأنظمة التي تستخدمها حالياً، مثل Excel أو متجرك الإلكتروني أو قاعدة بياناتك.</p></details>
       <details class="faq"><summary>كيف تحمون البيانات؟</summary><p>نحدد صلاحيات الوصول لكل مستخدم، وتبقى البيانات ملكك.</p></details>
+      <details class="faq"><summary>كم التكلفة؟</summary><p>الأتمتة تبدأ من 2,000 ر.س، وشاشة المتابعة من 3,500 ر.س، والموقع من 3,000 ر.س. التفاصيل في <a href="#pricing">الباقات والأسعار</a>، والسعر النهائي يصلك مكتوباً قبل البدء.</p></details>
       <details class="faq"><summary>كم يستغرق المشروع؟</summary><p>حسب حجمه. نحدد المدة بعد جلسة الفهم وقبل بدء العمل.</p></details>
       <details class="faq"><summary>ماذا بعد التسليم؟</summary><p>نسلّم التوثيق وندرّب فريقك، ونبقى متاحين للتعديلات.</p></details>
       <details class="faq"><summary>هل تصممون مواقع إلكترونية؟</summary><p>نعم. نصمم مواقع عربية تعمل على الجوال، مع نموذج حجز أو طلب سعر يصلك على واتساب. شاهد مثال <a href="https://sarahalolayan.github.io/demos/bahrawi/" target="_blank" rel="noopener">استديو البحراوي</a>.</p></details>
@@ -940,7 +1008,7 @@ main:focus{outline:none}
   addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8),{passive:true});
   $('#menu').addEventListener('click',e=>{ const o=$('#links').classList.toggle('open'); e.currentTarget.setAttribute('aria-expanded',o); });
   $$('#links a').forEach(a=>a.addEventListener('click',()=>$('#links').classList.remove('open')));
-  const secs=['services','process','lab','work','contact'].map(id=>document.getElementById(id));
+  const secs=['services','work','pricing','faq','contact'].map(id=>document.getElementById(id));
   if('IntersectionObserver' in window){
     const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) $$('#links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)); }),{rootMargin:'-45% 0px -50% 0px'});
     secs.forEach(s=>io.observe(s));
@@ -1260,7 +1328,7 @@ main:focus{outline:none}
 
   // reveal-on-scroll for content below the first screen, and count-up for the facts strip
   if('IntersectionObserver' in window && !still){
-    const targets=$$('.block-head, .service, .card, .step, .faq, .lab, .contact');
+    const targets=$$('.block-head, .service, .card, .plan, .step, .faq, .lab, .contact');
     const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{rootMargin:'0px 0px -8% 0px'});
     targets.forEach((el,i)=>{ if(el.getBoundingClientRect().top>innerHeight){ el.classList.add('reveal'); el.style.transitionDelay=(i%3)*80+'ms'; io.observe(el); } });
     const cio=new IntersectionObserver(es=>es.forEach(e=>{
