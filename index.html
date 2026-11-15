@@ -491,6 +491,33 @@ main:focus{outline:none}
 .promo p{color:var(--ink-2);font-size:15px;margin-top:4px}
 .promo .go{font-weight:600;color:var(--accent);white-space:nowrap}
 @media (max-width:600px){.promo{grid-template-columns:auto minmax(0,1fr)}.promo .go{grid-column:1/-1}}
+
+/* ---------- calmer motion: one moment in the hero, the rest moves only when asked ---------- */
+.opslog::after{display:none}
+.hero h1 .caret{display:none}
+.illo .bar,.illo .ln,.illo .pulse,.illo .wire.live{animation-play-state:paused}
+.service:hover .illo *,.service:focus-within .illo *{animation-play-state:running}
+.marquee{-webkit-mask-image:none;mask-image:none;overflow:visible;direction:rtl}
+.marquee-track{animation:none;width:auto;flex-wrap:wrap;direction:rtl}
+.marquee-track span:nth-child(n+13){display:none}
+
+/* ---------- goal picker under the hero buttons ---------- */
+.goals{display:grid;gap:10px;margin-top:6px}
+.goals>span{font-size:14px;color:var(--muted)}
+.goal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.goal{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 14px;border-radius:12px;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s}
+.goal:hover{border-color:var(--accent);transform:translateY(-1px)}
+.goal .gi{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.goal b{font-weight:600;font-size:15px;display:block;line-height:1.35}
+.goal small{display:block;color:var(--muted);font-size:12.5px;line-height:1.4}
+.goal .go{color:var(--accent);font-weight:700}
+@media (max-width:560px){.goal-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- back to top ---------- */
+.to-top{position:fixed;inset-inline-end:16px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:15;width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px -12px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s}
+.to-top.show{opacity:1;pointer-events:auto}
 @media (max-width:980px){
   .hero,.contact,.roi,.auto-grid,.mid,.summary{grid-template-columns:minmax(0,1fr)}
   .services,.work,.skills{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -550,6 +577,15 @@ main:focus{outline:none}
       <div class="cta-row">
         <a class="btn primary" href="#contact">ابدأ مشروعك</a>
         <a class="btn" href="#work">شاهد أعمالنا</a>
+      </div>
+      <div class="goals">
+        <span>أو ابدأ من هدفك:</span>
+        <div class="goal-grid">
+          <a class="goal" href="#lab" data-tab="store"><span class="gi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span><b>أبي أشوف أرقامي بوضوح</b><small>جرّب شاشة متابعة حية</small></span><span class="go" aria-hidden="true">←</span></a>
+          <a class="goal" href="hours/"><span class="gi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>أبي أوفّر وقت فريقي</b><small>احسب كم ساعة وكم ريال تضيع</small></span><span class="go" aria-hidden="true">←</span></a>
+          <a class="goal" href="#work" data-filter="web"><span class="gi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 8.5h18"/></svg></span><span><b>أبي موقع يجيب عملاء</b><small>شاهد نماذج المواقع</small></span><span class="go" aria-hidden="true">←</span></a>
+          <a class="goal" href="#work" data-filter="gov"><span class="gi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="4" width="7" height="6" rx="1.5"/><rect x="14" y="14" width="7" height="6" rx="1.5"/><path d="M6.5 10v4a3 3 0 0 0 3 3H14"/></svg></span><span><b>أبي أرتّب إجراءات العمل</b><small>أمثلة من خبرتنا</small></span><span class="go" aria-hidden="true">←</span></a>
+        </div>
       </div>
     </div>
     <aside class="opslog" aria-label="مثال توضيحي لسجل عمليات مؤتمت">
@@ -904,6 +940,7 @@ main:focus{outline:none}
       <div class="ci"><div><span>لينكدإن</span><br><a href="https://sa.linkedin.com/in/sarah-alolayan-991368183" target="_blank" rel="noopener">sarah-alolayan ↗</a></div></div>
     </div>
   </section>
+<button class="to-top" id="to-top" type="button" aria-label="العودة لأعلى الصفحة"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <a class="fab" id="fab" href="https://wa.me/966557912466" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg><span>واتساب</span></a>
 </main>
 <footer class="wrap"><span>© <span class="num" id="year">2026</span> <span class="en" lang="en">Agentiq</span></span><span>الرياض، المملكة العربية السعودية</span></footer>
@@ -921,6 +958,11 @@ main:focus{outline:none}
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let still = reduce; try{ const v=localStorage.getItem('still'); if(v!==null) still = v==='1'; }catch(e){}
   $('#year').textContent = new Date().getFullYear();
+  // back-to-top appears after the first screen
+  const tt=$('#to-top');
+  addEventListener('scroll',()=>tt.classList.toggle('show',scrollY>innerHeight*1.2),{passive:true});
+  tt.addEventListener('click',()=>{ scrollTo({top:0,behavior:still?'auto':'smooth'}); $('#top').focus({preventScroll:true}); });
+
 
   // ---------- theme ----------
   const root=document.documentElement;
@@ -1200,7 +1242,7 @@ main:focus{outline:none}
   // rotating phrase in the headline
   const PHRASES=['تُنجز تلقائياً','تُنجز بدون عمل يدوي','تُنجز في وقتها','تُنجز بدون أخطاء'];
   let pi=0; const rot=$('#rot');
-  setInterval(()=>{ if(still) return; rot.classList.add('out'); setTimeout(()=>{ pi=(pi+1)%PHRASES.length; rot.textContent=PHRASES[pi]; rot.classList.remove('out'); },350); },2800);
+  setInterval(()=>{ if(still) return; rot.classList.add('out'); setTimeout(()=>{ pi=(pi+1)%PHRASES.length; rot.textContent=PHRASES[pi]; rot.classList.remove('out'); },350); },4200);
 
   // hero data network: nodes drift, packets travel along nearby links
   (function net(){
