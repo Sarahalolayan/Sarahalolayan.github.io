@@ -158,6 +158,18 @@ button,select,input{font:inherit;color:inherit}
 .insight b{color:var(--accent)}
 .cta-col{display:grid;gap:8px}
 .note{font-size:12.5px;color:var(--muted)}
+.key3{display:grid;gap:8px}
+.k{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"l n" "l u";align-items:baseline;gap:0 12px;padding:12px 14px;border:1px solid var(--line);border-inline-start:3px solid var(--line);background:var(--sunk)}
+.k span{grid-area:l;align-self:center;font-size:14.5px;color:var(--ink-2)}
+.k b{grid-area:n;font-size:clamp(26px,3.4vw,34px);font-weight:500;line-height:1.15;text-align:left}
+.k small{grid-area:u;font-size:12.5px;color:var(--muted);text-align:left}
+.k-time{border-inline-start-color:var(--ink-2)}
+.k-cost{border-inline-start-color:var(--warm)}.k-cost b{color:var(--warm-ink)}
+.k-save{border-inline-start-color:var(--accent);background:var(--accent-soft)}.k-save b{color:var(--accent)}
+.more{border-top:1px solid var(--line);padding-top:10px}
+.more summary{cursor:pointer;font-size:14px;color:var(--accent);font-weight:500}
+.more-body{display:grid;gap:16px;margin-top:14px}
+
 .basics{display:grid;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line)}
 .basics h2{font-size:17px;font-weight:600}
 .basics .settings{border-top:0;padding-top:0}
@@ -325,30 +337,36 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
       <h2 id="t-res">النتيجة</h2>
       <div id="res-empty" class="empty" hidden>أضف مهمة واحدة على الأقل لتظهر النتيجة.</div>
       <div id="res" style="display:grid;gap:18px">
-        <div class="big"><span>وقت الأعمال اليدوية يومياً</span><b><svg class="clk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path class="h" d="M12 12V7"/></svg><span id="r-day">0</span><small>ساعة</small></b></div>
-        <div class="periods">
-          <div><span>أسبوعياً</span><b id="r-week">0</b></div>
-          <div><span>شهرياً</span><b id="r-month">0</b></div>
-          <div><span>سنوياً</span><b id="r-year">0</b></div>
-        </div>
-        <p class="equiv" id="r-equiv"></p>
-        <div class="cost" id="cost-box">
-          <span>تكلفة هذه الأعمال عليك</span>
-          <div class="cost-row"><b><span id="r-cost-m">0</span> <small>ر.س شهرياً</small></b><b><span id="r-cost-y">0</span> <small>ر.س سنوياً</small></b></div>
-        </div>
-        <div class="save">
-          <div class="save-text">
-          <span>توفّر عليك الأتمتة شهرياً</span>
-          <b><span id="r-save">0</span> ساعة</b>
-          <span class="money" id="r-money"></span>
-          </div>
-          <svg class="donut" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="40"/><circle class="fg" id="donut-fg" cx="50" cy="50" r="40" transform="rotate(-90 50 50)" stroke-dasharray="0 251.3"/><text x="50" y="53" text-anchor="middle" id="donut-t">0%</text><text class="sub" x="50" y="68" text-anchor="middle">من الوقت</text></svg>
-        </div>
-        <div class="chart">
-          <div class="chart-legend"><span><i style="background:var(--accent)"></i>يمكن أتمتته</span><span><i style="background:var(--ghost)"></i>يبقى يدوياً</span><span>· ساعات شهرياً</span></div>
-          <div id="bars"></div>
+        <div class="key3">
+          <div class="k k-time"><span>وقت الأعمال اليدوية</span><b class="num" id="r-month">0</b><small>ساعة شهرياً</small></div>
+          <div class="k k-cost" id="cost-box"><span>تكلفتها عليك</span><b class="num" id="r-cost-y">0</b><small>ر.س سنوياً</small></div>
+          <div class="k k-save"><span>توفّر عليك الأتمتة</span><b class="num" id="r-save-y">0</b><small id="r-save-unit">ر.س سنوياً</small></div>
         </div>
         <p class="insight" id="r-insight"></p>
+        <details class="more">
+          <summary>التفاصيل: يومياً وأسبوعياً، ولكل مهمة</summary>
+          <div class="more-body">
+            <div class="periods">
+              <div><span>يومياً</span><b id="r-day">0</b></div>
+              <div><span>أسبوعياً</span><b id="r-week">0</b></div>
+              <div><span>سنوياً</span><b id="r-year">0</b></div>
+            </div>
+            <p class="equiv" id="r-equiv"></p>
+            <div class="save">
+              <div class="save-text">
+                <span>التوفير بالساعات</span>
+                <b><span id="r-save">0</span> ساعة شهرياً</b>
+                <span class="money" id="r-money"></span>
+                <span class="money">التكلفة الحالية: <b class="num" id="r-cost-m">0</b> ر.س شهرياً</span>
+              </div>
+              <svg class="donut" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="40"/><circle class="fg" id="donut-fg" cx="50" cy="50" r="40" transform="rotate(-90 50 50)" stroke-dasharray="0 251.3"/><text x="50" y="53" text-anchor="middle" id="donut-t">0%</text><text class="sub" x="50" y="68" text-anchor="middle">من الوقت</text></svg>
+            </div>
+            <div class="chart">
+              <div class="chart-legend"><span><i style="background:var(--accent)"></i>يمكن أتمتته</span><span><i style="background:var(--warm-mute)"></i>يبقى يدوياً</span><span>· ساعات شهرياً</span></div>
+              <div id="bars"></div>
+            </div>
+          </div>
+        </details>
         <section class="talk" aria-labelledby="talk-h">
           <h3 id="talk-h">جاهز توفّر <span class="num" id="talk-h-n">0</span> ساعة كل شهر؟</h3>
           <p>تواصل معنا ونرسل لك خطة لأتمتة هذه المهام. نتيجتك تُرفق مع رسالة واتساب تلقائياً.</p>
@@ -467,7 +485,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     $('#r-equiv').innerHTML=`هذا يعادل <b class="num">${fmt(workDays)}</b> يوم عمل كامل في السنة${months>=1?`، أي قرابة <b class="num">${fmt(months,1)}</b> شهر عمل لموظف واحد`:''}.`;
     $('#r-save').textContent=fmtH(saveH);
     { const C=2*Math.PI*40; $('#donut-fg').setAttribute('stroke-dasharray',`${C*pct/100} ${C}`); $('#donut-t').textContent=fmt(pct)+'%'; }
-    $('#cost-box').hidden=!(rate>0); $('#r-cost-m').textContent=fmt(monthH*rate); $('#r-cost-y').textContent=fmt(yearH*rate);
+    $('#cost-box').hidden=!(rate>0); $('#r-save-y').textContent= rate>0 ? fmt(saveH*rate*12) : fmtH(saveH); $('#r-save-unit').textContent= rate>0 ? `ر.س سنوياً · ${fmtH(saveH)} ساعة شهرياً` : 'ساعة شهرياً'; $('#r-cost-m').textContent=fmt(monthH*rate); $('#r-cost-y').textContent=fmt(yearH*rate);
     $('#r-money').innerHTML=rate>0?`أي <b class="num">${fmt(saveH*rate)}</b> ر.س شهرياً · <b class="num">${fmt(saveH*rate*12)}</b> ر.س سنوياً`:'أدخل تكلفة ساعة الموظف لترى التوفير بالريال.';
     const sorted=[...valid].sort((a,b)=>b.mH-a.mH), max=sorted[0].mH;
     $('#bars').innerHTML=sorted.map(r=>`<div class="bar-row"><div class="lbl"><span>${esc(r.t.n||'مهمة بدون اسم')}</span><span class="num">${fmtH(r.mH)} س</span></div><div class="track" role="img" aria-label="${esc(r.t.n||'مهمة')}: ${fmtH(r.mH)} ساعة شهرياً، منها ${fmtH(r.auto)} يمكن أتمتتها"><i class="a" style="width:${r.auto/max*100}%"></i><i class="r" style="width:${(r.mH-r.auto)/max*100}%"></i></div></div>`).join('');
