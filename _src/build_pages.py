@@ -102,7 +102,7 @@ SERVICES = [
    gets=[('web', 'تصميم خاص بهويتك', 'بدون قوالب مكررة، بألوانك وخطوطك.'), ('phone', 'يعمل على الجوال أولاً', 'لأن أغلب زوارك يفتحون من الجوال.'),
          ('chat', 'حجز وطلب سعر عبر واتساب', 'نموذج يجمع التفاصيل ويرسلها لك جاهزة.'), ('eye', 'معرض لأعمالك', 'صور وأمثلة تعرض جودة عملك.')],
    uses=['استديو تصوير مع معرض أعمال ونموذج حجز جلسة', 'مطعم أو مقهى مع المنيو ورابط الطلب', 'عيادة أو مركز مع حجز موعد', 'صفحة هبوط لحملة إعلانية'],
-   example=('نموذج لعميل', 'موقع استديو تصوير', 'عدسة تنفتح مع التمرير، ومعرض أعمال بصور كاملة الشاشة، ونموذج حجز يرسل الطلب على واتساب.', SITE + '/demos/bahrawi/', 'افتح الموقع ↗'),
+   example=('نموذج لعميل', 'موقع استديو تصوير', 'عدسة تنفتح مع التمرير، ومعرض أعمال بصور كاملة الشاشة، ونموذج حجز يرسل الطلب على واتساب.', SITE + '/demos/studio/', 'افتح الموقع ↗'),
    faq=[('هل يمكنني تعديل المحتوى بنفسي؟', 'نعم، نسلّمك طريقة بسيطة لتعديل النصوص والصور، أو نتولى التعديلات عنك.'),
         ('هل يظهر الموقع في بحث Google؟', 'نجهّز الموقع بأساسيات الظهور في محركات البحث وصورة المشاركة في وسائل التواصل.'),
         ('هل تربطون دومين باسمي؟', 'نعم، نربط الموقع بالدومين الذي تختاره.')]),
@@ -214,7 +214,7 @@ EN_SERVICES = [
  ('org', 'Process and access design', 'Clear steps and clear access rules, before anything gets automated.', 'Your team is growing and tasks and access overlap.', ['Documented and simplified workflows', 'Clear rules on who sees which data', 'Regular compliance reports'], '/services/process/'),
 ]
 EN_WORK = [
- ('Website · client sample', 'Photography studio website', 'A lens that opens as you scroll, a full-screen gallery, studio services and a booking form that sends the quote request to WhatsApp.', SITE + '/demos/bahrawi/'),
+ ('Website · client sample', 'Photography studio website', 'A lens that opens as you scroll, a full-screen gallery, studio services and a booking form that sends the quote request to WhatsApp.', SITE + '/demos/studio/'),
  ('Dashboard · live project', 'Gym pulse', 'A gym dashboard showing today\'s visitors against target, with alerts and a daily summary, built on 973 real workout sessions.', SITE + '/nabd-alnadi/'),
  ('Automation · interactive demo', 'Three tasks that run themselves', 'A store order logged and flagged to the manager, a daily report sent on time, and a leave request routed for approval.', SITE + '/#lab'),
 ]
