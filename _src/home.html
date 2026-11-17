@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Agentiq | شاشات متابعة، أتمتة، ومواقع</title>
 <meta name="description" content="Agentiq: شاشات متابعة حية لأرقام عملك، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات والصلاحيات.">
-<meta name="theme-color" content="#08131d">
+<meta name="theme-color" content="#F7F6FB">
 <link rel="canonical" href="https://sarahalolayan.github.io/">
 <link rel="alternate" hreflang="ar" href="https://sarahalolayan.github.io/">
 <link rel="alternate" hreflang="en" href="https://sarahalolayan.github.io/en/">
 <link rel="alternate" hreflang="x-default" href="https://sarahalolayan.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2308131d'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='%239ad6c8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B47E0'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Agentiq">
 <meta property="og:locale" content="ar_SA">
@@ -24,446 +24,573 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Agentiq","url":"https://sarahalolayan.github.io/","logo":"https://sarahalolayan.github.io/og.png","telephone":"+966557912466","areaServed":"SA","address":{"@type":"PostalAddress","addressLocality":"الرياض","addressCountry":"SA"},"description":"شاشات متابعة حية لأرقام عملك، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات والصلاحيات."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Readex+Pro:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Readex+Pro:wght@600&display=swap" rel="stylesheet">
 <script src="/assets/agentiq-config.js" defer></script>
 <style>
-  /* One deliberate dark look, after the studio sample: deep navy, cream text, mint as the single accent. */
-  :root { --bg:#08131d; --bg-2:#0d1c28; --cream:#f3ece0; --dim:rgba(243,236,224,.68); --faint:rgba(243,236,224,.42); --line:rgba(243,236,224,.18);
-          --mint:#9ad6c8; --mint-2:#5fae9f; --ink-on-mint:#0b231f; color-scheme:dark; }
+  /* Light and calm: soft paper ground, deep ink, one emerald accent, warm amber only for costs. Real photos carry the warmth. */
+  :root { --bg:#F7F6FB; --surface:#FFFFFF; --sunk:#F0EEF8; --ink:#17152B; --ink-2:#433F5E; --muted:#67638A; --line:#E3E0F0;
+          --accent:#5B47E0; --accent-2:#4835C4; --accent-ink:#FFFFFF; --accent-soft:#EEEBFF; --warm:#B0601C; --warm-soft:#FBEBDD;
+          --f-display:"Noto Kufi Arabic","IBM Plex Sans Arabic",Tahoma,sans-serif; --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+          --f-data:"IBM Plex Mono",ui-monospace,monospace; --shadow:0 22px 50px -28px rgba(20,33,43,.35); color-scheme:light; }
   * { box-sizing:border-box; margin:0; padding:0; }
-  html { background:var(--bg); scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
-  body { background:var(--bg); color:var(--cream); font-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif; font-weight:300; line-height:1.8; overflow-x:clip; }
+  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body { background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.8; overflow-x:clip; }
   a { color:inherit; text-decoration:none; }
   button,input,select { font:inherit; color:inherit; }
-  :focus-visible { outline:2px solid var(--mint); outline-offset:3px; }
-  h1,h2,h3,.serif { font-family:Amiri,"Noto Naskh Arabic",serif; font-weight:400; line-height:1.25; }
-  .num { font-family:"IBM Plex Mono",ui-monospace,monospace; direction:ltr; unicode-bidi:isolate; font-variant-numeric:tabular-nums; }
-  .skip { position:absolute; right:12px; top:-60px; background:var(--cream); color:#111; padding:8px 14px; z-index:80; }
+  img { max-width:100%; display:block; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  h1,h2,h3 { font-family:var(--f-display); font-weight:700; line-height:1.35; text-wrap:balance; }
+  .num { font-family:var(--f-data); direction:ltr; unicode-bidi:isolate; font-variant-numeric:tabular-nums; }
+  .wrap { max-width:1180px; margin-inline:auto; padding-inline:24px; }
+  .skip { position:absolute; right:12px; top:-60px; background:var(--ink); color:#fff; padding:8px 14px; z-index:80; border-radius:8px; }
   .skip:focus { top:12px; }
+  .eyebrow { color:var(--accent); font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:8px; }
+  .eyebrow::before { content:""; width:18px; height:2px; background:var(--accent); border-radius:2px; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:10px; border:1px solid var(--line); background:var(--surface); font-weight:600; font-size:15px; cursor:pointer; transition:background .2s,border-color .2s,transform .2s; }
+  .btn:hover { border-color:var(--ink-2); }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+  .btn.primary:hover { background:var(--accent-2); border-color:var(--accent-2); }
+  .btn.sm { padding:8px 14px; font-size:14px; }
 
-  .bar { position:fixed; top:0; right:0; height:2px; width:100%; background:var(--mint); transform-origin:right; transform:scaleX(var(--s,0)); z-index:60; }
-  header { position:fixed; inset:0 0 auto 0; z-index:50; display:flex; align-items:center; gap:30px; padding:18px 44px; padding-top:calc(18px + env(safe-area-inset-top,0px)); font-size:14px; background:linear-gradient(to bottom,rgba(4,10,16,.7),transparent); }
-  .brand { display:flex; align-items:center; gap:10px; font-family:"Readex Pro",sans-serif; font-weight:600; font-size:19px; letter-spacing:.01em; }
-  .brand svg { color:var(--mint); }
-  header nav { display:flex; gap:26px; flex:1; color:var(--dim); }
-  header nav a:hover, header nav a.on { color:var(--cream); }
-  .hdr-end { display:flex; gap:14px; align-items:center; }
-  .lang { color:var(--dim); font-size:13px; font-weight:500; }
-  .lang:hover { color:var(--cream); }
-  .res { border:1px solid var(--line); padding:7px 20px; transition:background .2s,color .2s; }
-  .res:hover { background:var(--cream); color:#111; }
+  /* header */
+  header { position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:color-mix(in srgb,var(--bg) 88%,transparent); backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s; }
+  header.scrolled { border-bottom-color:var(--line); }
+  .hdr { display:flex; align-items:center; gap:28px; padding-block:14px; }
+  .brand { display:flex; align-items:center; gap:10px; font-family:"Readex Pro",sans-serif; font-weight:600; font-size:19px; }
+  .brand i { width:34px; height:34px; border-radius:9px; background:var(--accent); color:#fff; display:grid; place-items:center; }
+  header nav { display:flex; gap:24px; flex:1; color:var(--ink-2); font-size:15px; }
+  header nav a:hover { color:var(--accent); }
+  .hdr-end { display:flex; gap:12px; align-items:center; }
+  .lang { color:var(--ink-2); font-size:13.5px; font-weight:600; padding:6px 10px; border:1px solid var(--line); border-radius:8px; }
 
-  .pin { position:relative; }
-  .stage { position:sticky; top:0; height:100vh; height:100svh; overflow:hidden; background:var(--bg); }
-  .fill { position:absolute; inset:0; }
-  .shade { position:absolute; inset:0; background:linear-gradient(to left,rgba(4,10,16,.78),rgba(4,10,16,.1) 65%); pointer-events:none; }
-  .txt { position:absolute; opacity:0; will-change:transform,opacity; }
-  .eyebrow { color:var(--mint); font-size:14px; font-weight:400; display:block; margin-bottom:10px; }
+  /* hero */
+  .hero { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:48px; align-items:center; padding-block:48px 56px; }
+  .hero h1 { font-size:clamp(32px,4.4vw,54px); margin-top:14px; }
+  .hero h1 em { font-style:normal; color:var(--accent); }
+  .hero p { font-size:18px; color:var(--ink-2); margin-top:16px; max-width:52ch; }
+  .hero .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
+  .hero-media { position:relative; }
+  .hero-media img { width:100%; aspect-ratio:4/3.4; object-fit:cover; border-radius:20px; box-shadow:var(--shadow); }
+  .float { position:absolute; background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); padding:14px 16px; }
+  .float.kpi { inset-inline-end:-22px; bottom:28px; min-width:220px; display:grid; gap:2px; }
+  .float.kpi span { font-size:12.5px; color:var(--muted); }
+  .float.kpi b { font-family:var(--f-data); font-size:28px; font-weight:500; line-height:1.2; direction:ltr; text-align:right; }
+  .float.kpi em { font-style:normal; font-size:12.5px; color:var(--accent); font-weight:600; }
+  .float.kpi svg { width:100%; height:34px; margin-top:4px; }
+  .float.alert { inset-inline-start:-18px; top:26px; display:flex; gap:10px; align-items:center; font-size:13.5px; max-width:260px; }
+  .float.alert i { flex:none; width:30px; height:30px; border-radius:50%; background:var(--warm-soft); color:var(--warm); display:grid; place-items:center; font-style:normal; font-weight:700; }
+  .facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-block:1px solid var(--line); }
+  .facts div { padding:20px 4px; display:grid; gap:2px; }
+  .facts div + div { border-inline-start:1px solid var(--line); padding-inline-start:20px; }
+  .facts b { font-family:var(--f-display); font-size:24px; color:var(--ink); }
+  .facts span { font-size:14px; color:var(--muted); }
 
-  /* hero: a living network of data, slowly pushing in */
-  #hero { height:230vh; }
-  #hero .fill { background:radial-gradient(70% 60% at 30% 40%,#14303a 0%,transparent 70%),radial-gradient(60% 50% at 80% 80%,#0f2430 0%,transparent 70%),var(--bg); }
-  #net { position:absolute; inset:0; width:100%; height:100%; transform:scale(calc(1 + var(--p,0) * .5)); transform-origin:40% 45%; }
-  #hero .shade { opacity:calc(1 + var(--p,0) * .4); }
-  #hero .txt { right:7vw; bottom:17vh; max-width:700px; }
-  #hero h1 { font-size:clamp(46px,6.8vw,100px); }
-  #hero p { font-size:clamp(16px,1.5vw,20px); color:var(--dim); margin-top:10px; max-width:52ch; }
-  .scroll { position:absolute; left:50%; bottom:26px; transform:translateX(-50%); font-size:13px; color:var(--dim); text-align:center; opacity:calc(1 - var(--p,0) * 5); }
-  .scroll i { display:block; width:1px; height:34px; background:var(--mint); margin:6px auto 0; animation:drop 1.7s ease-in-out infinite; transform-origin:top; }
-  @keyframes drop { 0%{transform:scaleY(0)} 55%{transform:scaleY(1)} 100%{transform:scaleY(1);opacity:0} }
+  section { padding-block:72px 8px; scroll-margin-top:70px; }
+  .head { display:flex; justify-content:space-between; align-items:end; gap:24px; flex-wrap:wrap; margin-bottom:28px; }
+  .head h2 { font-size:clamp(26px,3.2vw,38px); margin-top:8px; }
+  .head p { color:var(--muted); max-width:52ch; }
 
-  /* iris: the screen opens and a live dashboard fills the view */
-  #iris { height:280vh; }
-  #iris .stage { background:#04090e; }
-  .screen { position:absolute; inset:0; clip-path:circle(calc(5% + var(--p,0) * 150%) at 50% 50%); transform:scale(calc(1.25 - var(--p,0) * .25));
-            background:radial-gradient(80% 70% at 50% 30%,#123039,#0a1822 70%); display:grid; align-content:center; justify-items:center; padding:14vh 6vw 22vh; }
-  .board { width:min(1100px,100%); display:grid; gap:14px; }
-  .kpis { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
-  .kpi { border:1px solid var(--line); background:rgba(8,19,29,.55); padding:14px 16px; display:grid; gap:2px; }
-  .kpi span { font-size:12.5px; color:var(--dim); }
-  .kpi b { font-family:"IBM Plex Mono",monospace; font-weight:400; font-size:clamp(20px,2.4vw,32px); direction:ltr; text-align:right; }
-  .kpi em { font-style:normal; font-size:12px; color:var(--mint); direction:ltr; text-align:right; }
-  .chart { border:1px solid var(--line); background:rgba(8,19,29,.55); padding:12px 14px 6px; }
-  .chart svg { width:100%; height:clamp(120px,26vh,260px); display:block; }
-  .veil { position:absolute; inset:0; background:linear-gradient(to top,rgba(4,9,14,.9),transparent 58%); opacity:calc((var(--p,0) - .45) * 3); }
-  .ring { position:absolute; top:50%; left:50%; width:30vmin; height:30vmin; margin:-15vmin 0 0 -15vmin; border:1px solid var(--mint); border-radius:50%; transform:scale(calc(.7 + var(--p,0) * 7)); opacity:calc(1 - var(--p,0) * 2.2); }
-  #iris .txt { inset:auto 0 10vh 0; text-align:center; padding:0 24px; }
-  #iris h2 { font-size:clamp(36px,5vw,72px); text-shadow:0 2px 26px rgba(0,0,0,.65); }
-  #iris .t0 { inset:auto 0 calc(50% - 32vmin) 0; color:var(--dim); font-size:16px; }
+  /* services with photos */
+  .svc { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; }
+  .svc a { background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; display:grid; grid-template-rows:auto 1fr; transition:transform .25s,box-shadow .25s; }
+  .svc a:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+  .svc img { width:100%; aspect-ratio:4/3; object-fit:cover; }
+  .svc .body { padding:18px; display:grid; gap:8px; align-content:start; }
+  .svc h3 { font-size:18px; }
+  .svc p { color:var(--ink-2); font-size:14.5px; }
+  .svc ul { list-style:none; display:grid; gap:4px; font-size:14px; color:var(--ink-2); }
+  .svc li::before { content:"✓ "; color:var(--accent); font-weight:700; }
+  .svc .go { color:var(--accent); font-weight:600; font-size:14px; margin-top:4px; }
 
-  /* film strip of our work */
-  #film { height:440vh; }
-  #film .stage { display:flex; flex-direction:column; justify-content:center; padding-top:40px; }
-  #film .head { padding:0 7vw 24px; display:flex; justify-content:space-between; align-items:baseline; gap:20px; }
-  #film h2 { font-size:clamp(34px,4.2vw,60px); }
-  #film .head span { color:var(--dim); font-size:15px; }
-  .track { display:flex; gap:22px; width:max-content; padding:0 7vw; will-change:transform; }
-  .frame { flex:none; width:clamp(280px,38vw,540px); }
-  .frame a { display:block; }
-  .shot { height:clamp(230px,48vh,480px); overflow:hidden; position:relative; border:1px solid var(--line); transition:border-color .3s; }
-  .frame a:hover .shot { border-color:var(--mint); }
-  .frame b { font-family:Amiri,serif; font-weight:400; font-size:26px; display:block; margin-top:10px; }
-  .frame small { color:var(--dim); font-size:14px; }
-  .frame .go { color:var(--mint); font-size:13.5px; margin-inline-start:8px; }
+  /* the cost of manual work */
+  .band { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); border-radius:20px; overflow:hidden; background:var(--ink); color:#fff; margin-top:72px; }
+  .band img { width:100%; height:100%; min-height:320px; object-fit:cover; }
+  .band .txt { padding:44px 40px; display:grid; gap:14px; align-content:center; }
+  .band h2 { font-size:clamp(24px,3vw,36px); }
+  .band p { color:rgba(255,255,255,.8); }
+  .band .stats { display:flex; gap:28px; flex-wrap:wrap; }
+  .band .stats b { font-family:var(--f-data); font-size:30px; font-weight:500; display:block; color:#C4BBFF; }
+  .band .stats span { font-size:13px; color:rgba(255,255,255,.7); }
+  .band .btn.primary { background:#fff; border-color:#fff; color:var(--ink); justify-self:start; }
+  .band .btn.primary:hover { background:#efedff; }
 
-  .s-studio { background:linear-gradient(180deg,#5d7ea6 0%,#9bb7d4 36%,#3f5d7a 52%,#1f3346 70%,#0b121a 100%); }
+  /* work: a swipeable row */
+  .row-nav { display:flex; gap:8px; }
+  .row-nav button { width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--surface); cursor:pointer; font-size:18px; }
+  .row-nav button:hover { border-color:var(--accent); color:var(--accent); }
+  .work { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(280px,32%); gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; scrollbar-width:thin; }
+  .work a { scroll-snap-align:start; display:grid; gap:10px; }
+  .shot { aspect-ratio:4/3; border-radius:16px; overflow:hidden; position:relative; border:1px solid var(--line); transition:box-shadow .25s; }
+  .work a:hover .shot { box-shadow:var(--shadow); }
+  .work h3 { font-size:17px; }
+  .work small { color:var(--muted); font-size:13.5px; }
+  .work .go { color:var(--accent); font-weight:600; font-size:13.5px; }
+  .s-studio { background:linear-gradient(180deg,#7d9ec0 0%,#b4cbe0 36%,#46647f 52%,#22374a 70%,#0b121a 100%); }
   .s-studio::before { content:""; position:absolute; inset:auto 0 0 0; height:58%; background:radial-gradient(120% 70% at 30% 100%,#2c3a44 40%,transparent 41%),radial-gradient(90% 60% at 85% 100%,#38474f 45%,transparent 46%),linear-gradient(180deg,transparent,#0b0f14 95%); }
-  .s-studio .t { position:absolute; right:22px; bottom:20px; text-align:right; }
-  .s-studio .t small { color:#f3ece0; opacity:.85; display:block; font-size:12px; }
-  .s-studio .t strong { font-family:Amiri,serif; font-weight:400; font-size:clamp(22px,2.4vw,32px); text-shadow:0 2px 14px rgba(0,0,0,.5); }
-  .s-studio .r { position:absolute; top:50%; left:50%; width:120px; height:120px; margin:-60px 0 0 -60px; border:1px solid #e9c46a; border-radius:50%; animation:breathe 4s ease-in-out infinite; }
-  @keyframes breathe { 50% { transform:scale(1.25); opacity:.4; } }
-  .s-dash, .s-store, .s-auto, .s-calc { background:radial-gradient(90% 80% at 50% 20%,#14303a,#0a1822 75%); padding:18px; display:grid; gap:12px; align-content:start; }
+  .s-studio .t { position:absolute; right:20px; bottom:18px; color:#fff; text-align:right; }
+  .s-studio .t small { color:#fff; opacity:.85; display:block; font-size:12px; }
+  .s-studio .t strong { font-family:Georgia,serif; font-weight:400; font-size:24px; text-shadow:0 2px 14px rgba(0,0,0,.5); }
+  .s-studio .r { position:absolute; top:42%; left:50%; width:96px; height:96px; margin:-48px 0 0 -48px; border:1px solid #e9c46a; border-radius:50%; }
+  .s-screen { background:var(--surface); padding:16px; display:grid; gap:10px; align-content:start; }
   .mini-k { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
-  .mini-k div { border:1px solid var(--line); padding:8px 10px; display:grid; }
-  .mini-k span { font-size:11px; color:var(--dim); }
-  .mini-k b { font-family:"IBM Plex Mono",monospace; font-weight:400; font-size:clamp(15px,1.6vw,20px); direction:ltr; text-align:right; }
+  .mini-k div { background:var(--sunk); border-radius:10px; padding:8px 10px; display:grid; }
+  .mini-k span { font-size:11px; color:var(--muted); }
+  .mini-k b { font-family:var(--f-data); font-weight:500; font-size:17px; direction:ltr; text-align:right; }
   .shot svg { width:100%; height:auto; display:block; }
-  .s-calc { align-content:center; justify-items:center; text-align:center; gap:6px; }
-  .s-calc .big { font-family:"IBM Plex Mono",monospace; font-size:clamp(48px,6vw,84px); line-height:1; direction:ltr; }
-  .s-calc .big small { font-family:"IBM Plex Sans Arabic",sans-serif; font-size:18px; color:var(--dim); }
-  .s-calc p { color:var(--dim); font-size:14px; }
+  .s-calc { background:var(--accent-soft); display:grid; place-content:center; text-align:center; gap:4px; }
+  .s-calc .big { font-family:var(--f-data); font-size:64px; line-height:1; color:var(--accent); direction:ltr; }
+  .s-calc .big small { font-family:var(--f-body); font-size:18px; color:var(--ink-2); }
+  .s-calc p { color:var(--ink-2); font-size:14px; }
 
-  /* services list with crossfading scenes */
-  #svc { height:400vh; }
-  .scene { position:absolute; inset:0; opacity:0; transition:opacity .7s ease,transform 1.4s ease; transform:scale(1.06); background:radial-gradient(70% 70% at 25% 50%,#122b35,var(--bg) 70%); }
-  .scene.on { opacity:1; transform:scale(1); }
-  .scene svg { position:absolute; left:6vw; top:50%; width:min(46vw,620px); height:auto; transform:translateY(-50%); opacity:.55; }
-  #svc .shade { background:linear-gradient(to left,rgba(4,10,16,.9),rgba(4,10,16,.25)); }
-  .list { position:absolute; right:7vw; top:50%; transform:translateY(-50%); width:min(580px,86vw); }
-  .list h2 { font-size:clamp(30px,3vw,44px); margin-bottom:18px; }
-  .row { border-top:1px solid var(--line); padding:15px 0; color:var(--dim); transition:color .4s,padding .4s; display:flex; gap:18px; align-items:baseline; }
-  .row em { font-style:normal; font-size:14px; color:var(--mint); }
-  .row b { font-family:Amiri,serif; font-weight:400; font-size:clamp(25px,2.8vw,38px); line-height:1.3; }
-  .row p { display:block; max-height:0; opacity:0; overflow:hidden; font-size:15.5px; transition:max-height .5s,opacity .5s; }
-  .row p a { color:var(--mint); white-space:nowrap; margin-inline-start:6px; }
-  .row.on { color:var(--cream); padding-right:14px; }
-  .row.on p { max-height:110px; opacity:1; }
+  /* steps */
+  .steps { list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; counter-reset:s; }
+  .steps li { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:grid; gap:6px; }
+  .steps em { font-style:normal; width:34px; height:34px; border-radius:50%; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-weight:700; font-family:var(--f-data); }
+  .steps b { font-family:var(--f-display); font-size:18px; }
+  .steps p { color:var(--ink-2); font-size:14.5px; }
 
-  /* plain sections */
-  .sec { padding:110px 7vw 40px; }
-  .sec h2 { font-size:clamp(36px,4.4vw,62px); }
-  .sec .lead { color:var(--dim); font-size:17px; margin-top:10px; max-width:560px; }
-  .steps { list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:40px; border-top:1px solid var(--line); }
-  .steps li { padding:22px 0 0; padding-inline-end:22px; display:grid; gap:6px; }
-  .steps em { font-style:normal; color:var(--mint); font-size:14px; }
-  .steps b { font-family:Amiri,serif; font-weight:400; font-size:28px; line-height:1.3; }
-  .steps p { color:var(--dim); font-size:15px; }
-  .tools { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; margin-top:40px; border-top:1px solid var(--line); }
-  .tools a { padding:22px 0 26px; padding-inline-end:24px; display:grid; gap:4px; border-bottom:1px solid var(--line); }
-  .tools a + a { padding-inline-start:24px; border-inline-start:1px solid var(--line); }
-  .tools b { font-family:Amiri,serif; font-weight:400; font-size:30px; }
-  .tools span { color:var(--dim); font-size:15px; }
-  .tools i { font-style:normal; color:var(--mint); font-size:14px; margin-top:6px; }
-  .tools a:hover b { color:var(--mint); }
-  .faq { margin-top:30px; max-width:860px; }
-  .faq details { border-top:1px solid var(--line); padding:16px 0; }
-  .faq details:last-child { border-bottom:1px solid var(--line); }
-  .faq summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:16px; font-size:clamp(19px,1.8vw,24px); font-family:Amiri,serif; }
+  .faq { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-items:start; }
+  .faq details { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 20px; }
+  .faq summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:16px; font-weight:600; }
   .faq summary::-webkit-details-marker { display:none; }
-  .faq summary::after { content:"+"; color:var(--mint); font-family:"IBM Plex Mono",monospace; }
+  .faq summary::after { content:"+"; color:var(--accent); font-family:var(--f-data); font-size:20px; line-height:1; }
   .faq details[open] summary::after { content:"−"; }
-  .faq p { color:var(--dim); margin-top:8px; font-size:16px; max-width:70ch; }
+  .faq p { color:var(--ink-2); margin-top:8px; font-size:15px; }
 
-  #start { min-height:100vh; padding:110px 7vw 60px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
-  #start h2 { font-size:clamp(44px,5.4vw,80px); }
-  #start .lead { color:var(--dim); font-size:17px; margin-top:12px; max-width:440px; }
-  .contact-alt { margin-top:26px; display:grid; gap:6px; color:var(--dim); font-size:15px; }
-  .contact-alt a { color:var(--cream); }
-  form label { display:block; font-size:13.5px; color:var(--dim); margin-bottom:22px; }
-  form input,form select { display:block; width:100%; background:transparent; border:0; border-bottom:1px solid var(--line); padding:8px 0; font-size:18px; font-weight:300; border-radius:0; color-scheme:dark; }
-  form select option { color:#111; }
-  form input:focus,form select:focus { outline:0; border-color:var(--mint); }
-  .two { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
-  .send { width:100%; min-height:54px; background:var(--mint); color:var(--ink-on-mint); border:0; font-size:17px; font-weight:500; cursor:pointer; transition:filter .2s; }
-  .send:hover { filter:brightness(1.08); }
-  .e { color:#f0a597; font-size:13px; display:block; min-height:18px; }
-  .thanks { border:1px solid var(--line); padding:38px; }
-  .thanks h3 { font-size:38px; }
-  .thanks p { color:var(--dim); margin-top:6px; }
-  .thanks a { color:var(--mint); }
-  footer { border-top:1px solid var(--line); padding:20px 7vw calc(20px + env(safe-area-inset-bottom,0px)); font-size:13.5px; color:var(--dim); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  /* contact */
+  #start { padding-bottom:72px; }
+  .contact { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); background:var(--surface); border:1px solid var(--line); border-radius:20px; overflow:hidden; }
+  .contact .pic { position:relative; min-height:100%; }
+  .contact .chat-num { font-size:14px; color:var(--ink-2); }
+  .contact .pic img { width:100%; height:100%; object-fit:cover; min-height:360px; }
+  .contact .pic .cap { position:absolute; inset:auto 18px 18px 18px; background:rgba(255,255,255,.94); border-radius:12px; padding:12px 14px; font-size:14px; display:grid; gap:2px; }
+  .contact .pic .cap b { font-family:var(--f-data); font-weight:500; direction:ltr; text-align:right; }
+  .contact form { padding:36px; display:grid; gap:16px; align-content:center; }
+  .contact h2 { font-size:clamp(24px,3vw,34px); }
+  .contact .lead { color:var(--ink-2); margin-top:-6px; }
+  form label { display:grid; gap:6px; font-size:14px; color:var(--ink-2); font-weight:500; }
+  form input,form select { width:100%; background:var(--sunk); border:1px solid var(--line); border-radius:10px; padding:11px 14px; font-size:16px; }
+  form input:focus,form select:focus { outline:0; border-color:var(--accent); background:#fff; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .e { color:#B3261E; font-size:13px; min-height:18px; }
+  .thanks { padding:36px; display:grid; gap:10px; align-content:center; }
+  .thanks h3 { font-size:28px; }
+  .thanks p { color:var(--ink-2); }
+  .thanks a { color:var(--accent); font-weight:600; }
+  footer { border-top:1px solid var(--line); padding-block:22px calc(22px + env(safe-area-inset-bottom,0px)); font-size:14px; color:var(--muted); }
+  footer .wrap { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
   footer nav { display:flex; gap:18px; flex-wrap:wrap; }
-  footer a:hover { color:var(--cream); }
+  footer a:hover { color:var(--accent); }
+  .fab { position:fixed; inset-inline-start:18px; bottom:calc(18px + env(safe-area-inset-bottom,0px)); z-index:40; display:flex; gap:8px; align-items:center; padding:12px 16px; border-radius:99px; background:var(--accent); color:#fff; font-weight:600; box-shadow:var(--shadow); }
 
-  @media (max-width:860px) {
-    .kpis { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .steps, .tools { grid-template-columns:1fr 1fr; }
-    .tools a + a { border-inline-start:0; padding-inline-start:0; }
-  }
-  @media (max-width:760px) {
-    header { padding:13px 18px; padding-top:calc(13px + env(safe-area-inset-top,0px)); gap:12px; justify-content:space-between; }
-    header nav { display:none; }
-    .shade,#hero .shade { background:linear-gradient(to top,rgba(4,10,16,.85),rgba(4,10,16,.15) 72%); }
-    #hero .txt { right:22px; left:22px; bottom:13vh; }
-    .screen { padding:16vh 18px 26vh; }
-    .chart { display:none; }
-    #svc .shade { background:rgba(4,10,16,.78); }
-    .scene svg { left:50%; width:90vw; transform:translate(-50%,-50%); opacity:.3; }
-    #film .head { flex-direction:column; gap:0; padding-bottom:16px; }
-    .frame { width:78vw; }
-    .shot { height:44vh; }
-    .list { right:22px; left:22px; width:auto; }
-    .sec { padding:84px 22px 30px; }
-    .steps, .tools { grid-template-columns:1fr; }
-    #start { grid-template-columns:1fr; gap:30px; padding:84px 22px 40px; }
-    .two { grid-template-columns:1fr; gap:0; }
-  }
+
+  /* ---------- device graphics (drawn in code, no photos) ---------- */
+  .stage-art { position:relative; padding:10px 0 30px; overflow-x:clip; }
+  .stage-art::before { content:""; position:absolute; inset:6% 4% 10% 8%; border-radius:50%; background:radial-gradient(closest-side,var(--accent-soft),transparent); z-index:0; }
+  .laptop { position:relative; z-index:1; width:100%; }
+  .laptop .lid { background:#1E1B33; border-radius:16px 16px 0 0; padding:12px 12px 14px; box-shadow:var(--shadow); }
+  .laptop .scr { background:#fff; border-radius:6px; aspect-ratio:16/10; overflow:hidden; display:grid; grid-template-columns:52px minmax(0,1fr); }
+  .laptop .base { height:16px; background:linear-gradient(#e0dcef,#c3bddb); border-radius:0 0 18px 18px; margin-inline:-5%; position:relative; box-shadow:0 18px 30px -18px rgba(0,0,0,.45); }
+  .laptop .base::after { content:""; position:absolute; top:0; left:50%; width:16%; height:6px; margin-left:-8%; background:#b2abcf; border-radius:0 0 8px 8px; }
+  .side { background:#17152B; display:grid; align-content:start; justify-items:center; gap:12px; padding-top:12px; }
+  .side i { width:22px; height:22px; border-radius:6px; background:rgba(255,255,255,.12); }
+  .side i:first-child { background:var(--accent); }
+  .app { padding:12px 14px; display:grid; gap:10px; align-content:start; min-width:0; }
+  .app-top { display:flex; justify-content:space-between; align-items:center; font-size:11px; color:var(--muted); }
+  .app-top b { font-family:var(--f-display); font-size:13px; color:var(--ink); }
+  .app-top .live { display:inline-flex; gap:5px; align-items:center; color:var(--accent); font-weight:600; }
+  .app-top .live::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--accent); animation:blink 1.6s infinite; }
+  @keyframes blink { 50% { opacity:.25; } }
+  .k4 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+  .k4 div { background:var(--sunk); border-radius:8px; padding:7px 9px; display:grid; min-width:0; }
+  .k4 span { font-size:9.5px; color:var(--muted); white-space:nowrap; }
+  .k4 b { font-family:var(--f-data); font-weight:500; font-size:clamp(12px,1.35vw,17px); direction:ltr; text-align:right; }
+  .k4 em { font-style:normal; font-size:9px; color:var(--accent); font-weight:600; }
+  .app svg { width:100%; height:auto; display:block; }
+  .phone { position:absolute; z-index:2; inset-inline-end:-4%; bottom:0; width:30%; min-width:120px; background:#1E1B33; border-radius:22px; padding:7px; box-shadow:var(--shadow); }
+  .phone .ps { background:#F2F4F1; border-radius:16px; aspect-ratio:9/18.5; overflow:hidden; display:grid; align-content:start; gap:6px; padding:16px 7px 8px; position:relative; }
+  .phone .ps::before { content:""; position:absolute; top:5px; left:50%; width:30%; height:5px; margin-left:-15%; border-radius:4px; background:#1E1B33; }
+  .note { background:#fff; border-radius:10px; padding:7px 8px; font-size:9.5px; line-height:1.5; box-shadow:0 4px 10px -6px rgba(0,0,0,.25); }
+  .note b { display:flex; justify-content:space-between; font-size:9px; color:var(--muted); font-weight:500; margin-bottom:2px; }
+  .note b i { font-style:normal; color:var(--accent); font-weight:700; }
+  .note.warn b i { color:var(--warm); }
+  .note.new { animation:slidein 6s ease-in-out infinite; }
+  @keyframes slidein { 0%,8% { transform:translateY(-14px); opacity:0; } 16%,88% { transform:none; opacity:1; } 100% { opacity:0; } }
+
+  .illo { width:100%; aspect-ratio:4/3; display:block; background:linear-gradient(160deg,var(--accent-soft),#F8F7FD 70%); }
+  .illo.warm { background:linear-gradient(160deg,var(--warm-soft),#FBF7F1 70%); }
+  .band .art { background:linear-gradient(160deg,#2A2460,#17152B); display:grid; place-items:center; padding:24px; }
+  .band .art svg { width:min(100%,420px); height:auto; }
+  .chat { background:#EFEDF8; padding:22px; display:grid; align-content:center; gap:10px; min-height:100%; }
+  .bubble { max-width:86%; padding:10px 12px; border-radius:12px; font-size:14px; line-height:1.6; box-shadow:0 2px 6px -4px rgba(0,0,0,.3); }
+  .bubble.me { justify-self:start; background:#E7E2FF; border-start-start-radius:3px; }
+  .bubble.them { justify-self:end; background:#fff; border-start-end-radius:3px; }
+  .bubble small { display:block; text-align:left; font-size:11px; color:var(--muted); margin-top:2px; direction:ltr; }
+  .chat-head { display:flex; gap:10px; align-items:center; padding-bottom:10px; border-bottom:1px solid rgba(20,33,43,.08); }
+  .chat-head i { width:36px; height:36px; border-radius:50%; background:var(--accent); color:#fff; display:grid; place-items:center; font-style:normal; font-weight:700; font-family:"Readex Pro",sans-serif; }
+  .chat-head b { font-family:var(--f-display); font-size:15px; display:block; }
+  .chat-head small { color:var(--accent); font-size:12px; }
+  @media (prefers-reduced-motion:reduce) { .note.new, .app-top .live::before { animation:none; } }
+
+  /* ---------- more life: moving colour, growing charts, live notifications, reveals ---------- */
+  .progress { position:fixed; top:0; inset-inline:0; height:3px; background:linear-gradient(90deg,#5B47E0,#B66CF0); transform-origin:right; transform:scaleX(var(--s,0)); z-index:60; }
+  .stage-art::before { display:none; }
+  .blob { position:absolute; border-radius:50%; filter:blur(38px); opacity:.55; z-index:0; animation:float 14s ease-in-out infinite; }
+  .blob.b1 { width:58%; height:62%; background:#C4BBFF; top:2%; inset-inline-start:6%; }
+  .blob.b2 { width:42%; height:46%; background:#F5C2E7; bottom:4%; inset-inline-end:2%; animation-delay:-5s; animation-duration:17s; }
+  .blob.b3 { width:30%; height:32%; background:#B9E4FF; top:30%; inset-inline-end:30%; animation-delay:-9s; animation-duration:20s; }
+  @keyframes float { 0%,100% { transform:translate(0,0) scale(1); } 33% { transform:translate(18px,-22px) scale(1.06); } 66% { transform:translate(-16px,14px) scale(.96); } }
+  .laptop { animation:bob 7s ease-in-out infinite; }
+  .phone { animation:bob 7s ease-in-out infinite; animation-delay:-3.5s; }
+  @keyframes bob { 50% { transform:translateY(-8px); } }
+  #hero-chart rect { transform-box:fill-box; transform-origin:50% 100%; animation:grow .9s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes grow { from { transform:scaleY(0); } }
+  .note { transition:transform .45s ease, opacity .45s ease; }
+  .note.enter { transform:translateY(-12px); opacity:0; }
+  .eyebrow::before { animation:line 1.2s ease both; }
+  @keyframes line { from { width:0; } }
+  .btn.primary { position:relative; overflow:hidden; }
+  .btn.primary::after { content:""; position:absolute; inset:0; background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%); transform:translateX(120%); transition:transform .7s ease; }
+  .btn.primary:hover::after { transform:translateX(-120%); }
+  .svc a .illo { transition:transform .5s ease; }
+  .svc a:hover .illo { transform:scale(1.05); }
+  .svc a svg * { animation-play-state:paused; }
+  .svc a:hover svg *, .svc a:focus-visible svg * { animation-play-state:running; }
+  .reveal { opacity:.25; transform:translateY(26px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+  .facts b { transition:color .3s; }
+  .facts div:hover b { color:var(--accent); }
+  .steps li { position:relative; overflow:hidden; }
+  .steps li::after { content:""; position:absolute; inset:auto 0 0 0; height:3px; background:linear-gradient(90deg,#5B47E0,#B66CF0); transform:scaleX(0); transform-origin:right; transition:transform .6s ease; }
+  .steps li:hover::after, .steps li.in::after { transform:scaleX(1); }
+  .steps li.in::after { transition-delay:calc(var(--i,0) * .15s + .3s); }
+  .work-dots { display:flex; gap:6px; justify-content:center; margin-top:10px; }
+  .work-dots i { width:7px; height:7px; border-radius:99px; background:var(--line); transition:width .3s,background .3s; }
+  .work-dots i.on { width:22px; background:var(--accent); }
   @media (prefers-reduced-motion:reduce) {
-    html { scroll-behavior:auto; }
-    .pin { height:auto !important; }
-    .stage { position:relative; min-height:100vh; }
-    .txt { opacity:1 !important; transform:none !important; }
-    .screen { clip-path:none; transform:none; }
-    .ring, .veil { display:none; }
-    .track { flex-wrap:wrap; width:auto; }
-    .scroll i, .s-studio .r { animation:none; }
-    #net { transform:none; }
+    .blob, .laptop, .phone, #hero-chart rect, .eyebrow::before { animation:none !important; }
+    .reveal { opacity:1; transform:none; }
   }
+  @media (max-width:1000px) {
+    .svc { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .work { grid-auto-columns:minmax(260px,46%); }
+  }
+  @media (max-width:820px) {
+    header nav { display:none; }
+    .hero { grid-template-columns:minmax(0,1fr); gap:34px; padding-top:28px; }
+        .facts { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:20px; }
+    .facts div:nth-child(3) { border-inline-start:0; padding-inline-start:4px; }
+    .facts div:nth-child(n+3) { border-top:1px solid var(--line); }
+    .band, .contact { grid-template-columns:minmax(0,1fr); }
+    .band img { min-height:220px; max-height:260px; }
+    .band .txt, .contact form, .thanks { padding:26px 22px; }
+    .contact .pic img { min-height:220px; max-height:260px; }
+    .faq { grid-template-columns:minmax(0,1fr); }
+  }
+  @media (max-width:560px) {
+    .wrap { padding-inline:16px; }
+    .svc, .steps { grid-template-columns:minmax(0,1fr); }
+    .work { grid-auto-columns:82%; }
+    .two { grid-template-columns:minmax(0,1fr); }
+    .hdr { gap:12px; justify-content:space-between; }
+    .hdr-end .btn { padding:8px 12px; }
+    .fab span { display:none; }
+    section { padding-top:56px; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none !important; } }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
-<div class="bar" id="bar"></div>
-<header>
-  <a class="brand" href="#hero" aria-label="Agentiq"><svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.5"/></svg><span lang="en">Agentiq</span></a>
-  <nav aria-label="الأقسام"><a href="#iris">رؤيتنا</a><a href="#film">أعمالنا</a><a href="#svc">الخدمات</a><a href="/hours/">احسب التوفير</a></nav>
-  <div class="hdr-end"><a class="lang" href="/en/" lang="en" hreflang="en">EN</a><a class="res" href="#start">ابدأ مشروعك</a></div>
-</header>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header id="hdr"><div class="wrap hdr">
+  <a class="brand" href="/" aria-label="Agentiq"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.5"/></svg></i><span lang="en">Agentiq</span></a>
+  <nav aria-label="الأقسام"><a href="#services">الخدمات</a><a href="#work">أعمالنا</a><a href="/hours/">احسب التوفير</a><a href="#faq">الأسئلة</a></nav>
+  <div class="hdr-end"><a class="lang" href="/en/" lang="en" hreflang="en">EN</a><a class="btn primary sm" href="#start">ابدأ مشروعك</a></div>
+</div></header>
 
 <main id="main">
-<section class="pin" id="hero" aria-label="البداية"><div class="stage">
-  <div class="fill"></div>
-  <canvas id="net" aria-hidden="true"></canvas>
-  <div class="shade"></div>
-  <div class="txt" data-r="-1,-.5,.34,.62"><span class="eyebrow">شاشات متابعة · أتمتة · مواقع</span><h1>أرقام عملك أمامك، ومهامك تُنجز وحدها</h1><p>نربط الأنظمة التي تستخدمها، ونعرض أرقامك في شاشة تتحدّث وحدها، ونرسل لك التنبيه والتقرير جاهزاً بدل متابعتها يدوياً.</p></div>
-  <div class="scroll" aria-hidden="true">مرّر للأسفل<i></i></div>
-</div></section>
+<div class="wrap">
+  <section class="hero" aria-label="البداية" style="padding-top:40px">
+    <div>
+      <span class="eyebrow">شاشات متابعة · أتمتة · مواقع</span>
+      <h1>أرقام عملك أمامك، ومهامك المتكررة <em>تُنجز وحدها</em></h1>
+      <p>نربط الأنظمة التي تستخدمها، ونعرض أرقامك في شاشة تتحدّث وحدها، ونرسل لك التنبيه والتقرير جاهزاً بدل متابعتها يدوياً.</p>
+      <div class="cta"><a class="btn primary" href="#start">ابدأ مشروعك</a><a class="btn" href="/hours/">احسب كم توفّر</a></div>
+    </div>
+    <div class="stage-art" aria-hidden="true">
+      <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+      <div class="laptop"><div class="lid"><div class="scr">
+        <div class="side"><i></i><i></i><i></i><i></i></div>
+        <div class="app">
+          <div class="app-top"><b>لوحة المتجر</b><span class="live">مباشر</span></div>
+          <div class="k4">
+            <div><span>المبيعات اليوم</span><b id="k-sales">48,210</b><em>▲ 12.4%</em></div>
+            <div><span>الطلبات</span><b id="k-orders">265</b><em>▲ 8.1%</em></div>
+            <div><span>وفّرتها الأتمتة</span><b>58</b><em>ساعة هذا الشهر</em></div>
+          </div>
+          <svg viewBox="0 0 400 130" id="hero-chart"></svg>
+        </div>
+      </div></div><div class="base"></div></div>
+      <div class="phone"><div class="ps">
+        <div class="note new warn"><b><span>تنبيه</span><i>الآن</i></b>مخزون «قهوة مختصة» أقل من 10 وحدات</div>
+        <div class="note"><b><span>التقرير اليومي</span><i>9:00 م</i></b>المبيعات أعلى من أمس بـ 12% ✓</div>
+        <div class="note"><b><span>طلب جديد</span><i>8:42 م</i></b>سُجّل في الشيت تلقائياً</div>
+      </div></div>
+    </div>
+  </section>
 
-<section class="pin" id="iris" aria-label="رؤيتنا"><div class="stage">
-  <div class="screen" aria-hidden="true">
-    <div class="board">
-      <div class="kpis">
-        <div class="kpi"><span>المبيعات اليوم</span><b id="k1">48,210</b><em>▲ 12.4% عن أمس</em></div>
-        <div class="kpi"><span>الطلبات</span><b id="k2">265</b><em>▲ 8.1%</em></div>
-        <div class="kpi"><span>معدل التحويل</span><b id="k3">2.74%</b><em>▲ 0.2 نقطة</em></div>
-        <div class="kpi"><span>ساعات وفّرتها الأتمتة</span><b id="k4">58</b><em>هذا الشهر</em></div>
-      </div>
-      <div class="chart"><svg id="bigchart" viewBox="0 0 1000 240" preserveAspectRatio="none"></svg></div>
+  <div class="facts">
+    <div><b class="num">24/7</b><span>تنبيهات تصلك على جوالك</span></div>
+    <div><b class="num" data-count="12" data-prefix="+">+12</b><span>نظاماً نربط معه، مثل سلة وExcel</span></div>
+    <div><b><span class="num" data-count="4">4</span> خطوات</b><span>من الفكرة إلى التشغيل</span></div>
+    <div><b>✓</b><span>نختبر كل شيء قبل التسليم</span></div>
+  </div>
+
+  <section id="services">
+    <div class="head"><div><span class="eyebrow">الخدمات</span><h2>ماذا نبني لكم</h2></div><p>أربع خدمات تكمّل بعضها. ابدأ بواحدة ونكبر معك.</p></div>
+    <div class="svc">
+      <a href="/services/dashboards/"><svg class="illo" viewBox="0 0 400 300" aria-hidden="true"><rect x="60" y="54" width="280" height="176" rx="12" fill="#fff" stroke="#E3E0F0"/>
+   <rect x="78" y="72" width="76" height="40" rx="8" fill="#F0EEF8"/><rect x="162" y="72" width="76" height="40" rx="8" fill="#F0EEF8"/><rect x="246" y="72" width="76" height="40" rx="8" fill="#EEEBFF"/>
+   <rect x="88" y="82" width="34" height="6" rx="3" fill="#C7C2DD"/><rect x="88" y="94" width="48" height="9" rx="3" fill="#17152B"/><rect x="172" y="82" width="34" height="6" rx="3" fill="#C7C2DD"/><rect x="172" y="94" width="40" height="9" rx="3" fill="#17152B"/><rect x="256" y="82" width="34" height="6" rx="3" fill="#B3A8F5"/><rect x="256" y="94" width="44" height="9" rx="3" fill="#5B47E0"/>
+   <g fill="#5B47E0"><rect x="88" y="168" width="18" height="44" rx="3" opacity=".45"/><rect x="116" y="152" width="18" height="60" rx="3" opacity=".45"/><rect x="144" y="160" width="18" height="52" rx="3" opacity=".45"/><rect x="172" y="138" width="18" height="74" rx="3" opacity=".45"/><rect x="200" y="146" width="18" height="66" rx="3" opacity=".45"/><rect x="228" y="128" width="18" height="84" rx="3" opacity=".45"/><rect x="256" y="120" width="18" height="92" rx="3"/></g>
+   <polyline points="97,160 125,146 153,152 181,132 209,138 237,120 300,118" fill="none" stroke="#B0601C" stroke-width="2" stroke-dasharray="5 4"/>
+   <rect x="250" y="196" width="120" height="44" rx="10" fill="#fff" stroke="#E3E0F0" filter="drop-shadow(0 6px 10px rgba(20,33,43,.15))"/><circle cx="352" cy="218" r="9" fill="#FBEBDD"/><text x="352" y="222" text-anchor="middle" font-size="12" font-weight="700" fill="#B0601C">!</text><rect x="262" y="210" width="72" height="6" rx="3" fill="#17152B"/><rect x="262" y="222" width="52" height="6" rx="3" fill="#C7C2DD"/></svg>
+        <div class="body"><h3>شاشات متابعة الأرقام</h3><p>مبيعاتك وطلباتك في شاشة واحدة تتحدّث وحدها.</p><ul><li>مقارنة بالأمس وبالهدف</li><li>تنبيه فوري عند الخلل</li><li>ملخص يومي مكتوب</li></ul><span class="go">التفاصيل ←</span></div></a>
+      <a href="/services/automation/"><svg class="illo" viewBox="0 0 400 300" aria-hidden="true"><path d="M300 130 H244 M156 130 H100" stroke="#5B47E0" stroke-width="3" stroke-dasharray="6 7" fill="none"/><path d="M200 160 V222 H130" stroke="#D8D3EC" stroke-width="3" fill="none"/>
+   <rect x="300" y="98" width="72" height="64" rx="14" fill="#fff" stroke="#5B47E0" stroke-width="1.5"/><path d="M322 120 h28 M322 132 h20 M322 144 h24" stroke="#17152B" stroke-width="3" stroke-linecap="round"/>
+   <rect x="156" y="98" width="88" height="64" rx="14" fill="#5B47E0"/><path d="M186 130 l10 10 l18 -20" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+   <rect x="28" y="98" width="72" height="64" rx="14" fill="#fff" stroke="#5B47E0" stroke-width="1.5"/><path d="M48 142 V124 a16 16 0 0 1 32 0 V142 l4 4 H44 z" fill="#EEEBFF" stroke="#5B47E0" stroke-width="2"/>
+   <rect x="58" y="200" width="72" height="44" rx="12" fill="#fff" stroke="#D8D3EC"/><path d="M74 216 h40 M74 228 h28" stroke="#C7C2DD" stroke-width="3" stroke-linecap="round"/>
+   <circle r="7" fill="#5B47E0"><animateMotion dur="1.8s" repeatCount="indefinite" path="M300 130 H244"/></circle><circle r="7" fill="#5B47E0"><animateMotion dur="1.8s" begin=".9s" repeatCount="indefinite" path="M156 130 H100"/></circle>
+   <text x="336" y="186" text-anchor="middle" font-size="13" fill="#433F5E" font-family="IBM Plex Sans Arabic">طلب جديد</text><text x="200" y="186" text-anchor="middle" font-size="13" fill="#433F5E" font-family="IBM Plex Sans Arabic">تحقق</text><text x="64" y="186" text-anchor="middle" font-size="13" fill="#433F5E" font-family="IBM Plex Sans Arabic">تنبيه</text></svg>
+        <div class="body"><h3>أتمتة المهام المتكررة</h3><p>المهام اليومية بنفس الخطوات تُنجز وحدها.</p><ul><li>نقل البيانات بين أنظمتك</li><li>تقارير تصلك في موعدها</li><li>طلبات وموافقات إلكترونية</li></ul><span class="go">التفاصيل ←</span></div></a>
+      <a href="/services/websites/"><svg class="illo" viewBox="0 0 400 300" aria-hidden="true"><defs><linearGradient id="skyL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FBCD3"/><stop offset="1" stop-color="#3D6274"/></linearGradient></defs>
+   <rect x="96" y="40" width="268" height="190" rx="12" fill="#fff" stroke="#E3E0F0"/><circle cx="112" cy="56" r="4" fill="#E3E0F0"/><circle cx="124" cy="56" r="4" fill="#E3E0F0"/><circle cx="136" cy="56" r="4" fill="#E3E0F0"/>
+   <rect x="108" y="70" width="244" height="96" rx="8" fill="url(#skyL)"/><path d="M108 166 V142 Q160 116 214 136 T320 128 Q338 124 352 134 V166 Z" fill="#2A4A4A" opacity=".85"/>
+   <rect x="250" y="90" width="88" height="10" rx="5" fill="#fff"/><rect x="274" y="106" width="64" height="7" rx="3.5" fill="#fff" opacity=".7"/>
+   <rect x="250" y="180" width="96" height="28" rx="14" fill="#5B47E0"/><text x="298" y="199" text-anchor="middle" font-size="13" fill="#fff" font-weight="600" font-family="IBM Plex Sans Arabic">احجز الآن</text>
+   <rect x="120" y="184" width="70" height="8" rx="4" fill="#E3E0F0"/><rect x="120" y="198" width="50" height="8" rx="4" fill="#E3E0F0"/>
+   <rect x="34" y="96" width="86" height="168" rx="16" fill="#1E1B33"/><rect x="40" y="104" width="74" height="152" rx="11" fill="#fff"/><rect x="46" y="116" width="62" height="50" rx="6" fill="url(#skyL)"/><rect x="46" y="174" width="50" height="6" rx="3" fill="#E3E0F0"/><rect x="46" y="186" width="38" height="6" rx="3" fill="#E3E0F0"/><rect x="46" y="230" width="62" height="16" rx="8" fill="#5B47E0"/></svg>
+        <div class="body"><h3>مواقع وصفحات حجز</h3><p>موقع عربي بهويتك يحوّل الزائر إلى طلب.</p><ul><li>تصميم خاص يعمل على الجوال</li><li>معرض لأعمالك</li><li>حجز وطلب سعر عبر واتساب</li></ul><span class="go">التفاصيل ←</span></div></a>
+      <a href="/services/process/"><svg class="illo" viewBox="0 0 400 300" aria-hidden="true"><path d="M340 150 H300 M240 150 H220 M180 150 H160 V100 H140 M160 150 V200 H140 M80 100 H60 V150 M80 200 H60 V150 H46" fill="none" stroke="#D8D3EC" stroke-width="3"/>
+   <circle cx="354" cy="150" r="14" fill="#fff" stroke="#5B47E0" stroke-width="3"/>
+   <rect x="240" y="126" width="60" height="48" rx="10" fill="#fff" stroke="#E3E0F0"/><text x="270" y="155" text-anchor="middle" font-size="13" fill="#17152B" font-family="IBM Plex Sans Arabic">طلب</text>
+   <path d="M200 128 L222 150 L200 172 L178 150 Z" fill="#EEEBFF" stroke="#5B47E0" stroke-width="2"/>
+   <rect x="80" y="78" width="60" height="44" rx="10" fill="#fff" stroke="#E3E0F0"/><text x="110" y="105" text-anchor="middle" font-size="13" fill="#17152B" font-family="IBM Plex Sans Arabic">موافقة</text>
+   <rect x="80" y="178" width="60" height="44" rx="10" fill="#fff" stroke="#E3E0F0"/><text x="110" y="205" text-anchor="middle" font-size="13" fill="#17152B" font-family="IBM Plex Sans Arabic">تعديل</text>
+   <circle cx="36" cy="150" r="12" fill="#fff" stroke="#17152B" stroke-width="5"/>
+   <circle r="7" fill="#5B47E0"><animateMotion dur="4s" repeatCount="indefinite" path="M354 150 H270 H200 H160 V100 H110 H60 V150 H36"/></circle>
+   <g transform="translate(300 214)"><rect width="76" height="54" rx="8" fill="#fff" stroke="#E3E0F0"/><path d="M12 16 h40 M12 28 h52 M12 40 h30" stroke="#C7C2DD" stroke-width="3" stroke-linecap="round"/><circle cx="62" cy="40" r="9" fill="#5B47E0"/><path d="M58 40 l3 3 l6 -6" stroke="#fff" stroke-width="2" fill="none"/></g></svg>
+        <div class="body"><h3>تنظيم الإجراءات والصلاحيات</h3><p>خطوات عمل واضحة يعرف فيها كل شخص دوره.</p><ul><li>توثيق خطوات العمل</li><li>قواعد لمن يرى ماذا</li><li>متابعة الالتزام</li></ul><span class="go">التفاصيل ←</span></div></a>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="art" aria-hidden="true"><svg viewBox="0 0 420 300">
+      <g transform="translate(36 120)"><rect x="0" y="120" width="140" height="18" rx="3" fill="#F3EFE6"/><rect x="6" y="104" width="134" height="18" rx="3" fill="#E9E3D6"/><rect x="-4" y="88" width="140" height="18" rx="3" fill="#F3EFE6"/><rect x="4" y="72" width="134" height="18" rx="3" fill="#E9E3D6"/><rect x="0" y="56" width="140" height="18" rx="3" fill="#F3EFE6"/><rect x="8" y="40" width="130" height="18" rx="3" fill="#E9E3D6"/><rect x="18" y="38" width="10" height="20" fill="#E7C66F"/><rect x="60" y="54" width="10" height="20" fill="#C4BBFF"/><rect x="100" y="86" width="10" height="20" fill="#E88A7C"/></g>
+      <circle cx="292" cy="120" r="74" fill="#fff" stroke="#4B4580" stroke-width="3"/><circle cx="292" cy="120" r="4" fill="#B0601C"/>
+      <g stroke="#C7C2DD" stroke-width="3" stroke-linecap="round"><path d="M292 54 v8 M292 178 v8 M226 120 h8 M350 120 h8"/></g>
+      <line x1="292" y1="120" x2="292" y2="72" stroke="#17152B" stroke-width="5" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 292 120" to="360 292 120" dur="6s" repeatCount="indefinite"/></line>
+      <line x1="292" y1="120" x2="322" y2="132" stroke="#B0601C" stroke-width="6" stroke-linecap="round"/>
+      <g fill="#E9C46A" stroke="#B8963E"><ellipse cx="270" cy="262" rx="26" ry="9"/><ellipse cx="270" cy="252" rx="26" ry="9"/><ellipse cx="270" cy="242" rx="26" ry="9"/><ellipse cx="320" cy="262" rx="24" ry="8.5"/><ellipse cx="320" cy="252" rx="24" ry="8.5"/></g>
+    </svg></div>
+    <div class="txt">
+      <h2>كم ساعة يضيع فريقك في الأعمال اليدوية؟</h2>
+      <p>اكتب مهامك اليومية، وتطلع لك الساعات التي تقضيها، وتكلفتها عليك، وكم توفّر عليك الأتمتة. تأخذ دقيقتين.</p>
+      <div class="stats"><div><b class="num">86</b><span>ساعة شهرياً في مثال المتجر</span></div><div><b class="num">41,712</b><span>ر.س توفير سنوي تقديري</span></div></div>
+      <a class="btn primary" href="/hours/">احسبها الآن ←</a>
     </div>
   </div>
-  <div class="veil"></div>
-  <div class="ring"></div>
-  <div class="txt t0" data-r="-1,-.5,.05,.22">افتح الشاشة</div>
-  <div class="txt" data-r=".55,.76,1.5,2"><span class="eyebrow">رؤيتنا</span><h2>أرقام واضحة، وقرارات في وقتها</h2></div>
-</div></section>
 
-<section class="pin" id="film" aria-label="أعمالنا"><div class="stage">
-  <div class="head"><h2>من أعمالنا</h2><span>تابع التمرير لمشاهدة الأعمال، واضغط أي عمل لتجربته</span></div>
-  <div class="track" id="track">
-    <figure class="frame"><a href="/demos/studio/" target="_blank" rel="noopener">
-      <div class="shot s-studio" aria-hidden="true"><span class="r"></span><span class="t"><small>استديو تصوير</small><strong>لحظاتكم تستاهل صورة تبقى</strong></span></div>
-      <b>موقع استديو تصوير</b><small>موقع إلكتروني · نموذج لعميل</small><small class="go">افتحه ↗</small></a></figure>
-    <figure class="frame"><a href="/nabd-alnadi/" target="_blank" rel="noopener">
-      <div class="shot s-dash" aria-hidden="true"><div class="mini-k"><div><span>الجلسات</span><b>59</b></div><div><span>السعرات</span><b>53,259</b></div><div><span>الهدف</span><b>128</b></div></div><svg viewBox="0 0 300 120" id="sv-dash"></svg></div>
-      <b>نبض النادي</b><small>شاشة متابعة · مشروع منشور</small><small class="go">افتحها ↗</small></a></figure>
-    <figure class="frame"><a href="/lab/#lab">
-      <div class="shot s-store" aria-hidden="true"><div class="mini-k"><div><span>المبيعات</span><b>48,210</b></div><div><span>الطلبات</span><b>265</b></div><div><span>التوقع</span><b>71,400</b></div></div><svg viewBox="0 0 300 120" id="sv-store"></svg></div>
-      <b>شاشة متابعة متجر</b><small>شاشة متابعة · مثال تفاعلي</small><small class="go">جرّبها ←</small></a></figure>
-    <figure class="frame"><a href="/lab/#lab">
-      <div class="shot s-auto" aria-hidden="true"><svg viewBox="0 0 300 170">
-        <path d="M262 70 H196 M130 70 H66" fill="none" stroke="#9ad6c8" stroke-width="2" stroke-dasharray="5 6"/><path d="M163 92 V132 H104" fill="none" stroke="rgba(243,236,224,.25)" stroke-width="2"/>
-        <rect x="236" y="46" width="52" height="48" fill="#0d1c28" stroke="#9ad6c8"/><text x="262" y="74" text-anchor="middle" font-size="11" fill="#f3ece0" font-family="IBM Plex Sans Arabic">طلب</text>
-        <rect x="130" y="46" width="66" height="48" fill="#123039" stroke="#9ad6c8"/><text x="163" y="74" text-anchor="middle" font-size="11" fill="#f3ece0" font-family="IBM Plex Sans Arabic">شرط</text>
-        <rect x="14" y="46" width="52" height="48" fill="#0d1c28" stroke="#9ad6c8"/><text x="40" y="74" text-anchor="middle" font-size="11" fill="#f3ece0" font-family="IBM Plex Sans Arabic">تنبيه</text>
-        <rect x="52" y="114" width="52" height="38" fill="#0d1c28" stroke="rgba(243,236,224,.25)"/><text x="78" y="137" text-anchor="middle" font-size="11" fill="rgba(243,236,224,.7)" font-family="IBM Plex Sans Arabic">تقرير</text>
-        <circle r="5" fill="#9ad6c8"><animateMotion dur="1.8s" repeatCount="indefinite" path="M236 70 H196"/></circle><circle r="5" fill="#9ad6c8"><animateMotion dur="1.8s" begin=".9s" repeatCount="indefinite" path="M130 70 H66"/></circle></svg></div>
-      <b>مهام تُنجز وحدها</b><small>أتمتة · محاكي تفاعلي</small><small class="go">شغّله ←</small></a></figure>
-    <figure class="frame"><a href="/hours/">
-      <div class="shot s-calc" aria-hidden="true"><p>توفّر الأتمتة شهرياً</p><div class="big">58<small> ساعة</small></div><p>أي 41,712 ر.س في السنة</p></div>
-      <b>حاسبة تكلفة الأعمال اليدوية</b><small>أداة مجانية · دقيقتان</small><small class="go">احسب ←</small></a></figure>
-  </div>
-</div></section>
+  <section id="work">
+    <div class="head"><div><span class="eyebrow">أعمالنا</span><h2>جرّبها بنفسك</h2></div>
+      <div class="row-nav"><button type="button" id="prev" aria-label="السابق">→</button><button type="button" id="next" aria-label="التالي">←</button></div></div>
+    <div class="work" id="track">
+      <a href="/demos/studio/" target="_blank" rel="noopener"><div class="shot s-studio" aria-hidden="true"><span class="r"></span><span class="t"><small>استديو تصوير</small><strong>لحظاتكم تستاهل صورة تبقى</strong></span></div>
+        <h3>موقع استديو تصوير</h3><small>موقع إلكتروني · نموذج لعميل</small><span class="go">افتحه ↗</span></a>
+      <a href="/nabd-alnadi/" target="_blank" rel="noopener"><div class="shot s-screen" aria-hidden="true"><div class="mini-k"><div><span>الجلسات</span><b>59</b></div><div><span>السعرات</span><b>53,259</b></div><div><span>الهدف</span><b>128</b></div></div><svg viewBox="0 0 300 120" id="sv-dash"></svg></div>
+        <h3>نبض النادي</h3><small>شاشة متابعة · مشروع منشور</small><span class="go">افتحها ↗</span></a>
+      <a href="/lab/#lab"><div class="shot s-screen" aria-hidden="true"><div class="mini-k"><div><span>المبيعات</span><b>48,210</b></div><div><span>الطلبات</span><b>265</b></div><div><span>التوقع</span><b>71,400</b></div></div><svg viewBox="0 0 300 120" id="sv-store"></svg></div>
+        <h3>شاشة متابعة متجر</h3><small>شاشة متابعة · مثال تفاعلي</small><span class="go">جرّبها ←</span></a>
+      <a href="/lab/#lab"><div class="shot s-screen" aria-hidden="true" style="align-content:center"><svg viewBox="0 0 300 170">
+        <path d="M262 70 H196 M130 70 H66" fill="none" stroke="#5B47E0" stroke-width="2" stroke-dasharray="5 6"/><path d="M163 92 V132 H104" fill="none" stroke="#E3E0F0" stroke-width="2"/>
+        <rect x="236" y="46" width="52" height="48" rx="10" fill="#fff" stroke="#5B47E0"/><text x="262" y="74" text-anchor="middle" font-size="11" fill="#17152B" font-family="IBM Plex Sans Arabic">طلب</text>
+        <rect x="130" y="46" width="66" height="48" rx="10" fill="#EEEBFF" stroke="#5B47E0"/><text x="163" y="74" text-anchor="middle" font-size="11" fill="#17152B" font-family="IBM Plex Sans Arabic">شرط</text>
+        <rect x="14" y="46" width="52" height="48" rx="10" fill="#fff" stroke="#5B47E0"/><text x="40" y="74" text-anchor="middle" font-size="11" fill="#17152B" font-family="IBM Plex Sans Arabic">تنبيه</text>
+        <rect x="52" y="114" width="52" height="38" rx="10" fill="#fff" stroke="#E3E0F0"/><text x="78" y="137" text-anchor="middle" font-size="11" fill="#433F5E" font-family="IBM Plex Sans Arabic">تقرير</text>
+        <circle r="5" fill="#5B47E0"><animateMotion dur="1.8s" repeatCount="indefinite" path="M236 70 H196"/></circle><circle r="5" fill="#5B47E0"><animateMotion dur="1.8s" begin=".9s" repeatCount="indefinite" path="M130 70 H66"/></circle></svg></div>
+        <h3>مهام تُنجز وحدها</h3><small>أتمتة · محاكي تفاعلي</small><span class="go">شغّله ←</span></a>
+      <a href="/hours/"><div class="shot s-calc" aria-hidden="true"><p>توفّر الأتمتة شهرياً</p><div class="big">58<small> ساعة</small></div><p>أي 41,712 ر.س في السنة</p></div>
+        <h3>حاسبة تكلفة الأعمال اليدوية</h3><small>أداة مجانية · دقيقتان</small><span class="go">احسب ←</span></a>
+    </div>
+    <div class="work-dots" id="dots" aria-hidden="true"></div>
+  </section>
 
-<section class="pin" id="svc" aria-label="الخدمات"><div class="stage">
-  <div class="scene on" aria-hidden="true"><svg viewBox="0 0 400 260"><g fill="none" stroke="#9ad6c8" stroke-width="1.4"><rect x="20" y="20" width="360" height="220"/><path d="M60 200 V150 M100 200 V120 M140 200 V140 M180 200 V90 M220 200 V110 M260 200 V70 M300 200 V85" stroke-width="16" stroke-opacity=".5"/><path d="M60 140 L100 110 L140 128 L180 80 L220 98 L260 60 L340 66" stroke-dasharray="4 5"/></g><circle cx="340" cy="66" r="6" fill="#9ad6c8"/></svg></div>
-  <div class="scene" aria-hidden="true"><svg viewBox="0 0 400 260"><g fill="none" stroke="#9ad6c8" stroke-width="1.4"><rect x="300" y="100" width="70" height="56"/><rect x="165" y="100" width="70" height="56"/><rect x="30" y="100" width="70" height="56"/><path d="M300 128 H235 M165 128 H100" stroke-dasharray="5 6"/><path d="M200 156 V210 H65"/><rect x="30" y="190" width="70" height="40"/></g><circle r="6" fill="#9ad6c8"><animateMotion dur="2s" repeatCount="indefinite" path="M300 128 H235"/></circle></svg></div>
-  <div class="scene" aria-hidden="true"><svg viewBox="0 0 400 260"><g fill="none" stroke="#9ad6c8" stroke-width="1.4"><rect x="60" y="20" width="320" height="210"/><path d="M60 46 H380"/><path d="M60 170 Q140 120 220 160 T380 140"/><rect x="250" y="190" width="110" height="24" rx="12"/><rect x="10" y="80" width="80" height="160" rx="8"/></g><circle cx="200" cy="120" r="34" fill="none" stroke="#e9c46a" stroke-width="1.2"/></svg></div>
-  <div class="scene" aria-hidden="true"><svg viewBox="0 0 400 260"><g fill="none" stroke="#9ad6c8" stroke-width="1.4"><circle cx="360" cy="130" r="14"/><rect x="250" y="108" width="70" height="44"/><path d="M200 104 L226 130 L200 156 L174 130 Z"/><rect x="60" y="60" width="70" height="40"/><rect x="60" y="160" width="70" height="40"/><circle cx="30" cy="130" r="12" stroke-width="4"/><path d="M346 130 H320 M250 130 H226 M174 130 H150 V80 H130 M150 130 V180 H130 M60 80 H44 V130 M60 180 H44 V130 H42"/></g></svg></div>
-  <div class="shade"></div>
-  <div class="list">
-    <h2>ماذا نبني لكم</h2>
-    <div class="row on"><em>01</em><div><b>شاشات متابعة الأرقام</b><p>مبيعاتك وطلباتك وأهم أرقامك في شاشة تتحدّث وحدها، مع تنبيه وملخص يومي. <a href="/services/dashboards/">التفاصيل ←</a></p></div></div>
-    <div class="row"><em>02</em><div><b>أتمتة المهام المتكررة</b><p>نقل البيانات والتقارير والموافقات تُنجز وحدها بدل العمل اليدوي. <a href="/services/automation/">التفاصيل ←</a></p></div></div>
-    <div class="row"><em>03</em><div><b>مواقع وصفحات حجز</b><p>موقع عربي بهويتك يعمل على الجوال، ويوصل لك الطلبات جاهزة على واتساب. <a href="/services/websites/">التفاصيل ←</a></p></div></div>
-    <div class="row"><em>04</em><div><b>تنظيم الإجراءات والصلاحيات</b><p>خطوات عمل واضحة، وقواعد لمن يرى ماذا من البيانات، قبل أي أتمتة. <a href="/services/process/">التفاصيل ←</a></p></div></div>
-  </div>
-</div></section>
+  <section id="how">
+    <div class="head"><div><span class="eyebrow">طريقة العمل</span><h2>من الفكرة إلى التشغيل</h2></div><p>أربع مراحل، ولكل مرحلة مخرج واضح تراجعه قبل الانتقال للتالية.</p></div>
+    <ol class="steps">
+      <li><em>1</em><b>جلسة فهم</b><p>نفهم نشاطك والأرقام المهمة لك.</p></li>
+      <li><em>2</em><b>تصميم الحل</b><p>نتفق على الشكل والتنبيهات والتقارير.</p></li>
+      <li><em>3</em><b>البناء والاختبار</b><p>نبني ونختبر على بياناتك قبل التشغيل.</p></li>
+      <li><em>4</em><b>التشغيل والدعم</b><p>نطلق وندرّب فريقك ونتابع بعد الإطلاق.</p></li>
+    </ol>
+  </section>
 
-<section class="sec" id="how">
-  <span class="eyebrow">طريقة العمل</span>
-  <h2>من الفكرة إلى التشغيل</h2>
-  <p class="lead">أربع مراحل، ولكل مرحلة مخرج واضح تراجعه قبل الانتقال للتالية.</p>
-  <ol class="steps">
-    <li><em>01</em><b>جلسة فهم</b><p>نفهم نشاطك والأرقام المهمة لك.</p></li>
-    <li><em>02</em><b>تصميم الحل</b><p>نتفق على الشكل والتنبيهات والتقارير.</p></li>
-    <li><em>03</em><b>البناء والاختبار</b><p>نبني ونختبر على بياناتك قبل التشغيل.</p></li>
-    <li><em>04</em><b>التشغيل والدعم</b><p>نطلق وندرّب فريقك ونتابع بعد الإطلاق.</p></li>
-  </ol>
-</section>
+  <section id="faq">
+    <div class="head"><div><span class="eyebrow">أسئلة شائعة</span><h2>قبل أن تسأل</h2></div></div>
+    <div class="faq">
+      <details><summary>هل أحتاج فريقاً تقنياً؟</summary><p>لا. نتولى البناء والربط، وفريقك يستخدم النتيجة فقط.</p></details>
+      <details><summary>من أين تأتي البيانات؟</summary><p>من الأنظمة التي تستخدمها حالياً، مثل Excel أو متجرك الإلكتروني أو نظام نقاط البيع أو قاعدة بياناتك.</p></details>
+      <details><summary>كيف تحمون البيانات؟</summary><p>نحدد صلاحيات الوصول لكل مستخدم، وتبقى البيانات ملكك.</p></details>
+      <details><summary>كم يستغرق المشروع؟</summary><p>حسب حجمه. نحدد المدة بعد جلسة الفهم وقبل بدء العمل.</p></details>
+      <details><summary>هل يمكن البدء بمشروع صغير؟</summary><p>نعم. يمكنك البدء بشاشة واحدة أو مهمة واحدة، ثم التوسع.</p></details>
+      <details><summary>هل تصممون مواقع إلكترونية؟</summary><p>نعم، مواقع عربية تعمل على الجوال مع حجز أو طلب سعر عبر واتساب. شاهد <a href="/demos/studio/" style="color:var(--accent);font-weight:600">نموذج موقع الاستديو</a>.</p></details>
+    </div>
+  </section>
 
-<section class="sec" id="try">
-  <span class="eyebrow">جرّب بنفسك</span>
-  <h2>شاهد النتيجة قبل أن تقرر</h2>
-  <div class="tools">
-    <a href="/lab/#lab"><b>شاشة متابعة حية</b><span>متجر تجريبي تتحدّث أرقامه أمامك، مع تنبيهات وملخص يومي.</span><i>جرّبها ←</i></a>
-    <a href="/lab/#lab"><b>محاكي الأتمتة</b><span>شغّل ثلاث مهام وشاهد كل خطوة تُنفّذ وحدها.</span><i>شغّله ←</i></a>
-    <a href="/hours/"><b>حاسبة التوفير</b><span>كم ساعة وكم ريال تكلفك الأعمال اليدوية، وكم توفّر الأتمتة.</span><i>احسب ←</i></a>
-  </div>
-</section>
-
-<section class="sec" id="faq">
-  <span class="eyebrow">أسئلة شائعة</span>
-  <h2>قبل أن تسأل</h2>
-  <div class="faq">
-    <details><summary>هل أحتاج فريقاً تقنياً؟</summary><p>لا. نتولى البناء والربط، وفريقك يستخدم النتيجة فقط.</p></details>
-    <details><summary>من أين تأتي البيانات؟</summary><p>من الأنظمة التي تستخدمها حالياً، مثل Excel أو متجرك الإلكتروني أو نظام نقاط البيع أو قاعدة بياناتك.</p></details>
-    <details><summary>كيف تحمون البيانات؟</summary><p>نحدد صلاحيات الوصول لكل مستخدم، وتبقى البيانات ملكك.</p></details>
-    <details><summary>كم يستغرق المشروع؟</summary><p>حسب حجمه. نحدد المدة بعد جلسة الفهم وقبل بدء العمل.</p></details>
-    <details><summary>هل يمكن البدء بمشروع صغير؟</summary><p>نعم. يمكنك البدء بشاشة واحدة أو مهمة واحدة، ثم التوسع.</p></details>
-  </div>
-</section>
-
-<section id="start" aria-labelledby="start-h">
-  <div><span class="eyebrow">ابدأ مشروعك</span><h2 id="start-h">لنبدأ مشروعك</h2><p class="lead">اكتب تفاصيلك باختصار، وتُفتح رسالتك جاهزة على واتساب.</p>
-    <div class="contact-alt"><span>أو تواصل مباشرة: <a class="num" href="tel:+966557912466">0557 912 466</a></span><span>واتساب: <a href="https://wa.me/966557912466" target="_blank" rel="noopener">ابدأ محادثة ↗</a></span></div></div>
-  <div id="fbox">
-    <form id="f" novalidate>
-      <label>الاسم أو الجهة<input name="n" autocomplete="organization"><span class="e" id="en"></span></label>
-      <div class="two">
-        <label>نوع النشاط<select name="t"><option>متجر إلكتروني</option><option>مطعم أو مقهى</option><option>عيادة أو مركز</option><option>شركة خدمات</option><option>جهة حكومية أو غير ربحية</option><option>أخرى</option></select></label>
-        <label>الخدمة<select name="s"><option>شاشة متابعة</option><option>أتمتة مهام</option><option>موقع إلكتروني</option><option>تنظيم الإجراءات</option><option>لست متأكداً بعد</option></select></label>
+  <section id="start" aria-labelledby="start-h">
+    <div class="contact">
+      <div class="pic chat" aria-hidden="true">
+        <div class="chat-head"><i>A</i><div><b>Agentiq</b><small>متصل الآن</small></div></div>
+        <div class="bubble me">السلام عليكم، عندنا متجر ونجمع مبيعات الفروع يدوياً كل يوم.<small>9:12</small></div>
+        <div class="bubble them">وعليكم السلام! نقدر نخليها تتجمع وحدها في شاشة واحدة، ويوصلك ملخص كل ليلة على واتساب.<small>9:13 ✓✓</small></div>
+        <div class="bubble me">ممتاز، كم تأخذ؟<small>9:14</small></div>
+        <div class="bubble them">نحددها معك في جلسة فهم قصيرة. متى يناسبك؟<small>9:14 ✓✓</small></div>
       </div>
-      <label>ما الذي تريد تحسينه؟<input name="m" placeholder="مثال: نجمع مبيعات الفروع يدوياً كل يوم"><span class="e" id="em"></span></label>
-      <button class="send">أرسل عبر واتساب</button>
-    </form>
-  </div>
-</section>
+      <div id="fbox">
+        <form id="f" novalidate>
+          <span class="eyebrow">ابدأ مشروعك</span>
+          <h2 id="start-h">لنبدأ مشروعك</h2>
+          <p class="lead">اكتب تفاصيلك باختصار، وتُفتح رسالتك جاهزة على واتساب. أو اتصل: <a class="num" href="tel:+966557912466" style="color:var(--accent);font-weight:600;white-space:nowrap">0557 912 466</a></p>
+          <label>الاسم أو الجهة<input name="n" autocomplete="organization"><span class="e" id="en"></span></label>
+          <div class="two">
+            <label>نوع النشاط<select name="t"><option>متجر إلكتروني</option><option>مطعم أو مقهى</option><option>عيادة أو مركز</option><option>شركة خدمات</option><option>جهة حكومية أو غير ربحية</option><option>أخرى</option></select></label>
+            <label>الخدمة<select name="s"><option>شاشة متابعة</option><option>أتمتة مهام</option><option>موقع إلكتروني</option><option>تنظيم الإجراءات</option><option>لست متأكداً بعد</option></select></label>
+          </div>
+          <label>ما الذي تريد تحسينه؟<input name="m" placeholder="مثال: نجمع مبيعات الفروع يدوياً كل يوم"><span class="e" id="em"></span></label>
+          <button class="btn primary">أرسل عبر واتساب</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
 </main>
-<footer><span><span lang="en">Agentiq</span> · الرياض، المملكة العربية السعودية</span>
-  <nav aria-label="روابط"><a href="/services/dashboards/">شاشات المتابعة</a><a href="/services/automation/">الأتمتة</a><a href="/services/websites/">المواقع</a><a href="/services/process/">تنظيم الإجراءات</a><a href="/hours/">حاسبة التوفير</a><a href="/en/" lang="en">English</a></nav></footer>
+<footer><div class="wrap"><span><span lang="en">Agentiq</span> · الرياض، المملكة العربية السعودية</span>
+  <nav aria-label="روابط"><a href="/services/dashboards/">شاشات المتابعة</a><a href="/services/automation/">الأتمتة</a><a href="/services/websites/">المواقع</a><a href="/services/process/">تنظيم الإجراءات</a><a href="/hours/">حاسبة التوفير</a><a href="/en/" lang="en">English</a></nav></div></footer>
+<a class="fab" href="https://wa.me/966557912466" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg><span>واتساب</span></a>
 
 <script>
-const clamp = (v) => Math.min(1, Math.max(0, v));
 const $ = (s) => document.querySelector(s);
-const pins = [...document.querySelectorAll('.pin')];
-const track = $('#track'), bar = $('#bar');
-const scenes = [...document.querySelectorAll('#svc .scene')], rows = [...document.querySelectorAll('#svc .row')];
-const navLinks = [...document.querySelectorAll('header nav a[href^="#"]')];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-let queued = false, active = 0;
+addEventListener('scroll', () => $('#hdr').classList.toggle('scrolled', scrollY > 8), { passive: true });
 
-function update() {
-  queued = false;
-  const vh = innerHeight;
-  bar.style.setProperty('--s', clamp(scrollY / (document.documentElement.scrollHeight - vh)));
-  for (const s of pins) {
-    const r = s.getBoundingClientRect();
-    if (r.bottom < -vh || r.top > vh * 2) continue;
-    const p = clamp(-r.top / (s.offsetHeight - vh));
-    s.style.setProperty('--p', p.toFixed(4));
-    s.querySelectorAll('[data-r]').forEach((el) => {
-      const [a, b, c, d] = el.dataset.r.split(',').map(Number);
-      const i = clamp((p - a) / (b - a)), o = clamp((d - p) / (d - c));
-      el.style.opacity = Math.min(i, o);
-      el.style.transform = `translateY(${(1 - i) * 42 - (1 - o) * 42}px)`;
-    });
-    if (s.id === 'film' && !reduce) track.style.transform = `translate3d(${p * Math.max(0, track.scrollWidth - innerWidth)}px,0,0)`;
-    if (s.id === 'svc') {
-      const n = Math.min(rows.length - 1, Math.floor(p * rows.length));
-      if (n !== active) { active = n; scenes.forEach((b, i) => b.classList.toggle('on', i === n)); rows.forEach((b, i) => b.classList.toggle('on', i === n)); }
-    }
-    if (r.top <= vh * .4 && r.bottom > vh * .4) navLinks.forEach((a) => a.classList.toggle('on', a.getAttribute('href') === '#' + s.id));
-  }
-}
-const ask = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
-addEventListener('scroll', ask, { passive: true });
-addEventListener('resize', ask);
-addEventListener('load', ask);
-update();
+// work row: arrow buttons move one card at a time (RTL: "next" goes left)
+const track = $('#track');
+const step = () => track.querySelector('a').getBoundingClientRect().width + 18;
+$('#next').addEventListener('click', () => track.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }));
+$('#prev').addEventListener('click', () => track.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }));
 
-// hero network: points drift, data packets travel between neighbours
-(function net(){
-  const cv = $('#net'), ctx = cv.getContext('2d');
-  let W = 0, H = 0, nodes = [], packets = [], last = 0, visible = true;
-  const rnd = (a, b) => a + Math.random() * (b - a);
-  function size(){
-    const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
-    W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.round(Math.min(80, Math.max(26, W * H / 15000)));
-    nodes = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: rnd(-.15, .15), vy: rnd(-.15, .15), r: rnd(1.2, 2.6) }));
-  }
-  function frame(t){
-    if (!visible) { requestAnimationFrame(frame); return; }
-    const dt = Math.min(50, t - last || 16); last = t;
-    ctx.clearRect(0, 0, W, H);
-    const d = Math.min(170, Math.max(110, W / 8));
-    for (const n of nodes) { if (!reduce) { n.x += n.vx * dt / 16; n.y += n.vy * dt / 16; } if (n.x < 0 || n.x > W) n.vx *= -1; if (n.y < 0 || n.y > H) n.vy *= -1; }
-    ctx.lineWidth = 1; ctx.strokeStyle = '#9ad6c8';
-    for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
-      const a = nodes[i], b = nodes[j], dist = Math.hypot(a.x - b.x, a.y - b.y);
-      if (dist < d) { ctx.globalAlpha = (1 - dist / d) * .22; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
-    }
-    ctx.globalAlpha = .55; ctx.fillStyle = '#f3ece0';
-    for (const n of nodes) { ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 7); ctx.fill(); }
-    if (!reduce && Math.random() < .09 && packets.length < 16) {
-      const a = nodes[Math.floor(Math.random() * nodes.length)], near = nodes.filter((b) => b !== a && Math.hypot(a.x - b.x, a.y - b.y) < d);
-      if (near.length) packets.push({ a, b: near[Math.floor(Math.random() * near.length)], t: 0, hops: Math.floor(rnd(1, 4)) });
-    }
-    ctx.fillStyle = '#9ad6c8';
-    packets = packets.filter((p) => {
-      p.t += dt / 700;
-      if (p.t >= 1) { if (--p.hops <= 0) return false; const near = nodes.filter((b) => b !== p.b && Math.hypot(p.b.x - b.x, p.b.y - b.y) < d); if (!near.length) return false; p.a = p.b; p.b = near[Math.floor(Math.random() * near.length)]; p.t = 0; }
-      const x = p.a.x + (p.b.x - p.a.x) * p.t, y = p.a.y + (p.b.y - p.a.y) * p.t;
-      ctx.globalAlpha = .22; ctx.beginPath(); ctx.arc(x, y, 8, 0, 7); ctx.fill();
-      ctx.globalAlpha = 1; ctx.beginPath(); ctx.arc(x, y, 2.8, 0, 7); ctx.fill();
-      return true;
-    });
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(frame);
-  }
-  size(); new ResizeObserver(size).observe(cv);
-  new IntersectionObserver((e) => { visible = e[0].isIntersecting; }).observe($('#hero'));
-  requestAnimationFrame(frame);
-})();
-
-// charts inside the opened screen and the work frames
+// small charts inside the work cards
 function bars(svg, vals, w, h, line){
-  const max = Math.max(...vals) * 1.1, bw = w / vals.length;
-  let s = '';
-  for (let k = 1; k <= 3; k++) s += `<line x1="0" x2="${w}" y1="${h * k / 4}" y2="${h * k / 4}" stroke="rgba(243,236,224,.1)"/>`;
-  vals.forEach((v, i) => { const bh = v / max * (h - 8); s += `<rect x="${w - (i + 1) * bw + bw * .18}" y="${h - bh}" width="${bw * .64}" height="${bh}" fill="#9ad6c8" opacity="${i === vals.length - 1 ? .95 : .45}"/>`; });
-  if (line) s += `<polyline points="${line.map((v, i) => `${w - (i + .5) * bw},${h - v / max * (h - 8)}`).join(' ')}" fill="none" stroke="#f3ece0" stroke-opacity=".6" stroke-width="2" stroke-dasharray="6 5"/>`;
+  const max = Math.max(...vals) * 1.1, bw = w / vals.length; let s = '';
+  for (let k = 1; k <= 3; k++) s += `<line x1="0" x2="${w}" y1="${h * k / 4}" y2="${h * k / 4}" stroke="#ECEAF5"/>`;
+  vals.forEach((v, i) => { const bh = v / max * (h - 8); s += `<rect x="${w - (i + 1) * bw + bw * .18}" y="${h - bh}" width="${bw * .64}" height="${bh}" rx="3" fill="#5B47E0" opacity="${i === vals.length - 1 ? 1 : .45}"/>`; });
+  if (line) s += `<polyline points="${line.map((v, i) => `${w - (i + .5) * bw},${h - v / max * (h - 8)}`).join(' ')}" fill="none" stroke="#B0601C" stroke-width="2" stroke-dasharray="5 4"/>`;
   svg.innerHTML = s;
 }
-const hours = [8, 6, 5, 7, 12, 18, 22, 25, 21, 19, 24, 30, 33, 28, 26, 31, 38, 44];
-bars($('#bigchart'), hours, 1000, 240, hours.map((v) => v * .88 + 3));
+bars($('#hero-chart'), [10, 14, 12, 18, 16, 22, 20, 27, 25, 31, 29, 36], 400, 130, [9, 12, 12, 15, 15, 18, 19, 22, 23, 26, 27, 30]);
 bars($('#sv-dash'), [4, 9, 7, 5, 3, 4, 6, 5, 4, 7, 6, 8], 300, 120);
 bars($('#sv-store'), [6, 9, 12, 15, 13, 17, 21, 19, 24], 300, 120, [5, 8, 11, 12, 13, 15, 17, 18, 20]);
 
-// the numbers on the opened screen keep ticking while it is in view
-(function tick(){
-  let sales = 48210, orders = 265, on = false;
-  new IntersectionObserver((e) => { on = e[0].isIntersecting; }).observe($('#iris'));
+// the hero card's sales figure ticks up while the page is open
+(function(){ let sales = 48210; const el = $('#k-sales'); if (reduce) return;
+  setInterval(() => { if (document.hidden) return; sales += Math.round(120 + Math.random() * 160); el.textContent = sales.toLocaleString('en-US'); const o = $('#k-orders'); if (Math.random() < .7) o.textContent = +o.textContent + 1; }, 2200); })();
+
+
+// ---------- more life ----------
+const prog = $('#progress');
+addEventListener('scroll', () => prog.style.setProperty('--s', Math.min(1, scrollY / (document.documentElement.scrollHeight - innerHeight))), { passive: true });
+
+// hero chart grows in, then keeps receiving a new hour every few seconds
+(function(){
+  let data = [10, 14, 12, 18, 16, 22, 20, 27, 25, 31, 29, 36], prev = [9, 12, 12, 15, 15, 18, 19, 22, 23, 26, 27, 30];
+  const svg = $('#hero-chart');
+  [...svg.querySelectorAll('rect')].forEach((r, i) => r.style.animationDelay = (i * 60) + 'ms');
+  if (reduce) return;
   setInterval(() => {
-    if (!on || reduce) return;
-    if (Math.random() < .7) { orders += 1; sales += Math.round(120 + Math.random() * 160); }
-    $('#k1').textContent = sales.toLocaleString('en-US'); $('#k2').textContent = orders;
-  }, 1400);
+    if (document.hidden) return;
+    const last = data[data.length - 1];
+    data = data.slice(1).concat(Math.max(8, Math.round(last + (Math.random() * 10 - 4))));
+    prev = prev.slice(1).concat(Math.round(prev[prev.length - 1] + Math.random() * 4 - 1));
+    bars(svg, data, 400, 130, prev);
+    const rs = svg.querySelectorAll('rect'); rs[rs.length - 1].style.animationDelay = '0ms';
+    [...rs].slice(0, -1).forEach((r) => r.style.animation = 'none');
+  }, 3200);
+})();
+
+// the phone keeps receiving notifications
+(function(){
+  if (reduce) return;
+  const ps = document.querySelector('.phone .ps');
+  const feed = [
+    ['طلب جديد', 'سُجّل في الشيت تلقائياً', ''],
+    ['تنبيه', 'معدل التحويل انخفض إلى 1.4%', 'warn'],
+    ['تقرير أسبوعي', 'أُرسل لـ 4 مستلمين ✓', ''],
+    ['موافقة', 'تمت الموافقة على طلب إجازة', ''],
+    ['عميل جديد', 'أُضيف إلى قائمة العملاء', ''],
+    ['تنبيه', 'مخزون «دلة ستيل» أقل من 5', 'warn'],
+  ];
+  let k = 0;
+  setInterval(() => {
+    if (document.hidden) return;
+    const [t, body, cls] = feed[k++ % feed.length];
+    const d = new Date(), hm = `${d.getHours() % 12 || 12}:${String(d.getMinutes()).padStart(2, '0')}`;
+    const n = document.createElement('div'); n.className = 'note enter' + (cls ? ' ' + cls : '');
+    n.innerHTML = `<b><span>${t}</span><i>${hm}</i></b>${body}`;
+    ps.prepend(n); requestAnimationFrame(() => requestAnimationFrame(() => n.classList.remove('enter')));
+    while (ps.children.length > 4) ps.lastElementChild.remove();
+  }, 3000);
+})();
+
+// sections slide in as you reach them; numbers count up
+if ('IntersectionObserver' in window && !reduce) {
+  const els = [...document.querySelectorAll('.svc a, .band, .work a, .steps li, .faq details, .contact, .head')];
+  document.querySelectorAll('.steps li').forEach((li, i) => li.style.setProperty('--i', i));
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  els.forEach((el, i) => { if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('reveal'); el.style.transitionDelay = (i % 4) * 90 + 'ms'; } io.observe(el); });
+  const cio = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return; cio.unobserve(e.target);
+    const b = e.target, to = +b.dataset.count, pre = b.dataset.prefix || ''; let t0;
+    const tick = (t) => { t0 = t0 || t; const q = Math.min(1, (t - t0) / 1000); b.textContent = pre + Math.round(to * (1 - Math.pow(1 - q, 3))); if (q < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }), { threshold: .6 });
+  document.querySelectorAll('[data-count]').forEach((b) => cio.observe(b));
+}
+
+// the work row moves on its own, pauses while you look at it
+(function(){
+  const cards = [...track.querySelectorAll('a')], dots = $('#dots');
+  dots.innerHTML = cards.map(() => '<i></i>').join('');
+  const marks = [...dots.children];
+  const current = () => { const r = track.getBoundingClientRect(); let best = 0, bd = 1e9; cards.forEach((c, i) => { const d = Math.abs(c.getBoundingClientRect().right - r.right); if (d < bd) { bd = d; best = i; } }); return best; };
+  const paint = () => { const c = current(); marks.forEach((m, i) => m.classList.toggle('on', i === c)); };
+  track.addEventListener('scroll', () => requestAnimationFrame(paint), { passive: true }); paint();
+  if (reduce) return;
+  let hold = false;
+  ['mouseenter', 'focusin', 'touchstart'].forEach((ev) => track.addEventListener(ev, () => hold = true, { passive: true }));
+  ['mouseleave', 'focusout'].forEach((ev) => track.addEventListener(ev, () => hold = false));
+  setInterval(() => {
+    if (hold || document.hidden) return;
+    const r = track.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+    const atEnd = Math.abs(track.scrollLeft) + track.clientWidth >= track.scrollWidth - 4;
+    if (atEnd) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: -step(), behavior: 'smooth' });
+  }, 4200);
 })();
 
 // project form opens WhatsApp with the message ready
-document.getElementById('f').addEventListener('submit', (e) => {
+$('#f').addEventListener('submit', (e) => {
   e.preventDefault();
   const f = e.target, n = f.n.value.trim(), m = f.m.value.trim();
   const en = n.length < 2 ? 'اكتب الاسم أو اسم الجهة' : '', em = m.length < 3 ? 'اكتب باختصار ما تريد تحسينه' : '';
@@ -472,11 +599,11 @@ document.getElementById('f').addEventListener('submit', (e) => {
   const text = `السلام عليكم، معكم ${n}.\nنوع النشاط: ${f.t.value}\nالخدمة: ${f.s.value}\nالمطلوب: ${m}`;
   const url = 'https://wa.me/966557912466?text=' + encodeURIComponent(text);
   try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/form-whatsapp', title: 'form', event: true }); } catch (err) {}
-  const w = window.open(url, '_blank', 'noopener');
+  window.open(url, '_blank', 'noopener');
   const box = $('#fbox'), d = document.createElement('div'), h = document.createElement('h3'), p = document.createElement('p'), a = document.createElement('a');
   d.className = 'thanks'; h.textContent = 'شكراً ' + n;
   p.textContent = 'فتحنا لك واتساب برسالتك جاهزة. اضغط إرسال هناك، ونرد عليك في أقرب وقت. ';
-  a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = w ? 'افتح الرسالة مرة أخرى ↗' : 'افتح واتساب ↗';
+  a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'افتح الرسالة مرة أخرى ↗';
   p.append(a); d.append(h, p); box.replaceChildren(d);
 });
 

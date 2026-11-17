@@ -6,7 +6,7 @@
 <title>حاسبة تكلفة الأعمال اليدوية | Agentiq</title>
 <meta name="description" content="احسب كم ساعة يقضي فريقك في الأعمال اليدوية المتكررة يومياً وشهرياً وسنوياً، وكم منها يمكن أتمتته. أداة مجانية من Agentiq.">
 <link rel="canonical" href="https://sarahalolayan.github.io/hours/">
-<meta name="theme-color" content="#08131d">
+<meta name="theme-color" content="#F7F6FB">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E6E6B'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Agentiq">
@@ -158,6 +158,9 @@ button,select,input{font:inherit;color:inherit}
 .insight b{color:var(--accent)}
 .cta-col{display:grid;gap:8px}
 .note{font-size:12.5px;color:var(--muted)}
+.task{padding:10px 12px!important;gap:8px!important}
+.stepper button,.stepper input{height:32px!important}
+.fields{gap:8px!important}
 .key3{display:grid;gap:8px}
 .k{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"l n" "l u";align-items:baseline;gap:0 12px;padding:12px 14px;border:1px solid var(--line);border-inline-start:3px solid var(--line);background:var(--sunk)}
 .k span{grid-area:l;align-self:center;font-size:14.5px;color:var(--ink-2)}
@@ -259,7 +262,7 @@ footer{padding-block:24px 40px;color:var(--muted);font-size:13px;border-top:1px 
 // count WhatsApp and call clicks once visitor statistics are switched on (see /assets/agentiq-config.js)
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"],a[href^="tel:"]');if(!a)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'click/'+(a.href.indexOf('wa.me')>-1?'whatsapp':'call')+':'+location.pathname,title:'click',event:true});}catch(err){}});
 </script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Readex+Pro:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600;700&family=Readex+Pro:wght@500;600&display=swap">
 <link rel="stylesheet" href="/assets/cinema.css">
 </head>
 <body>
@@ -322,7 +325,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
         <p class="hint" style="margin-bottom:8px">أضف بضغطة:</p>
         <div class="presets" id="presets"></div>
       </div>
-      <details class="levels" open>
+      <details class="levels">
         <summary>ماذا تعني قابلية الأتمتة؟</summary>
         <ul>
           <li><b>عالية</b><span>خطوات ثابتة كل مرة، مثل نسخ البيانات وإدخال الطلبات والتقارير. نحسب أنها توفّر قرابة 80% من الوقت.</span></li>

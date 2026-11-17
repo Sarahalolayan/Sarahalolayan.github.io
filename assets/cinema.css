@@ -1,41 +1,31 @@
-/* Brings the older pages (/lab/, /hours/) into the home page's look: deep navy, cream text, one mint accent,
-   Amiri headings, straight edges. Loaded after each page's own styles; the id-level selector wins over their theme blocks. */
+/* Brings the older pages (/lab/, /hours/) into the site's look: light lavender-white ground, deep ink, modern purple accent,
+   warm amber only for costs, Noto Kufi headings, soft rounded corners. Loaded after each page's own styles; the id-level selector
+   wins over their theme blocks. */
 html:root:not(#_){
-  --bg:#08131d; --surface:#0d1c28; --sunk:#0a1822; --ink:#f3ece0; --ink-2:#d2cbbf; --muted:#a8a197; --line:#22323d; --grid:#162630;
-  --accent:#9ad6c8; --accent-ink:#0b231f; --accent-soft:#143036; --ghost:#3c4f57;
-  --good:#8fd4a8; --good-soft:#14302a; --warn:#e7c66f; --warn-soft:#2e2814; --bad:#f0a597; --bad-soft:#3a201d; --info-soft:#13293a;
-  --st-good:#6fc28f; --st-warn:#e7c66f; --st-bad:#e88a7c; --st-info:#7fb2e0;
-  --s1:#7fb2e0; --s2:#e0a07a; --s3:#8fd4a8; --s4:#e7c66f;
-  --warm:#d9b48a; --warm-ink:#ead2b4; --warm-soft:#231d17; --warm-mute:#5a4a3b; --coin:#e9c46a; --coin-2:#b8963e;
-  --deep:#102a33; --deep-2:#16343e; --on-deep:#f3ece0; --mint:#9ad6c8;
-  --z1:#b7d3f6; --z2:#6da7ec; --z3:#2a78d6; --z4:#184f95;
-  color-scheme:dark;
+  --bg:#F7F6FB; --surface:#FFFFFF; --sunk:#F0EEF8; --ink:#17152B; --ink-2:#433F5E; --muted:#67638A; --line:#E3E0F0; --grid:#ECEAF5;
+  --accent:#5B47E0; --accent-ink:#FFFFFF; --accent-soft:#EEEBFF; --ghost:#C7C2DD;
+  --good:#1F7A4A; --good-soft:#E2F4EA; --warn:#8A5A00; --warn-soft:#FBEFD2; --bad:#B4380B; --bad-soft:#FBE3DA; --info-soft:#EEEBFF;
+  --st-good:#22A45D; --st-warn:#F0A500; --st-bad:#D9452B; --st-info:#5B47E0;
+  --s1:#5B47E0; --s2:#E0703B; --s3:#22A45D; --s4:#E0A100;
+  --warm:#B0601C; --warm-ink:#7A3F10; --warm-soft:#FBEBDD; --warm-mute:#E8CDB4; --coin:#E9B04A; --coin-2:#B8862A;
+  --deep:#4835C4; --deep-2:#5B47E0; --on-deep:#FFFFFF; --mint:#E7E2FF;
+  --z1:#C4BBFF; --z2:#8F7DF0; --z3:#5B47E0; --z4:#3A2A9E;
+  color-scheme:light;
 }
-html body{background:#08131d;color:#f3ece0;font-weight:300}
-h1,h2,h3,.block-head h2,.panel h2,.intro h1{font-family:Amiri,"Noto Naskh Arabic",serif!important;font-weight:400!important;letter-spacing:0}
-h1{line-height:1.2}
-.eyebrow{color:#9ad6c8}
-
-/* header like the home page */
-.nav{background:linear-gradient(to bottom,rgba(4,10,16,.9),rgba(4,10,16,.6))!important;border-bottom:1px solid #22323d!important;backdrop-filter:blur(6px)}
+html body{background:#F7F6FB;color:#17152B}
+h1,h2,h3,.block-head h2,.panel h2,.intro h1{font-family:"Noto Kufi Arabic","IBM Plex Sans Arabic",sans-serif!important;font-weight:700!important;letter-spacing:0}
+.eyebrow{color:#5B47E0}
+.nav{background:color-mix(in srgb,#F7F6FB 88%,transparent)!important;border-bottom:1px solid #E3E0F0!important;backdrop-filter:blur(10px)}
 .brand{font-family:"Readex Pro",sans-serif}
-.brand .mark{background:transparent!important;color:#9ad6c8!important;border:1px solid #22323d}
+.brand .mark{background:#5B47E0!important;color:#fff!important;border:0}
 #theme,.motion-btn{display:none!important}
-.nav .btn.primary,.nav-cta{background:transparent!important;color:#f3ece0!important;border:1px solid rgba(243,236,224,.25)!important}
-.nav .btn.primary:hover,.nav-cta:hover{background:#f3ece0!important;color:#111!important}
-
-/* straight edges, hairline borders */
-.btn,.card,.panel,.service,.service .fit,.lab,.box,.kpi,.task,.alert,.ba-row,.ci,.console,.contact,.goal,.goal .gi,.promo,.mini,.site-prev,
-.opslog,.roi-out,.illo,.node,.tab,.controls select,.brief input,.brief select,.brief textarea,details.faq,.faq,.cost,.save,.periods,.stepper,
-.talk,.empty,.equiv,.seg,.del,.icon-btn,.summary,.tile,.example,.steps li,.step,.hero-card,.others a,.band,.preset,.lang-link,.mark,.cmp-row .track{border-radius:0!important}
-.btn.primary,.send{background:#9ad6c8;border-color:#9ad6c8;color:#0b231f}
-.chip,.preset{border-radius:0!important}
-.chip[aria-pressed="true"],.chip[aria-selected="true"]{background:#f3ece0;color:#111;border-color:#f3ece0}
-.tab[aria-selected="true"]{background:#0d1c28;color:#f3ece0;box-shadow:inset 0 -2px 0 #9ad6c8}
-.contact,.talk{background:#0d1c28!important;color:#f3ece0!important;border:1px solid #22323d}
-.contact .btn,.talk .btn{border-radius:0}
-.fab{border-radius:0!important;background:#9ad6c8!important;color:#0b231f!important}
-.to-top{border-radius:0!important}
-.opslog,.lab,.card,.service,.panel{box-shadow:none!important}
-footer{border-top-color:#22323d}
-::selection{background:#9ad6c8;color:#0b231f}
+.nav .btn.primary,.nav-cta{background:#5B47E0!important;color:#fff!important;border-color:#5B47E0!important}
+.btn,.panel,.card,.service,.lab,.box,.kpi,.task,.alert,.ci,.goal,.promo,.mini,.opslog,.roi-out,.node,.tab,.cost,.save,.periods,.stepper,.talk,.k,.levels,.empty,.equiv,.seg,.del,.icon-btn,.preset,.chip{border-radius:12px}
+.btn.primary,.send{background:#5B47E0;border-color:#5B47E0;color:#fff}
+.btn.primary:hover{background:#4835C4;border-color:#4835C4}
+.chip[aria-pressed="true"],.chip[aria-selected="true"]{background:#5B47E0;color:#fff;border-color:#5B47E0}
+.contact,.talk{background:linear-gradient(135deg,#5B47E0,#3A2A9E)!important;color:#fff!important;border:0}
+.talk .wa-btn{background:#fff!important;color:#3A2A9E!important;border-color:#fff!important}
+.fab{background:#5B47E0!important;color:#fff!important}
+.opslog,.lab,.panel{box-shadow:0 22px 50px -32px rgba(43,32,120,.35)}
+::selection{background:#5B47E0;color:#fff}
