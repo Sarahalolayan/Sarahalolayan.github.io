@@ -158,6 +158,26 @@ button,select,input{font:inherit;color:inherit}
 .insight b{color:var(--accent)}
 .cta-col{display:grid;gap:8px}
 .note{font-size:12.5px;color:var(--muted)}
+.basics{display:grid;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.basics h2{font-size:17px;font-weight:600}
+.basics .settings{border-top:0;padding-top:0}
+.basics .hint{font-size:12.5px}
+.levels{border:1px solid var(--line);border-radius:0;padding:10px 14px;background:var(--sunk);font-size:14px}
+.levels summary{cursor:pointer;font-weight:600;color:var(--ink-2)}
+.levels ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px}
+.levels li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:8px;align-items:baseline}
+.levels b{color:var(--accent)}
+.levels span{color:var(--ink-2);font-size:13.5px}
+.dock{display:none}
+@media (max-width:900px){
+  .dock{position:fixed;inset-inline:0;bottom:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+  .dock[hidden]{display:none!important}
+  .dock div{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap;font-size:13px;color:var(--ink-2)}
+  .dock b{color:var(--ink);font-size:15px}
+  .dock .btn{flex:none}
+  body{padding-bottom:70px}
+}
 .talk{border-radius:14px;padding:20px;background:radial-gradient(120% 90% at 100% 0%,var(--deep-2),var(--deep));color:var(--on-deep);display:grid;gap:12px;animation:pop .45s ease;position:relative;overflow:hidden}
 .talk::after{content:"";position:absolute;inset-inline-start:-40px;bottom:-40px;width:140px;height:140px;border-radius:50%;border:18px solid rgba(255,255,255,.06);pointer-events:none}
 .talk>*{position:relative}
@@ -247,7 +267,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     <span class="eyebrow">أداة مجانية · دقيقتان</span>
     <h1>كم ساعة وكم ريال تكلفك الأعمال اليدوية؟</h1>
     <p>اكتب أعمالك اليومية المتكررة، وكم تأخذ من وقتك، وكم تكلفك ساعة العمل. تطلع لك مباشرة: الساعات التي تقضيها، وتكلفتها عليك، وكم توفّر عليك الأتمتة.</p>
-    <div class="steps-mini"><span><b>1</b>اكتب أعمالك</span><span><b>2</b>الوقت والتكرار</span><span><b>3</b>تكلفة الساعة</span><span><b>4</b>الساعات والتكلفة والتوفير</span></div>
+    <div class="steps-mini"><span><b>1</b>تكلفة الساعة</span><span><b>2</b>أعمالك ووقتها</span><span><b>3</b>الساعات والتكلفة والتوفير</span></div>
     </div>
     <svg class="hero-art" viewBox="0 0 300 220" role="img" aria-label="ساعة تتسرب منها عملات، وترس الأتمتة يعيد الوقت">
       <circle class="wglow" cx="62" cy="186" r="44"/><circle class="glow" cx="258" cy="176" r="40"/>
@@ -271,8 +291,18 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 
   <div class="layout">
     <section class="panel" aria-labelledby="t-tasks">
+      <div class="basics">
+        <h2>١. كم تكلفك ساعة العمل؟</h2>
+        <div class="settings">
+          <div class="f"><label for="rate">تكلفة ساعة الموظف (ر.س)</label>
+            <div class="stepper"><button type="button" data-step="-5" data-for="rate" aria-label="إنقاص">−</button><input id="rate" lang="en" dir="ltr" size="3" type="text" inputmode="numeric" autocomplete="off" min="0" max="2000" value="60"><button type="button" data-step="5" data-for="rate" aria-label="زيادة">+</button></div>
+            <span class="hint">الراتب الشهري ÷ ساعات العمل. مثال: 9,000 ÷ 176 ≈ 50 ر.س</span></div>
+          <div class="f"><label for="days">أيام العمل في الشهر</label>
+            <div class="stepper"><button type="button" data-step="-1" data-for="days" aria-label="إنقاص">−</button><input id="days" lang="en" dir="ltr" size="3" type="text" inputmode="numeric" autocomplete="off" min="1" max="31" value="22"><button type="button" data-step="1" data-for="days" aria-label="زيادة">+</button></div></div>
+        </div>
+      </div>
       <div class="panel-head">
-        <h2 id="t-tasks">١. أعمالك اليومية المتكررة</h2>
+        <h2 id="t-tasks">٢. أعمالك اليومية المتكررة</h2>
         <button class="btn link" id="reset" type="button">ابدأ من جديد</button>
       </div>
       <p class="hint" id="example-hint">وضعنا ثلاث مهام كمثال. عدّلها أو احذفها وأضف مهامك.</p>
@@ -280,13 +310,15 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
         <p class="hint" style="margin-bottom:8px">أضف بضغطة:</p>
         <div class="presets" id="presets"></div>
       </div>
+      <details class="levels" open>
+        <summary>ماذا تعني قابلية الأتمتة؟</summary>
+        <ul>
+          <li><b>عالية</b><span>خطوات ثابتة كل مرة، مثل نسخ البيانات وإدخال الطلبات والتقارير. نحسب أنها توفّر قرابة 80% من الوقت.</span></li>
+          <li><b>متوسطة</b><span>فيها قرار بسيط أو استثناءات، مثل الفواتير والرد على الأسئلة المتكررة. قرابة 50%.</span></li>
+          <li><b>منخفضة</b><span>تحتاج حكماً بشرياً في كل مرة، ونؤتمت أجزاء منها فقط. قرابة 20%.</span></li>
+        </ul>
+      </details>
       <ul class="tasks" id="tasks" aria-live="polite"></ul>
-      <div class="settings">
-        <div class="f"><label for="days">أيام العمل في الشهر</label>
-          <div class="stepper"><button type="button" data-step="-1" data-for="days" aria-label="إنقاص">−</button><input id="days" size="3" type="number" inputmode="numeric" min="1" max="31" value="22"><button type="button" data-step="1" data-for="days" aria-label="زيادة">+</button></div></div>
-        <div class="f"><label for="rate"><b style="color:var(--ink)">٢. كم تكلفك ساعة الموظف؟</b> (ر.س، الراتب ÷ ساعات العمل)</label>
-          <div class="stepper"><button type="button" data-step="-5" data-for="rate" aria-label="إنقاص">−</button><input id="rate" size="3" type="number" inputmode="numeric" min="0" max="2000" value="60"><button type="button" data-step="5" data-for="rate" aria-label="زيادة">+</button></div></div>
-      </div>
     </section>
 
     <aside class="panel results" aria-labelledby="t-res" aria-live="polite">
@@ -307,7 +339,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
         <div class="save">
           <div class="save-text">
           <span>توفّر عليك الأتمتة شهرياً</span>
-          <b><span id="r-save">0</span> ساعة <small class="num" id="r-save-pct" style="font-size:15px;color:var(--ink-2)"></small></b>
+          <b><span id="r-save">0</span> ساعة</b>
           <span class="money" id="r-money"></span>
           </div>
           <svg class="donut" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="40"/><circle class="fg" id="donut-fg" cx="50" cy="50" r="40" transform="rotate(-90 50 50)" stroke-dasharray="0 251.3"/><text x="50" y="53" text-anchor="middle" id="donut-t">0%</text><text class="sub" x="50" y="68" text-anchor="middle">من الوقت</text></svg>
@@ -330,6 +362,11 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     </aside>
   </div>
 </main>
+<div class="dock" id="dock" hidden>
+  <div><span>شهرياً</span><b><span class="num" id="d-h">0</span> ساعة</b><b id="d-c-wrap">· <span class="num" id="d-c">0</span> ر.س</b></div>
+  <a class="btn primary sm" href="#t-res" id="d-go">شوف النتيجة ↓</a>
+</div>
+
 <footer class="wrap"><span>© <span class="num" id="year">2026</span> <span lang="en">Agentiq</span></span><a href="../">العودة للصفحة الرئيسية</a></footer>
 
 <script>
@@ -349,7 +386,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   });
 
   // automation potential: share of the task's time that automation typically removes
-  const LEVELS=[{k:'high',l:'عالية',v:.8},{k:'mid',l:'متوسطة',v:.5},{k:'low',l:'منخفضة',v:.2}];
+  const LEVELS=[{k:'high',l:'عالية',v:.8,h:'خطوات ثابتة: توفير قرابة 80%'},{k:'mid',l:'متوسطة',v:.5,h:'قرار بسيط: توفير قرابة 50%'},{k:'low',l:'منخفضة',v:.2,h:'تحتاج حكماً بشرياً: توفير قرابة 20%'}];
   const PRESETS=[
     {n:'إدخال الطلبات في النظام',m:3,t:30,p:1,a:'high'},
     {n:'نسخ البيانات بين الملفات',m:20,t:2,p:1,a:'high'},
@@ -384,12 +421,12 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   });
 
   // ---------- task rows ----------
-  const stepper=(id,key,val,label,step,unit)=>`<div class="f"><label for="${key}-${id}">${label}</label><div class="stepper"><button type="button" data-step="-${step}" data-for="${key}-${id}" aria-label="إنقاص ${label}">−</button><input id="${key}-${id}" data-k="${key}" type="number" inputmode="numeric" min="0" size="3" value="${val}"><button type="button" data-step="${step}" data-for="${key}-${id}" aria-label="زيادة ${label}">+</button></div></div>`;
+  const stepper=(id,key,val,label,step,unit)=>`<div class="f"><label for="${key}-${id}">${label}</label><div class="stepper"><button type="button" data-step="-${step}" data-for="${key}-${id}" aria-label="إنقاص ${label}">−</button><input id="${key}-${id}" data-k="${key}" type="text" lang="en" dir="ltr" inputmode="numeric" autocomplete="off" min="0" size="3" value="${val}"><button type="button" data-step="${step}" data-for="${key}-${id}" aria-label="زيادة ${label}">+</button></div></div>`;
   function drawTasks(newId){
     $('#tasks').innerHTML=tasks.map(t=>`<li class="task${t.id===newId?' new':''}" data-id="${t.id}">
       <div class="task-top"><label class="sr-only" for="n-${t.id}">اسم المهمة</label><input class="tname" id="n-${t.id}" data-k="n" value="${esc(t.n)}" placeholder="اكتب اسم المهمة" maxlength="60"><button class="del" type="button" aria-label="حذف ${esc(t.n||'المهمة')}">✕</button></div>
       <div class="fields">${stepper(t.id,'m',t.m,'دقائق في المرة',1)}${stepper(t.id,'t',t.t,'مرات في اليوم',1)}${stepper(t.id,'p',t.p,'عدد الموظفين',1)}</div>
-      <div class="task-foot"><div><span class="seg-label" id="al-${t.id}">قابلية الأتمتة</span><span class="seg" role="group" aria-labelledby="al-${t.id}">${LEVELS.map(l=>`<button type="button" data-a="${l.k}" aria-pressed="${t.a===l.k}">${l.l}</button>`).join('')}</span></div>
+      <div class="task-foot"><div><span class="seg-label" id="al-${t.id}">قابلية الأتمتة</span><span class="seg" role="group" aria-labelledby="al-${t.id}">${LEVELS.map(l=>`<button type="button" title="${l.h}" data-a="${l.k}" aria-pressed="${t.a===l.k}">${l.l}</button>`).join('')}</span></div>
       <span class="task-sum" data-sum></span></div></li>`).join('');
     drawPresets(); $('#example-hint').hidden=!isExample;
   }
@@ -406,8 +443,8 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   // steppers (task rows and settings)
   document.addEventListener('click',e=>{
     const b=e.target.closest('[data-step]'); if(!b) return;
-    const inp=document.getElementById(b.dataset.for); const max=+inp.max||600;
-    inp.value=clamp((+inp.value||0)+(+b.dataset.step),+inp.min||0,max);
+    const inp=document.getElementById(b.dataset.for); const max=+inp.getAttribute('max')||600;
+    inp.value=clamp((+inp.value||0)+(+b.dataset.step),+inp.getAttribute('min')||0,max);
     inp.dispatchEvent(new Event('input',{bubbles:true}));
   });
   ['days','rate'].forEach(id=>$('#'+id).addEventListener('input',()=>update(true)));
@@ -420,16 +457,16 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     // per-row totals
     $$('.task').forEach(li=>{ const r=rows.find(x=>x.t.id===+li.dataset.id); if(r) li.querySelector('[data-sum]').innerHTML=`<b>${fmtH(r.mH)}</b> ساعة شهرياً`+(rate>0?` · <b>${fmt(r.mH*rate)}</b> ر.س`:''); });
     const valid=rows.filter(r=>r.d>0);
-    $('#res-empty').hidden=valid.length>0; $('#res').hidden=!valid.length;
+    $('#res-empty').hidden=valid.length>0; if(!valid.length) $('#dock').hidden=true; $('#res').hidden=!valid.length;
     save();
     if(!valid.length){ summary=''; return; }
     const dayH=valid.reduce((s,r)=>s+r.d,0)/60, monthH=dayH*days, yearH=monthH*12, weekH=yearH/52;
     const saveH=valid.reduce((s,r)=>s+r.auto,0), pct=saveH/monthH*100;
-    $('#r-day').textContent=fmtH(dayH); $('#r-week').textContent=fmtH(weekH); $('#r-month').textContent=fmtH(monthH); $('#r-year').textContent=fmt(yearH);
+    $('#r-day').textContent=fmtH(dayH); if(window.__dock) window.__dock(fmtH(monthH), fmt(monthH*rate), rate); $('#r-week').textContent=fmtH(weekH); $('#r-month').textContent=fmtH(monthH); $('#r-year').textContent=fmt(yearH);
     const workDays=yearH/8, months=workDays/days;
     $('#r-equiv').innerHTML=`هذا يعادل <b class="num">${fmt(workDays)}</b> يوم عمل كامل في السنة${months>=1?`، أي قرابة <b class="num">${fmt(months,1)}</b> شهر عمل لموظف واحد`:''}.`;
     $('#r-save').textContent=fmtH(saveH);
-    { const C=2*Math.PI*40; $('#donut-fg').setAttribute('stroke-dasharray',`${C*pct/100} ${C}`); $('#donut-t').textContent=fmt(pct)+'%'; } $('#r-save-pct').textContent=`(${fmt(pct)}%)`;
+    { const C=2*Math.PI*40; $('#donut-fg').setAttribute('stroke-dasharray',`${C*pct/100} ${C}`); $('#donut-t').textContent=fmt(pct)+'%'; }
     $('#cost-box').hidden=!(rate>0); $('#r-cost-m').textContent=fmt(monthH*rate); $('#r-cost-y').textContent=fmt(yearH*rate);
     $('#r-money').innerHTML=rate>0?`أي <b class="num">${fmt(saveH*rate)}</b> ر.س شهرياً · <b class="num">${fmt(saveH*rate*12)}</b> ر.س سنوياً`:'أدخل تكلفة ساعة الموظف لترى التوفير بالريال.';
     const sorted=[...valid].sort((a,b)=>b.mH-a.mH), max=sorted[0].mH;
@@ -453,6 +490,22 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   });
   $('#reset').addEventListener('click',()=>{ tasks=[]; isExample=false; drawTasks(); update(); });
 
+
+  // phones: keep the totals in view while editing tasks, until the result panel itself is on screen
+  (function(){
+    const dock=$('#dock'), res=document.querySelector('.results'); let resVisible=false;
+    const sync=()=>{ dock.hidden = resVisible || !$('#res-empty').hidden; };
+    if('IntersectionObserver' in window) new IntersectionObserver(e=>{ resVisible=e[0].isIntersecting; sync(); },{threshold:.15}).observe(res);
+    window.__dock=(h,c,rate)=>{ $('#d-h').textContent=h; $('#d-c').textContent=c; $('#d-c-wrap').hidden=!(rate>0); sync(); };
+    $('#d-go').addEventListener('click',e=>{ e.preventDefault(); res.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); });
+  })();
+
+  // numeric fields accept Arabic or Latin digits and always show Latin digits
+  document.addEventListener('input',e=>{
+    const el=e.target; if(el.tagName!=='INPUT'||el.getAttribute('inputmode')!=='numeric') return;
+    const v=el.value.replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[^\d]/g,'');
+    if(v!==el.value) el.value=v;
+  },true);
   load(); drawTasks(); update();
 })();
 </script>
