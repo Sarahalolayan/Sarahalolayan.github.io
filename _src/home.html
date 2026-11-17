@@ -187,7 +187,7 @@
   /* ---------- device graphics (drawn in code, no photos) ---------- */
   .stage-art { position:relative; padding:10px 0 30px; overflow-x:clip; }
   .stage-art::before { content:""; position:absolute; inset:6% 4% 10% 8%; border-radius:50%; background:radial-gradient(closest-side,var(--accent-soft),transparent); z-index:0; }
-  .laptop { position:relative; z-index:1; width:100%; }
+  .laptop { position:relative; z-index:1; width:86%; }
   .laptop .lid { background:#1E1B33; border-radius:16px 16px 0 0; padding:12px 12px 14px; box-shadow:var(--shadow); }
   .laptop .scr { background:#fff; border-radius:6px; aspect-ratio:16/10; overflow:hidden; display:grid; grid-template-columns:52px minmax(0,1fr); }
   .laptop .base { height:16px; background:linear-gradient(#e0dcef,#c3bddb); border-radius:0 0 18px 18px; margin-inline:-5%; position:relative; box-shadow:0 18px 30px -18px rgba(0,0,0,.45); }
@@ -207,7 +207,7 @@
   .k4 b { font-family:var(--f-data); font-weight:500; font-size:clamp(12px,1.35vw,17px); direction:ltr; text-align:right; }
   .k4 em { font-style:normal; font-size:9px; color:var(--accent); font-weight:600; }
   .app svg { width:100%; height:auto; display:block; }
-  .phone { position:absolute; z-index:2; inset-inline-end:-4%; bottom:0; width:30%; min-width:120px; background:#1E1B33; border-radius:22px; padding:7px; box-shadow:var(--shadow); }
+  .phone { position:absolute; z-index:2; inset-inline-end:0; bottom:0; width:27%; min-width:118px; background:#1E1B33; border-radius:22px; padding:7px; box-shadow:var(--shadow); }
   .phone .ps { background:#F2F4F1; border-radius:16px; aspect-ratio:9/18.5; overflow:hidden; display:grid; align-content:start; gap:6px; padding:16px 7px 8px; position:relative; }
   .phone .ps::before { content:""; position:absolute; top:5px; left:50%; width:30%; height:5px; margin-left:-15%; border-radius:4px; background:#1E1B33; }
   .note { background:#fff; border-radius:10px; padding:7px 8px; font-size:9.5px; line-height:1.5; box-shadow:0 4px 10px -6px rgba(0,0,0,.25); }
@@ -236,13 +236,11 @@
   .progress { position:fixed; top:0; inset-inline:0; height:3px; background:linear-gradient(90deg,#5B47E0,#B66CF0); transform-origin:right; transform:scaleX(var(--s,0)); z-index:60; }
   .stage-art::before { display:none; }
   .blob { position:absolute; border-radius:50%; filter:blur(38px); opacity:.55; z-index:0; animation:float 14s ease-in-out infinite; }
-  .blob.b1 { width:58%; height:62%; background:#C4BBFF; top:2%; inset-inline-start:6%; }
+  .blob.b1 { width:58%; height:62%; background:#C4BBFF; top:2%; inset-inline-start:6%; animation-duration:22s; }
   .blob.b2 { width:42%; height:46%; background:#F5C2E7; bottom:4%; inset-inline-end:2%; animation-delay:-5s; animation-duration:17s; }
   .blob.b3 { width:30%; height:32%; background:#B9E4FF; top:30%; inset-inline-end:30%; animation-delay:-9s; animation-duration:20s; }
   @keyframes float { 0%,100% { transform:translate(0,0) scale(1); } 33% { transform:translate(18px,-22px) scale(1.06); } 66% { transform:translate(-16px,14px) scale(.96); } }
-  .laptop { animation:bob 7s ease-in-out infinite; }
-  .phone { animation:bob 7s ease-in-out infinite; animation-delay:-3.5s; }
-  @keyframes bob { 50% { transform:translateY(-8px); } }
+    @keyframes bob { 50% { transform:translateY(-8px); } }
   #hero-chart rect { transform-box:fill-box; transform-origin:50% 100%; animation:grow .9s cubic-bezier(.2,.8,.2,1) both; }
   @keyframes grow { from { transform:scaleY(0); } }
   .note { transition:transform .45s ease, opacity .45s ease; }
@@ -551,7 +549,7 @@ addEventListener('scroll', () => prog.style.setProperty('--s', Math.min(1, scrol
     n.innerHTML = `<b><span>${t}</span><i>${hm}</i></b>${body}`;
     ps.prepend(n); requestAnimationFrame(() => requestAnimationFrame(() => n.classList.remove('enter')));
     while (ps.children.length > 4) ps.lastElementChild.remove();
-  }, 3000);
+  }, 5000);
 })();
 
 // sections slide in as you reach them; numbers count up

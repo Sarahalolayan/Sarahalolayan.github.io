@@ -554,6 +554,15 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 </script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600;700&family=Readex+Pro:wght@500;600&display=swap">
 <link rel="stylesheet" href="/assets/cinema.css">
+<style>
+/* This page shows only the interactive examples; the rest of the old page stays in the markup for its scripts but is not shown. */
+main#top > *:not(#lab):not(.lab-next){display:none!important}
+#lab{padding-top:36px}
+.lab-next{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-block:8px 64px;padding:22px 24px;border-radius:16px;background:#EEEBFF}
+.lab-next b{font-family:"Noto Kufi Arabic",sans-serif;font-size:19px;display:block}
+.lab-next span{color:#433F5E;font-size:15px}
+.lab-next .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+</style>
 </head>
 <body>
 <a class="skip" href="#top">تخطَّ إلى المحتوى</a>
@@ -810,7 +819,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <!-- LAB -->
   <section class="block" id="lab">
     <div class="block-head">
-      <h2>جرّب بنفسك</h2>
+      <h1 style="font-size:clamp(28px,4vw,42px)">جرّب بنفسك</h1>
       <p>ثلاثة أمثلة تعمل أمامك الآن ببيانات تجريبية. جرّبها لترى النتيجة بنفسك.</p>
     </div>
     <div class="lab">
@@ -901,6 +910,11 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
       </div>
     </div>
   </section>
+
+  <div class="lab-next">
+    <div><b>أعجبك ما رأيت؟</b><span>نبني لك نفس الشيء على بياناتك وطريقة عملك.</span></div>
+    <div class="cta-row"><a class="btn primary" href="/#start">ابدأ مشروعك</a><a class="btn" href="/hours/">احسب كم توفّر</a><a class="btn" href="/">الصفحة الرئيسية</a></div>
+  </div>
 
   <!-- FAQ -->
   <section class="block" id="faq">
