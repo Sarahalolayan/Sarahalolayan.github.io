@@ -219,6 +219,19 @@
   .final .btn:not(.grad){background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
   @media (max-width:1000px){.svc,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.work{grid-auto-columns:minmax(260px,46%)}.links{display:none}}
   @media (max-width:560px){.svc,.steps,.faq{grid-template-columns:minmax(0,1fr)}.work{grid-auto-columns:82%}.hdr-end .lang{display:none}}
+  .feat{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:center;background:var(--surface);border:1px solid var(--card-border);box-shadow:var(--shadow);border-radius:24px;padding:24px}
+  .feat .frame{position:relative;display:block;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--sunk);aspect-ratio:16/10}
+  .feat .frame iframe{position:absolute;top:0;inset-inline-start:0;width:1280px;height:800px;border:0;transform-origin:top right;pointer-events:none}
+  .feat .frame .live{position:absolute;top:12px;inset-inline-end:12px;z-index:2;display:flex;align-items:center;gap:6px;background:rgba(15,16,32,.78);color:#fff;font-size:13px;font-weight:700;padding:5px 11px;border-radius:99px}
+  .feat .frame .live i{width:8px;height:8px;border-radius:50%;background:#00C2A8;animation:pulse 1.6s infinite}
+  @keyframes pulse{50%{opacity:.3}}
+  .feat .txt{display:grid;gap:12px;align-content:start}
+  .feat h3{font-size:clamp(24px,2.6vw,32px);font-weight:800}
+  .feat p{color:var(--ink-2);font-size:16px}
+  .feat ul{list-style:none;display:grid;gap:7px;font-size:15.5px;color:var(--ink-2)}
+  .feat li::before{content:"✓ ";color:var(--accent);font-weight:800}
+  .feat .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+  @media (max-width:900px){.feat{grid-template-columns:minmax(0,1fr);padding:18px}}
   .dock{display:none}
   @media (max-width:900px){
     .layout,.cta{grid-template-columns:minmax(0,1fr)}
@@ -245,7 +258,7 @@
 <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
 <header><div class="wrap hdr">
   <a class="brand" href="/" aria-label="Agentiq، الصفحة الرئيسية"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.5"/></svg></i><span lang="en">Agentiq</span></a>
-  <nav class="links" aria-label="الأقسام"><a href="#calc">الحاسبة</a><a href="#services">الخدمات</a><a href="#work">أعمالنا</a><a href="#faq">الأسئلة</a></nav>
+  <nav class="links" aria-label="الأقسام"><a href="#calc">الحاسبة</a><a href="#services">الخدمات</a><a href="#featured">نبض النادي</a><a href="#work">أعمالنا</a><a href="#faq">الأسئلة</a></nav>
   <div class="hdr-end">
     <a class="lang" href="/en/" lang="en" hreflang="en">EN</a>
     <a class="btn sm grad" href="#cta">احجز استشارة</a>
@@ -387,14 +400,26 @@
         <div class="body"><h3>تنظيم الإجراءات والصلاحيات</h3><p>خطوات عمل واضحة يعرف فيها كل شخص دوره.</p><ul><li>توثيق خطوات العمل</li><li>قواعد لمن يرى ماذا</li><li>متابعة الالتزام</li></ul><span class="go">التفاصيل ←</span></div></a>
     </div>
   </section>
+<section id="featured" aria-labelledby="feat-h">
+    <div class="head"><div><span class="eyebrow">مشروع مميز</span><h2>شاشة متابعة تشتغل الآن</h2></div><p>هذا مثال حي لخدمة شاشات متابعة الأرقام. افتحه وجرّبه بنفسك.</p></div>
+    <div class="feat">
+      <a class="frame" href="/nabd-alnadi/" target="_blank" rel="noopener" aria-label="افتح شاشة نبض النادي"><span class="live"><i></i>مباشر</span><iframe id="feat-if" data-src="/nabd-alnadi/" title="معاينة شاشة نبض النادي" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></a>
+      <div class="txt">
+        <h3 id="feat-h">نبض النادي</h3>
+        <p>شاشة متابعة لنادٍ رياضي مبنية على 973 جلسة تمرين حقيقية. الجلسات تصل تباعاً، والأرقام والتنبيهات والملخص تتحدّث معها.</p>
+        <ul><li>ستة مؤشرات أداء مقارنة بأمس وبالهدف</li><li>تنبيهات فورية: جفاف، نبض مرتفع، تغيّر الإقبال</li><li>ملخص يومي مكتوب يتحدّث وحده</li><li>فلاتر حسب نوع التمرين والمستوى</li></ul>
+        <div class="acts"><a class="btn grad" href="/nabd-alnadi/" target="_blank" rel="noopener">افتح الشاشة الحية ↗</a><a class="btn" href="/services/dashboards/">عن الخدمة</a></div>
+      </div>
+    </div>
+  </section>
 <section id="work">
     <div class="head"><div><span class="eyebrow">جرّبها بنفسك</span><h2>أعمالنا</h2></div>
       <div class="row-nav"><button type="button" id="prev" aria-label="السابق">→</button><button type="button" id="next" aria-label="التالي">←</button></div></div>
     <div class="work" id="track">
-      <a href="/demos/studio/" target="_blank" rel="noopener"><div class="shot s-studio" aria-hidden="true"><span class="r"></span><span class="t"><small>استديو تصوير</small><strong>لحظاتكم تستاهل صورة تبقى</strong></span></div>
-        <h3>موقع استديو تصوير</h3><small>موقع إلكتروني · نموذج لعميل</small><span class="go">افتحه ↗</span></a>
       <a href="/nabd-alnadi/" target="_blank" rel="noopener"><div class="shot s-screen" aria-hidden="true"><div class="mini-k"><div><span>الجلسات</span><b>59</b></div><div><span>السعرات</span><b>53,259</b></div><div><span>الهدف</span><b>128</b></div></div><svg viewBox="0 0 300 120" id="sv-dash"></svg></div>
         <h3>نبض النادي</h3><small>شاشة متابعة · مشروع منشور</small><span class="go">افتحها ↗</span></a>
+      <a href="/demos/studio/" target="_blank" rel="noopener"><div class="shot s-studio" aria-hidden="true"><span class="r"></span><span class="t"><small>استديو تصوير</small><strong>لحظاتكم تستاهل صورة تبقى</strong></span></div>
+        <h3>موقع استديو تصوير</h3><small>موقع إلكتروني · نموذج لعميل</small><span class="go">افتحه ↗</span></a>
       <a href="/lab/#lab"><div class="shot s-screen" aria-hidden="true"><div class="mini-k"><div><span>المبيعات</span><b>48,210</b></div><div><span>الطلبات</span><b>265</b></div><div><span>التوقع</span><b>71,400</b></div></div><svg viewBox="0 0 300 120" id="sv-store"></svg></div>
         <h3>شاشة متابعة متجر</h3><small>شاشة متابعة · مثال تفاعلي</small><span class="go">جرّبها ←</span></a>
       <a href="/lab/#lab"><div class="shot s-screen" aria-hidden="true" style="align-content:center"><svg viewBox="0 0 300 170">
@@ -558,6 +583,15 @@
   // count WhatsApp clicks once visitor statistics are switched on
   document.addEventListener('click', (e) => { const a = e.target.closest && e.target.closest('a[href*="wa.me"]'); if (!a) return;
     try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/whatsapp:/', title: 'click', event: true }); } catch (err) {} });
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('feat-if'); if(!f) return; var box=f.parentNode;
+  function fit(){ f.style.transform='scale('+(box.clientWidth/1280)+')'; }
+  fit(); new ResizeObserver(fit).observe(box);
+  var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ f.src=f.dataset.src; io.disconnect(); } },{rootMargin:'300px'});
+  io.observe(box);
 })();
 </script>
 </body>
