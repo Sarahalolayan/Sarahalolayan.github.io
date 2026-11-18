@@ -11,3 +11,7 @@ var GOATCOUNTER_CODE = '';
   s.setAttribute('data-goatcounter', 'https://' + GOATCOUNTER_CODE + '.goatcounter.com/count');
   document.head.appendChild(s);
 })();
+
+// Calculator leads: the Google Apps Script web app URL (see _src/leads-apps-script.gs).
+// Empty = the "email me the report" form just opens the visitor's own email app.
+var LEADS_ENDPOINT = '';

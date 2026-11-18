@@ -265,10 +265,11 @@
       <a class="btn grad" id="wa" href="https://wa.me/966557912466" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>احجز استشارة مجانية</a>
       <form class="mail" id="mail" novalidate>
         <label for="em" class="sr">بريدك الإلكتروني</label>
+        <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);opacity:0">
         <input id="em" type="email" inputmode="email" autocomplete="email" placeholder="بريدك الإلكتروني">
         <button class="btn" type="submit">أرسل لي التقرير</button>
       </form>
-      <p class="msg" id="msg">يفتح بريدك برسالة جاهزة فيها نتيجتك.</p>
+      <p class="msg" id="msg">يوصلك التقرير على بريدك. بإرسال بريدك توافق أن نتواصل معك بخصوص النتيجة.</p>
     </div>
   </section>
 </main>
@@ -309,7 +310,7 @@
   }
   $('#industries').addEventListener('click', (e) => { const b = e.target.closest('.ind'); if (b) load(b.dataset.k); });
 
-  let summary = '';
+  let summary = '', lead = {};
   function update(){
     const v = Object.fromEntries(ids.map((id) => [id, +el[id].value]));
     ids.forEach((id) => {
@@ -343,6 +344,7 @@
       `التوفير السنوي المتوقع: ${fmt(saveYear)} ر.س، و${fmt(hoursSaved)} ساعة شهرياً (${fmt(days)} يوم عمل بالسنة)`,
       `العائد: كل ريال يرجع ${fmt(roi, 1)} ريال خلال سنة`,
     ].join('\n');
+    lead = Object.assign({ industry: ind ? ind.dataset.k : 'custom' }, v);
     $('#wa').href = 'https://wa.me/966557912466?text=' + encodeURIComponent(summary + '\n\nأرغب بحجز استشارة مجانية.');
   }
   ids.forEach((id) => el[id].addEventListener('input', () => {
@@ -350,13 +352,22 @@
   }));
   load('store');
 
-  // email report: opens the visitor's mail app with the result ready to send to themselves
+  // email report: sends the lead to the Google Sheet (LEADS_ENDPOINT), which emails the report; otherwise opens the mail app
   $('#mail').addEventListener('submit', (e) => {
     e.preventDefault();
     const m = $('#em').value.trim(), msg = $('#msg');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m)) { msg.textContent = 'اكتب بريداً إلكترونياً صحيحاً، مثل name@company.com'; msg.className = 'msg err'; $('#em').focus(); return; }
-    location.href = `mailto:${encodeURIComponent(m)}?subject=${encodeURIComponent('تقرير تكلفة الشغل اليدوي')}&body=${encodeURIComponent(summary + '\n\nللاستشارة المجانية: https://wa.me/966557912466')}`;
-    msg.textContent = 'فتحنا بريدك برسالة فيها التقرير. اضغط إرسال لتحفظها عندك.'; msg.className = 'msg';
+    const fallback = () => { location.href = `mailto:${encodeURIComponent(m)}?subject=${encodeURIComponent('تقرير تكلفة الشغل اليدوي')}&body=${encodeURIComponent(summary + '\n\nللاستشارة المجانية: https://wa.me/966557912466')}`; msg.textContent = 'فتحنا بريدك برسالة فيها التقرير. اضغط إرسال لتحفظها عندك.'; msg.className = 'msg'; };
+    const url = window.LEADS_ENDPOINT;
+    if (!url) { fallback(); }
+    else {
+      const btn = $('#mail button'); btn.disabled = true; msg.textContent = 'جارٍ الإرسال…'; msg.className = 'msg';
+      const body = new URLSearchParams(Object.assign({ email: m, lang: 'ar', page: location.pathname, website: $('#mail [name=website]').value }, lead));
+      fetch(url, { method: 'POST', mode: 'no-cors', body })
+        .then(() => { msg.textContent = 'وصل طلبك. التقرير بيوصل بريدك خلال دقائق، وإذا ما لقيته شيّك على الرسائل غير المرغوبة.'; msg.className = 'msg'; $('#em').value = ''; })
+        .catch(fallback)
+        .finally(() => { btn.disabled = false; });
+    }
     try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/report-email', title: 'report', event: true }); } catch (err) {}
   });
 

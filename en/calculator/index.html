@@ -267,10 +267,11 @@
       <a class="btn grad" id="wa" href="https://wa.me/966557912466" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>Book a free consultation</a>
       <form class="mail" id="mail" novalidate>
         <label for="em" class="sr">Your email</label>
+        <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);opacity:0">
         <input id="em" type="email" inputmode="email" autocomplete="email" placeholder="Your email">
         <button class="btn" type="submit">Email me the report</button>
       </form>
-      <p class="msg" id="msg">Opens your email with a ready message containing your result.</p>
+      <p class="msg" id="msg">We email you the report. By sending your email you agree we may contact you about your result.</p>
     </div>
   </section>
 </main>
@@ -311,7 +312,7 @@
   }
   $('#industries').addEventListener('click', (e) => { const b = e.target.closest('.ind'); if (b) load(b.dataset.k); });
 
-  let summary = '';
+  let summary = '', lead = {};
   function update(){
     const v = Object.fromEntries(ids.map((id) => [id, +el[id].value]));
     ids.forEach((id) => {
@@ -345,6 +346,7 @@
       `Expected yearly saving: SAR ${fmt(saveYear)}, plus ${fmt(hoursSaved)} hours a month (${fmt(days)} working days a year)`,
       `Return: every riyal returns ${fmt(roi, 1)} within a year`,
     ].join('\n');
+    lead = Object.assign({ industry: ind ? ind.dataset.k : 'custom' }, v);
     $('#wa').href = 'https://wa.me/966557912466?text=' + encodeURIComponent(summary + '\n\nI would like to book a free consultation.');
   }
   ids.forEach((id) => el[id].addEventListener('input', () => {
@@ -352,13 +354,22 @@
   }));
   load('store');
 
-  // email report: opens the visitor's mail app with the result ready to send to themselves
+  // email report: sends the lead to the Google Sheet (LEADS_ENDPOINT), which emails the report; otherwise opens the mail app
   $('#mail').addEventListener('submit', (e) => {
     e.preventDefault();
     const m = $('#em').value.trim(), msg = $('#msg');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m)) { msg.textContent = 'Enter a valid email, like name@company.com'; msg.className = 'msg err'; $('#em').focus(); return; }
-    location.href = `mailto:${encodeURIComponent(m)}?subject=${encodeURIComponent('Manual work cost report')}&body=${encodeURIComponent(summary + '\n\nFree consultation: https://wa.me/966557912466')}`;
-    msg.textContent = 'Your email app is open with the report. Press send to keep a copy.'; msg.className = 'msg';
+    const fallback = () => { location.href = `mailto:${encodeURIComponent(m)}?subject=${encodeURIComponent('Manual work cost report')}&body=${encodeURIComponent(summary + '\n\nFree consultation: https://wa.me/966557912466')}`; msg.textContent = 'Your email app is open with the report. Press send to keep a copy.'; msg.className = 'msg'; };
+    const url = window.LEADS_ENDPOINT;
+    if (!url) { fallback(); }
+    else {
+      const btn = $('#mail button'); btn.disabled = true; msg.textContent = 'Sending…'; msg.className = 'msg';
+      const body = new URLSearchParams(Object.assign({ email: m, lang: 'en', page: location.pathname, website: $('#mail [name=website]').value }, lead));
+      fetch(url, { method: 'POST', mode: 'no-cors', body })
+        .then(() => { msg.textContent = 'Done. The report will reach your inbox within minutes; check spam if you do not see it.'; msg.className = 'msg'; $('#em').value = ''; })
+        .catch(fallback)
+        .finally(() => { btn.disabled = false; });
+    }
     try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/report-email', title: 'report', event: true }); } catch (err) {}
   });
 
