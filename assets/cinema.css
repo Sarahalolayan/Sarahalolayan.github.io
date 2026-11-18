@@ -1,25 +1,25 @@
 /* Brings /lab/ into the site's look: Tajawal, teal-to-purple gradient, light by default with a matching dark mode.
    Loaded after the page's own styles; the id-level selectors win over its theme blocks. */
 html:root:not(#_){
-  --bg:#F7F6FB; --surface:#FFFFFF; --sunk:#F0EEF8; --ink:#17152B; --ink-2:#433F5E; --muted:#67638A; --line:#E3E0F0; --grid:#ECEAF5;
-  --accent:#5B47E0; --accent-ink:#FFFFFF; --accent-soft:#EEEBFF; --ghost:#C7C2DD;
+  --bg:#F7F8FC; --surface:#FFFFFF; --sunk:#EEF0F8; --ink:#1A1B2E; --ink-2:#4F5374; --muted:#6B7090; --line:#E6E8F2; --grid:#EEF0F8;
+  --accent:#5B4BFF; --accent-ink:#FFFFFF; --accent-soft:#ECEBFF; --ghost:#C7C2DD;
   --good:#1F7A4A; --good-soft:#E2F4EA; --warn:#8A5A00; --warn-soft:#FBEFD2; --bad:#B4380B; --bad-soft:#FBE3DA; --info-soft:#EEEBFF;
-  --st-good:#22A45D; --st-warn:#F0A500; --st-bad:#D9452B; --st-info:#5B47E0;
-  --s1:#5B47E0; --s2:#E0703B; --s3:#22A45D; --s4:#E0A100;
+  --st-good:#22A45D; --st-warn:#F0A500; --st-bad:#D9452B; --st-info:#5B4BFF;
+  --s1:#5B4BFF; --s2:#E0703B; --s3:#22A45D; --s4:#E0A100;
   --warm:#B0601C; --warm-ink:#7A3F10; --warm-soft:#FBEBDD; --warm-mute:#E8CDB4; --coin:#E9B04A; --coin-2:#B8862A;
-  --deep:#4835C4; --deep-2:#5B47E0; --on-deep:#FFFFFF; --mint:#E7E2FF;
-  --z1:#C4BBFF; --z2:#8F7DF0; --z3:#5B47E0; --z4:#3A2A9E;
+  --deep:#4835C4; --deep-2:#5B4BFF; --on-deep:#FFFFFF; --mint:#E7E2FF;
+  --z1:#C4BBFF; --z2:#8F7DF0; --z3:#5B4BFF; --z4:#3A2A9E;
   color-scheme:light;
 }
 html body{background:var(--bg);color:var(--ink)}
 @media (prefers-color-scheme: dark){html:root:not(#_):not([data-theme="light"]){
-  --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57; --grid:#2A2650;
-  --accent:#8B7BFF; --accent-ink:#14122A; --accent-soft:#2A2557; --ghost:#4A4580;
+  --bg:#0F1020; --surface:#181A2E; --sunk:#20223A; --ink:#F3F4FF; --ink-2:#C3C7E4; --muted:#9AA0C3; --line:#2A2D4A; --grid:#20223A;
+  --accent:#A49CFF; --accent-ink:#0F1020; --accent-soft:#24234A; --ghost:#4A4580;
   --good:#4FD08E; --good-soft:#16302A; --warn:#F2C14E; --warn-soft:#33290F; --bad:#FF8A7A; --bad-soft:#3A1F2A; --info-soft:#2A2557;
   --warm:#F0A868; --warm-ink:#F7CDA6; --warm-soft:#33241A; --warm-mute:#5A4636; color-scheme:dark}}
 html:root:not(#_)[data-theme="dark"]{
-  --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57; --grid:#2A2650;
-  --accent:#8B7BFF; --accent-ink:#14122A; --accent-soft:#2A2557; --ghost:#4A4580;
+  --bg:#0F1020; --surface:#181A2E; --sunk:#20223A; --ink:#F3F4FF; --ink-2:#C3C7E4; --muted:#9AA0C3; --line:#2A2D4A; --grid:#20223A;
+  --accent:#A49CFF; --accent-ink:#0F1020; --accent-soft:#24234A; --ghost:#4A4580;
   --good:#4FD08E; --good-soft:#16302A; --warn:#F2C14E; --warn-soft:#33290F; --bad:#FF8A7A; --bad-soft:#3A1F2A; --info-soft:#2A2557;
   --warm:#F0A868; --warm-ink:#F7CDA6; --warm-soft:#33241A; --warm-mute:#5A4636; color-scheme:dark}
 html body{font-family:"Tajawal","IBM Plex Sans Arabic",sans-serif}
@@ -27,15 +27,15 @@ h1,h2,h3,.block-head h2,.panel h2,.intro h1{font-family:"Tajawal","IBM Plex Sans
 .eyebrow{color:var(--accent)}
 .nav{background:color-mix(in srgb,var(--bg) 86%,transparent)!important;border-bottom:1px solid var(--line)!important;backdrop-filter:blur(10px)}
 .brand{font-family:"Readex Pro",sans-serif}
-.brand .mark{background:linear-gradient(120deg,#0B8178,#5B47E0)!important;color:#fff!important;border:0}
+.brand .mark{background:linear-gradient(120deg,#00A890,#5B4BFF)!important;color:#fff!important;border:0}
 .motion-btn{display:none!important}
-.nav .btn.primary,.nav-cta{background:linear-gradient(120deg,#0B8178,#5B47E0)!important;color:#fff!important;border:0!important}
+.nav .btn.primary,.nav-cta{background:linear-gradient(120deg,#00A890,#5B4BFF)!important;color:#fff!important;border:0!important}
 .btn,.panel,.card,.service,.lab,.box,.kpi,.task,.alert,.ci,.goal,.promo,.mini,.opslog,.roi-out,.node,.tab,.cost,.save,.periods,.stepper,.talk,.k,.levels,.empty,.equiv,.seg,.del,.icon-btn,.preset,.chip{border-radius:12px}
-.btn.primary,.send{background:linear-gradient(120deg,#0B8178,#5B47E0);border:0;color:#fff}
+.btn.primary,.send{background:linear-gradient(120deg,#00A890,#5B4BFF);border:0;color:#fff}
 .btn.primary:hover{filter:brightness(1.08)}
-.chip[aria-pressed="true"],.chip[aria-selected="true"]{background:#5B47E0;color:#fff;border-color:#5B47E0}
-.contact,.talk{background:linear-gradient(135deg,#5B47E0,#3A2A9E)!important;color:#fff!important;border:0}
+.chip[aria-pressed="true"],.chip[aria-selected="true"]{background:#5B4BFF;color:#fff;border-color:#5B4BFF}
+.contact,.talk{background:linear-gradient(135deg,#5B4BFF,#3A2A9E)!important;color:#fff!important;border:0}
 .talk .wa-btn{background:#fff!important;color:#3A2A9E!important;border-color:#fff!important}
-.fab{background:#5B47E0!important;color:#fff!important}
+.fab{background:#5B4BFF!important;color:#fff!important}
 .opslog,.lab,.panel{box-shadow:0 22px 50px -32px rgba(43,32,120,.35)}
-::selection{background:#5B47E0;color:#fff}
+::selection{background:#5B4BFF;color:#fff}
