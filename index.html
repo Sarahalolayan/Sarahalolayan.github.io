@@ -3,351 +3,352 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Agentiq | شاشات متابعة، أتمتة، ومواقع</title>
-<meta name="description" content="Agentiq: شاشات متابعة حية لأرقام عملك، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات والصلاحيات.">
-<meta name="theme-color" content="#F7F6FB">
+<title>Agentiq | كم يكلّفك الشغل اليدوي؟</title>
+<meta name="description" content="Agentiq تحوّل الشغل اليدوي المتكرر إلى أنظمة تشتغل وحدها: أتمتة المهام، شاشات متابعة الأرقام، ومواقع بنماذج حجز. احسب بنفسك كم يكلّفك الشغل اليدوي وكم توفّر.">
 <link rel="canonical" href="https://sarahalolayan.github.io/">
 <link rel="alternate" hreflang="ar" href="https://sarahalolayan.github.io/">
 <link rel="alternate" hreflang="en" href="https://sarahalolayan.github.io/en/">
 <link rel="alternate" hreflang="x-default" href="https://sarahalolayan.github.io/">
+<meta name="theme-color" content="#F7F6FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14122A" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B47E0'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Agentiq">
 <meta property="og:locale" content="ar_SA">
 <meta property="og:url" content="https://sarahalolayan.github.io/">
-<meta property="og:title" content="Agentiq | أرقام عملك أمامك، ومهامك تُنجز وحدها">
-<meta property="og:description" content="شاشات متابعة حية، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات.">
+<meta property="og:title" content="Agentiq | كم يكلّفك الشغل اليدوي؟">
+<meta property="og:description" content="حرّك المؤشرات وشوف بنفسك كم يكلّفك الشغل اليدوي، وكم توفّر عليك الأتمتة.">
 <meta property="og:image" content="https://sarahalolayan.github.io/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Agentiq","url":"https://sarahalolayan.github.io/","logo":"https://sarahalolayan.github.io/og.png","telephone":"+966557912466","areaServed":"SA","address":{"@type":"PostalAddress","addressLocality":"الرياض","addressCountry":"SA"},"description":"شاشات متابعة حية لأرقام عملك، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات والصلاحيات."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Agentiq","url":"https://sarahalolayan.github.io/","logo":"https://sarahalolayan.github.io/og.png","telephone":"+966557912466","areaServed":"SA","address":{"@type":"PostalAddress","addressLocality":"الرياض","addressCountry":"SA"},"description":"نحوّل الشغل اليدوي المتكرر إلى أنظمة تشتغل وحدها: أتمتة المهام، شاشات متابعة الأرقام، ومواقع بنماذج حجز."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Readex+Pro:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Readex+Pro:wght@600&display=swap" rel="stylesheet">
 <script src="/assets/agentiq-config.js" defer></script>
 <style>
-  /* Light and calm: soft paper ground, deep ink, one emerald accent, warm amber only for costs. Real photos carry the warmth. */
-  :root { --bg:#F7F6FB; --surface:#FFFFFF; --sunk:#F0EEF8; --ink:#17152B; --ink-2:#433F5E; --muted:#67638A; --line:#E3E0F0;
-          --accent:#5B47E0; --accent-2:#4835C4; --accent-ink:#FFFFFF; --accent-soft:#EEEBFF; --warm:#B0601C; --warm-soft:#FBEBDD;
-          --f-display:"Noto Kufi Arabic","IBM Plex Sans Arabic",Tahoma,sans-serif; --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
-          --f-data:"IBM Plex Mono",ui-monospace,monospace; --shadow:0 22px 50px -28px rgba(20,33,43,.35); color-scheme:light; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
-  body { background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.8; overflow-x:clip; }
-  a { color:inherit; text-decoration:none; }
-  button,input,select { font:inherit; color:inherit; }
-  img { max-width:100%; display:block; }
-  :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-  h1,h2,h3 { font-family:var(--f-display); font-weight:700; line-height:1.35; text-wrap:balance; }
-  .num { font-family:var(--f-data); direction:ltr; unicode-bidi:isolate; font-variant-numeric:tabular-nums; }
-  .wrap { max-width:1180px; margin-inline:auto; padding-inline:24px; }
-  .skip { position:absolute; right:12px; top:-60px; background:var(--ink); color:#fff; padding:8px 14px; z-index:80; border-radius:8px; }
-  .skip:focus { top:12px; }
-  .eyebrow { color:var(--accent); font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:8px; }
-  .eyebrow::before { content:""; width:18px; height:2px; background:var(--accent); border-radius:2px; }
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:10px; border:1px solid var(--line); background:var(--surface); font-weight:600; font-size:15px; cursor:pointer; transition:background .2s,border-color .2s,transform .2s; }
-  .btn:hover { border-color:var(--ink-2); }
-  .btn.primary { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
-  .btn.primary:hover { background:var(--accent-2); border-color:var(--accent-2); }
-  .btn.sm { padding:8px 14px; font-size:14px; }
-
-  /* header */
-  header { position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:color-mix(in srgb,var(--bg) 88%,transparent); backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s; }
-  header.scrolled { border-bottom-color:var(--line); }
-  .hdr { display:flex; align-items:center; gap:28px; padding-block:14px; }
-  .brand { display:flex; align-items:center; gap:10px; font-family:"Readex Pro",sans-serif; font-weight:600; font-size:19px; }
-  .brand i { width:34px; height:34px; border-radius:9px; background:var(--accent); color:#fff; display:grid; place-items:center; }
-  header nav { display:flex; gap:24px; flex:1; color:var(--ink-2); font-size:15px; }
-  header nav a:hover { color:var(--accent); }
-  .hdr-end { display:flex; gap:12px; align-items:center; }
-  .lang { color:var(--ink-2); font-size:13.5px; font-weight:600; padding:6px 10px; border:1px solid var(--line); border-radius:8px; }
-
-  /* hero */
-  .hero { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:48px; align-items:center; padding-block:48px 56px; }
-  .hero h1 { font-size:clamp(32px,4.4vw,54px); margin-top:14px; }
-  .hero h1 em { font-style:normal; color:var(--accent); }
-  .hero p { font-size:18px; color:var(--ink-2); margin-top:16px; max-width:52ch; }
-  .hero .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
-  .hero-media { position:relative; }
-  .hero-media img { width:100%; aspect-ratio:4/3.4; object-fit:cover; border-radius:20px; box-shadow:var(--shadow); }
-  .float { position:absolute; background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); padding:14px 16px; }
-  .float.kpi { inset-inline-end:-22px; bottom:28px; min-width:220px; display:grid; gap:2px; }
-  .float.kpi span { font-size:12.5px; color:var(--muted); }
-  .float.kpi b { font-family:var(--f-data); font-size:28px; font-weight:500; line-height:1.2; direction:ltr; text-align:right; }
-  .float.kpi em { font-style:normal; font-size:12.5px; color:var(--accent); font-weight:600; }
-  .float.kpi svg { width:100%; height:34px; margin-top:4px; }
-  .float.alert { inset-inline-start:-18px; top:26px; display:flex; gap:10px; align-items:center; font-size:13.5px; max-width:260px; }
-  .float.alert i { flex:none; width:30px; height:30px; border-radius:50%; background:var(--warm-soft); color:var(--warm); display:grid; place-items:center; font-style:normal; font-weight:700; }
-  .facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-block:1px solid var(--line); }
-  .facts div { padding:20px 4px; display:grid; gap:2px; }
-  .facts div + div { border-inline-start:1px solid var(--line); padding-inline-start:20px; }
-  .facts b { font-family:var(--f-display); font-size:24px; color:var(--ink); }
-  .facts span { font-size:14px; color:var(--muted); }
-
-  section { padding-block:72px 8px; scroll-margin-top:70px; }
-  .head { display:flex; justify-content:space-between; align-items:end; gap:24px; flex-wrap:wrap; margin-bottom:28px; }
-  .head h2 { font-size:clamp(26px,3.2vw,38px); margin-top:8px; }
-  .head p { color:var(--muted); max-width:52ch; }
-
-  /* services with photos */
-  .svc { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; }
-  .svc a { background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; display:grid; grid-template-rows:auto 1fr; transition:transform .25s,box-shadow .25s; }
-  .svc a:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
-  .svc img { width:100%; aspect-ratio:4/3; object-fit:cover; }
-  .svc .body { padding:18px; display:grid; gap:8px; align-content:start; }
-  .svc h3 { font-size:18px; }
-  .svc p { color:var(--ink-2); font-size:14.5px; }
-  .svc ul { list-style:none; display:grid; gap:4px; font-size:14px; color:var(--ink-2); }
-  .svc li::before { content:"✓ "; color:var(--accent); font-weight:700; }
-  .svc .go { color:var(--accent); font-weight:600; font-size:14px; margin-top:4px; }
-
-  /* the cost of manual work */
-  .band { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); border-radius:20px; overflow:hidden; background:var(--ink); color:#fff; margin-top:72px; }
-  .band img { width:100%; height:100%; min-height:320px; object-fit:cover; }
-  .band .txt { padding:44px 40px; display:grid; gap:14px; align-content:center; }
-  .band h2 { font-size:clamp(24px,3vw,36px); }
-  .band p { color:rgba(255,255,255,.8); }
-  .band .stats { display:flex; gap:28px; flex-wrap:wrap; }
-  .band .stats b { font-family:var(--f-data); font-size:30px; font-weight:500; display:block; color:#C4BBFF; }
-  .band .stats span { font-size:13px; color:rgba(255,255,255,.7); }
-  .band .btn.primary { background:#fff; border-color:#fff; color:var(--ink); justify-self:start; }
-  .band .btn.primary:hover { background:#efedff; }
-
-  /* work: a swipeable row */
-  .row-nav { display:flex; gap:8px; }
-  .row-nav button { width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--surface); cursor:pointer; font-size:18px; }
-  .row-nav button:hover { border-color:var(--accent); color:var(--accent); }
-  .work { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(280px,32%); gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; scrollbar-width:thin; }
-  .work a { scroll-snap-align:start; display:grid; gap:10px; }
-  .shot { aspect-ratio:4/3; border-radius:16px; overflow:hidden; position:relative; border:1px solid var(--line); transition:box-shadow .25s; }
-  .work a:hover .shot { box-shadow:var(--shadow); }
-  .work h3 { font-size:17px; }
-  .work small { color:var(--muted); font-size:13.5px; }
-  .work .go { color:var(--accent); font-weight:600; font-size:13.5px; }
-  .s-studio { background:linear-gradient(180deg,#7d9ec0 0%,#b4cbe0 36%,#46647f 52%,#22374a 70%,#0b121a 100%); }
-  .s-studio::before { content:""; position:absolute; inset:auto 0 0 0; height:58%; background:radial-gradient(120% 70% at 30% 100%,#2c3a44 40%,transparent 41%),radial-gradient(90% 60% at 85% 100%,#38474f 45%,transparent 46%),linear-gradient(180deg,transparent,#0b0f14 95%); }
-  .s-studio .t { position:absolute; right:20px; bottom:18px; color:#fff; text-align:right; }
-  .s-studio .t small { color:#fff; opacity:.85; display:block; font-size:12px; }
-  .s-studio .t strong { font-family:Georgia,serif; font-weight:400; font-size:24px; text-shadow:0 2px 14px rgba(0,0,0,.5); }
-  .s-studio .r { position:absolute; top:42%; left:50%; width:96px; height:96px; margin:-48px 0 0 -48px; border:1px solid #e9c46a; border-radius:50%; }
-  .s-screen { background:var(--surface); padding:16px; display:grid; gap:10px; align-content:start; }
-  .mini-k { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
-  .mini-k div { background:var(--sunk); border-radius:10px; padding:8px 10px; display:grid; }
-  .mini-k span { font-size:11px; color:var(--muted); }
-  .mini-k b { font-family:var(--f-data); font-weight:500; font-size:17px; direction:ltr; text-align:right; }
-  .shot svg { width:100%; height:auto; display:block; }
-  .s-calc { background:var(--accent-soft); display:grid; place-content:center; text-align:center; gap:4px; }
-  .s-calc .big { font-family:var(--f-data); font-size:64px; line-height:1; color:var(--accent); direction:ltr; }
-  .s-calc .big small { font-family:var(--f-body); font-size:18px; color:var(--ink-2); }
-  .s-calc p { color:var(--ink-2); font-size:14px; }
-
-  /* steps */
-  .steps { list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; counter-reset:s; }
-  .steps li { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:grid; gap:6px; }
-  .steps em { font-style:normal; width:34px; height:34px; border-radius:50%; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-weight:700; font-family:var(--f-data); }
-  .steps b { font-family:var(--f-display); font-size:18px; }
-  .steps p { color:var(--ink-2); font-size:14.5px; }
-
-  .faq { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-items:start; }
-  .faq details { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 20px; }
-  .faq summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:16px; font-weight:600; }
-  .faq summary::-webkit-details-marker { display:none; }
-  .faq summary::after { content:"+"; color:var(--accent); font-family:var(--f-data); font-size:20px; line-height:1; }
-  .faq details[open] summary::after { content:"−"; }
-  .faq p { color:var(--ink-2); margin-top:8px; font-size:15px; }
-
-  /* contact */
-  #start { padding-bottom:72px; }
-  .contact { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); background:var(--surface); border:1px solid var(--line); border-radius:20px; overflow:hidden; }
-  .contact .pic { position:relative; min-height:100%; }
-  .contact .chat-num { font-size:14px; color:var(--ink-2); }
-  .contact .pic img { width:100%; height:100%; object-fit:cover; min-height:360px; }
-  .contact .pic .cap { position:absolute; inset:auto 18px 18px 18px; background:rgba(255,255,255,.94); border-radius:12px; padding:12px 14px; font-size:14px; display:grid; gap:2px; }
-  .contact .pic .cap b { font-family:var(--f-data); font-weight:500; direction:ltr; text-align:right; }
-  .contact form { padding:36px; display:grid; gap:16px; align-content:center; }
-  .contact h2 { font-size:clamp(24px,3vw,34px); }
-  .contact .lead { color:var(--ink-2); margin-top:-6px; }
-  form label { display:grid; gap:6px; font-size:14px; color:var(--ink-2); font-weight:500; }
-  form input,form select { width:100%; background:var(--sunk); border:1px solid var(--line); border-radius:10px; padding:11px 14px; font-size:16px; }
-  form input:focus,form select:focus { outline:0; border-color:var(--accent); background:#fff; }
-  .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .e { color:#B3261E; font-size:13px; min-height:18px; }
-  .thanks { padding:36px; display:grid; gap:10px; align-content:center; }
-  .thanks h3 { font-size:28px; }
-  .thanks p { color:var(--ink-2); }
-  .thanks a { color:var(--accent); font-weight:600; }
-  footer { border-top:1px solid var(--line); padding-block:22px calc(22px + env(safe-area-inset-bottom,0px)); font-size:14px; color:var(--muted); }
-  footer .wrap { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-  footer nav { display:flex; gap:18px; flex-wrap:wrap; }
-  footer a:hover { color:var(--accent); }
-  .fab { position:fixed; inset-inline-start:18px; bottom:calc(18px + env(safe-area-inset-bottom,0px)); z-index:40; display:flex; gap:8px; align-items:center; padding:12px 16px; border-radius:99px; background:var(--accent); color:#fff; font-weight:600; box-shadow:var(--shadow); }
-
-
-  /* ---------- device graphics (drawn in code, no photos) ---------- */
-  .stage-art { position:relative; padding:10px 0 30px; overflow-x:clip; }
-  .stage-art::before { content:""; position:absolute; inset:6% 4% 10% 8%; border-radius:50%; background:radial-gradient(closest-side,var(--accent-soft),transparent); z-index:0; }
-  .laptop { position:relative; z-index:1; width:86%; }
-  .laptop .lid { background:#1E1B33; border-radius:16px 16px 0 0; padding:12px 12px 14px; box-shadow:var(--shadow); }
-  .laptop .scr { background:#fff; border-radius:6px; aspect-ratio:16/10; overflow:hidden; display:grid; grid-template-columns:52px minmax(0,1fr); }
-  .laptop .base { height:16px; background:linear-gradient(#e0dcef,#c3bddb); border-radius:0 0 18px 18px; margin-inline:-5%; position:relative; box-shadow:0 18px 30px -18px rgba(0,0,0,.45); }
-  .laptop .base::after { content:""; position:absolute; top:0; left:50%; width:16%; height:6px; margin-left:-8%; background:#b2abcf; border-radius:0 0 8px 8px; }
-  .side { background:#17152B; display:grid; align-content:start; justify-items:center; gap:12px; padding-top:12px; }
-  .side i { width:22px; height:22px; border-radius:6px; background:rgba(255,255,255,.12); }
-  .side i:first-child { background:var(--accent); }
-  .app { padding:12px 14px; display:grid; gap:10px; align-content:start; min-width:0; }
-  .app-top { display:flex; justify-content:space-between; align-items:center; font-size:11px; color:var(--muted); }
-  .app-top b { font-family:var(--f-display); font-size:13px; color:var(--ink); }
-  .app-top .live { display:inline-flex; gap:5px; align-items:center; color:var(--accent); font-weight:600; }
-  .app-top .live::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--accent); animation:blink 1.6s infinite; }
-  @keyframes blink { 50% { opacity:.25; } }
-  .k4 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
-  .k4 div { background:var(--sunk); border-radius:8px; padding:7px 9px; display:grid; min-width:0; }
-  .k4 span { font-size:9.5px; color:var(--muted); white-space:nowrap; }
-  .k4 b { font-family:var(--f-data); font-weight:500; font-size:clamp(12px,1.35vw,17px); direction:ltr; text-align:right; }
-  .k4 em { font-style:normal; font-size:9px; color:var(--accent); font-weight:600; }
-  .app svg { width:100%; height:auto; display:block; }
-  .phone { position:absolute; z-index:2; inset-inline-end:0; bottom:0; width:27%; min-width:118px; background:#1E1B33; border-radius:22px; padding:7px; box-shadow:var(--shadow); }
-  .phone .ps { background:#F2F4F1; border-radius:16px; aspect-ratio:9/18.5; overflow:hidden; display:grid; align-content:start; gap:6px; padding:16px 7px 8px; position:relative; }
-  .phone .ps::before { content:""; position:absolute; top:5px; left:50%; width:30%; height:5px; margin-left:-15%; border-radius:4px; background:#1E1B33; }
-  .note { background:#fff; border-radius:10px; padding:7px 8px; font-size:9.5px; line-height:1.5; box-shadow:0 4px 10px -6px rgba(0,0,0,.25); }
-  .note b { display:flex; justify-content:space-between; font-size:9px; color:var(--muted); font-weight:500; margin-bottom:2px; }
-  .note b i { font-style:normal; color:var(--accent); font-weight:700; }
-  .note.warn b i { color:var(--warm); }
-  .note.new { animation:slidein 6s ease-in-out infinite; }
-  @keyframes slidein { 0%,8% { transform:translateY(-14px); opacity:0; } 16%,88% { transform:none; opacity:1; } 100% { opacity:0; } }
-
-  .illo { width:100%; aspect-ratio:4/3; display:block; background:linear-gradient(160deg,var(--accent-soft),#F8F7FD 70%); }
-  .illo.warm { background:linear-gradient(160deg,var(--warm-soft),#FBF7F1 70%); }
-  .band .art { background:linear-gradient(160deg,#2A2460,#17152B); display:grid; place-items:center; padding:24px; }
-  .band .art svg { width:min(100%,420px); height:auto; }
-  .chat { background:#EFEDF8; padding:22px; display:grid; align-content:center; gap:10px; min-height:100%; }
-  .bubble { max-width:86%; padding:10px 12px; border-radius:12px; font-size:14px; line-height:1.6; box-shadow:0 2px 6px -4px rgba(0,0,0,.3); }
-  .bubble.me { justify-self:start; background:#E7E2FF; border-start-start-radius:3px; }
-  .bubble.them { justify-self:end; background:#fff; border-start-end-radius:3px; }
-  .bubble small { display:block; text-align:left; font-size:11px; color:var(--muted); margin-top:2px; direction:ltr; }
-  .chat-head { display:flex; gap:10px; align-items:center; padding-bottom:10px; border-bottom:1px solid rgba(20,33,43,.08); }
-  .chat-head i { width:36px; height:36px; border-radius:50%; background:var(--accent); color:#fff; display:grid; place-items:center; font-style:normal; font-weight:700; font-family:"Readex Pro",sans-serif; }
-  .chat-head b { font-family:var(--f-display); font-size:15px; display:block; }
-  .chat-head small { color:var(--accent); font-size:12px; }
-  @media (prefers-reduced-motion:reduce) { .note.new, .app-top .live::before { animation:none; } }
-
-  /* ---------- more life: moving colour, growing charts, live notifications, reveals ---------- */
-  .progress { position:fixed; top:0; inset-inline:0; height:3px; background:linear-gradient(90deg,#5B47E0,#B66CF0); transform-origin:right; transform:scaleX(var(--s,0)); z-index:60; }
-  .stage-art::before { display:none; }
-  .blob { position:absolute; border-radius:50%; filter:blur(38px); opacity:.55; z-index:0; animation:float 14s ease-in-out infinite; }
-  .blob.b1 { width:58%; height:62%; background:#C4BBFF; top:2%; inset-inline-start:6%; animation-duration:22s; }
-  .blob.b2 { width:42%; height:46%; background:#F5C2E7; bottom:4%; inset-inline-end:2%; animation-delay:-5s; animation-duration:17s; }
-  .blob.b3 { width:30%; height:32%; background:#B9E4FF; top:30%; inset-inline-end:30%; animation-delay:-9s; animation-duration:20s; }
-  @keyframes float { 0%,100% { transform:translate(0,0) scale(1); } 33% { transform:translate(18px,-22px) scale(1.06); } 66% { transform:translate(-16px,14px) scale(.96); } }
-    @keyframes bob { 50% { transform:translateY(-8px); } }
-  #hero-chart rect { transform-box:fill-box; transform-origin:50% 100%; animation:grow .9s cubic-bezier(.2,.8,.2,1) both; }
-  @keyframes grow { from { transform:scaleY(0); } }
-  .note { transition:transform .45s ease, opacity .45s ease; }
-  .note.enter { transform:translateY(-12px); opacity:0; }
-  .eyebrow::before { animation:line 1.2s ease both; }
-  @keyframes line { from { width:0; } }
-  .btn.primary { position:relative; overflow:hidden; }
-  .btn.primary::after { content:""; position:absolute; inset:0; background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%); transform:translateX(120%); transition:transform .7s ease; }
-  .btn.primary:hover::after { transform:translateX(-120%); }
-  .svc a .illo { transition:transform .5s ease; }
-  .svc a:hover .illo { transform:scale(1.05); }
-  .svc a svg * { animation-play-state:paused; }
-  .svc a:hover svg *, .svc a:focus-visible svg * { animation-play-state:running; }
-  .reveal { opacity:.25; transform:translateY(26px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
-  .reveal.in { opacity:1; transform:none; }
-  .facts b { transition:color .3s; }
-  .facts div:hover b { color:var(--accent); }
-  .steps li { position:relative; overflow:hidden; }
-  .steps li::after { content:""; position:absolute; inset:auto 0 0 0; height:3px; background:linear-gradient(90deg,#5B47E0,#B66CF0); transform:scaleX(0); transform-origin:right; transition:transform .6s ease; }
-  .steps li:hover::after, .steps li.in::after { transform:scaleX(1); }
-  .steps li.in::after { transition-delay:calc(var(--i,0) * .15s + .3s); }
-  .work-dots { display:flex; gap:6px; justify-content:center; margin-top:10px; }
-  .work-dots i { width:7px; height:7px; border-radius:99px; background:var(--line); transition:width .3s,background .3s; }
-  .work-dots i.on { width:22px; background:var(--accent); }
-  @media (prefers-reduced-motion:reduce) {
-    .blob, .laptop, .phone, #hero-chart rect, .eyebrow::before { animation:none !important; }
-    .reveal { opacity:1; transform:none; }
+  /* Light by default, matching the rest of the site. Dark only when the visitor's device asks for it (or the toggle),
+     using the same purple and teal family so both modes feel like one brand. */
+  :root{
+    --bg:#F7F6FB; --surface:#FFFFFF; --sunk:#F0EEF8; --ink:#17152B; --ink-2:#433F5E; --muted:#67638A; --line:#E3E0F0;
+    --accent:#5B47E0; --accent-soft:#EEEBFF;
+    --grad:linear-gradient(120deg,#0B8178 0%,#5B47E0 100%);
+    --red:#B02E22; --red-soft:#FCE6E3; --green:#11683F; --green-soft:#E0F4E9;
+    --track:#E3E0F0; --shadow:0 24px 60px -36px rgba(43,32,120,.4);
+    --f:"Tajawal","IBM Plex Sans Arabic",Tahoma,sans-serif;
+    color-scheme:light;
   }
-  @media (max-width:1000px) {
-    .svc { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .work { grid-auto-columns:minmax(260px,46%); }
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+    --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57;
+    --accent:#8B7BFF; --accent-soft:#2A2557;
+    --grad:linear-gradient(120deg,#127A72 0%,#6A57EA 100%);
+    --red:#FF8A7A; --red-soft:#3A1F2A; --green:#4FD08E; --green-soft:#16302A;
+    --track:#353060; --shadow:0 24px 60px -30px rgba(0,0,0,.6); color-scheme:dark}}
+  :root[data-theme="dark"]{
+    --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57;
+    --accent:#8B7BFF; --accent-soft:#2A2557;
+    --grad:linear-gradient(120deg,#127A72 0%,#6A57EA 100%);
+    --red:#FF8A7A; --red-soft:#3A1F2A; --green:#4FD08E; --green-soft:#16302A;
+    --track:#353060; --shadow:0 24px 60px -30px rgba(0,0,0,.6); color-scheme:dark}
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.7;overflow-x:clip}
+  body::before{content:"";position:fixed;top:-20%;left:-10%;width:60vw;height:60vw;max-width:720px;max-height:720px;border-radius:50%;background:var(--grad);opacity:.10;filter:blur(80px);z-index:-1;pointer-events:none}
+  a{color:inherit;text-decoration:none}
+  button,input,select{font:inherit;color:inherit}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .wrap{max-width:1180px;margin-inline:auto;padding-inline:24px}
+  .skip{position:absolute;right:12px;top:-60px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;z-index:80}
+  .skip:focus{top:12px}
+
+  header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:19px}
+  .brand i{width:34px;height:34px;border-radius:9px;background:var(--grad);color:#fff;display:grid;place-items:center}
+  .hdr-end{display:flex;gap:10px;align-items:center}
+  .icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:16px;cursor:pointer;transition:filter .2s,transform .2s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.grad{background:var(--grad);border:0;color:#fff}
+  .btn.grad:hover{filter:brightness(1.08)}
+  .btn.sm{padding:8px 14px;font-size:14.5px}
+
+  .intro{padding-block:40px 26px;display:grid;gap:10px;max-width:760px}
+  .tag{justify-self:start;font-size:14px;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--accent-soft);color:var(--accent)}
+  h1{font-size:clamp(34px,5.4vw,60px);font-weight:800;line-height:1.2}
+  .gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .intro p{font-size:19px;color:var(--ink-2);max-width:56ch}
+
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:start;padding-bottom:40px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow)}
+  .card h2{font-size:20px;font-weight:800;margin-bottom:4px}
+  .card .sub{color:var(--muted);font-size:15px}
+
+  .industries{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .ind{padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:var(--sunk);cursor:pointer;font-size:15px;font-weight:500}
+  .ind[aria-pressed="true"]{background:var(--grad);color:#fff;border-color:transparent}
+
+  .field{display:grid;gap:6px;padding-block:14px;border-top:1px solid var(--line);min-width:0}
+  .f-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .f-top label{font-weight:700;font-size:16px}
+  .f-top output{font-weight:800;font-size:20px;color:var(--accent);white-space:nowrap}
+  .f-top output small{font-size:13px;color:var(--muted);font-weight:500}
+  .hint{font-size:13.5px;color:var(--muted)}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer}
+  input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:99px;background:linear-gradient(to left,var(--accent) var(--fill,50%),var(--track) var(--fill,50%))}
+  input[type=range]::-moz-range-track{height:8px;border-radius:99px;background:var(--track)}
+  input[type=range]::-moz-range-progress{height:8px;border-radius:99px;background:var(--accent)}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-8px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--accent)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+
+  .results{position:sticky;top:78px;display:grid;gap:16px}
+  .hero-num{border-radius:22px;padding:24px;background:var(--grad);color:#fff;display:grid;gap:4px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .hero-num::after{content:"";position:absolute;left:-40px;bottom:-60px;width:180px;height:180px;border-radius:50%;border:26px solid rgba(255,255,255,.1)}
+  .hero-num>span{font-size:16px;opacity:.92;font-weight:500}
+  .hero-num b{font-size:clamp(44px,6vw,68px);font-weight:800;line-height:1.05}
+  .hero-num b small{font-size:20px;font-weight:700;opacity:.92;margin-inline-start:6px}
+  .hero-num p{opacity:.92;font-size:15px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cmp{border-radius:18px;padding:16px;display:grid;gap:2px}
+  .cmp>span{font-size:14.5px;font-weight:700}
+  .cmp b{font-size:clamp(24px,3vw,32px);font-weight:800;line-height:1.2}
+  .cmp small{font-size:13px;opacity:.85}
+  .cmp.before{background:var(--red-soft);color:var(--red)}
+  .cmp.after{background:var(--green-soft);color:var(--green)}
+  .bars{display:grid;gap:12px;padding:18px 20px}
+  .bar{display:grid;gap:4px}
+  .bar .l{display:flex;justify-content:space-between;font-size:14px;font-weight:700}
+  .bar .t{height:16px;border-radius:99px;background:var(--sunk);overflow:hidden}
+  .bar .t i{display:block;height:100%;border-radius:99px;transition:width .35s ease}
+  .bar.before .l{color:var(--red)} .bar.after .l{color:var(--green)}
+  .bar.before .t i{background:var(--red)}
+  .bar.after .t i{background:var(--green)}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:2px;align-content:start}
+  .stat>span{font-size:13.5px;color:var(--muted);font-weight:500}
+  .stat b{font-size:24px;font-weight:800;line-height:1.2}
+  .stat small{font-size:12.5px;color:var(--muted)}
+  .stat.roi b{font-size:30px}
+  .note{font-size:13px;color:var(--muted)}
+
+  .cta{margin-block:20px 60px;border-radius:24px;padding:30px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center;scroll-margin-top:80px}
+  .cta h2{font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.3}
+  .cta p{color:var(--ink-2);margin-top:6px}
+  .cta-actions{display:grid;gap:10px}
+  .cta-actions .btn.grad{width:100%;font-size:18px;padding:16px 20px}
+  .mail{display:flex;gap:8px}
+  .mail input{flex:1;min-width:0;border:1px solid var(--line);background:var(--sunk);border-radius:12px;padding:11px 14px;direction:ltr;text-align:right}
+  .mail input:focus{outline:0;border-color:var(--accent)}
+  .msg{font-size:13.5px;min-height:20px;color:var(--muted)}
+  .msg.err{color:var(--red)}
+  footer{border-top:1px solid var(--line);padding-block:20px calc(20px + env(safe-area-inset-bottom,0px));font-size:14px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a:hover{color:var(--accent)}
+
+
+  /* header links */
+  .links{display:flex;gap:22px;flex:1;margin-inline-start:28px;color:var(--ink-2);font-size:16px;font-weight:500}
+  .links a:hover{color:var(--accent)}
+  .lang{color:var(--ink-2);font-size:14px;font-weight:700;padding:7px 10px;border:1px solid var(--line);border-radius:10px}
+
+  /* sections that follow the calculator */
+  main>section:not(.cta):not(.final){padding-block:64px 0;scroll-margin-top:80px}
+  .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+  .head h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-top:6px;line-height:1.3}
+  .head p{color:var(--muted);max-width:52ch}
+  .eyebrow{color:var(--accent);font-size:15px;font-weight:700}
+  .svc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .svc a{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;transition:transform .25s,box-shadow .25s}
+  .svc a:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .svc .illo{width:100%;aspect-ratio:4/3;display:block;background:linear-gradient(160deg,var(--accent-soft),var(--sunk) 75%)}
+  .svc a svg *{animation-play-state:paused}
+  .svc a:hover svg *,.svc a:focus-visible svg *{animation-play-state:running}
+  .svc .body{padding:18px;display:grid;gap:8px;align-content:start}
+  .svc h3{font-size:19px;font-weight:800}
+  .svc p{color:var(--ink-2);font-size:15.5px}
+  .svc ul{list-style:none;display:grid;gap:4px;font-size:15px;color:var(--ink-2)}
+  .svc li::before{content:"✓ ";color:var(--accent);font-weight:800}
+  .svc .go{color:var(--accent);font-weight:700;font-size:15px}
+  .row-nav{display:flex;gap:8px}
+  .row-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:18px}
+  .row-nav button:hover{border-color:var(--accent);color:var(--accent)}
+  .work{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,32%);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+  .work a{scroll-snap-align:start;display:grid;gap:8px}
+  .shot{aspect-ratio:4/3;border-radius:18px;overflow:hidden;position:relative;border:1px solid var(--line);transition:box-shadow .25s}
+  .work a:hover .shot{box-shadow:var(--shadow)}
+  .work h3{font-size:18px;font-weight:800}
+  .work small{color:var(--muted);font-size:14px}
+  .work .go{color:var(--accent);font-weight:700;font-size:14px}
+  .work-dots{display:flex;gap:6px;justify-content:center;margin-top:10px}
+  .work-dots i{width:7px;height:7px;border-radius:99px;background:var(--line);transition:width .3s,background .3s}
+  .work-dots i.on{width:22px;background:var(--accent)}
+  .s-studio{background:linear-gradient(180deg,#7d9ec0 0%,#b4cbe0 36%,#46647f 52%,#22374a 70%,#0b121a 100%)}
+  .s-studio::before{content:"";position:absolute;inset:auto 0 0 0;height:58%;background:radial-gradient(120% 70% at 30% 100%,#2c3a44 40%,transparent 41%),radial-gradient(90% 60% at 85% 100%,#38474f 45%,transparent 46%),linear-gradient(180deg,transparent,#0b0f14 95%)}
+  .s-studio .t{position:absolute;right:20px;bottom:18px;color:#fff;text-align:right}
+  .s-studio .t small{color:#fff;opacity:.85;display:block;font-size:12px}
+  .s-studio .t strong{font-family:Georgia,serif;font-weight:400;font-size:24px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+  .s-studio .r{position:absolute;top:42%;left:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border:1px solid #e9c46a;border-radius:50%}
+  .s-screen{background:var(--surface);padding:16px;display:grid;gap:10px;align-content:start}
+  .mini-k{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .mini-k div{background:var(--sunk);border-radius:10px;padding:8px 10px;display:grid}
+  .mini-k span{font-size:12px;color:var(--muted)}
+  .mini-k b{font-weight:800;font-size:18px;direction:ltr;text-align:right;font-variant-numeric:tabular-nums}
+  .shot svg{width:100%;height:auto;display:block}
+  .steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .steps li{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:6px}
+  .steps em{font-style:normal;width:36px;height:36px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-weight:800}
+  .steps b{font-size:19px;font-weight:800}
+  .steps p{color:var(--ink-2);font-size:15.5px}
+  .faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+  .faq details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:700;font-size:17px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--accent);font-size:22px;line-height:1}
+  .faq details[open] summary::after{content:"−"}
+  .faq p{color:var(--ink-2);margin-top:8px;font-size:16px}
+  .faq a{color:var(--accent);font-weight:700}
+  .final{margin-block:64px 60px;border-radius:24px;padding:36px 30px;background:var(--grad);color:#fff;text-align:center;display:grid;gap:10px;justify-items:center}
+  .final h2{font-size:clamp(26px,3.4vw,38px);font-weight:800}
+  .final p{opacity:.92;max-width:52ch}
+  .final-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+  .final .btn.grad{background:#fff;color:#2b2160}
+  .final .btn:not(.grad){background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+  @media (max-width:1000px){.svc,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.work{grid-auto-columns:minmax(260px,46%)}.links{display:none}}
+  @media (max-width:560px){.svc,.steps,.faq{grid-template-columns:minmax(0,1fr)}.work{grid-auto-columns:82%}.hdr-end .lang{display:none}}
+  .dock{display:none}
+  @media (max-width:900px){
+    .layout,.cta{grid-template-columns:minmax(0,1fr)}
+    .results{position:static}
+    .dock{position:fixed;inset-inline:0;bottom:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--grad);color:#fff;font-weight:700}
+    .dock[hidden]{display:none}
+    .dock b{font-size:20px}
+    .dock a{background:#fff;color:#2b2160;border-radius:10px;padding:7px 12px;font-size:14px;white-space:nowrap}
+    body{padding-bottom:64px}
   }
-  @media (max-width:820px) {
-    header nav { display:none; }
-    .hero { grid-template-columns:minmax(0,1fr); gap:34px; padding-top:28px; }
-        .facts { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:20px; }
-    .facts div:nth-child(3) { border-inline-start:0; padding-inline-start:4px; }
-    .facts div:nth-child(n+3) { border-top:1px solid var(--line); }
-    .band, .contact { grid-template-columns:minmax(0,1fr); }
-    .band img { min-height:220px; max-height:260px; }
-    .band .txt, .contact form, .thanks { padding:26px 22px; }
-    .contact .pic img { min-height:220px; max-height:260px; }
-    .faq { grid-template-columns:minmax(0,1fr); }
+  @media (max-width:560px){
+    .wrap{padding-inline:16px}
+    .card{padding:18px}
+    .two{grid-template-columns:minmax(0,1fr)}
+    .stats{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+    .stats .roi{grid-column:1/-1}
+    .mail{flex-direction:column}
+    .cta{padding:22px}
   }
-  @media (max-width:560px) {
-    .wrap { padding-inline:16px; }
-    .svc, .steps { grid-template-columns:minmax(0,1fr); }
-    .work { grid-auto-columns:82%; }
-    .two { grid-template-columns:minmax(0,1fr); }
-    .hdr { gap:12px; justify-content:space-between; }
-    .hdr-end .btn { padding:8px 12px; }
-    .fab span { display:none; }
-    section { padding-top:56px; }
-  }
-  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none !important; } }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
-<div class="progress" id="progress" aria-hidden="true"></div>
-<header id="hdr"><div class="wrap hdr">
-  <a class="brand" href="/" aria-label="Agentiq"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.5"/></svg></i><span lang="en">Agentiq</span></a>
-  <nav aria-label="الأقسام"><a href="#services">الخدمات</a><a href="#work">أعمالنا</a><a href="/hours/">احسب التوفير</a><a href="#faq">الأسئلة</a></nav>
-  <div class="hdr-end"><a class="lang" href="/en/" lang="en" hreflang="en">EN</a><a class="btn primary sm" href="#start">ابدأ مشروعك</a></div>
+<header><div class="wrap hdr">
+  <a class="brand" href="/" aria-label="Agentiq، الصفحة الرئيسية"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.5"/></svg></i><span lang="en">Agentiq</span></a>
+  <nav class="links" aria-label="الأقسام"><a href="#calc">الحاسبة</a><a href="#services">الخدمات</a><a href="#work">أعمالنا</a><a href="#faq">الأسئلة</a></nav>
+  <div class="hdr-end">
+    <a class="lang" href="/en/" lang="en" hreflang="en">EN</a>
+    <a class="btn sm grad" href="#cta">احجز استشارة</a>
+    <button class="icon-btn" id="theme" type="button" aria-label="الوضع الداكن" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
+  </div>
 </div></header>
 
-<main id="main">
-<div class="wrap">
-  <section class="hero" aria-label="البداية" style="padding-top:40px">
-    <div>
-      <span class="eyebrow">شاشات متابعة · أتمتة · مواقع</span>
-      <h1>أرقام عملك أمامك، ومهامك المتكررة <em>تُنجز وحدها</em></h1>
-      <p>نربط الأنظمة التي تستخدمها، ونعرض أرقامك في شاشة تتحدّث وحدها، ونرسل لك التنبيه والتقرير جاهزاً بدل متابعتها يدوياً.</p>
-      <div class="cta"><a class="btn primary" href="#start">ابدأ مشروعك</a><a class="btn" href="/hours/">احسب كم توفّر</a></div>
-    </div>
-    <div class="stage-art" aria-hidden="true">
-      <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
-      <div class="laptop"><div class="lid"><div class="scr">
-        <div class="side"><i></i><i></i><i></i><i></i></div>
-        <div class="app">
-          <div class="app-top"><b>لوحة المتجر</b><span class="live">مباشر</span></div>
-          <div class="k4">
-            <div><span>المبيعات اليوم</span><b id="k-sales">48,210</b><em>▲ 12.4%</em></div>
-            <div><span>الطلبات</span><b id="k-orders">265</b><em>▲ 8.1%</em></div>
-            <div><span>وفّرتها الأتمتة</span><b>58</b><em>ساعة هذا الشهر</em></div>
-          </div>
-          <svg viewBox="0 0 400 130" id="hero-chart"></svg>
-        </div>
-      </div></div><div class="base"></div></div>
-      <div class="phone"><div class="ps">
-        <div class="note new warn"><b><span>تنبيه</span><i>الآن</i></b>مخزون «قهوة مختصة» أقل من 10 وحدات</div>
-        <div class="note"><b><span>التقرير اليومي</span><i>9:00 م</i></b>المبيعات أعلى من أمس بـ 12% ✓</div>
-        <div class="note"><b><span>طلب جديد</span><i>8:42 م</i></b>سُجّل في الشيت تلقائياً</div>
-      </div></div>
-    </div>
-  </section>
-
-  <div class="facts">
-    <div><b class="num">24/7</b><span>تنبيهات تصلك على جوالك</span></div>
-    <div><b class="num" data-count="12" data-prefix="+">+12</b><span>نظاماً نربط معه، مثل سلة وExcel</span></div>
-    <div><b><span class="num" data-count="4">4</span> خطوات</b><span>من الفكرة إلى التشغيل</span></div>
-    <div><b>✓</b><span>نختبر كل شيء قبل التسليم</span></div>
+<main class="wrap" id="main">
+  <div id="calc"></div>
+  <div class="intro">
+    <span class="tag">أتمتة · شاشات متابعة · مواقع</span>
+    <h1>الشغل اليدوي يكلّفك <span class="gt">أكثر مما تتوقع</span></h1>
+    <p>احسبه بنفسك في دقيقة: حرّك المؤشرات وشوف كم يكلّفك كل شهر. وبعدها نحوّل هالشغل إلى أنظمة تشتغل وحدها، وتوفّر عليك المبلغ اللي تشوفه.</p>
   </div>
 
-  <section id="services">
-    <div class="head"><div><span class="eyebrow">الخدمات</span><h2>ماذا نبني لكم</h2></div><p>أربع خدمات تكمّل بعضها. ابدأ بواحدة ونكبر معك.</p></div>
+  <div class="layout">
+    <section class="card" aria-labelledby="in-h">
+      <h2 id="in-h">أرقام عملك</h2>
+      <p class="sub">اختر مجالك لتتعبى أرقام تقريبية، ثم عدّلها لتناسبك.</p>
+      <div class="industries" id="industries" role="group" aria-label="مجال العمل">
+        <button class="ind" type="button" data-k="store" aria-pressed="true">متجر إلكتروني</button>
+        <button class="ind" type="button" data-k="clinic" aria-pressed="false">عيادة</button>
+        <button class="ind" type="button" data-k="realty" aria-pressed="false">مكتب عقار</button>
+        <button class="ind" type="button" data-k="food" aria-pressed="false">مطعم أو مقهى</button>
+        <button class="ind" type="button" data-k="services" aria-pressed="false">شركة خدمات</button>
+      </div>
+
+      <div class="field">
+        <div class="f-top"><label for="emp">كم موظف يشتغل على مهام متكررة؟</label><output for="emp" id="o-emp"></output></div>
+        <input type="range" id="emp" min="1" max="50" step="1">
+      </div>
+      <div class="field">
+        <div class="f-top"><label for="hrs">كم ساعة بالأسبوع لكل موظف؟</label><output for="hrs" id="o-hrs"></output></div>
+        <input type="range" id="hrs" min="1" max="40" step="1">
+        <span class="hint">مثل إدخال البيانات، والفواتير، والتقارير، والرد على العملاء.</span>
+      </div>
+      <div class="field">
+        <div class="f-top"><label for="rate">كم تكلفة ساعة الموظف؟</label><output for="rate" id="o-rate"></output></div>
+        <input type="range" id="rate" min="20" max="300" step="5">
+        <span class="hint">الراتب الشهري ÷ 160 تقريباً. مثال: 8,000 ÷ 160 = 50 ر.س</span>
+      </div>
+      <div class="two">
+        <div class="field">
+          <div class="f-top"><label for="err">كم خطأ بشري بالشهر؟</label><output for="err" id="o-err"></output></div>
+          <input type="range" id="err" min="0" max="100" step="1">
+        </div>
+        <div class="field">
+          <div class="f-top"><label for="errc">تكلفة تصحيح الخطأ الواحد</label><output for="errc" id="o-errc"></output></div>
+          <input type="range" id="errc" min="0" max="2000" step="10">
+        </div>
+      </div>
+      <div class="field">
+        <div class="f-top"><label for="auto">كم نسبة الشغل اللي ينفع يتأتمت؟</label><output for="auto" id="o-auto"></output></div>
+        <input type="range" id="auto" min="10" max="90" step="5">
+        <span class="hint">المهام اللي خطواتها ثابتة كل مرة تتأتمت بنسبة أعلى.</span>
+      </div>
+      <div class="field">
+        <div class="f-top"><label for="inv">تكلفة الأتمتة التقديرية (مرة واحدة)</label><output for="inv" id="o-inv"></output></div>
+        <input type="range" id="inv" min="3000" max="150000" step="1000">
+        <span class="hint">تقدير لحساب العائد. نحدد التكلفة الفعلية معك في الاستشارة.</span>
+      </div>
+    </section>
+
+    <section class="results" aria-labelledby="out-h" aria-live="polite">
+      <h2 id="out-h" class="sr">النتيجة</h2>
+      <div class="hero-num">
+        <span>التوفير السنوي المتوقع</span>
+        <b><span class="num" id="r-year">0</span><small>ر.س</small></b>
+        <p>يعني <span class="num" id="r-month-save">0</span> ر.س كل شهر</p>
+      </div>
+      <div class="compare">
+        <div class="cmp before"><span>الشغل اليدوي شهرياً</span><b class="num" id="r-before">0</b><small>ر.س</small></div>
+        <div class="cmp after"><span>بعد الأتمتة شهرياً</span><b class="num" id="r-after">0</b><small>ر.س</small></div>
+      </div>
+      <div class="card bars" aria-hidden="true">
+        <div class="bar before"><div class="l"><span>قبل الأتمتة</span><span><span class="num" id="b-before">0</span> ر.س</span></div><div class="t"><i id="bb" style="width:100%"></i></div></div>
+        <div class="bar after"><div class="l"><span>بعد الأتمتة</span><span><span class="num" id="b-after">0</span> ر.س</span></div><div class="t"><i id="ba" style="width:40%"></i></div></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>ساعات توفّرها</span><b class="num" id="r-hours">0</b><small>ساعة بالشهر</small></div>
+        <div class="stat"><span>أيام عمل</span><b class="num" id="r-days">0</b><small>يوم بالسنة</small></div>
+        <div class="stat roi"><span>العائد على الاستثمار</span><b class="num gt" id="r-roi">0</b><small id="r-pay">كل ريال يرجع لك</small></div>
+      </div>
+      <p class="note">أرقام تقديرية مبنية على ما أدخلته، وتفترض 4.33 أسبوع في الشهر و8 ساعات لليوم.</p>
+    </section>
+  </div>
+
+  <section class="cta" id="cta" aria-labelledby="cta-h">
+    <div>
+      <h2 id="cta-h">جاهز توفّر <span class="gt"><span class="num" id="c-year">0</span> ر.س</span> بالسنة؟</h2>
+      <p>احجز استشارة مجانية، ونرسل لك خطة واضحة لأتمتة شغلك. نتيجتك تُرفق مع رسالتك تلقائياً.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn grad" id="wa" href="https://wa.me/966557912466" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>احجز استشارة مجانية</a>
+      <form class="mail" id="mail" novalidate>
+        <label for="em" class="sr">بريدك الإلكتروني</label>
+        <input id="em" type="email" inputmode="email" autocomplete="email" placeholder="بريدك الإلكتروني">
+        <button class="btn" type="submit">أرسل لي التقرير</button>
+      </form>
+      <p class="msg" id="msg">يفتح بريدك برسالة جاهزة فيها نتيجتك.</p>
+    </div>
+  </section>
+<section id="services">
+    <div class="head"><div><span class="eyebrow">الخدمات</span><h2>كيف نوفّر لك هذا المبلغ</h2></div><p>كل خدمة تشيل جزءاً من الشغل اليدوي اللي حسبته فوق. ابدأ بواحدة ونكبر معك.</p></div>
     <div class="svc">
       <a href="/services/dashboards/"><svg class="illo" viewBox="0 0 400 300" aria-hidden="true"><rect x="60" y="54" width="280" height="176" rx="12" fill="#fff" stroke="#E3E0F0"/>
    <rect x="78" y="72" width="76" height="40" rx="8" fill="#F0EEF8"/><rect x="162" y="72" width="76" height="40" rx="8" fill="#F0EEF8"/><rect x="246" y="72" width="76" height="40" rx="8" fill="#EEEBFF"/>
@@ -384,26 +385,8 @@
         <div class="body"><h3>تنظيم الإجراءات والصلاحيات</h3><p>خطوات عمل واضحة يعرف فيها كل شخص دوره.</p><ul><li>توثيق خطوات العمل</li><li>قواعد لمن يرى ماذا</li><li>متابعة الالتزام</li></ul><span class="go">التفاصيل ←</span></div></a>
     </div>
   </section>
-
-  <div class="band">
-    <div class="art" aria-hidden="true"><svg viewBox="0 0 420 300">
-      <g transform="translate(36 120)"><rect x="0" y="120" width="140" height="18" rx="3" fill="#F3EFE6"/><rect x="6" y="104" width="134" height="18" rx="3" fill="#E9E3D6"/><rect x="-4" y="88" width="140" height="18" rx="3" fill="#F3EFE6"/><rect x="4" y="72" width="134" height="18" rx="3" fill="#E9E3D6"/><rect x="0" y="56" width="140" height="18" rx="3" fill="#F3EFE6"/><rect x="8" y="40" width="130" height="18" rx="3" fill="#E9E3D6"/><rect x="18" y="38" width="10" height="20" fill="#E7C66F"/><rect x="60" y="54" width="10" height="20" fill="#C4BBFF"/><rect x="100" y="86" width="10" height="20" fill="#E88A7C"/></g>
-      <circle cx="292" cy="120" r="74" fill="#fff" stroke="#4B4580" stroke-width="3"/><circle cx="292" cy="120" r="4" fill="#B0601C"/>
-      <g stroke="#C7C2DD" stroke-width="3" stroke-linecap="round"><path d="M292 54 v8 M292 178 v8 M226 120 h8 M350 120 h8"/></g>
-      <line x1="292" y1="120" x2="292" y2="72" stroke="#17152B" stroke-width="5" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 292 120" to="360 292 120" dur="6s" repeatCount="indefinite"/></line>
-      <line x1="292" y1="120" x2="322" y2="132" stroke="#B0601C" stroke-width="6" stroke-linecap="round"/>
-      <g fill="#E9C46A" stroke="#B8963E"><ellipse cx="270" cy="262" rx="26" ry="9"/><ellipse cx="270" cy="252" rx="26" ry="9"/><ellipse cx="270" cy="242" rx="26" ry="9"/><ellipse cx="320" cy="262" rx="24" ry="8.5"/><ellipse cx="320" cy="252" rx="24" ry="8.5"/></g>
-    </svg></div>
-    <div class="txt">
-      <h2>كم ساعة يضيع فريقك في الأعمال اليدوية؟</h2>
-      <p>حرّك المؤشرات وشوف بنفسك كم يكلّفك الشغل اليدوي، وكم توفّر عليك الأتمتة، والعائد على كل ريال. تأخذ دقيقة.</p>
-      <div class="stats"><div><b class="num">12,112</b><span>ر.س تكلفة شهرية في مثال المتجر</span></div><div><b class="num">94,470</b><span>ر.س توفير سنوي تقديري</span></div></div>
-      <a class="btn primary" href="/hours/">احسبها الآن ←</a>
-    </div>
-  </div>
-
-  <section id="work">
-    <div class="head"><div><span class="eyebrow">أعمالنا</span><h2>جرّبها بنفسك</h2></div>
+<section id="work">
+    <div class="head"><div><span class="eyebrow">جرّبها بنفسك</span><h2>أعمالنا</h2></div>
       <div class="row-nav"><button type="button" id="prev" aria-label="السابق">→</button><button type="button" id="next" aria-label="التالي">←</button></div></div>
     <div class="work" id="track">
       <a href="/demos/studio/" target="_blank" rel="noopener"><div class="shot s-studio" aria-hidden="true"><span class="r"></span><span class="t"><small>استديو تصوير</small><strong>لحظاتكم تستاهل صورة تبقى</strong></span></div>
@@ -420,14 +403,11 @@
         <rect x="52" y="114" width="52" height="38" rx="10" fill="#fff" stroke="#E3E0F0"/><text x="78" y="137" text-anchor="middle" font-size="11" fill="#433F5E" font-family="IBM Plex Sans Arabic">تقرير</text>
         <circle r="5" fill="#5B47E0"><animateMotion dur="1.8s" repeatCount="indefinite" path="M236 70 H196"/></circle><circle r="5" fill="#5B47E0"><animateMotion dur="1.8s" begin=".9s" repeatCount="indefinite" path="M130 70 H66"/></circle></svg></div>
         <h3>مهام تُنجز وحدها</h3><small>أتمتة · محاكي تفاعلي</small><span class="go">شغّله ←</span></a>
-      <a href="/hours/"><div class="shot s-calc" aria-hidden="true"><p>التوفير السنوي المتوقع</p><div class="big" style="font-size:52px">94,470</div><p>ر.س · كل ريال يرجع 5.2 ريال</p></div>
-        <h3>كم يكلّفك الشغل اليدوي؟</h3><small>حاسبة مجانية · دقيقة واحدة</small><span class="go">احسب ←</span></a>
     </div>
     <div class="work-dots" id="dots" aria-hidden="true"></div>
   </section>
-
-  <section id="how">
-    <div class="head"><div><span class="eyebrow">طريقة العمل</span><h2>من الفكرة إلى التشغيل</h2></div><p>أربع مراحل، ولكل مرحلة مخرج واضح تراجعه قبل الانتقال للتالية.</p></div>
+<section id="how">
+    <div class="head"><div><span class="eyebrow">طريقة العمل</span><h2>من الاستشارة إلى التشغيل</h2></div><p>أربع مراحل، ولكل مرحلة مخرج واضح تراجعه قبل الانتقال للتالية.</p></div>
     <ol class="steps">
       <li><em>1</em><b>جلسة فهم</b><p>نفهم نشاطك والأرقام المهمة لك.</p></li>
       <li><em>2</em><b>تصميم الحل</b><p>نتفق على الشكل والتنبيهات والتقارير.</p></li>
@@ -435,8 +415,7 @@
       <li><em>4</em><b>التشغيل والدعم</b><p>نطلق وندرّب فريقك ونتابع بعد الإطلاق.</p></li>
     </ol>
   </section>
-
-  <section id="faq">
+<section id="faq">
     <div class="head"><div><span class="eyebrow">أسئلة شائعة</span><h2>قبل أن تسأل</h2></div></div>
     <div class="faq">
       <details><summary>هل أحتاج فريقاً تقنياً؟</summary><p>لا. نتولى البناء والربط، وفريقك يستخدم النتيجة فقط.</p></details>
@@ -447,169 +426,137 @@
       <details><summary>هل تصممون مواقع إلكترونية؟</summary><p>نعم، مواقع عربية تعمل على الجوال مع حجز أو طلب سعر عبر واتساب. شاهد <a href="/demos/studio/" style="color:var(--accent);font-weight:600">نموذج موقع الاستديو</a>.</p></details>
     </div>
   </section>
-
-  <section id="start" aria-labelledby="start-h">
-    <div class="contact">
-      <div class="pic chat" aria-hidden="true">
-        <div class="chat-head"><i>A</i><div><b>Agentiq</b><small>متصل الآن</small></div></div>
-        <div class="bubble me">السلام عليكم، عندنا متجر ونجمع مبيعات الفروع يدوياً كل يوم.<small>9:12</small></div>
-        <div class="bubble them">وعليكم السلام! نقدر نخليها تتجمع وحدها في شاشة واحدة، ويوصلك ملخص كل ليلة على واتساب.<small>9:13 ✓✓</small></div>
-        <div class="bubble me">ممتاز، كم تأخذ؟<small>9:14</small></div>
-        <div class="bubble them">نحددها معك في جلسة فهم قصيرة. متى يناسبك؟<small>9:14 ✓✓</small></div>
-      </div>
-      <div id="fbox">
-        <form id="f" novalidate>
-          <span class="eyebrow">ابدأ مشروعك</span>
-          <h2 id="start-h">لنبدأ مشروعك</h2>
-          <p class="lead">اكتب تفاصيلك باختصار، وتُفتح رسالتك جاهزة على واتساب. أو اتصل: <a class="num" href="tel:+966557912466" style="color:var(--accent);font-weight:600;white-space:nowrap">0557 912 466</a></p>
-          <label>الاسم أو الجهة<input name="n" autocomplete="organization"><span class="e" id="en"></span></label>
-          <div class="two">
-            <label>نوع النشاط<select name="t"><option>متجر إلكتروني</option><option>مطعم أو مقهى</option><option>عيادة أو مركز</option><option>شركة خدمات</option><option>جهة حكومية أو غير ربحية</option><option>أخرى</option></select></label>
-            <label>الخدمة<select name="s"><option>شاشة متابعة</option><option>أتمتة مهام</option><option>موقع إلكتروني</option><option>تنظيم الإجراءات</option><option>لست متأكداً بعد</option></select></label>
-          </div>
-          <label>ما الذي تريد تحسينه؟<input name="m" placeholder="مثال: نجمع مبيعات الفروع يدوياً كل يوم"><span class="e" id="em"></span></label>
-          <button class="btn primary">أرسل عبر واتساب</button>
-        </form>
-      </div>
-    </div>
+  <section class="final" aria-labelledby="final-h">
+    <h2 id="final-h">خلّ الشغل اليدوي علينا</h2>
+    <p>استشارة مجانية نفهم فيها شغلك، ونقترح عليك أول خطوة توفّر عليك أكثر.</p>
+    <div class="final-actions"><a class="btn grad" href="#cta">احسب واحجز استشارة</a><a class="btn" href="tel:+966557912466">اتصل: <span class="num">0557 912 466</span></a></div>
   </section>
-</div>
 </main>
-<footer><div class="wrap"><span><span lang="en">Agentiq</span> · الرياض، المملكة العربية السعودية</span>
-  <nav aria-label="روابط"><a href="/services/dashboards/">شاشات المتابعة</a><a href="/services/automation/">الأتمتة</a><a href="/services/websites/">المواقع</a><a href="/services/process/">تنظيم الإجراءات</a><a href="/hours/">حاسبة التوفير</a><a href="/en/" lang="en">English</a></nav></div></footer>
-<a class="fab" href="https://wa.me/966557912466" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg><span>واتساب</span></a>
+
+<div class="dock" id="dock"><span>توفير سنوي: <b class="num" id="d-year">0</b> ر.س</span><a href="#cta">احجز استشارة</a></div>
+
+<footer><div class="wrap"><span><span lang="en">Agentiq</span> · الرياض، المملكة العربية السعودية</span><span><a href="/services/dashboards/">شاشات المتابعة</a> · <a href="/services/automation/">الأتمتة</a> · <a href="/services/websites/">المواقع</a> · <a href="/services/process/">تنظيم الإجراءات</a> · <a href="/lab/">جرّب بنفسك</a> · <a href="/en/" lang="en">English</a></span></div></footer>
 
 <script>
-const $ = (s) => document.querySelector(s);
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-addEventListener('scroll', () => $('#hdr').classList.toggle('scrolled', scrollY > 8), { passive: true });
-
-// work row: arrow buttons move one card at a time (RTL: "next" goes left)
-const track = $('#track');
-const step = () => track.querySelector('a').getBoundingClientRect().width + 18;
-$('#next').addEventListener('click', () => track.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }));
-$('#prev').addEventListener('click', () => track.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }));
-
-// small charts inside the work cards
-function bars(svg, vals, w, h, line){
-  const max = Math.max(...vals) * 1.1, bw = w / vals.length; let s = '';
-  for (let k = 1; k <= 3; k++) s += `<line x1="0" x2="${w}" y1="${h * k / 4}" y2="${h * k / 4}" stroke="#ECEAF5"/>`;
-  vals.forEach((v, i) => { const bh = v / max * (h - 8); s += `<rect x="${w - (i + 1) * bw + bw * .18}" y="${h - bh}" width="${bw * .64}" height="${bh}" rx="3" fill="#5B47E0" opacity="${i === vals.length - 1 ? 1 : .45}"/>`; });
-  if (line) s += `<polyline points="${line.map((v, i) => `${w - (i + .5) * bw},${h - v / max * (h - 8)}`).join(' ')}" fill="none" stroke="#B0601C" stroke-width="2" stroke-dasharray="5 4"/>`;
-  svg.innerHTML = s;
-}
-bars($('#hero-chart'), [10, 14, 12, 18, 16, 22, 20, 27, 25, 31, 29, 36], 400, 130, [9, 12, 12, 15, 15, 18, 19, 22, 23, 26, 27, 30]);
-bars($('#sv-dash'), [4, 9, 7, 5, 3, 4, 6, 5, 4, 7, 6, 8], 300, 120);
-bars($('#sv-store'), [6, 9, 12, 15, 13, 17, 21, 19, 24], 300, 120, [5, 8, 11, 12, 13, 15, 17, 18, 20]);
-
-// the hero card's sales figure ticks up while the page is open
-(function(){ let sales = 48210; const el = $('#k-sales'); if (reduce) return;
-  setInterval(() => { if (document.hidden) return; sales += Math.round(120 + Math.random() * 160); el.textContent = sales.toLocaleString('en-US'); const o = $('#k-orders'); if (Math.random() < .7) o.textContent = +o.textContent + 1; }, 2200); })();
-
-
-// ---------- more life ----------
-const prog = $('#progress');
-addEventListener('scroll', () => prog.style.setProperty('--s', Math.min(1, scrollY / (document.documentElement.scrollHeight - innerHeight))), { passive: true });
-
-// hero chart grows in, then keeps receiving a new hour every few seconds
 (function(){
-  let data = [10, 14, 12, 18, 16, 22, 20, 27, 25, 31, 29, 36], prev = [9, 12, 12, 15, 15, 18, 19, 22, 23, 26, 27, 30];
-  const svg = $('#hero-chart');
-  [...svg.querySelectorAll('rect')].forEach((r, i) => r.style.animationDelay = (i * 60) + 'ms');
-  if (reduce) return;
-  setInterval(() => {
-    if (document.hidden) return;
-    const last = data[data.length - 1];
-    data = data.slice(1).concat(Math.max(8, Math.round(last + (Math.random() * 10 - 4))));
-    prev = prev.slice(1).concat(Math.round(prev[prev.length - 1] + Math.random() * 4 - 1));
-    bars(svg, data, 400, 130, prev);
-    const rs = svg.querySelectorAll('rect'); rs[rs.length - 1].style.animationDelay = '0ms';
-    [...rs].slice(0, -1).forEach((r) => r.style.animation = 'none');
-  }, 3200);
-})();
+  const $ = (s) => document.querySelector(s);
+  const fmt = (n, d = 0) => Number(n).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
 
-// the phone keeps receiving notifications
-(function(){
-  if (reduce) return;
-  const ps = document.querySelector('.phone .ps');
-  const feed = [
-    ['طلب جديد', 'سُجّل في الشيت تلقائياً', ''],
-    ['تنبيه', 'معدل التحويل انخفض إلى 1.4%', 'warn'],
-    ['تقرير أسبوعي', 'أُرسل لـ 4 مستلمين ✓', ''],
-    ['موافقة', 'تمت الموافقة على طلب إجازة', ''],
-    ['عميل جديد', 'أُضيف إلى قائمة العملاء', ''],
-    ['تنبيه', 'مخزون «دلة ستيل» أقل من 5', 'warn'],
-  ];
-  let k = 0;
-  setInterval(() => {
-    if (document.hidden) return;
-    const [t, body, cls] = feed[k++ % feed.length];
-    const d = new Date(), hm = `${d.getHours() % 12 || 12}:${String(d.getMinutes()).padStart(2, '0')}`;
-    const n = document.createElement('div'); n.className = 'note enter' + (cls ? ' ' + cls : '');
-    n.innerHTML = `<b><span>${t}</span><i>${hm}</i></b>${body}`;
-    ps.prepend(n); requestAnimationFrame(() => requestAnimationFrame(() => n.classList.remove('enter')));
-    while (ps.children.length > 4) ps.lastElementChild.remove();
-  }, 5000);
-})();
+  // theme: follows the device; the button overrides it (same key as the rest of the site)
+  const root = document.documentElement;
+  try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch (e) {}
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  const syncThemeBtn = () => { const d = isDark(); $('#theme').setAttribute('aria-pressed', d); $('#theme').setAttribute('aria-label', d ? 'الوضع الفاتح' : 'الوضع الداكن'); };
+  syncThemeBtn();
+  $('#theme').addEventListener('click', () => { root.dataset.theme = isDark() ? 'light' : 'dark'; try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {} syncThemeBtn(); });
 
-// sections slide in as you reach them; numbers count up
-if ('IntersectionObserver' in window && !reduce) {
-  const els = [...document.querySelectorAll('.svc a, .band, .work a, .steps li, .faq details, .contact, .head')];
-  document.querySelectorAll('.steps li').forEach((li, i) => li.style.setProperty('--i', i));
-  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
-  els.forEach((el, i) => { if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('reveal'); el.style.transitionDelay = (i % 4) * 90 + 'ms'; } io.observe(el); });
-  const cio = new IntersectionObserver((es) => es.forEach((e) => {
-    if (!e.isIntersecting) return; cio.unobserve(e.target);
-    const b = e.target, to = +b.dataset.count, pre = b.dataset.prefix || ''; let t0;
-    const tick = (t) => { t0 = t0 || t; const q = Math.min(1, (t - t0) / 1000); b.textContent = pre + Math.round(to * (1 - Math.pow(1 - q, 3))); if (q < 1) requestAnimationFrame(tick); };
-    requestAnimationFrame(tick);
-  }), { threshold: .6 });
-  document.querySelectorAll('[data-count]').forEach((b) => cio.observe(b));
-}
+  // typical starting numbers per field of work
+  const PRESETS = {
+    store:    { emp: 4,  hrs: 14, rate: 45, err: 10, errc: 120, auto: 65, inv: 18000 },
+    clinic:   { emp: 6,  hrs: 10, rate: 55, err: 6,  errc: 250, auto: 50, inv: 22000 },
+    realty:   { emp: 5,  hrs: 12, rate: 60, err: 5,  errc: 400, auto: 55, inv: 20000 },
+    food:     { emp: 8,  hrs: 6,  rate: 30, err: 15, errc: 80,  auto: 45, inv: 15000 },
+    services: { emp: 10, hrs: 10, rate: 70, err: 8,  errc: 300, auto: 55, inv: 30000 },
+  };
+  const ids = ['emp', 'hrs', 'rate', 'err', 'errc', 'auto', 'inv'];
+  const el = Object.fromEntries(ids.map((k) => [k, $('#' + k)]));
+  const UNIT = { emp: 'موظف', hrs: 'ساعة', rate: 'ر.س', err: 'خطأ', errc: 'ر.س', auto: '%', inv: 'ر.س' };
 
-// the work row moves on its own, pauses while you look at it
-(function(){
+  function load(k){
+    const p = PRESETS[k]; ids.forEach((id) => el[id].value = p[id]);
+    document.querySelectorAll('.ind').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.k === k)));
+    update();
+  }
+  $('#industries').addEventListener('click', (e) => { const b = e.target.closest('.ind'); if (b) load(b.dataset.k); });
+
+  let summary = '';
+  function update(){
+    const v = Object.fromEntries(ids.map((id) => [id, +el[id].value]));
+    ids.forEach((id) => {
+      $('#o-' + id).innerHTML = `<span class="num">${fmt(v[id])}</span> <small>${UNIT[id]}</small>`;
+      const r = el[id]; r.style.setProperty('--fill', ((r.value - r.min) / (r.max - r.min) * 100) + '%');
+    });
+    const a = v.auto / 100;
+    const hoursMonth = v.emp * v.hrs * 4.33;
+    const before = hoursMonth * v.rate + v.err * v.errc;
+    const after = hoursMonth * (1 - a) * v.rate + v.err * (1 - a) * v.errc;
+    const saveMonth = before - after, saveYear = saveMonth * 12;
+    const hoursSaved = hoursMonth * a, days = hoursSaved * 12 / 8;
+    const roi = v.inv > 0 ? saveYear / v.inv : 0, payback = saveMonth > 0 ? v.inv / saveMonth : 0;
+
+    ['#r-year', '#c-year', '#d-year'].forEach((s) => $(s).textContent = fmt(saveYear));
+    $('#r-month-save').textContent = fmt(saveMonth);
+    $('#r-before').textContent = fmt(before); $('#r-after').textContent = fmt(after);
+    $('#b-before').textContent = fmt(before); $('#b-after').textContent = fmt(after);
+    $('#ba').style.width = (before > 0 ? after / before * 100 : 0) + '%';
+    $('#r-hours').textContent = fmt(hoursSaved); $('#r-days').textContent = fmt(days);
+    $('#r-roi').textContent = fmt(roi, 1) + '×';
+    $('#r-pay').textContent = `كل ريال يرجع ${fmt(roi, 1)} ريال خلال سنة · تسترد التكلفة في ${payback < 1 ? 'أقل من شهر' : fmt(payback, 1) + ' شهر'}`;
+
+    const ind = document.querySelector('.ind[aria-pressed="true"]');
+    summary = [
+      'نتيجة حاسبة تكلفة الشغل اليدوي (Agentiq):',
+      `المجال: ${ind ? ind.textContent : 'أرقام مخصصة'}`,
+      `${v.emp} موظف × ${v.hrs} ساعة أسبوعياً على مهام متكررة، تكلفة الساعة ${v.rate} ر.س`,
+      `${v.err} خطأ شهرياً بتكلفة ${fmt(v.errc)} ر.س للخطأ، ونسبة الأتمتة الممكنة ${v.auto}%`,
+      `التكلفة الحالية: ${fmt(before)} ر.س شهرياً، وبعد الأتمتة: ${fmt(after)} ر.س شهرياً`,
+      `التوفير السنوي المتوقع: ${fmt(saveYear)} ر.س، و${fmt(hoursSaved)} ساعة شهرياً (${fmt(days)} يوم عمل بالسنة)`,
+      `العائد: كل ريال يرجع ${fmt(roi, 1)} ريال خلال سنة`,
+    ].join('\n');
+    $('#wa').href = 'https://wa.me/966557912466?text=' + encodeURIComponent(summary + '\n\nأرغب بحجز استشارة مجانية.');
+  }
+  ids.forEach((id) => el[id].addEventListener('input', () => {
+    document.querySelectorAll('.ind').forEach((b) => b.setAttribute('aria-pressed', 'false')); update();
+  }));
+  load('store');
+
+  // email report: opens the visitor's mail app with the result ready to send to themselves
+  $('#mail').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const m = $('#em').value.trim(), msg = $('#msg');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m)) { msg.textContent = 'اكتب بريداً إلكترونياً صحيحاً، مثل name@company.com'; msg.className = 'msg err'; $('#em').focus(); return; }
+    location.href = `mailto:${encodeURIComponent(m)}?subject=${encodeURIComponent('تقرير تكلفة الشغل اليدوي')}&body=${encodeURIComponent(summary + '\n\nللاستشارة المجانية: https://wa.me/966557912466')}`;
+    msg.textContent = 'فتحنا بريدك برسالة فيها التقرير. اضغط إرسال لتحفظها عندك.'; msg.className = 'msg';
+    try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/report-email', title: 'report', event: true }); } catch (err) {}
+  });
+
+
+  // work row: arrows, dots, small charts, gentle auto-advance
+  const track = $('#track'), reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const step = () => track.querySelector('a').getBoundingClientRect().width + 18;
+  $('#next').addEventListener('click', () => track.scrollBy({ left: -step(), behavior: reduceMotion ? 'auto' : 'smooth' }));
+  $('#prev').addEventListener('click', () => track.scrollBy({ left: step(), behavior: reduceMotion ? 'auto' : 'smooth' }));
+  function bars(svg, vals, w, h, line){
+    const max = Math.max(...vals) * 1.1, bw = w / vals.length; let s = '';
+    for (let k = 1; k <= 3; k++) s += `<line x1="0" x2="${w}" y1="${h * k / 4}" y2="${h * k / 4}" stroke="currentColor" stroke-opacity=".12"/>`;
+    vals.forEach((v, i) => { const bh = v / max * (h - 8); s += `<rect x="${w - (i + 1) * bw + bw * .18}" y="${h - bh}" width="${bw * .64}" height="${bh}" rx="3" fill="#5B47E0" opacity="${i === vals.length - 1 ? 1 : .5}"/>`; });
+    if (line) s += `<polyline points="${line.map((v, i) => `${w - (i + .5) * bw},${h - v / max * (h - 8)}`).join(' ')}" fill="none" stroke="#0B8178" stroke-width="2" stroke-dasharray="5 4"/>`;
+    svg.innerHTML = s;
+  }
+  bars($('#sv-dash'), [4, 9, 7, 5, 3, 4, 6, 5, 4, 7, 6, 8], 300, 120);
+  bars($('#sv-store'), [6, 9, 12, 15, 13, 17, 21, 19, 24], 300, 120, [5, 8, 11, 12, 13, 15, 17, 18, 20]);
   const cards = [...track.querySelectorAll('a')], dots = $('#dots');
   dots.innerHTML = cards.map(() => '<i></i>').join('');
-  const marks = [...dots.children];
-  const current = () => { const r = track.getBoundingClientRect(); let best = 0, bd = 1e9; cards.forEach((c, i) => { const d = Math.abs(c.getBoundingClientRect().right - r.right); if (d < bd) { bd = d; best = i; } }); return best; };
-  const paint = () => { const c = current(); marks.forEach((m, i) => m.classList.toggle('on', i === c)); };
+  const paint = () => { const r = track.getBoundingClientRect(); let best = 0, bd = 1e9; cards.forEach((c, i) => { const d = Math.abs(c.getBoundingClientRect().right - r.right); if (d < bd) { bd = d; best = i; } }); [...dots.children].forEach((m, i) => m.classList.toggle('on', i === best)); };
   track.addEventListener('scroll', () => requestAnimationFrame(paint), { passive: true }); paint();
-  if (reduce) return;
-  let hold = false;
-  ['mouseenter', 'focusin', 'touchstart'].forEach((ev) => track.addEventListener(ev, () => hold = true, { passive: true }));
-  ['mouseleave', 'focusout'].forEach((ev) => track.addEventListener(ev, () => hold = false));
-  setInterval(() => {
-    if (hold || document.hidden) return;
-    const r = track.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
-    const atEnd = Math.abs(track.scrollLeft) + track.clientWidth >= track.scrollWidth - 4;
-    if (atEnd) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: -step(), behavior: 'smooth' });
-  }, 4200);
+  if (!reduceMotion) {
+    let hold = false;
+    ['mouseenter', 'focusin', 'touchstart'].forEach((ev) => track.addEventListener(ev, () => hold = true, { passive: true }));
+    ['mouseleave', 'focusout'].forEach((ev) => track.addEventListener(ev, () => hold = false));
+    setInterval(() => {
+      if (hold || document.hidden) return;
+      const r = track.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+      if (Math.abs(track.scrollLeft) + track.clientWidth >= track.scrollWidth - 4) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: -step(), behavior: 'smooth' });
+    }, 4500);
+  }
+
+  // phones: hide the bottom bar once the call to action is on screen
+  if ('IntersectionObserver' in window) new IntersectionObserver((es) => { $('#dock').hidden = es[0].isIntersecting; }, { threshold: .2 }).observe($('#cta'));
+
+  // count WhatsApp clicks once visitor statistics are switched on
+  document.addEventListener('click', (e) => { const a = e.target.closest && e.target.closest('a[href*="wa.me"]'); if (!a) return;
+    try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/whatsapp:/', title: 'click', event: true }); } catch (err) {} });
 })();
-
-// project form opens WhatsApp with the message ready
-$('#f').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const f = e.target, n = f.n.value.trim(), m = f.m.value.trim();
-  const en = n.length < 2 ? 'اكتب الاسم أو اسم الجهة' : '', em = m.length < 3 ? 'اكتب باختصار ما تريد تحسينه' : '';
-  $('#en').textContent = en; $('#em').textContent = em;
-  if (en || em) { (en ? f.n : f.m).focus(); return; }
-  const text = `السلام عليكم، معكم ${n}.\nنوع النشاط: ${f.t.value}\nالخدمة: ${f.s.value}\nالمطلوب: ${m}`;
-  const url = 'https://wa.me/966557912466?text=' + encodeURIComponent(text);
-  try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/form-whatsapp', title: 'form', event: true }); } catch (err) {}
-  window.open(url, '_blank', 'noopener');
-  const box = $('#fbox'), d = document.createElement('div'), h = document.createElement('h3'), p = document.createElement('p'), a = document.createElement('a');
-  d.className = 'thanks'; h.textContent = 'شكراً ' + n;
-  p.textContent = 'فتحنا لك واتساب برسالتك جاهزة. اضغط إرسال هناك، ونرد عليك في أقرب وقت. ';
-  a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'افتح الرسالة مرة أخرى ↗';
-  p.append(a); d.append(h, p); box.replaceChildren(d);
-});
-
-// count WhatsApp and call clicks once visitor statistics are switched on
-document.addEventListener('click', (e) => {
-  const a = e.target.closest && e.target.closest('a[href*="wa.me"],a[href^="tel:"]'); if (!a) return;
-  try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/' + (a.href.includes('wa.me') ? 'whatsapp' : 'call') + ':/', title: 'click', event: true }); } catch (err) {}
-});
 </script>
 </body>
 </html>
