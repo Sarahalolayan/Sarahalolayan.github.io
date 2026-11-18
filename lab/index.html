@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Agentiq: شاشات متابعة حية لأرقام عملك، أتمتة المهام المتكررة، مواقع إلكترونية بنماذج حجز، وتنظيم الإجراءات والصلاحيات.">
-<meta name="theme-color" content="#F7F6FB">
+<meta name="theme-color" content="#F7F6FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14122A" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://sarahalolayan.github.io/lab/">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E6E6B'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='12.5' cy='19' r='2' fill='white'/%3E%3Ccircle cx='19.5' cy='19' r='2' fill='white'/%3E%3C/svg%3E">
@@ -552,15 +553,15 @@ main:focus{outline:none}
 // count WhatsApp and call clicks once visitor statistics are switched on (see /assets/agentiq-config.js)
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"],a[href^="tel:"]');if(!a)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'click/'+(a.href.indexOf('wa.me')>-1?'whatsapp':'call')+':'+location.pathname,title:'click',event:true});}catch(err){}});
 </script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600;700&family=Readex+Pro:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Readex+Pro:wght@500;600&display=swap">
 <link rel="stylesheet" href="/assets/cinema.css">
 <style>
 /* This page shows only the interactive examples; the rest of the old page stays in the markup for its scripts but is not shown. */
 main#top > *:not(#lab):not(.lab-next){display:none!important}
 #lab{padding-top:36px}
-.lab-next{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-block:8px 64px;padding:22px 24px;border-radius:16px;background:#EEEBFF}
-.lab-next b{font-family:"Noto Kufi Arabic",sans-serif;font-size:19px;display:block}
-.lab-next span{color:#433F5E;font-size:15px}
+.lab-next{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-block:8px 64px;padding:22px 24px;border-radius:16px;background:var(--accent-soft)}
+.lab-next b{font-family:"Tajawal",sans-serif;font-weight:800;font-size:20px;display:block}
+.lab-next span{color:var(--ink-2);font-size:16px}
 .lab-next .cta-row{display:flex;gap:10px;flex-wrap:wrap}
 </style>
 </head>

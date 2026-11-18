@@ -1,24 +1,33 @@
-/* Shared styles for the service pages and the English page, in the home page's look: light paper ground, deep ink, emerald accent, Noto Kufi headings, soft rounded corners. */
+/* Shared styles for the service pages and the English page, in the home page's look: Tajawal, teal-to-purple gradient, light by default with a matching dark mode. */
 [hidden]{display:none!important}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 :root{
   --bg:#F7F6FB; --surface:#FFFFFF; --sunk:#F0EEF8; --ink:#17152B; --ink-2:#433F5E; --muted:#67638A; --line:#E3E0F0; --grid:#ECEAF5;
-  --accent:#5B47E0; --accent-ink:#FFFFFF; --accent-soft:#EEEBFF; --mint:#EEEBFF; --deep:#5B47E0; --deep-2:#4835C4;
-  --f-display:"Noto Kufi Arabic","IBM Plex Sans Arabic",Tahoma,sans-serif;
-  --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
-  --f-data:"IBM Plex Mono",ui-monospace,Consolas,monospace;
-  --shadow:0 22px 50px -28px rgba(20,33,43,.35);
+  --accent:#5B47E0; --accent-ink:#FFFFFF; --accent-soft:#EEEBFF; --mint:#EEEBFF; --deep:#5B47E0; --deep-2:#0B8178;
+  --grad:linear-gradient(120deg,#0B8178 0%,#5B47E0 100%);
+  --f-display:"Tajawal","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --f-body:"Tajawal","IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+  --f-data:"Tajawal","IBM Plex Sans Arabic",sans-serif;
+  --shadow:0 24px 60px -36px rgba(43,32,120,.4);
   color-scheme:light;
 }
-html[lang="en"]{--f-body:"IBM Plex Sans",system-ui,"Segoe UI",sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57; --grid:#2A2650;
+  --accent:#8B7BFF; --accent-ink:#14122A; --accent-soft:#2A2557; --mint:#2A2557; --deep:#6A57EA; --deep-2:#127A72;
+  --grad:linear-gradient(120deg,#127A72 0%,#6A57EA 100%); --shadow:0 24px 60px -30px rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57; --grid:#2A2650;
+  --accent:#8B7BFF; --accent-ink:#14122A; --accent-soft:#2A2557; --mint:#2A2557; --deep:#6A57EA; --deep-2:#127A72;
+  --grad:linear-gradient(120deg,#127A72 0%,#6A57EA 100%); --shadow:0 24px 60px -30px rgba(0,0,0,.6); color-scheme:dark}
+html[lang="en"]{--f-body:"Tajawal",system-ui,"Segoe UI",sans-serif;--f-display:"Tajawal",system-ui,sans-serif}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.8}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.75}
 .wrap{max-width:1120px;margin-inline:auto;padding-inline:20px}
-h1,h2,h3{font-family:var(--f-display);font-weight:700!important;text-wrap:balance;margin:0;line-height:1.25}
+h1,h2,h3{font-family:var(--f-display);font-weight:800!important;text-wrap:balance;margin:0;line-height:1.25}
 .tile h3,.steps h3,.others b{font-family:var(--f-display);font-weight:700}
-.tile h3{font-size:17px!important}.steps h3{font-size:17px!important}.others b{font-size:16px}
+.tile h3{font-size:19px!important}.steps h3{font-size:19px!important}.others b{font-size:18px}
 p{margin:0}
 a{color:var(--accent)}
 button{font:inherit;color:inherit}
@@ -126,17 +135,20 @@ footer a{color:var(--muted)}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
-/* light finishing touches */
-.nav{background:color-mix(in srgb,var(--bg) 88%,transparent)!important}
-.nav .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-#theme{display:none}
-.mark{background:var(--accent)!important;color:#fff!important;border:0!important}
-.page-hero h1{font-size:clamp(30px,4.4vw,50px)}
+/* finishing touches, matching the home page */
+.nav{background:color-mix(in srgb,var(--bg) 86%,transparent)!important}
+.nav .btn.primary,.btn.primary{background:var(--grad);color:#fff;border:0}
+.btn.primary:hover{filter:brightness(1.08)}
+.mark{background:var(--grad)!important;color:#fff!important;border:0!important;border-radius:9px!important}
+.page-hero h1{font-size:clamp(32px,4.8vw,54px)}
+.eyebrow{color:var(--accent);font-weight:700}
 .hero-card{box-shadow:var(--shadow);background:var(--surface)}
 .tile,.example,.faq,.others a{background:var(--surface)}
 .steps li{background:var(--surface);border:1px solid var(--line);padding-inline:16px}
-.band{background:var(--ink);color:#fff;border:0}
-.band .btn{background:#fff;border-color:#fff;color:var(--ink)}
-.band .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-.fab{background:var(--accent);color:#fff;border-radius:99px}
-.btn{border-radius:10px}
+.band{background:var(--grad);color:#fff;border:0}
+.band .btn{background:#fff;border-color:#fff;color:#2b2160}
+.band .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.fab{background:var(--grad);color:#fff;border-radius:99px}
+.btn{border-radius:12px;font-weight:700}
+.tile .ic{background:var(--accent-soft);color:var(--accent)}
+.checks li::before{color:var(--accent)}

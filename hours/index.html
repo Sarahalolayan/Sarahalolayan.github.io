@@ -171,6 +171,7 @@
 <header><div class="wrap hdr">
   <a class="brand" href="/" aria-label="Agentiq، الصفحة الرئيسية"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.5"/></svg></i><span lang="en">Agentiq</span></a>
   <div class="hdr-end">
+    <a class="btn sm" href="/en/calculator/" lang="en" hreflang="en">EN</a>
     <a class="btn sm" href="/#services">خدماتنا</a>
     <button class="icon-btn" id="theme" type="button" aria-label="الوضع الداكن" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
   </div>
@@ -251,7 +252,7 @@
         <div class="stat"><span>أيام عمل</span><b class="num" id="r-days">0</b><small>يوم بالسنة</small></div>
         <div class="stat roi"><span>العائد على الاستثمار</span><b class="num gt" id="r-roi">0</b><small id="r-pay">كل ريال يرجع لك</small></div>
       </div>
-      <p class="note">أرقام تقديرية مبنية على ما أدخلته، وتفترض 4.33 أسبوع في الشهر و8 ساعات لليوم.</p>
+      <p class="note">أرقام تقديرية ومتحفّظة: الأتمتة لا تشيل كل الشغل، فنحسب فقط النسبة اللي تختارها، ونفترض أن الأخطاء تقل بنفس النسبة، و4.33 أسبوع في الشهر و8 ساعات لليوم. النتيجة الفعلية نحسبها معك بعد الاستشارة.</p>
     </section>
   </div>
 
@@ -291,11 +292,11 @@
 
   // typical starting numbers per field of work
   const PRESETS = {
-    store:    { emp: 4,  hrs: 14, rate: 45, err: 10, errc: 120, auto: 65, inv: 18000 },
-    clinic:   { emp: 6,  hrs: 10, rate: 55, err: 6,  errc: 250, auto: 50, inv: 22000 },
-    realty:   { emp: 5,  hrs: 12, rate: 60, err: 5,  errc: 400, auto: 55, inv: 20000 },
-    food:     { emp: 8,  hrs: 6,  rate: 30, err: 15, errc: 80,  auto: 45, inv: 15000 },
-    services: { emp: 10, hrs: 10, rate: 70, err: 8,  errc: 300, auto: 55, inv: 30000 },
+    store:    { emp: 3,  hrs: 10, rate: 40, err: 6,  errc: 100, auto: 45, inv: 20000 },
+    clinic:   { emp: 4,  hrs: 8,  rate: 50, err: 4,  errc: 200, auto: 40, inv: 22000 },
+    realty:   { emp: 4,  hrs: 8,  rate: 55, err: 3,  errc: 300, auto: 40, inv: 20000 },
+    food:     { emp: 5,  hrs: 5,  rate: 30, err: 8,  errc: 60,  auto: 35, inv: 15000 },
+    services: { emp: 6,  hrs: 8,  rate: 60, err: 5,  errc: 250, auto: 45, inv: 30000 },
   };
   const ids = ['emp', 'hrs', 'rate', 'err', 'errc', 'auto', 'inv'];
   const el = Object.fromEntries(ids.map((k) => [k, $('#' + k)]));

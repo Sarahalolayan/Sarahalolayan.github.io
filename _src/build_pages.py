@@ -5,7 +5,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://sarahalolayan.github.io'
 WA = '966557912466'
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Readex+Pro:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">')
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Readex+Pro:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">')
 FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B47E0'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
 MARK = '<span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.6" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.6" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.6"/></svg></span>'
 MOON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>'
@@ -135,7 +135,8 @@ def head(lang, title, desc, path, alt_path=None, extra=''):
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{SITE}{path}">{alts}
-<meta name="theme-color" content="#F7F6FB">
+<meta name="theme-color" content="#F7F6FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14122A" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="{FAVICON}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Agentiq"><meta property="og:locale" content="{'ar_SA' if lang=='ar' else 'en_US'}">
 <meta property="og:url" content="{SITE}{path}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}">
@@ -242,7 +243,7 @@ def en_page():
 <a class="skip" href="#main">Skip to content</a>
 <nav class="nav"><div class="wrap nav-in">
   <a class="brand" href="/en/" aria-label="Agentiq home">{MARK}<span>Agentiq</span></a>
-  <div class="links" id="links"><a href="#services">Services</a><a href="#work">Work</a><a href="#how">How we work</a><a href="#faq">FAQ</a></div>
+  <div class="links" id="links"><a href="/en/calculator/">Calculator</a><a href="#services">Services</a><a href="#work">Work</a><a href="#how">How we work</a><a href="#faq">FAQ</a></div>
   <div class="nav-r"><a class="lang" href="/" lang="ar" hreflang="ar">عربي</a><a class="btn primary sm" href="#contact">Start a project</a>
     <button class="icon-btn" id="theme" type="button" aria-label="Toggle light and dark mode">{MOON}</button>
     <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="links">{BURGER}</button></div>
@@ -250,10 +251,10 @@ def en_page():
 <main class="wrap" id="main" tabindex="-1">
   <header class="page-hero">
     <div class="txt">
-      <span class="eyebrow">Dashboards · Automation · Websites</span>
-      <h1>Your numbers in front of you. Your repetitive work done automatically.</h1>
-      <p>We connect the systems you already use, show your key numbers on one screen that updates itself, and send you alerts and ready-made reports instead of chasing them by hand.</p>
-      <div class="cta-row"><a class="btn primary" href="#contact">Start a project</a><a class="btn" href="#work">See our work</a></div>
+      <span class="eyebrow">Automation · Dashboards · Websites</span>
+      <h1>Manual work costs you more than you think.</h1>
+      <p>Work it out yourself in one minute, then let us turn that work into systems that run on their own: automated tasks, live dashboards, and websites that bring in requests.</p>
+      <div class="cta-row"><a class="btn primary" href="/en/calculator/">What is manual work costing you?</a><a class="btn" href="#contact">Start a project</a></div>
     </div>
     <div class="hero-card">{ART["dashboards"]}<span class="cap">Illustrative example (Arabic interface)</span></div>
   </header>

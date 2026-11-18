@@ -76,6 +76,7 @@
   .btn.sm{padding:8px 14px;font-size:14.5px}
 
   .intro{padding-block:40px 26px;display:grid;gap:10px;max-width:760px}
+  .who{font-size:15.5px;color:var(--muted);border-inline-start:3px solid var(--accent);padding-inline-start:12px;max-width:62ch}
   .tag{justify-self:start;font-size:14px;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--accent-soft);color:var(--accent)}
   h1{font-size:clamp(34px,5.4vw,60px);font-weight:800;line-height:1.2}
   .gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -258,6 +259,7 @@
     <span class="tag">أتمتة · شاشات متابعة · مواقع</span>
     <h1>الشغل اليدوي يكلّفك <span class="gt">أكثر مما تتوقع</span></h1>
     <p>احسبه بنفسك في دقيقة: حرّك المؤشرات وشوف كم يكلّفك كل شهر. وبعدها نحوّل هالشغل إلى أنظمة تشتغل وحدها، وتوفّر عليك المبلغ اللي تشوفه.</p>
+    <p class="who"><b lang="en">Agentiq</b> تبني أتمتة المهام المتكررة، وشاشات متابعة الأرقام، والمواقع الإلكترونية للمنشآت الصغيرة والمتوسطة في السعودية.</p>
   </div>
 
   <div class="layout">
@@ -328,7 +330,7 @@
         <div class="stat"><span>أيام عمل</span><b class="num" id="r-days">0</b><small>يوم بالسنة</small></div>
         <div class="stat roi"><span>العائد على الاستثمار</span><b class="num gt" id="r-roi">0</b><small id="r-pay">كل ريال يرجع لك</small></div>
       </div>
-      <p class="note">أرقام تقديرية مبنية على ما أدخلته، وتفترض 4.33 أسبوع في الشهر و8 ساعات لليوم.</p>
+      <p class="note">أرقام تقديرية ومتحفّظة: الأتمتة لا تشيل كل الشغل، فنحسب فقط النسبة اللي تختارها، ونفترض أن الأخطاء تقل بنفس النسبة، و4.33 أسبوع في الشهر و8 ساعات لليوم. النتيجة الفعلية نحسبها معك بعد الاستشارة.</p>
     </section>
   </div>
 
@@ -452,11 +454,11 @@
 
   // typical starting numbers per field of work
   const PRESETS = {
-    store:    { emp: 4,  hrs: 14, rate: 45, err: 10, errc: 120, auto: 65, inv: 18000 },
-    clinic:   { emp: 6,  hrs: 10, rate: 55, err: 6,  errc: 250, auto: 50, inv: 22000 },
-    realty:   { emp: 5,  hrs: 12, rate: 60, err: 5,  errc: 400, auto: 55, inv: 20000 },
-    food:     { emp: 8,  hrs: 6,  rate: 30, err: 15, errc: 80,  auto: 45, inv: 15000 },
-    services: { emp: 10, hrs: 10, rate: 70, err: 8,  errc: 300, auto: 55, inv: 30000 },
+    store:    { emp: 3,  hrs: 10, rate: 40, err: 6,  errc: 100, auto: 45, inv: 20000 },
+    clinic:   { emp: 4,  hrs: 8,  rate: 50, err: 4,  errc: 200, auto: 40, inv: 22000 },
+    realty:   { emp: 4,  hrs: 8,  rate: 55, err: 3,  errc: 300, auto: 40, inv: 20000 },
+    food:     { emp: 5,  hrs: 5,  rate: 30, err: 8,  errc: 60,  auto: 35, inv: 15000 },
+    services: { emp: 6,  hrs: 8,  rate: 60, err: 5,  errc: 250, auto: 45, inv: 30000 },
   };
   const ids = ['emp', 'hrs', 'rate', 'err', 'errc', 'auto', 'inv'];
   const el = Object.fromEntries(ids.map((k) => [k, $('#' + k)]));

@@ -1,6 +1,5 @@
-/* Brings the older pages (/lab/, /hours/) into the site's look: light lavender-white ground, deep ink, modern purple accent,
-   warm amber only for costs, Noto Kufi headings, soft rounded corners. Loaded after each page's own styles; the id-level selector
-   wins over their theme blocks. */
+/* Brings /lab/ into the site's look: Tajawal, teal-to-purple gradient, light by default with a matching dark mode.
+   Loaded after the page's own styles; the id-level selectors win over its theme blocks. */
 html:root:not(#_){
   --bg:#F7F6FB; --surface:#FFFFFF; --sunk:#F0EEF8; --ink:#17152B; --ink-2:#433F5E; --muted:#67638A; --line:#E3E0F0; --grid:#ECEAF5;
   --accent:#5B47E0; --accent-ink:#FFFFFF; --accent-soft:#EEEBFF; --ghost:#C7C2DD;
@@ -12,17 +11,28 @@ html:root:not(#_){
   --z1:#C4BBFF; --z2:#8F7DF0; --z3:#5B47E0; --z4:#3A2A9E;
   color-scheme:light;
 }
-html body{background:#F7F6FB;color:#17152B}
-h1,h2,h3,.block-head h2,.panel h2,.intro h1{font-family:"Noto Kufi Arabic","IBM Plex Sans Arabic",sans-serif!important;font-weight:700!important;letter-spacing:0}
-.eyebrow{color:#5B47E0}
-.nav{background:color-mix(in srgb,#F7F6FB 88%,transparent)!important;border-bottom:1px solid #E3E0F0!important;backdrop-filter:blur(10px)}
+html body{background:var(--bg);color:var(--ink)}
+@media (prefers-color-scheme: dark){html:root:not(#_):not([data-theme="light"]){
+  --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57; --grid:#2A2650;
+  --accent:#8B7BFF; --accent-ink:#14122A; --accent-soft:#2A2557; --ghost:#4A4580;
+  --good:#4FD08E; --good-soft:#16302A; --warn:#F2C14E; --warn-soft:#33290F; --bad:#FF8A7A; --bad-soft:#3A1F2A; --info-soft:#2A2557;
+  --warm:#F0A868; --warm-ink:#F7CDA6; --warm-soft:#33241A; --warm-mute:#5A4636; color-scheme:dark}}
+html:root:not(#_)[data-theme="dark"]{
+  --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57; --grid:#2A2650;
+  --accent:#8B7BFF; --accent-ink:#14122A; --accent-soft:#2A2557; --ghost:#4A4580;
+  --good:#4FD08E; --good-soft:#16302A; --warn:#F2C14E; --warn-soft:#33290F; --bad:#FF8A7A; --bad-soft:#3A1F2A; --info-soft:#2A2557;
+  --warm:#F0A868; --warm-ink:#F7CDA6; --warm-soft:#33241A; --warm-mute:#5A4636; color-scheme:dark}
+html body{font-family:"Tajawal","IBM Plex Sans Arabic",sans-serif}
+h1,h2,h3,.block-head h2,.panel h2,.intro h1{font-family:"Tajawal","IBM Plex Sans Arabic",sans-serif!important;font-weight:800!important;letter-spacing:0}
+.eyebrow{color:var(--accent)}
+.nav{background:color-mix(in srgb,var(--bg) 86%,transparent)!important;border-bottom:1px solid var(--line)!important;backdrop-filter:blur(10px)}
 .brand{font-family:"Readex Pro",sans-serif}
-.brand .mark{background:#5B47E0!important;color:#fff!important;border:0}
-#theme,.motion-btn{display:none!important}
-.nav .btn.primary,.nav-cta{background:#5B47E0!important;color:#fff!important;border-color:#5B47E0!important}
+.brand .mark{background:linear-gradient(120deg,#0B8178,#5B47E0)!important;color:#fff!important;border:0}
+.motion-btn{display:none!important}
+.nav .btn.primary,.nav-cta{background:linear-gradient(120deg,#0B8178,#5B47E0)!important;color:#fff!important;border:0!important}
 .btn,.panel,.card,.service,.lab,.box,.kpi,.task,.alert,.ci,.goal,.promo,.mini,.opslog,.roi-out,.node,.tab,.cost,.save,.periods,.stepper,.talk,.k,.levels,.empty,.equiv,.seg,.del,.icon-btn,.preset,.chip{border-radius:12px}
-.btn.primary,.send{background:#5B47E0;border-color:#5B47E0;color:#fff}
-.btn.primary:hover{background:#4835C4;border-color:#4835C4}
+.btn.primary,.send{background:linear-gradient(120deg,#0B8178,#5B47E0);border:0;color:#fff}
+.btn.primary:hover{filter:brightness(1.08)}
 .chip[aria-pressed="true"],.chip[aria-selected="true"]{background:#5B47E0;color:#fff;border-color:#5B47E0}
 .contact,.talk{background:linear-gradient(135deg,#5B47E0,#3A2A9E)!important;color:#fff!important;border:0}
 .talk .wa-btn{background:#fff!important;color:#3A2A9E!important;border-color:#fff!important}

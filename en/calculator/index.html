@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What is manual work costing you? | Agentiq</title>
+<meta name="description" content="Work out what repetitive manual work costs you each month and year, how much automation saves, and the return on every riyal. A free calculator from Agentiq.">
+<link rel="canonical" href="https://sarahalolayan.github.io/en/calculator/">
+<link rel="alternate" hreflang="en" href="https://sarahalolayan.github.io/en/calculator/">
+<link rel="alternate" hreflang="ar" href="https://sarahalolayan.github.io/hours/">
+<meta name="theme-color" content="#F7F6FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14122A" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B47E0'/%3E%3Cpath d='M9 25 L16 8 L23 25' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Agentiq">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://sarahalolayan.github.io/en/calculator/">
+<meta property="og:title" content="What is manual work costing you?">
+<meta property="og:description" content="Move the sliders and see what manual work costs you, and how much automation saves.">
+<meta property="og:image" content="https://sarahalolayan.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;700;800&family=Readex+Pro:wght@600&display=swap" rel="stylesheet">
+<script src="/assets/agentiq-config.js" defer></script>
+<style>
+  /* Light by default, matching the rest of the site. Dark only when the visitor's device asks for it (or the toggle),
+     using the same purple and teal family so both modes feel like one brand. */
+  :root{
+    --bg:#F7F6FB; --surface:#FFFFFF; --sunk:#F0EEF8; --ink:#17152B; --ink-2:#433F5E; --muted:#67638A; --line:#E3E0F0;
+    --accent:#5B47E0; --accent-soft:#EEEBFF;
+    --grad:linear-gradient(120deg,#0B8178 0%,#5B47E0 100%);
+    --red:#B02E22; --red-soft:#FCE6E3; --green:#11683F; --green-soft:#E0F4E9;
+    --track:#E3E0F0; --shadow:0 24px 60px -36px rgba(43,32,120,.4);
+    --f:"Inter","Tajawal",system-ui,sans-serif;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+    --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57;
+    --accent:#8B7BFF; --accent-soft:#2A2557;
+    --grad:linear-gradient(120deg,#127A72 0%,#6A57EA 100%);
+    --red:#FF8A7A; --red-soft:#3A1F2A; --green:#4FD08E; --green-soft:#16302A;
+    --track:#353060; --shadow:0 24px 60px -30px rgba(0,0,0,.6); color-scheme:dark}}
+  :root[data-theme="dark"]{
+    --bg:#14122A; --surface:#1D1A38; --sunk:#232046; --ink:#EEEBFA; --ink-2:#C9C4E6; --muted:#A39EC7; --line:#302C57;
+    --accent:#8B7BFF; --accent-soft:#2A2557;
+    --grad:linear-gradient(120deg,#127A72 0%,#6A57EA 100%);
+    --red:#FF8A7A; --red-soft:#3A1F2A; --green:#4FD08E; --green-soft:#16302A;
+    --track:#353060; --shadow:0 24px 60px -30px rgba(0,0,0,.6); color-scheme:dark}
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.7;overflow-x:clip}
+  body::before{content:"";position:fixed;top:-20%;right:-10%;width:60vw;height:60vw;max-width:720px;max-height:720px;border-radius:50%;background:var(--grad);opacity:.10;filter:blur(80px);z-index:-1;pointer-events:none}
+  a{color:inherit;text-decoration:none}
+  button,input,select{font:inherit;color:inherit}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .wrap{max-width:1180px;margin-inline:auto;padding-inline:24px}
+  .skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;z-index:80}
+  .skip:focus{top:12px}
+
+  header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:19px}
+  .brand i{width:34px;height:34px;border-radius:9px;background:var(--grad);color:#fff;display:grid;place-items:center}
+  .hdr-end{display:flex;gap:10px;align-items:center}
+  .icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:16px;cursor:pointer;transition:filter .2s,transform .2s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.grad{background:var(--grad);border:0;color:#fff}
+  .btn.grad:hover{filter:brightness(1.08)}
+  .btn.sm{padding:8px 14px;font-size:14.5px}
+
+  .intro{padding-block:40px 26px;display:grid;gap:10px;max-width:760px}
+  .tag{justify-self:start;font-size:14px;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--accent-soft);color:var(--accent)}
+  h1{font-size:clamp(34px,5.4vw,60px);font-weight:800;line-height:1.2}
+  .gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .intro p{font-size:19px;color:var(--ink-2);max-width:56ch}
+
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:start;padding-bottom:40px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow)}
+  .card h2{font-size:20px;font-weight:800;margin-bottom:4px}
+  .card .sub{color:var(--muted);font-size:15px}
+
+  .industries{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .ind{padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:var(--sunk);cursor:pointer;font-size:15px;font-weight:500}
+  .ind[aria-pressed="true"]{background:var(--grad);color:#fff;border-color:transparent}
+
+  .field{display:grid;gap:6px;padding-block:14px;border-top:1px solid var(--line);min-width:0}
+  .f-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .f-top label{font-weight:700;font-size:16px}
+  .f-top output{font-weight:800;font-size:20px;color:var(--accent);white-space:nowrap}
+  .f-top output small{font-size:13px;color:var(--muted);font-weight:500}
+  .hint{font-size:13.5px;color:var(--muted)}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer}
+  input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:99px;background:linear-gradient(to right,var(--accent) var(--fill,50%),var(--track) var(--fill,50%))}
+  input[type=range]::-moz-range-track{height:8px;border-radius:99px;background:var(--track)}
+  input[type=range]::-moz-range-progress{height:8px;border-radius:99px;background:var(--accent)}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-8px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--accent)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+
+  .results{position:sticky;top:78px;display:grid;gap:16px}
+  .hero-num{border-radius:22px;padding:24px;background:var(--grad);color:#fff;display:grid;gap:4px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .hero-num::after{content:"";position:absolute;right:-40px;bottom:-60px;width:180px;height:180px;border-radius:50%;border:26px solid rgba(255,255,255,.1)}
+  .hero-num>span{font-size:16px;opacity:.92;font-weight:500}
+  .hero-num b{font-size:clamp(44px,6vw,68px);font-weight:800;line-height:1.05}
+  .hero-num b small{font-size:20px;font-weight:700;opacity:.92;margin-inline-start:6px}
+  .hero-num p{opacity:.92;font-size:15px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cmp{border-radius:18px;padding:16px;display:grid;gap:2px}
+  .cmp>span{font-size:14.5px;font-weight:700}
+  .cmp b{font-size:clamp(24px,3vw,32px);font-weight:800;line-height:1.2}
+  .cmp small{font-size:13px;opacity:.85}
+  .cmp.before{background:var(--red-soft);color:var(--red)}
+  .cmp.after{background:var(--green-soft);color:var(--green)}
+  .bars{display:grid;gap:12px;padding:18px 20px}
+  .bar{display:grid;gap:4px}
+  .bar .l{display:flex;justify-content:space-between;font-size:14px;font-weight:700}
+  .bar .t{height:16px;border-radius:99px;background:var(--sunk);overflow:hidden}
+  .bar .t i{display:block;height:100%;border-radius:99px;transition:width .35s ease}
+  .bar.before .l{color:var(--red)} .bar.after .l{color:var(--green)}
+  .bar.before .t i{background:var(--red)}
+  .bar.after .t i{background:var(--green)}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:2px;align-content:start}
+  .stat>span{font-size:13.5px;color:var(--muted);font-weight:500}
+  .stat b{font-size:24px;font-weight:800;line-height:1.2}
+  .stat small{font-size:12.5px;color:var(--muted)}
+  .stat.roi b{font-size:30px}
+  .note{font-size:13px;color:var(--muted)}
+
+  .cta{margin-block:20px 60px;border-radius:24px;padding:30px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center;scroll-margin-top:80px}
+  .cta h2{font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.3}
+  .cta p{color:var(--ink-2);margin-top:6px}
+  .cta-actions{display:grid;gap:10px}
+  .cta-actions .btn.grad{width:100%;font-size:18px;padding:16px 20px}
+  .mail{display:flex;gap:8px}
+  .mail input{flex:1;min-width:0;border:1px solid var(--line);background:var(--sunk);border-radius:12px;padding:11px 14px;direction:ltr;text-align:right}
+  .mail input:focus{outline:0;border-color:var(--accent)}
+  .msg{font-size:13.5px;min-height:20px;color:var(--muted)}
+  .msg.err{color:var(--red)}
+  footer{border-top:1px solid var(--line);padding-block:20px calc(20px + env(safe-area-inset-bottom,0px));font-size:14px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a:hover{color:var(--accent)}
+
+  .dock{display:none}
+  @media (max-width:900px){
+    .layout,.cta{grid-template-columns:minmax(0,1fr)}
+    .results{position:static}
+    .dock{position:fixed;inset-inline:0;bottom:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--grad);color:#fff;font-weight:700}
+    .dock[hidden]{display:none}
+    .dock b{font-size:20px}
+    .dock a{background:#fff;color:#2b2160;border-radius:10px;padding:7px 12px;font-size:14px;white-space:nowrap}
+    body{padding-bottom:64px}
+  }
+  @media (max-width:560px){
+    .wrap{padding-inline:16px}
+    .card{padding:18px}
+    .two{grid-template-columns:minmax(0,1fr)}
+    .stats{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+    .stats .roi{grid-column:1/-1}
+    .mail{flex-direction:column}
+    .cta{padding:22px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#calc">Skip to the calculator</a>
+<header><div class="wrap hdr">
+  <a class="brand" href="/en/" aria-label="Agentiq home"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 L10 3.5 L16 17"/><circle cx="7" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><circle cx="13" cy="12.2" r="1.5" fill="currentColor" stroke="none"/><path d="M8.6 12.2 H11.4" stroke-width="1.5"/></svg></i><span lang="en">Agentiq</span></a>
+  <div class="hdr-end">
+    <a class="btn sm" href="/hours/" lang="ar" hreflang="ar">عربي</a>
+    <a class="btn sm" href="/en/#services">Services</a>
+    <button class="icon-btn" id="theme" type="button" aria-label="Dark mode" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
+  </div>
+</div></header>
+
+<main class="wrap" id="calc">
+  <div class="intro">
+    <span class="tag">Free calculator · one minute</span>
+    <h1>What is <span class="gt">manual work</span> costing you?</h1>
+    <p>Move the sliders and see what manual work costs you every month, and how much automation would save. The numbers update as you go.</p>
+  </div>
+
+  <div class="layout">
+    <section class="card" aria-labelledby="in-h">
+      <h2 id="in-h">Your numbers</h2>
+      <p class="sub">Pick your field to fill in typical numbers, then adjust them to fit.</p>
+      <div class="industries" id="industries" role="group" aria-label="Field of work">
+        <button class="ind" type="button" data-k="store" aria-pressed="true">Online store</button>
+        <button class="ind" type="button" data-k="clinic" aria-pressed="false">Clinic</button>
+        <button class="ind" type="button" data-k="realty" aria-pressed="false">Real estate office</button>
+        <button class="ind" type="button" data-k="food" aria-pressed="false">Restaurant or café</button>
+        <button class="ind" type="button" data-k="services" aria-pressed="false">Services company</button>
+      </div>
+
+      <div class="field">
+        <div class="f-top"><label for="emp">How many employees do repetitive tasks?</label><output for="emp" id="o-emp"></output></div>
+        <input type="range" id="emp" min="1" max="50" step="1">
+      </div>
+      <div class="field">
+        <div class="f-top"><label for="hrs">Hours per week, per employee</label><output for="hrs" id="o-hrs"></output></div>
+        <input type="range" id="hrs" min="1" max="40" step="1">
+        <span class="hint">Such as data entry, invoices, reports and answering customers.</span>
+      </div>
+      <div class="field">
+        <div class="f-top"><label for="rate">Cost of one employee hour</label><output for="rate" id="o-rate"></output></div>
+        <input type="range" id="rate" min="20" max="300" step="5">
+        <span class="hint">Monthly salary ÷ about 160. Example: 8,000 ÷ 160 = SAR 50</span>
+      </div>
+      <div class="two">
+        <div class="field">
+          <div class="f-top"><label for="err">Human errors per month</label><output for="err" id="o-err"></output></div>
+          <input type="range" id="err" min="0" max="100" step="1">
+        </div>
+        <div class="field">
+          <div class="f-top"><label for="errc">Cost to fix one error</label><output for="errc" id="o-errc"></output></div>
+          <input type="range" id="errc" min="0" max="2000" step="10">
+        </div>
+      </div>
+      <div class="field">
+        <div class="f-top"><label for="auto">Share of the work that can be automated</label><output for="auto" id="o-auto"></output></div>
+        <input type="range" id="auto" min="10" max="90" step="5">
+        <span class="hint">Tasks with the same steps every time can be automated the most.</span>
+      </div>
+      <div class="field">
+        <div class="f-top"><label for="inv">Estimated automation cost (one-off)</label><output for="inv" id="o-inv"></output></div>
+        <input type="range" id="inv" min="3000" max="150000" step="1000">
+        <span class="hint">An estimate for the return. We set the real cost with you in the consultation.</span>
+      </div>
+    </section>
+
+    <section class="results" aria-labelledby="out-h" aria-live="polite">
+      <h2 id="out-h" class="sr">Result</h2>
+      <div class="hero-num">
+        <span>Expected yearly saving</span>
+        <b><small>SAR</small> <span class="num" id="r-year">0</span></b>
+        <p>That is SAR <span class="num" id="r-month-save">0</span> every month</p>
+      </div>
+      <div class="compare">
+        <div class="cmp before"><span>Manual work, monthly</span><b class="num" id="r-before">0</b><small>SAR</small></div>
+        <div class="cmp after"><span>After automation, monthly</span><b class="num" id="r-after">0</b><small>SAR</small></div>
+      </div>
+      <div class="card bars" aria-hidden="true">
+        <div class="bar before"><div class="l"><span>Before automation</span><span>SAR <span class="num" id="b-before">0</span></span></div><div class="t"><i id="bb" style="width:100%"></i></div></div>
+        <div class="bar after"><div class="l"><span>After automation</span><span>SAR <span class="num" id="b-after">0</span></span></div><div class="t"><i id="ba" style="width:40%"></i></div></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>Hours saved</span><b class="num" id="r-hours">0</b><small>hours a month</small></div>
+        <div class="stat"><span>Working days</span><b class="num" id="r-days">0</b><small>days a year</small></div>
+        <div class="stat roi"><span>Return on investment</span><b class="num gt" id="r-roi">0</b><small id="r-pay">Every riyal returns</small></div>
+      </div>
+      <p class="note">Conservative estimates: automation never removes all the work, so we count only the share you choose, assume errors drop by the same share, and use 4.33 weeks a month and 8-hour days. We work out your real figures with you after the consultation.</p>
+    </section>
+  </div>
+
+  <section class="cta" id="cta" aria-labelledby="cta-h">
+    <div>
+      <h2 id="cta-h">Ready to save <span class="gt">SAR <span class="num" id="c-year">0</span></span> a year?</h2>
+      <p>Book a free consultation and we will send you a clear plan to automate your work. Your result is attached to your message automatically.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn grad" id="wa" href="https://wa.me/966557912466" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>Book a free consultation</a>
+      <form class="mail" id="mail" novalidate>
+        <label for="em" class="sr">Your email</label>
+        <input id="em" type="email" inputmode="email" autocomplete="email" placeholder="Your email">
+        <button class="btn" type="submit">Email me the report</button>
+      </form>
+      <p class="msg" id="msg">Opens your email with a ready message containing your result.</p>
+    </div>
+  </section>
+</main>
+
+<div class="dock" id="dock"><span>Yearly saving: SAR <b class="num" id="d-year">0</b></span><a href="#cta">Book a call</a></div>
+
+<footer><div class="wrap"><span>Agentiq · Riyadh, Saudi Arabia</span><span><a href="/en/">Home</a> · <a href="/en/#services">Services</a> · <a href="/hours/" lang="ar">العربية</a></span></div></footer>
+
+<script>
+(function(){
+  const $ = (s) => document.querySelector(s);
+  const fmt = (n, d = 0) => Number(n).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+
+  // theme: follows the device; the button overrides it (same key as the rest of the site)
+  const root = document.documentElement;
+  try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch (e) {}
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  const syncThemeBtn = () => { const d = isDark(); $('#theme').setAttribute('aria-pressed', d); $('#theme').setAttribute('aria-label', d ? 'Light mode' : 'Dark mode'); };
+  syncThemeBtn();
+  $('#theme').addEventListener('click', () => { root.dataset.theme = isDark() ? 'light' : 'dark'; try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {} syncThemeBtn(); });
+
+  // typical starting numbers per field of work
+  const PRESETS = {
+    store:    { emp: 3,  hrs: 10, rate: 40, err: 6,  errc: 100, auto: 45, inv: 20000 },
+    clinic:   { emp: 4,  hrs: 8,  rate: 50, err: 4,  errc: 200, auto: 40, inv: 22000 },
+    realty:   { emp: 4,  hrs: 8,  rate: 55, err: 3,  errc: 300, auto: 40, inv: 20000 },
+    food:     { emp: 5,  hrs: 5,  rate: 30, err: 8,  errc: 60,  auto: 35, inv: 15000 },
+    services: { emp: 6,  hrs: 8,  rate: 60, err: 5,  errc: 250, auto: 45, inv: 30000 },
+  };
+  const ids = ['emp', 'hrs', 'rate', 'err', 'errc', 'auto', 'inv'];
+  const el = Object.fromEntries(ids.map((k) => [k, $('#' + k)]));
+  const UNIT = { emp: 'people', hrs: 'hours', rate: 'SAR', err: 'errors', errc: 'SAR', auto: '%', inv: 'SAR' };
+
+  function load(k){
+    const p = PRESETS[k]; ids.forEach((id) => el[id].value = p[id]);
+    document.querySelectorAll('.ind').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.k === k)));
+    update();
+  }
+  $('#industries').addEventListener('click', (e) => { const b = e.target.closest('.ind'); if (b) load(b.dataset.k); });
+
+  let summary = '';
+  function update(){
+    const v = Object.fromEntries(ids.map((id) => [id, +el[id].value]));
+    ids.forEach((id) => {
+      $('#o-' + id).innerHTML = `<span class="num">${fmt(v[id])}</span> <small>${UNIT[id]}</small>`;
+      const r = el[id]; r.style.setProperty('--fill', ((r.value - r.min) / (r.max - r.min) * 100) + '%');
+    });
+    const a = v.auto / 100;
+    const hoursMonth = v.emp * v.hrs * 4.33;
+    const before = hoursMonth * v.rate + v.err * v.errc;
+    const after = hoursMonth * (1 - a) * v.rate + v.err * (1 - a) * v.errc;
+    const saveMonth = before - after, saveYear = saveMonth * 12;
+    const hoursSaved = hoursMonth * a, days = hoursSaved * 12 / 8;
+    const roi = v.inv > 0 ? saveYear / v.inv : 0, payback = saveMonth > 0 ? v.inv / saveMonth : 0;
+
+    ['#r-year', '#c-year', '#d-year'].forEach((s) => $(s).textContent = fmt(saveYear));
+    $('#r-month-save').textContent = fmt(saveMonth);
+    $('#r-before').textContent = fmt(before); $('#r-after').textContent = fmt(after);
+    $('#b-before').textContent = fmt(before); $('#b-after').textContent = fmt(after);
+    $('#ba').style.width = (before > 0 ? after / before * 100 : 0) + '%';
+    $('#r-hours').textContent = fmt(hoursSaved); $('#r-days').textContent = fmt(days);
+    $('#r-roi').textContent = fmt(roi, 1) + '×';
+    $('#r-pay').textContent = `Every riyal returns ${fmt(roi, 1)} within a year · pays back in ${payback < 1 ? 'under a month' : fmt(payback, 1) + ' months'}`;
+
+    const ind = document.querySelector('.ind[aria-pressed="true"]');
+    summary = [
+      'Manual work cost calculator result (Agentiq):',
+      `Field: ${ind ? ind.textContent : 'custom numbers'}`,
+      `${v.emp} employees × ${v.hrs} hours a week on repetitive tasks, SAR ${v.rate} per hour`,
+      `${v.err} errors a month at SAR ${fmt(v.errc)} each; ${v.auto}% of the work can be automated`,
+      `Current cost: SAR ${fmt(before)} a month; after automation: SAR ${fmt(after)} a month`,
+      `Expected yearly saving: SAR ${fmt(saveYear)}, plus ${fmt(hoursSaved)} hours a month (${fmt(days)} working days a year)`,
+      `Return: every riyal returns ${fmt(roi, 1)} within a year`,
+    ].join('\n');
+    $('#wa').href = 'https://wa.me/966557912466?text=' + encodeURIComponent(summary + '\n\nI would like to book a free consultation.');
+  }
+  ids.forEach((id) => el[id].addEventListener('input', () => {
+    document.querySelectorAll('.ind').forEach((b) => b.setAttribute('aria-pressed', 'false')); update();
+  }));
+  load('store');
+
+  // email report: opens the visitor's mail app with the result ready to send to themselves
+  $('#mail').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const m = $('#em').value.trim(), msg = $('#msg');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m)) { msg.textContent = 'Enter a valid email, like name@company.com'; msg.className = 'msg err'; $('#em').focus(); return; }
+    location.href = `mailto:${encodeURIComponent(m)}?subject=${encodeURIComponent('Manual work cost report')}&body=${encodeURIComponent(summary + '\n\nFree consultation: https://wa.me/966557912466')}`;
+    msg.textContent = 'Your email app is open with the report. Press send to keep a copy.'; msg.className = 'msg';
+    try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/report-email', title: 'report', event: true }); } catch (err) {}
+  });
+
+  // phones: hide the bottom bar once the call to action is on screen
+  if ('IntersectionObserver' in window) new IntersectionObserver((es) => { $('#dock').hidden = es[0].isIntersecting; }, { threshold: .2 }).observe($('#cta'));
+
+  // count WhatsApp clicks once visitor statistics are switched on
+  document.addEventListener('click', (e) => { const a = e.target.closest && e.target.closest('a[href*="wa.me"]'); if (!a) return;
+    try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'click/whatsapp:/en/calculator/', title: 'click', event: true }); } catch (err) {} });
+})();
+</script>
+</body>
+</html>
